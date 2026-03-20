@@ -1,0 +1,3315 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台灣駕駛緊急應變訓練</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: 'Noto Sans TC', sans-serif; box-sizing: border-box; }
+    body { margin: 0; background: #0f172a; }
+
+    @keyframes hazard {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.1; }
+    }
+    @keyframes rainFall {
+      0% { transform: translateY(-20px); opacity: 0; }
+      20% { opacity: 0.6; }
+      100% { transform: translateY(220px); opacity: 0; }
+    }
+    @keyframes carWobble {
+      0%, 100% { transform: rotate(0deg) translateX(0); }
+      20% { transform: rotate(-3deg) translateX(-3px); }
+      50% { transform: rotate(3deg) translateX(3px); }
+      80% { transform: rotate(-2deg) translateX(-2px); }
+    }
+    @keyframes smokeRise {
+      0% { transform: translateY(0) scale(1); opacity: 0.7; }
+      100% { transform: translateY(-40px) scale(3); opacity: 0; }
+    }
+    @keyframes impactPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.5; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes needleSpin {
+      0% { transform: rotate(-80deg); }
+      100% { transform: rotate(60deg); }
+    }
+    @keyframes fogPulse {
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 0.55; }
+    }
+    @keyframes twBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .anim-hazard { animation: hazard 0.75s ease-in-out infinite; }
+    .anim-wobble { animation: carWobble 0.45s ease-in-out infinite; }
+    .anim-smoke { animation: smokeRise 1.8s ease-out infinite; }
+    .anim-impact { animation: impactPulse 0.6s ease-in-out infinite; }
+    .anim-fade { animation: fadeIn 0.45s ease-out forwards; }
+    .anim-slide { animation: slideUp 0.35s ease-out forwards; }
+    .anim-fog { animation: fogPulse 3s ease-in-out infinite; }
+
+    @keyframes stepSlideR {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(22px); }
+    }
+    @keyframes stepSlideL {
+      0% { transform: translateX(40px); opacity:0; }
+      20% { opacity:1; }
+      80% { opacity:1; }
+      100% { transform: translateX(-10px); opacity:0; }
+    }
+    @keyframes stepBounce {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      40% { transform: translateY(-8px) scale(1.05); }
+      60% { transform: translateY(0px) scale(0.98); }
+    }
+    @keyframes stepPhoneRing {
+      0%, 60%, 100% { transform: rotate(0deg); }
+      10%, 30% { transform: rotate(-12deg); }
+      20%, 40% { transform: rotate(12deg); }
+    }
+    @keyframes stepRingWave {
+      0% { transform: scale(0.8); opacity: 0.8; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    @keyframes stepFootLift {
+      0%, 100% { transform: translateY(8px); }
+      50% { transform: translateY(-4px); }
+    }
+    @keyframes stepNeedleDrop {
+      0%, 100% { transform: rotate(50deg); }
+      50% { transform: rotate(-65deg); }
+    }
+    @keyframes stepBrakePump {
+      0%, 100% { transform: translateY(0px) scaleY(1); }
+      40%, 60% { transform: translateY(6px) scaleY(0.75); }
+    }
+    @keyframes stepGearDrop {
+      0% { transform: translateY(-18px); opacity:0.4; }
+      30% { transform: translateY(0px); opacity:1; }
+      70% { transform: translateY(0px); opacity:1; }
+      100% { transform: translateY(8px); opacity:0.4; }
+    }
+    @keyframes stepGripPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+    }
+    @keyframes stepCamFlash {
+      0%, 70%, 100% { opacity: 0; }
+      75%, 90% { opacity: 1; }
+    }
+    @keyframes stepDocSlide {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(-22px); }
+    }
+    @keyframes stepHeartCalm {
+      0%, 100% { stroke-dashoffset: 0; }
+      50% { stroke-dashoffset: 40; }
+    }
+    @keyframes stepHandbrakePull {
+      0%, 100% { transform: rotate(0deg) translateY(0px); }
+      50% { transform: rotate(-12deg) translateY(-6px); }
+    }
+
+    .btn-choice {
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+    .btn-choice:hover { transform: translateY(-2px); }
+    .btn-choice:active { transform: translateY(0); }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #1e293b; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+
+    @keyframes simPulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 12px rgba(245,158,11,0.6); }
+      50% { opacity: 0.7; box-shadow: 0 0 24px rgba(245,158,11,1); }
+    }
+    @keyframes simGlow {
+      0%, 100% { filter: drop-shadow(0 0 8px rgba(245,158,11,0.5)); }
+      50% { filter: drop-shadow(0 0 20px rgba(245,158,11,1)); }
+    }
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+
+// ─────────────────────────────────────────
+// SCENARIO DATA
+// ─────────────────────────────────────────
+const SCENARIOS = [
+  {
+    id: 'highway-breakdown',
+    title: '高速公路拋錨',
+    subtitle: '車輛突然失去動力',
+    icon: '🚗',
+    difficulty: '中等',
+    difficultyColor: '#fbbf24',
+    accent: '#f59e0b',
+    description: '你正在國道1號以時速100公里行駛，突然間引擎發出異響，車輛開始失去動力，儀表板上的警示燈相繼亮起...',
+    story: {
+      character: { avatar: '👨‍💻', name: '小明', age: 27, role: '軟體工程師' },
+      time: '週五晚上 10:47',
+      location: '國道 1 號・台北往台中・豐原交流道前 8 公里',
+      narrative: '剛結束和朋友的聚餐，你獨自踏上回台中的夜路。高速公路空曠寂靜，車速穩定維持在 100 km/h，音響放著喜歡的播客。\n\n突然，儀表板跳出橙色引擎警示燈——同時傳來一聲低沉異響。右腳踩下油門，車子毫無反應，速度開始不受控地往下掉……',
+    },
+    decision: {
+      question: '車子突然在高速公路上拋錨，你的第一個反應是？',
+      options: [
+        { id: 'a', text: '立刻下車，站在車旁等待救援', icon: '🚶' },
+        { id: 'b', text: '打開危險警示燈，慢慢將車駛向路肩', icon: '⚠️', correct: true },
+        { id: 'c', text: '停在原地，直接打電話叫拖吊車', icon: '📱' },
+      ],
+      correctExplanation: '正確！開啟危險警示燈並立即移車至路肩，是保護自身安全的第一步，可以有效避免後方車輛追撞。',
+      wrongExplanation: {
+        a: '危險！高速公路車速極快，在車道旁站立極易被後方車輛撞擊，造成嚴重傷亡事故。',
+        c: '危險！停在車道中間打電話，車輛和人員仍暴露在高速車流中，隨時可能被追撞。',
+      },
+    },
+    steps: [
+      { icon: '⚠️', title: '立即開啟雙黃燈（危險警示燈）', desc: '第一時間打開危險警示燈，提醒後方所有車輛注意' },
+      { icon: '➡️', title: '慢慢移向路肩或緊急停車格', desc: '輕放油門，緩慢駛向路肩，不要急踩煞車' },
+      { icon: '🔺', title: '放置警告三角架', desc: '停穩後，在車輛後方 30～50 公尺處放置警告三角架' },
+      { icon: '🏃', title: '人員越過護欄等待', desc: '所有乘客下車，越過護欄在安全區域等待，切勿停留在車旁' },
+      { icon: '📞', title: '撥打救援電話', desc: '高公局救援：1968　／　國道警察：0800-000-035' },
+      { icon: '🔶', title: '等待期間持續開警示燈', desc: '等待救援的整個過程，危險警示燈必須保持開啟' },
+    ],
+    quiz: [
+      { question: '高速公路拋錨後，應該優先做什麼？', options: ['立刻下車站在車旁', '開啟危險警示燈並駛向路肩', '打電話求救', '原地等待'], correct: 1, explanation: '移車並開啟警示燈是優先動作，先確保車輛不阻塞車流、不被後車追撞。' },
+      { question: '警告三角架應放置在車輛後方多遠處？', options: ['10 公尺', '30～50 公尺', '100 公尺', '不需要放置'], correct: 1, explanation: '30～50 公尺讓後方來車有足夠的反應時間和煞停距離。' },
+      { question: '等待救援時，人員應該待在哪裡？', options: ['坐在車內等待', '站在車旁', '越過護欄在安全區域', '站在車道上指揮交通'], correct: 2, explanation: '必須越過護欄到護欄外側，留在車道旁仍有被車輛撞擊的高度風險。' },
+      { question: '高公局道路救援的電話是？', options: ['110', '119', '1968', '1999'], correct: 2, explanation: '高公局道路救援專線 1968，國道警察則撥 0800-000-035。' },
+    ],
+  },
+  {
+    id: 'tire-blowout',
+    title: '行駛中爆胎',
+    subtitle: '輪胎突然爆裂失壓',
+    icon: '💨',
+    difficulty: '高',
+    difficultyColor: '#f87171',
+    accent: '#ef4444',
+    description: '你在高速公路以時速110公里行駛，突然聽到一聲巨響，車子開始劇烈抖動並向右偏移，方向盤變得很難控制...',
+    story: {
+      character: { avatar: '👩‍⚕️', name: '雅婷', age: 34, role: '護理師' },
+      time: '週三上午 8:12',
+      location: '高速公路・往醫院上班途中',
+      narrative: '早班七點半，你比平常晚出發，心裡盤算著還能趕上交班。車道上車輛不多，你把車速加快到 110 km/h，想把時間補回來。\n\n轟——！右後方傳來震耳欲聾的爆裂聲。方向盤猛地往右扯，車身劇烈搖晃，車速驟然下滑……',
+    },
+    decision: {
+      question: '行駛中突然爆胎，車子抖動偏移，你會？',
+      options: [
+        { id: 'a', text: '緊急用力踩下煞車，讓車快速停下', icon: '🦶' },
+        { id: 'b', text: '緊握方向盤，慢慢放開油門，不急踩煞車', icon: '✊', correct: true },
+        { id: 'c', text: '立刻猛打方向盤轉向路肩', icon: '↩️' },
+      ],
+      correctExplanation: '正確！爆胎時緊握方向盤、自然減速是關鍵。急踩煞車或猛打方向盤都會讓車輛嚴重失控。',
+      wrongExplanation: {
+        a: '危險！爆胎後急踩煞車，車輪鎖死後車子會急劇偏移甚至打滑翻滾，高速下後果非常嚴重。',
+        c: '危險！爆胎後車輛已不穩定，猛打方向盤會讓車子急速甩尾，極易失控翻覆。',
+      },
+    },
+    steps: [
+      { icon: '✊', title: '緊握方向盤，保持直線', desc: '雙手用力握穩方向盤，對抗偏移的力道，盡量維持直線行駛' },
+      { icon: '🦶', title: '慢慢放開油門自然減速', desc: '緩慢放開油門讓車子自然降速，絕對不要急踩煞車' },
+      { icon: '⚠️', title: '開啟危險警示燈', desc: '提醒周圍車輛注意，讓後方車輛拉開距離' },
+      { icon: '➡️', title: '車速降低後輕柔駛向路肩', desc: '待車速降至安全範圍，再輕柔地將車引導至路肩停靠' },
+      { icon: '🔺', title: '放置警告三角架', desc: '停穩後放置三角架，距車後 30～50 公尺' },
+      { icon: '📞', title: '聯絡道路救援，勿自行換胎', desc: '高速公路上自行換胎非常危險，應等待專業救援' },
+    ],
+    quiz: [
+      { question: '爆胎時最重要的第一個動作是？', options: ['緊急煞車', '緊握方向盤保持直線', '猛打方向盤轉向', '立刻停車'], correct: 1, explanation: '保持直線是爆胎後最重要的事，防止車輛劇烈偏移引發更嚴重的事故。' },
+      { question: '爆胎後為什麼不應該急踩煞車？', options: ['會增加輪胎損壞', '可能造成車輛失控打滑', '會讓引擎受損', '會損壞地面'], correct: 1, explanation: '高速爆胎後急踩煞車，車輪鎖死後車子會嚴重偏移甚至翻滾。' },
+      { question: '爆胎後的正確減速方式是？', options: ['踩下煞車踏板', '拉手煞車', '慢慢放開油門自然減速', '快速切換低速檔'], correct: 2, explanation: '慢慢放開油門讓車子自然減速，不會造成額外的不穩定。' },
+    ],
+  },
+  {
+    id: 'heavy-rain-fog',
+    title: '大雨大霧能見度極低',
+    subtitle: '視線受阻，危機四伏',
+    icon: '🌫️',
+    difficulty: '中等',
+    difficultyColor: '#fbbf24',
+    accent: '#60a5fa',
+    description: '你在山區道路行駛，突然遭遇濃霧，能見度急速降低至不足30公尺，前方幾乎什麼都看不見，後方也有車輛跟隨...',
+    story: {
+      character: { avatar: '👴', name: '林伯伯', age: 61, role: '退休公務員' },
+      time: '週日傍晚 5:38',
+      location: '台 3 線・南投仁愛鄉山區道路',
+      narrative: '和老伴從山上賞完楓葉，正驅車下山。秋末的山區傍晚，本來視線清晰。\n\n才過了合歡山岔路，濃霧突然如潮水般湧來——能見度急速降到不足 30 公尺，對向車燈幾乎貼近才看得清。老伴緊握住了你的手臂……',
+    },
+    decision: {
+      question: '突然遭遇濃霧，能見度極低，你會怎麼做？',
+      options: [
+        { id: 'a', text: '繼續以正常速度行駛，不影響後方車流', icon: '🚗' },
+        { id: 'b', text: '開啟霧燈和近光燈，大幅降速，保持大車距', icon: '💡', correct: true },
+        { id: 'c', text: '開啟遠光燈，讓自己看得更遠', icon: '🔆' },
+      ],
+      correctExplanation: '正確！大霧中應開近光燈和霧燈（非遠光燈），大幅降速並保持充足車距，必要時靠邊停車。',
+      wrongExplanation: {
+        a: '危險！能見度極低時維持原速，根本沒有足夠的反應時間應對突發狀況，極易追撞前車。',
+        c: '反效果！遠光燈的光線會被霧氣中的水分子反射回來，形成「光牆」讓前方更看不清楚。',
+      },
+    },
+    steps: [
+      { icon: '💡', title: '開啟近光燈和霧燈（不是遠光燈）', desc: '遠光燈會被霧氣反射造成炫光，近光燈+霧燈才是正確選擇' },
+      { icon: '🐌', title: '大幅降低車速', desc: '能見度不足50公尺時，速度不超過50km/h；不足30公尺時靠邊停車' },
+      { icon: '↔️', title: '保持大安全車距', desc: '與前車保持至少3～4秒的距離，能見度越低，距離越大' },
+      { icon: '⚠️', title: '開啟危險警示燈', desc: '讓後方車輛知道你的存在（但注意別讓人誤以為你已停車）' },
+      { icon: '🅿️', title: '能見度極差時靠邊停車', desc: '若幾乎看不見前方，找安全地點靠邊停車等待霧散' },
+      { icon: '🚫', title: '避開危險停車位置', desc: '不要停在隧道口、橋樑上、彎道旁，這些位置後車難以及時反應' },
+    ],
+    quiz: [
+      { question: '大霧中行駛應該開啟哪種燈？', options: ['遠光燈', '近光燈和霧燈', '只開危險警示燈', '不開燈'], correct: 1, explanation: '近光燈配合霧燈是正確選擇，遠光燈會被霧氣反射形成炫光，反而讓能見度更差。' },
+      { question: '濃霧中為什麼不應開遠光燈？', options: ['耗電量太大', '光線被霧氣反射形成炫光，能見度更差', '對對向駕駛不禮貌', '法規明確禁止'], correct: 1, explanation: '遠光燈射出的光線被霧氣水分子散射，形成一堵光牆，讓前方更看不清楚。' },
+      { question: '能見度不足50公尺時，建議車速控制在？', options: ['30 km/h 以下', '50 km/h 以下', '80 km/h 以下', '不需要降速'], correct: 1, explanation: '50公尺能見度下，建議時速不超過50km/h，確保有足夠的煞停距離。' },
+    ],
+  },
+  {
+    id: 'rear-end-collision',
+    title: '輕微追撞事故',
+    subtitle: '被追撞後的正確處置',
+    icon: '💥',
+    difficulty: '低',
+    difficultyColor: '#4ade80',
+    accent: '#f97316',
+    description: '你在路口等待紅燈，突然後方傳來一聲撞擊聲，你的車被後方車輛追撞了。撞擊力道不大，你身體沒有明顯不適...',
+    story: {
+      character: { avatar: '🧑‍🎓', name: '佑安', age: 22, role: '大學生' },
+      time: '週六下午 3:15',
+      location: '信義路五段・市區路口等紅燈',
+      narrative: '剛考完期末最後一科，你借了爸媽的車，準備去接妹妹一起慶祝。車子停在紅燈前，你伸手拿起杯架上的珍奶。\n\n咚——！後方傳來一聲悶響，頸部感受到一股往前的衝擊。後照鏡映出一輛車的車頭燈，就緊貼著你的後保險桿……',
+    },
+    decision: {
+      question: '在快速道路被輕微追撞，你的第一步是？',
+      options: [
+        { id: 'a', text: '立刻下車查看車損，和對方理論', icon: '😤' },
+        { id: 'b', text: '先開啟危險警示燈，將車移至路肩', icon: '➡️', correct: true },
+        { id: 'c', text: '就停在原地，等警察來處理一切', icon: '🚔' },
+      ],
+      correctExplanation: '正確！在快速道路或車流量大的路段，先移車至路肩是保護自身安全的第一步。',
+      wrongExplanation: {
+        a: '危險！在行車道下車爭論，不僅阻塞交通，更可能被其他車輛撞傷，人身安全優先。',
+        c: '危險！停在行車道上等候會繼續阻塞交通，且可能引發連環追撞，輕微事故應先移車。',
+      },
+    },
+    steps: [
+      { icon: '🩺', title: '確認人員是否受傷', desc: '先確認自身和乘客安全，有受傷務必立即撥打110+119' },
+      { icon: '⚠️', title: '開啟危險警示燈', desc: '讓後方車輛知道前方有狀況，避免引發連環追撞' },
+      { icon: '📸', title: '移車前先拍照記錄', desc: '拍攝車損、雙方車牌、事故位置與現場環境，移車後難以舉證' },
+      { icon: '➡️', title: '將車移至路肩', desc: '輕微事故確認安全後，先把車移至不影響交通的位置' },
+      { icon: '📋', title: '互換雙方資料', desc: '互留姓名、電話、車牌、駕照與行照資訊' },
+      { icon: '📱', title: '報警或使用線上通報', desc: '有受傷必須報警。輕微碰撞可用LINE事故自行登記，避免久占車道' },
+      { icon: '🏢', title: '聯絡保險公司報案', desc: '盡快向保險公司報案，並記錄對方的保險資訊' },
+    ],
+    quiz: [
+      { question: '在快速道路發生輕微追撞，第一步應該？', options: ['下車與對方理論', '開啟警示燈，移車至路肩', '立刻報警', '拍照存證'], correct: 1, explanation: '人身安全優先，先把車移至安全位置，再處理後續理賠和報警事宜。' },
+      { question: '移車前一定要先做的事是？', options: ['打電話給家人', '拍照記錄現場', '等警察到場', '測量車損距離'], correct: 1, explanation: '移車前必須先拍照記錄現場（車損、車牌、位置），否則事後難以舉證。' },
+      { question: '發生事故有人受傷時，必須？', options: ['先拍照再報警', '立即報警並叫救護車（110+119）', '協商私下解決', '送醫後再報警'], correct: 1, explanation: '有人受傷必須立即報警並叫救護車，這是法律義務，不可拖延或私下協商。' },
+    ],
+  },
+  {
+    id: 'brake-failure',
+    title: '煞車異常失靈',
+    subtitle: '踩下去幾乎沒有反應',
+    icon: '🚨',
+    difficulty: '高',
+    difficultyColor: '#f87171',
+    accent: '#dc2626',
+    description: '你在市區道路以時速60公里行駛，前方紅燈亮起，你踩下煞車踏板，卻發現幾乎踩到底，車子還是幾乎沒有減速...',
+    story: {
+      character: { avatar: '👨‍🔧', name: '建國', age: 45, role: '水電師傅' },
+      time: '週一上午 9:05',
+      location: '台 3 線・三峽往板橋省道下坡路段',
+      narrative: '拉了一早的工，貨車載著工具正趕往下個工地。山路轉入下坡省道，你輕踩煞車準備減速——踏板卻陷進去，軟綿綿地幾乎踩到底。\n\n踩了？確實踩了。但車子幾乎沒有反應，車速反而還在往上爬。前方彎道就在 200 公尺外……',
+    },
+    decision: {
+      question: '踩下煞車但車子幾乎沒有減速，你會？',
+      options: [
+        { id: 'a', text: '拼命大力反覆踩煞車，試圖讓車停下', icon: '🦶' },
+        { id: 'b', text: '立刻猛拉手煞車，強制讓車停下', icon: '🤚' },
+        { id: 'c', text: '快速點踩煞車，同時降檔，找安全地點停車', icon: '⚙️', correct: true },
+      ],
+      correctExplanation: '正確！連續點踩煞車可能重建油壓，降檔利用引擎煞車減速，同時尋找安全停車點，是最完整的應對方式。',
+      wrongExplanation: {
+        a: '不完整！單純用力踩煞車若是油壓失效，效果有限。應同時配合降檔利用引擎煞車，並尋找安全停車點。',
+        b: '危險！猛拉手煞車會造成後輪鎖死，車尾會急速甩出，在一般車速下極易失控翻滾。',
+      },
+    },
+    steps: [
+      { icon: '😤', title: '保持冷靜，深呼吸', desc: '驚慌只會讓情況更糟，深呼吸，你有時間做出正確判斷' },
+      { icon: '🦶', title: '快速連續點踩煞車', desc: '以短促連續點踩的方式（非一踩到底），有時可重建煞車油壓' },
+      { icon: '⬇️', title: '逐步降檔利用引擎煞車', desc: '從高檔逐步降至低檔（5→4→3→2→1），引擎阻力能有效降低車速' },
+      { icon: '📢', title: '提醒周圍車輛', desc: '開啟危險警示燈，持續按喇叭，讓周圍車輛知道你的緊急狀況' },
+      { icon: '🎯', title: '尋找安全停車點', desc: '尋找上坡路段、空地、沙坑或障礙物等可以讓車自然減速停下的地方' },
+      { icon: '🅿️', title: '緩緩輕拉手煞車（最後手段）', desc: '車速已很低時，可緩緩輕拉手煞車——切記不可猛拉，會造成甩尾' },
+      { icon: '🔧', title: '停車後聯絡救援', desc: '停穩後立刻聯絡道路救援，車輛必須送廠完整檢修才能再上路' },
+    ],
+    quiz: [
+      { question: '煞車失靈時，正確的應對方式是？', options: ['立刻猛拉手煞車', '連續點踩煞車並降檔減速', '放棄操控等車停下', '加速衝過危險路段'], correct: 1, explanation: '連續點踩配合降檔是最正確的應對，能最大程度降低車速並維持車輛穩定性。' },
+      { question: '降檔的目的是？', options: ['讓車加速', '利用引擎阻力降低車速', '保護引擎不受損', '讓方向盤更好控制'], correct: 1, explanation: '低速檔時引擎轉速提升會產生阻力，有效幫助車輛減速，稱為「引擎煞車」。' },
+      { question: '為什麼猛拉手煞車很危險？', options: ['會損壞手煞車系統', '可能造成後輪鎖死甩尾失控', '手煞車根本煞不住', '法規禁止使用'], correct: 1, explanation: '手煞車作用於後輪，猛拉會造成後輪鎖死，車尾急速甩出，高速時後果非常嚴重。' },
+      { question: '煞車失靈停車後，正確做法是？', options: ['稍作休息後繼續上路', '自行簡單修理後繼續', '聯絡救援，送廠完整檢修後才上路', '換備用車繼續行駛'], correct: 2, explanation: '煞車系統異常是嚴重安全隱患，必須由專業技師完整檢修確認安全後，才能重新上路。' },
+    ],
+  },
+  {
+    id: 'narrow-road',
+    title: '窄路會車',
+    subtitle: '山路轉彎，對向來車逼近',
+    icon: '🏔️',
+    difficulty: '中',
+    difficultyColor: '#fb923c',
+    accent: '#f97316',
+    description: '你正沿著台3線山區省道單線道行駛，路寬僅約4公尺，前方彎道後突然出現對向來車，兩車距離不到30公尺...',
+    story: {
+      character: { avatar: '👩‍🏫', name: '秀英', age: 67, role: '退休教師' },
+      time: '週日下午 3:12',
+      location: '台 3 線・苗栗南庄山區省道',
+      narrative: '週日下午，你開著小轎車前往南庄老街探訪老同事。山路蜿蜒，路幅窄小，兩側是山壁與護欄。轉過一個彎，迎面突然出現一輛麵包車，正以中速駛來。\n\n兩車相距不到30公尺，路幅只夠一輛車通行。你的右側是山壁，左側是護欄外的山谷。麵包車似乎沒有停車讓路的意思……',
+    },
+    decision: {
+      question: '對向突然出現來車，兩車距離僅30公尺，你會？',
+      options: [
+        { id: 'a', text: '猛打方向盤往右閃，擠進路肩強行通過', icon: '↪️' },
+        { id: 'b', text: '按喇叭閃大燈，等對方主動讓路', icon: '📯' },
+        { id: 'c', text: '立即減速靠右，開燈示意，必要時倒車找寬處', icon: '⬅️', correct: true },
+      ],
+      correctExplanation: '正確！減速靠右讓出空間、開燈示意對方，若兩車均無法通過，依「上坡讓下坡」原則由有空間一方緩緩倒退至寬處，才是最安全的做法。',
+      wrongExplanation: {
+        a: '危險！強行擠入路肩可能撞上山壁或落入護欄外，山路路肩狹窄，緊急切入極易失控翻車。',
+        b: '不完整！按喇叭等待對方讓路可能造成對峙僵局，且在距離僅30公尺時毫無行動，非常危險。',
+      },
+    },
+    steps: [
+      { icon: '🦶', title: '立即減速，停車待命', desc: '發現對向來車立刻放開油門、輕踩煞車，在安全距離內停穩車輛，切勿慌張急踩' },
+      { icon: '➡️', title: '靠右讓路，開啟頭燈', desc: '車輛盡量靠向右側山壁（可距山壁約20公分），開啟近光燈讓對方清楚看到你的位置' },
+      { icon: '⬆️', title: '讓路原則：上坡讓下坡', desc: '下坡車輛較難控制且啟動困難，因此上坡方車輛應主動讓路；若你在下坡，對方應讓你先行' },
+      { icon: '🔄', title: '必要時緩緩倒車', desc: '若兩車均無空間通過，尋找身後較寬處（路肩、彎道外側），緩慢倒車讓出通道' },
+      { icon: '🤝', title: '保持耐心，緩緩通過', desc: '兩車協調後，速度放慢至步行速度（5-10公里/時）緩緩通過，側鏡注意兩側間距' },
+    ],
+    quiz: [
+      { question: '窄路會車時，應優先採取什麼行動？', options: ['按喇叭要求對方讓路', '立即減速靠右停車', '加速快速通過', '開雙黃燈原地等待'], correct: 1, explanation: '遇到窄路會車首要動作是立即減速靠右，爭取空間並讓對方看清你的位置，避免正面衝突。' },
+      { question: '窄路會車的讓路原則是？', options: ['後來的讓先來的', '上坡的讓下坡的', '小車讓大車', '速度快的讓速度慢的'], correct: 1, explanation: '下坡車輛因重力加速難以控制，倒車也較困難，因此上坡方車輛應主動退讓，這是台灣道路交通規則的基本原則。' },
+      { question: '兩車都無法繼續前進時，正確做法是？', options: ['雙方同時強行擠過', '有空間倒車的一方緩緩倒退至寬處', '搖下車窗協商誰應讓路', '撥打110讓警察協調'], correct: 1, explanation: '有較多空間（如位於寬處附近、上坡方）的車輛應主動緩緩倒退至可錯車的位置，讓兩車安全通過。' },
+      { question: '通過窄路會車時，適當的車速是？', options: ['10-20公里/時（步行速度）', '30-40公里/時', '維持原速不變', '對方配合後快速通過'], correct: 0, explanation: '兩車錯車時速度應降至接近步行速度（約10-20公里/時），注意兩側後視鏡與山壁距離，緩慢通過最安全。' },
+    ],
+  },
+];
+
+// ─────────────────────────────────────────
+// SVG SCENE COMPONENTS
+// ─────────────────────────────────────────
+const HighwayScene = () => (
+  <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <rect width="300" height="180" fill="#1a2744"/>
+    <defs>
+      <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#0f172a"/>
+        <stop offset="100%" stopColor="#1e3a5f"/>
+      </linearGradient>
+    </defs>
+    <rect width="300" height="100" fill="url(#sky1)"/>
+    <rect x="0" y="90" width="300" height="70" fill="#2d3748"/>
+    <line x1="0" y1="125" x2="300" y2="125" stroke="#64748b" strokeWidth="1.5" strokeDasharray="18,14"/>
+    <rect x="0" y="90" width="300" height="3" fill="#475569"/>
+    <rect x="235" y="90" width="65" height="70" fill="#374151"/>
+    <line x1="235" y1="90" x2="235" y2="160" stroke="#fbbf24" strokeWidth="2.5"/>
+    <rect x="265" y="92" width="35" height="4" fill="#94a3b8"/>
+    <rect x="265" y="150" width="35" height="4" fill="#94a3b8"/>
+    {[270,280,290].map(x => <rect key={x} x={x} y="92" width="2" height="62" fill="#6b7280"/>)}
+    <g transform="translate(252,118)">
+      <rect x="-18" y="-13" width="36" height="22" fill="#dc2626" rx="3"/>
+      <rect x="-12" y="-22" width="24" height="12" fill="#dc2626" rx="2"/>
+      <rect x="-10" y="-20" width="9" height="8" fill="#bfdbfe" rx="1" opacity="0.9"/>
+      <rect x="1" y="-20" width="9" height="8" fill="#bfdbfe" rx="1" opacity="0.9"/>
+      <ellipse cx="-10" cy="9" rx="5" ry="4" fill="#111827"/>
+      <ellipse cx="10" cy="9" rx="5" ry="4" fill="#111827"/>
+      <circle cx="-15" cy="-11" r="3" fill="#f59e0b" className="anim-hazard"/>
+      <circle cx="15" cy="-11" r="3" fill="#f59e0b" className="anim-hazard"/>
+      <circle cx="-15" cy="9" r="3" fill="#f59e0b" className="anim-hazard"/>
+      <circle cx="15" cy="9" r="3" fill="#f59e0b" className="anim-hazard"/>
+    </g>
+    <polygon points="195,140 201,128 207,140" fill="none" stroke="#f59e0b" strokeWidth="2"/>
+    <line x1="201" y1="136" x2="201" y2="132" stroke="#f59e0b" strokeWidth="1.5"/>
+    <circle cx="201" cy="138" r="1" fill="#f59e0b"/>
+    <circle cx="276" cy="112" r="4" fill="#fbbf24"/>
+    <rect x="274" y="116" width="4" height="14" fill="#3b82f6" rx="1"/>
+    <line x1="274" y1="120" x2="270" y2="126" stroke="#3b82f6" strokeWidth="2"/>
+    <line x1="278" y1="120" x2="282" y2="126" stroke="#3b82f6" strokeWidth="2"/>
+    <g transform="translate(80,108)">
+      <rect x="-20" y="-10" width="40" height="18" fill="#1d4ed8" rx="2"/>
+      <rect x="-14" y="-17" width="28" height="10" fill="#1d4ed8" rx="2"/>
+      <circle cx="-14" cy="8" r="4" fill="#111"/>
+      <circle cx="14" cy="8" r="4" fill="#111"/>
+    </g>
+    <g transform="translate(150,138)">
+      <rect x="-20" y="-10" width="40" height="18" fill="#15803d" rx="2"/>
+      <rect x="-14" y="-17" width="28" height="10" fill="#15803d" rx="2"/>
+      <circle cx="-14" cy="8" r="4" fill="#111"/>
+      <circle cx="14" cy="8" r="4" fill="#111"/>
+    </g>
+    <text x="150" y="174" textAnchor="middle" fill="#64748b" fontSize="9">國道一號・時速 100 km/h</text>
+  </svg>
+);
+
+const TireBlowoutScene = () => (
+  <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <rect width="300" height="180" fill="#1a2744"/>
+    <rect width="300" height="90" fill="#0f172a"/>
+    <rect x="0" y="90" width="300" height="65" fill="#2d3748"/>
+    <line x1="0" y1="122" x2="300" y2="122" stroke="#64748b" strokeWidth="1.5" strokeDasharray="18,14"/>
+    <path d="M 60 130 Q 130 126 180 128" stroke="#1f2937" strokeWidth="4" fill="none" opacity="0.7"/>
+    <path d="M 60 135 Q 130 131 180 133" stroke="#111827" strokeWidth="3" fill="none" opacity="0.5"/>
+    <g transform="translate(148,108)" className="anim-wobble">
+      <rect x="-42" y="-20" width="84" height="34" fill="#7c3aed" rx="4"/>
+      <rect x="-30" y="-32" width="60" height="17" fill="#6d28d9" rx="3"/>
+      <rect x="-26" y="-30" width="22" height="12" fill="#bfdbfe" rx="1" opacity="0.85"/>
+      <rect x="4" y="-30" width="22" height="12" fill="#bfdbfe" rx="1" opacity="0.85"/>
+      <ellipse cx="-28" cy="14" rx="11" ry="7" fill="#111827"/>
+      <ellipse cx="-28" cy="14" rx="6" ry="3.5" fill="#374151"/>
+      <ellipse cx="28" cy="16" rx="13" ry="4" fill="#111827" opacity="0.6"/>
+      <path d="M 18 12 Q 28 7 38 12" stroke="#6b7280" strokeWidth="2.5" fill="none"/>
+      <text x="24" y="30" fontSize="14" textAnchor="middle">💥</text>
+      <circle cx="-38" cy="-18" r="3" fill="#f59e0b" className="anim-hazard"/>
+      <circle cx="38" cy="-18" r="3" fill="#f59e0b" className="anim-hazard"/>
+    </g>
+    <circle cx="176" cy="108" r="6" fill="#6b7280" className="anim-smoke" style={{animationDelay:'0s'}}/>
+    <circle cx="184" cy="102" r="9" fill="#4b5563" className="anim-smoke" style={{animationDelay:'0.4s'}}/>
+    <circle cx="170" cy="98" r="7" fill="#6b7280" className="anim-smoke" style={{animationDelay:'0.8s'}}/>
+    <text x="150" y="174" textAnchor="middle" fill="#64748b" fontSize="9">高速公路・時速 110 km/h・右前輪爆胎</text>
+  </svg>
+);
+
+const HeavyFogScene = () => {
+  const drops = Array.from({length: 28}, (_, i) => ({
+    x: (i * 41 + 10) % 295, y: (i * 29) % 80,
+    delay: (i * 0.09) % 1.4, dur: 0.7 + (i % 5) * 0.15,
+  }));
+  return (
+    <svg viewBox="0 0 300 180" width="100%" height="100%">
+      <defs>
+        <radialGradient id="fogCenter" cx="50%" cy="55%" r="55%">
+          <stop offset="0%" stopColor="#94a3b8" stopOpacity="0.65"/>
+          <stop offset="100%" stopColor="#1e293b" stopOpacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="300" height="180" fill="#1e293b"/>
+      <rect x="0" y="95" width="300" height="65" fill="#374151"/>
+      <line x1="0" y1="127" x2="300" y2="127" stroke="#4b5563" strokeWidth="1.5" strokeDasharray="14,12"/>
+      <rect width="300" height="180" fill="#94a3b8" className="anim-fog" style={{opacity:0.35}}/>
+      <g transform="translate(148,112)" opacity="0.8">
+        <rect x="-40" y="-20" width="80" height="34" fill="#065f46" rx="4"/>
+        <rect x="-28" y="-32" width="56" height="16" fill="#047857" rx="3"/>
+        <rect x="-24" y="-30" width="20" height="11" fill="#bfdbfe" rx="1" opacity="0.7"/>
+        <rect x="4" y="-30" width="20" height="11" fill="#bfdbfe" rx="1" opacity="0.7"/>
+        <circle cx="-36" cy="12" r="5" fill="#fef3c7" opacity="0.95"/>
+        <circle cx="36" cy="12" r="5" fill="#fef3c7" opacity="0.95"/>
+        <path d="M -41 12 L -80 4 L -80 20 Z" fill="#fef3c7" opacity="0.12"/>
+        <path d="M 41 12 L 80 4 L 80 20 Z" fill="#fef3c7" opacity="0.12"/>
+        <circle cx="-36" cy="-18" r="3" fill="#f59e0b" className="anim-hazard"/>
+        <circle cx="36" cy="-18" r="3" fill="#f59e0b" className="anim-hazard"/>
+      </g>
+      {drops.map((d, i) => (
+        <line key={i} x1={d.x} y1={d.y} x2={d.x - 5} y2={d.y + 18}
+          stroke="#93c5fd" strokeWidth="1.5" opacity="0.5"
+          style={{animation: `rainFall ${d.dur}s linear ${d.delay}s infinite`}}/>
+      ))}
+      <rect width="300" height="180" fill="url(#fogCenter)"/>
+      <text x="150" y="174" textAnchor="middle" fill="#64748b" fontSize="9">山區道路・能見度不足 30 公尺</text>
+    </svg>
+  );
+};
+
+const RearEndScene = () => (
+  <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <rect width="300" height="180" fill="#1a2744"/>
+    <rect width="300" height="90" fill="#0f172a"/>
+    <rect x="0" y="90" width="300" height="65" fill="#2d3748"/>
+    <line x1="0" y1="122" x2="300" y2="122" stroke="#64748b" strokeWidth="1.5" strokeDasharray="14,12"/>
+    <rect x="248" y="40" width="16" height="40" fill="#374151" rx="4"/>
+    <circle cx="256" cy="50" r="6" fill="#ef4444"/>
+    <circle cx="256" cy="64" r="6" fill="#374151"/>
+    <circle cx="256" cy="78" r="6" fill="#374151"/>
+    <g transform="translate(168,110)">
+      <rect x="-42" y="-20" width="84" height="34" fill="#1d4ed8" rx="4"/>
+      <rect x="-30" y="-32" width="60" height="16" fill="#1e40af" rx="3"/>
+      <rect x="-26" y="-30" width="22" height="11" fill="#bfdbfe" rx="1" opacity="0.85"/>
+      <rect x="4" y="-30" width="22" height="11" fill="#bfdbfe" rx="1" opacity="0.85"/>
+      <circle cx="-38" cy="12" r="5" fill="#ef4444"/>
+      <circle cx="38" cy="12" r="5" fill="#ef4444"/>
+      <ellipse cx="-28" cy="14" rx="10" ry="6" fill="#111"/>
+      <ellipse cx="28" cy="14" rx="10" ry="6" fill="#111"/>
+    </g>
+    <g transform="translate(88,110)">
+      <rect x="-42" y="-20" width="84" height="34" fill="#dc2626" rx="4"/>
+      <rect x="-30" y="-32" width="60" height="16" fill="#b91c1c" rx="3"/>
+      <rect x="-26" y="-30" width="22" height="11" fill="#bfdbfe" rx="1" opacity="0.85"/>
+      <rect x="4" y="-30" width="22" height="11" fill="#bfdbfe" rx="1" opacity="0.85"/>
+      <circle cx="-38" cy="-18" r="4" fill="#fef9c3"/>
+      <circle cx="38" cy="-18" r="4" fill="#fef9c3"/>
+      <ellipse cx="-28" cy="14" rx="10" ry="6" fill="#111"/>
+      <ellipse cx="28" cy="14" rx="10" ry="6" fill="#111"/>
+    </g>
+    <g transform="translate(130,110)" className="anim-impact">
+      <circle r="8" fill="#fbbf24" opacity="0.9"/>
+      <line x1="-12" y1="-12" x2="12" y2="12" stroke="#f59e0b" strokeWidth="3"/>
+      <line x1="12" y1="-12" x2="-12" y2="12" stroke="#f59e0b" strokeWidth="3"/>
+      <line x1="0" y1="-14" x2="0" y2="14" stroke="#fcd34d" strokeWidth="2"/>
+      <line x1="-14" y1="0" x2="14" y2="0" stroke="#fcd34d" strokeWidth="2"/>
+    </g>
+    <text x="150" y="174" textAnchor="middle" fill="#64748b" fontSize="9">市區路口・等待紅燈時被追撞</text>
+  </svg>
+);
+
+const BrakeFailureScene = () => (
+  <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <rect width="300" height="180" fill="#0f172a"/>
+    <rect x="15" y="15" width="270" height="150" fill="#1e293b" rx="16"/>
+    <rect x="20" y="20" width="260" height="140" fill="#0f172a" rx="12"/>
+    <circle cx="105" cy="95" r="62" fill="#1e293b" stroke="#334155" strokeWidth="3"/>
+    <circle cx="105" cy="95" r="56" fill="none" stroke="#374151" strokeWidth="1"/>
+    <path d="M 52 128 A 57 57 0 1 1 158 128" fill="none" stroke="#1f2937" strokeWidth="10" strokeLinecap="round"/>
+    <path d="M 52 128 A 57 57 0 1 1 158 128" fill="none" stroke="#ef4444" strokeWidth="10" strokeLinecap="round" strokeDasharray="230" strokeDashoffset="65"/>
+    {[0,30,60,90,120,150,180].map((deg, i) => {
+      const angle = (-210 + deg) * Math.PI / 180;
+      const r1 = 48, r2 = 55;
+      return <line key={i} x1={105 + r1*Math.cos(angle)} y1={95 + r1*Math.sin(angle)} x2={105 + r2*Math.cos(angle)} y2={95 + r2*Math.sin(angle)} stroke="#475569" strokeWidth="2"/>;
+    })}
+    <line x1="105" y1="95" x2="148" y2="62" stroke="#f59e0b" strokeWidth="3" strokeLinecap="round"/>
+    <circle cx="105" cy="95" r="6" fill="#f59e0b"/>
+    <circle cx="105" cy="95" r="3" fill="#0f172a"/>
+    <text x="105" y="122" textAnchor="middle" fill="white" fontSize="22" fontWeight="bold">76</text>
+    <text x="105" y="135" textAnchor="middle" fill="#64748b" fontSize="8">km/h</text>
+    <circle cx="210" cy="75" r="32" fill="#7f1d1d"/>
+    <circle cx="210" cy="75" r="29" fill="#ef4444" className="anim-impact"/>
+    <text x="210" y="70" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">BRAKE</text>
+    <text x="210" y="84" textAnchor="middle" fill="white" fontSize="9">FAILURE</text>
+    <rect x="160" y="120" width="55" height="28" fill="#374151" rx="4"/>
+    <rect x="163" y="123" width="49" height="22" fill="#ef4444" rx="3"/>
+    <text x="187" y="138" textAnchor="middle" fill="white" fontSize="9" fontWeight="bold">BRAKE</text>
+    <path d="M 232 128 L 232 118 M 228 124 L 232 128 L 236 124" stroke="#ef4444" strokeWidth="2" fill="none"/>
+    <text x="150" y="174" textAnchor="middle" fill="#f87171" fontSize="9">⚠️ 踩下煞車・車輛幾乎無反應</text>
+  </svg>
+);
+
+const NarrowRoadScene = () => (
+  <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <defs>
+      <linearGradient id="nrSky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#0c1a2e"/>
+        <stop offset="100%" stopColor="#1a3a5c"/>
+      </linearGradient>
+      <linearGradient id="nrRoad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#374151"/>
+        <stop offset="100%" stopColor="#1f2937"/>
+      </linearGradient>
+    </defs>
+    {/* Sky */}
+    <rect width="300" height="180" fill="url(#nrSky)"/>
+    {/* Mountain left */}
+    <polygon points="0,130 0,60 50,20 90,55 110,130" fill="#1e3a1e"/>
+    <polygon points="0,130 0,75 40,30 70,60 95,130" fill="#15291a"/>
+    {/* Mountain right */}
+    <polygon points="300,130 300,55 255,18 215,52 190,130" fill="#1e3a1e"/>
+    <polygon points="300,130 300,65 262,28 238,55 205,130" fill="#15291a"/>
+    {/* Narrow road */}
+    <rect x="90" y="80" width="120" height="100" fill="url(#nrRoad)"/>
+    {/* Road edges */}
+    <line x1="90" y1="80" x2="90" y2="180" stroke="#fbbf24" strokeWidth="2.5"/>
+    <line x1="210" y1="80" x2="210" y2="180" stroke="#fbbf24" strokeWidth="2.5"/>
+    {/* Road center dashes */}
+    <line x1="150" y1="85" x2="150" y2="180" stroke="#64748b" strokeWidth="1.5" strokeDasharray="12,10"/>
+    {/* Guard rails */}
+    <rect x="78" y="100" width="12" height="80" fill="#374151"/>
+    <rect x="80" y="100" width="8" height="80" fill="#475569" opacity="0.5"/>
+    <rect x="210" y="100" width="12" height="80" fill="#374151"/>
+    <rect x="212" y="100" width="8" height="80" fill="#475569" opacity="0.5"/>
+    {/* Player car (bottom, coming toward viewer) */}
+    <g transform="translate(150,155)">
+      <rect x="-22" y="-18" width="44" height="30" fill="#dc2626" rx="4"/>
+      <rect x="-14" y="-28" width="28" height="14" fill="#b91c1c" rx="3"/>
+      <rect x="-12" y="-26" width="10" height="9" fill="#bfdbfe" rx="1" opacity="0.85"/>
+      <rect x="2" y="-26" width="10" height="9" fill="#bfdbfe" rx="1" opacity="0.85"/>
+      <circle cx="-22" cy="-18" r="3.5" fill="#fef3c7" opacity="0.9"/>
+      <circle cx="22" cy="-18" r="3.5" fill="#fef3c7" opacity="0.9"/>
+      <ellipse cx="-12" cy="12" rx="7" ry="5" fill="#111"/>
+      <ellipse cx="12" cy="12" rx="7" ry="5" fill="#111"/>
+    </g>
+    {/* Oncoming car (top, heading toward viewer) */}
+    <g transform="translate(150,100) rotate(180)">
+      <rect x="-18" y="-16" width="36" height="26" fill="#2563eb" rx="4"/>
+      <rect x="-11" y="-24" width="22" height="12" fill="#1d4ed8" rx="3"/>
+      <rect x="-9" y="-22" width="8" height="8" fill="#bfdbfe" rx="1" opacity="0.85"/>
+      <rect x="1" y="-22" width="8" height="8" fill="#bfdbfe" rx="1" opacity="0.85"/>
+      <circle cx="-18" cy="-15" r="4" fill="#fef9c3" opacity="0.95"/>
+      <circle cx="18" cy="-15" r="4" fill="#fef9c3" opacity="0.95"/>
+      <ellipse cx="-10" cy="10" rx="6" ry="4" fill="#111"/>
+      <ellipse cx="10" cy="10" rx="6" ry="4" fill="#111"/>
+    </g>
+    {/* Distance indicator */}
+    <line x1="150" y1="112" x2="150" y2="143" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="4,3"/>
+    <text x="162" y="130" fill="#ef4444" fontSize="7" fontWeight="700">30m</text>
+    {/* Warning */}
+    <text x="150" y="174" textAnchor="middle" fill="#fb923c" fontSize="9">⚠️ 單線山路・對向來車急速逼近</text>
+  </svg>
+);
+
+const SCENE_COMPONENTS = {
+  'highway-breakdown': HighwayScene,
+  'tire-blowout': TireBlowoutScene,
+  'heavy-rain-fog': HeavyFogScene,
+  'rear-end-collision': RearEndScene,
+  'brake-failure': BrakeFailureScene,
+  'narrow-road': NarrowRoadScene,
+};
+
+// ─────────────────────────────────────────
+// STEP ANIMATIONS
+// ─────────────────────────────────────────
+const SAHazardFlash = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <rect x="57" y="20" width="46" height="50" fill="#475569" rx="5"/>
+    <rect x="64" y="13" width="32" height="18" fill="#374151" rx="4"/>
+    <rect x="64" y="62" width="32" height="12" fill="#374151" rx="3"/>
+    <rect x="49" y="24" width="8" height="12" fill="#111827" rx="3"/>
+    <rect x="103" y="24" width="8" height="12" fill="#111827" rx="3"/>
+    <rect x="49" y="54" width="8" height="12" fill="#111827" rx="3"/>
+    <rect x="103" y="54" width="8" height="12" fill="#111827" rx="3"/>
+    <circle cx="53" cy="26" r="6" fill="#f59e0b" className="anim-hazard"/>
+    <circle cx="107" cy="26" r="6" fill="#f59e0b" className="anim-hazard"/>
+    <circle cx="53" cy="60" r="6" fill="#f59e0b" className="anim-hazard"/>
+    <circle cx="107" cy="60" r="6" fill="#f59e0b" className="anim-hazard"/>
+    <circle cx="53" cy="26" r="11" fill="none" stroke="#f59e0b" strokeWidth="1.5" className="anim-hazard" opacity="0.35"/>
+    <circle cx="107" cy="26" r="11" fill="none" stroke="#f59e0b" strokeWidth="1.5" className="anim-hazard" opacity="0.35"/>
+    <circle cx="53" cy="60" r="11" fill="none" stroke="#f59e0b" strokeWidth="1.5" className="anim-hazard" opacity="0.35"/>
+    <circle cx="107" cy="60" r="11" fill="none" stroke="#f59e0b" strokeWidth="1.5" className="anim-hazard" opacity="0.35"/>
+    <text x="80" y="84" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="700">雙黃燈持續閃爍</text>
+  </svg>
+);
+const SACarToShoulder = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <rect x="8" y="16" width="144" height="58" fill="#2d3748" rx="4"/>
+    <line x1="8" y1="45" x2="152" y2="45" stroke="#475569" strokeWidth="1.5" strokeDasharray="10,8"/>
+    <rect x="122" y="16" width="30" height="58" fill="#374151"/>
+    <line x1="122" y1="16" x2="122" y2="74" stroke="#fbbf24" strokeWidth="2"/>
+    <g style={{animation:'stepSlideR 2.2s ease-in-out infinite'}}>
+      <rect x="52" y="33" width="32" height="22" fill="#dc2626" rx="3"/>
+      <rect x="57" y="25" width="22" height="12" fill="#b91c1c" rx="2"/>
+      <circle cx="55" cy="33" r="3" fill="#f59e0b" className="anim-hazard"/>
+      <circle cx="82" cy="33" r="3" fill="#f59e0b" className="anim-hazard"/>
+    </g>
+    <path d="M 96 44 L 114 44 M 109 39 L 115 44 L 109 49" stroke="#4ade80" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+    <text x="80" y="84" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">緩緩駛向路肩停靠</text>
+  </svg>
+);
+const SATriangle = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <rect x="8" y="48" width="144" height="34" fill="#2d3748" rx="4"/>
+    <line x1="8" y1="65" x2="152" y2="65" stroke="#475569" strokeWidth="1.5" strokeDasharray="10,8"/>
+    <rect x="104" y="36" width="40" height="22" fill="#475569" rx="3"/>
+    <rect x="110" y="29" width="28" height="13" fill="#374151" rx="2"/>
+    <circle cx="107" cy="55" r="3" fill="#f59e0b" className="anim-hazard"/>
+    <circle cx="141" cy="55" r="3" fill="#f59e0b" className="anim-hazard"/>
+    <g style={{animation:'stepBounce 1.6s ease-in-out infinite', transformOrigin:'62px 44px'}}>
+      <polygon points="62,14 85,46 39,46" fill="none" stroke="#f59e0b" strokeWidth="3"/>
+      <line x1="62" y1="24" x2="62" y2="37" stroke="#f59e0b" strokeWidth="2"/>
+      <circle cx="62" cy="41" r="2" fill="#f59e0b"/>
+    </g>
+    <line x1="86" y1="50" x2="104" y2="50" stroke="#94a3b8" strokeWidth="1" strokeDasharray="3,3"/>
+    <text x="95" y="46" textAnchor="middle" fill="#94a3b8" fontSize="7">30–50m</text>
+    <text x="80" y="84" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">車後 30–50 公尺放置三角架</text>
+  </svg>
+);
+const SAPersonCross = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <rect x="0" y="44" width="160" height="38" fill="#2d3748"/>
+    <rect x="0" y="42" width="160" height="6" fill="#94a3b8"/>
+    {[10,28,46,64,82,100,118,136].map(x => <rect key={x} x={x} y="32" width="3" height="20" fill="#6b7280"/>)}
+    <text x="112" y="70" textAnchor="middle" fill="#ef4444" fontSize="8">⚠️ 車道側</text>
+    <text x="50" y="22" textAnchor="middle" fill="#4ade80" fontSize="8">✓ 護欄外安全區</text>
+    <g style={{animation:'stepSlideL 2.8s ease-in-out infinite'}}>
+      <circle cx="96" cy="28" r="6" fill="#fbbf24"/>
+      <rect x="93" y="34" width="6" height="12" fill="#3b82f6" rx="1"/>
+      <line x1="91" y1="37" x2="87" y2="42" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
+      <line x1="99" y1="37" x2="103" y2="42" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
+      <line x1="93" y1="46" x2="90" y2="52" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
+      <line x1="99" y1="46" x2="102" y2="52" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
+    </g>
+    <text x="80" y="84" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">越過護欄在安全區等待</text>
+  </svg>
+);
+const SAPhoneCall = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <circle cx="80" cy="45" r="32" fill="none" stroke="#22c55e" strokeWidth="1.5" style={{animation:'stepRingWave 1.8s ease-out infinite'}} opacity="0.5"/>
+    <circle cx="80" cy="45" r="40" fill="none" stroke="#22c55e" strokeWidth="1" style={{animation:'stepRingWave 1.8s ease-out 0.45s infinite'}} opacity="0.25"/>
+    <g style={{animation:'stepPhoneRing 1.8s ease-in-out infinite', transformOrigin:'80px 45px'}}>
+      <rect x="62" y="18" width="36" height="54" fill="#1e293b" rx="8" stroke="#475569" strokeWidth="2"/>
+      <rect x="68" y="24" width="24" height="34" fill="#0f172a" rx="3"/>
+      <circle cx="80" cy="63" r="3.5" fill="#334155"/>
+      <text x="80" y="36" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">1968</text>
+      <text x="80" y="47" textAnchor="middle" fill="#64748b" fontSize="7">高公局救援</text>
+    </g>
+    <text x="80" y="84" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">撥打道路救援電話</text>
+  </svg>
+);
+const SASteeringGrip = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <circle cx="80" cy="44" r="30" fill="none" stroke="#4b5563" strokeWidth="7"/>
+    <circle cx="80" cy="44" r="10" fill="#374151" stroke="#4b5563" strokeWidth="3"/>
+    <line x1="80" y1="34" x2="80" y2="16" stroke="#4b5563" strokeWidth="5" strokeLinecap="round"/>
+    <line x1="71" y1="50" x2="58" y2="66" stroke="#4b5563" strokeWidth="5" strokeLinecap="round"/>
+    <line x1="89" y1="50" x2="102" y2="66" stroke="#4b5563" strokeWidth="5" strokeLinecap="round"/>
+    <g style={{animation:'stepGripPulse 1.4s ease-in-out infinite', transformOrigin:'52px 44px'}}>
+      <circle cx="52" cy="44" r="12" fill="#92400e" opacity="0.8"/>
+      <text x="52" y="48" textAnchor="middle" fontSize="14">✊</text>
+    </g>
+    <g style={{animation:'stepGripPulse 1.4s ease-in-out 0.7s infinite', transformOrigin:'108px 44px'}}>
+      <circle cx="108" cy="44" r="12" fill="#92400e" opacity="0.8"/>
+      <text x="108" y="48" textAnchor="middle" fontSize="14">✊</text>
+    </g>
+    <text x="80" y="84" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">雙手緊握方向盤保持直線</text>
+  </svg>
+);
+const SALiftFoot = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <rect x="88" y="46" width="40" height="24" fill="#374151" rx="4" stroke="#475569" strokeWidth="2"/>
+    <text x="108" y="62" textAnchor="middle" fill="#94a3b8" fontSize="9" fontWeight="700">油門</text>
+    <rect x="32" y="46" width="40" height="24" fill="#374151" rx="4" stroke="#475569" strokeWidth="2"/>
+    <text x="52" y="62" textAnchor="middle" fill="#94a3b8" fontSize="9" fontWeight="700">煞車</text>
+    <line x1="35" y1="49" x2="69" y2="67" stroke="#ef4444" strokeWidth="3" strokeLinecap="round"/>
+    <line x1="69" y1="49" x2="35" y2="67" stroke="#ef4444" strokeWidth="3" strokeLinecap="round"/>
+    <text x="52" y="42" textAnchor="middle" fill="#ef4444" fontSize="9">✗ 不踩</text>
+    <g style={{animation:'stepFootLift 2s ease-in-out infinite', transformOrigin:'108px 46px'}}>
+      <text x="108" y="38" textAnchor="middle" fontSize="20">🦶</text>
+    </g>
+    <text x="108" y="42" textAnchor="middle" fill="#4ade80" fontSize="8">慢放開</text>
+    <text x="80" y="84" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">放開油門自然減速（不踩煞車）</text>
+  </svg>
+);
+const SAFogLights = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <rect x="6" y="8" width="70" height="72" fill="#0f172a" rx="6" stroke="#22c55e" strokeWidth="2"/>
+    <text x="41" y="22" textAnchor="middle" fill="#22c55e" fontSize="8" fontWeight="700">✓ 近光燈</text>
+    <circle cx="22" cy="54" r="5" fill="#fef3c7" opacity="0.9"/>
+    <circle cx="60" cy="54" r="5" fill="#fef3c7" opacity="0.9"/>
+    <path d="M 6 54 L 16 48 L 16 60 Z" fill="#fef3c7" opacity="0.35"/>
+    <path d="M 76 54 L 66 48 L 66 60 Z" fill="#fef3c7" opacity="0.35"/>
+    <text x="41" y="68" textAnchor="middle" fill="#4ade80" fontSize="7">穿透力強</text>
+    <rect x="84" y="8" width="70" height="72" fill="#0f172a" rx="6" stroke="#ef4444" strokeWidth="2"/>
+    <text x="119" y="22" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">✗ 遠光燈</text>
+    <circle cx="100" cy="54" r="5" fill="#fef3c7" opacity="0.9"/>
+    <circle cx="138" cy="54" r="5" fill="#fef3c7" opacity="0.9"/>
+    <ellipse cx="119" cy="40" rx="24" ry="16" fill="#fef3c7" className="anim-fog" opacity="0.3"/>
+    <text x="119" y="60" textAnchor="middle" fill="#ef4444" fontSize="7">反射炫光</text>
+    <text x="80" y="84" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">開近光燈 ＋ 霧燈</text>
+  </svg>
+);
+const SASpeedDrop = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <circle cx="80" cy="50" r="36" fill="#1e293b" stroke="#334155" strokeWidth="2.5"/>
+    <path d="M 46 70 A 36 36 0 1 1 114 70" fill="none" stroke="#1f2937" strokeWidth="8" strokeLinecap="round"/>
+    <path d="M 46 70 A 36 36 0 1 1 114 70" fill="none" stroke="#22c55e" strokeWidth="8" strokeLinecap="round" strokeDasharray="150" strokeDashoffset="115"/>
+    <g style={{animation:'stepNeedleDrop 2.4s ease-in-out infinite', transformOrigin:'80px 50px'}}>
+      <line x1="80" y1="50" x2="80" y2="18" stroke="#4ade80" strokeWidth="3.5" strokeLinecap="round"/>
+    </g>
+    <circle cx="80" cy="50" r="6" fill="#4ade80"/>
+    <circle cx="80" cy="50" r="3" fill="#0f172a"/>
+    <text x="80" y="64" textAnchor="middle" fill="#4ade80" fontSize="16" fontWeight="900">↓</text>
+    <text x="80" y="82" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">大幅降低車速</text>
+  </svg>
+);
+const SACarGap = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <rect x="0" y="28" width="160" height="38" fill="#2d3748"/>
+    <line x1="0" y1="47" x2="160" y2="47" stroke="#475569" strokeWidth="1.5" strokeDasharray="8,6"/>
+    <rect x="4" y="34" width="36" height="26" fill="#1d4ed8" rx="3"/>
+    <rect x="10" y="27" width="24" height="14" fill="#1e40af" rx="2"/>
+    <rect x="96" y="34" width="36" height="26" fill="#dc2626" rx="3"/>
+    <rect x="102" y="27" width="24" height="14" fill="#b91c1c" rx="2"/>
+    <line x1="42" y1="47" x2="94" y2="47" stroke="#4ade80" strokeWidth="2.5" strokeDasharray="5,4"/>
+    <line x1="42" y1="40" x2="42" y2="54" stroke="#4ade80" strokeWidth="2"/>
+    <line x1="94" y1="40" x2="94" y2="54" stroke="#4ade80" strokeWidth="2"/>
+    <text x="68" y="43" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">3 秒以上</text>
+    <text x="80" y="76" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">能見度越差，距離越大</text>
+  </svg>
+);
+const SAPullOver = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <rect x="8" y="18" width="144" height="54" fill="#2d3748" rx="4"/>
+    <line x1="8" y1="45" x2="152" y2="45" stroke="#475569" strokeWidth="1.5" strokeDasharray="10,8"/>
+    <rect x="118" y="18" width="34" height="54" fill="#374151"/>
+    <line x1="118" y1="18" x2="118" y2="72" stroke="#fbbf24" strokeWidth="2"/>
+    <rect x="120" y="32" width="28" height="18" fill="#065f46" rx="3"/>
+    <rect x="125" y="25" width="18" height="11" fill="#047857" rx="2"/>
+    <circle cx="123" cy="32" r="2.5" fill="#f59e0b" className="anim-hazard"/>
+    <circle cx="145" cy="32" r="2.5" fill="#f59e0b" className="anim-hazard"/>
+    <circle cx="50" cy="45" r="18" fill="#15803d" opacity="0.85"/>
+    <text x="50" y="51" textAnchor="middle" fill="white" fontSize="20" fontWeight="900">P</text>
+    <text x="80" y="82" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">找安全地點靠邊停車等待</text>
+  </svg>
+);
+const SACamera = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <rect x="42" y="26" width="76" height="46" fill="#1e293b" rx="9" stroke="#475569" strokeWidth="2"/>
+    <rect x="58" y="17" width="24" height="15" fill="#1e293b" rx="4" stroke="#475569" strokeWidth="2"/>
+    <circle cx="80" cy="49" r="17" fill="#0f172a" stroke="#334155" strokeWidth="3"/>
+    <circle cx="80" cy="49" r="11" fill="#1e3a5f"/>
+    <circle cx="80" cy="49" r="6" fill="#0f172a"/>
+    <circle cx="77" cy="46" r="2.5" fill="#60a5fa" opacity="0.7"/>
+    <circle cx="80" cy="49" r="22" fill="#fef9c3" style={{animation:'stepCamFlash 2.5s ease-in-out infinite'}} opacity="0"/>
+    <text x="124" y="54" fontSize="18" style={{animation:'stepCamFlash 2.5s ease-in-out infinite'}}>⚡</text>
+    <text x="80" y="82" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">移車前先拍照記錄現場</text>
+  </svg>
+);
+const SADataExchange = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <circle cx="28" cy="26" r="9" fill="#fbbf24"/>
+    <rect x="22" y="35" width="12" height="18" fill="#3b82f6" rx="2"/>
+    <line x1="22" y1="40" x2="16" y2="46" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="34" y1="40" x2="40" y2="46" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
+    <circle cx="132" cy="26" r="9" fill="#fbbf24"/>
+    <rect x="126" y="35" width="12" height="18" fill="#ef4444" rx="2"/>
+    <line x1="126" y1="40" x2="120" y2="46" stroke="#ef4444" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="138" y1="40" x2="144" y2="46" stroke="#ef4444" strokeWidth="2" strokeLinecap="round"/>
+    <g style={{animation:'stepDocSlide 2s ease-in-out infinite'}}>
+      <rect x="56" y="32" width="48" height="32" fill="#f1f5f9" rx="4"/>
+      <line x1="63" y1="40" x2="97" y2="40" stroke="#94a3b8" strokeWidth="1.5"/>
+      <line x1="63" y1="47" x2="97" y2="47" stroke="#94a3b8" strokeWidth="1.5"/>
+      <line x1="63" y1="54" x2="86" y2="54" stroke="#94a3b8" strokeWidth="1.5"/>
+      <text x="80" y="38" textAnchor="middle" fill="#475569" fontSize="5" fontWeight="700">駕照・行照</text>
+    </g>
+    <path d="M 40 50 L 54 50 M 120 50 L 106 50" stroke="#4ade80" strokeWidth="2" fill="none" strokeLinecap="round"/>
+    <text x="80" y="78" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">互換駕照・行照・聯絡資訊</text>
+  </svg>
+);
+const SACheckInjury = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <circle cx="68" cy="28" r="11" fill="#fbbf24"/>
+    <rect x="60" y="39" width="16" height="22" fill="#475569" rx="2"/>
+    <line x1="60" y1="44" x2="54" y2="52" stroke="#475569" strokeWidth="2.5" strokeLinecap="round"/>
+    <line x1="76" y1="44" x2="82" y2="52" stroke="#475569" strokeWidth="2.5" strokeLinecap="round"/>
+    <line x1="62" y1="61" x2="58" y2="70" stroke="#475569" strokeWidth="2.5" strokeLinecap="round"/>
+    <line x1="74" y1="61" x2="78" y2="70" stroke="#475569" strokeWidth="2.5" strokeLinecap="round"/>
+    <text x="40" y="26" fill="#fbbf24" fontSize="22" fontWeight="900">?</text>
+    <g style={{animation:'stepGripPulse 1.3s ease-in-out infinite', transformOrigin:'118px 38px'}}>
+      <circle cx="118" cy="38" r="18" fill="#15803d" opacity="0.85"/>
+      <rect x="113" y="31" width="10" height="14" fill="white" rx="2"/>
+      <rect x="111" y="33" width="14" height="10" fill="white" rx="2"/>
+    </g>
+    <text x="80" y="82" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">先確認人員有無受傷</text>
+  </svg>
+);
+const SAStayCalm = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <text x="80" y="24" textAnchor="middle" fill="#60a5fa" fontSize="13">😤 深呼吸</text>
+    <polyline
+      points="14,55 28,55 34,36 42,70 50,46 57,55 72,55 78,38 86,68 93,48 100,55 114,55 120,40 128,65 136,50 146,55"
+      fill="none" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+      style={{animation:'stepHeartCalm 2s ease-in-out infinite'}}/>
+    <text x="80" y="78" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">保持冷靜，有時間做正確判斷</text>
+  </svg>
+);
+const SABrakePump = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <rect x="44" y="44" width="72" height="28" fill="#374151" rx="5" stroke="#475569" strokeWidth="2"/>
+    <text x="80" y="62" textAnchor="middle" fill="#94a3b8" fontSize="11" fontWeight="700">BRAKE</text>
+    <g style={{animation:'stepBrakePump 0.85s ease-in-out infinite', transformOrigin:'80px 44px'}}>
+      <text x="80" y="34" textAnchor="middle" fontSize="22">🦶</text>
+    </g>
+    <text x="26" y="46" fill="#f59e0b" fontSize="11" fontWeight="700">↓↑</text>
+    <text x="126" y="46" fill="#f59e0b" fontSize="11" fontWeight="700">↓↑</text>
+    <text x="80" y="82" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">快速點踩（非一踩到底）</text>
+  </svg>
+);
+const SAGearDown = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <line x1="50" y1="18" x2="50" y2="72" stroke="#334155" strokeWidth="2"/>
+    <line x1="80" y1="18" x2="80" y2="72" stroke="#334155" strokeWidth="2"/>
+    <line x1="110" y1="18" x2="110" y2="72" stroke="#334155" strokeWidth="2"/>
+    <line x1="50" y1="45" x2="110" y2="45" stroke="#334155" strokeWidth="2"/>
+    {[['5',50,24],['3',50,66],['4',80,24],['N',80,66],['2',110,24],['1',110,66]].map(([g,x,y]) => (
+      <g key={`${g}${x}`}>
+        <circle cx={x} cy={y} r="10" fill="#1e293b" stroke="#334155" strokeWidth="1.5"/>
+        <text x={x} y={y+4} textAnchor="middle" fill="#64748b" fontSize="10" fontWeight="700">{g}</text>
+      </g>
+    ))}
+    <g style={{animation:'stepGearDrop 2s ease-in-out infinite'}}>
+      <circle cx="110" cy="24" r="12" fill="#f59e0b" opacity="0.95"/>
+      <text x="110" y="28" textAnchor="middle" fill="#000" fontSize="11" fontWeight="900">1</text>
+    </g>
+    <text x="80" y="84" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">逐步降檔 5→4→3→2→1</text>
+  </svg>
+);
+const SAHornHazard = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <rect x="42" y="28" width="76" height="36" fill="#334155" rx="6"/>
+    <rect x="52" y="20" width="56" height="22" fill="#2d3748" rx="4"/>
+    <ellipse cx="50" cy="50" rx="9" ry="5" fill="#fef3c7" opacity="0.8"/>
+    <ellipse cx="110" cy="50" rx="9" ry="5" fill="#fef3c7" opacity="0.8"/>
+    <circle cx="48" cy="32" r="5" fill="#f59e0b" className="anim-hazard"/>
+    <circle cx="112" cy="32" r="5" fill="#f59e0b" className="anim-hazard"/>
+    <circle cx="48" cy="32" r="9" fill="none" stroke="#f59e0b" strokeWidth="1" className="anim-hazard" opacity="0.3"/>
+    <circle cx="112" cy="32" r="9" fill="none" stroke="#f59e0b" strokeWidth="1" className="anim-hazard" opacity="0.3"/>
+    <circle cx="80" cy="46" r="8" fill="#475569" stroke="#6b7280" strokeWidth="1"/>
+    <text x="80" y="50" textAnchor="middle" fill="#fbbf24" fontSize="10">📣</text>
+    <path d="M 18 42 Q 12 38 18 30" stroke="#fbbf24" strokeWidth="2" fill="none" strokeLinecap="round" style={{animation:'stepRingWave 1.4s ease-out infinite'}}/>
+    <path d="M 12 46 Q 5 40 12 26" stroke="#fbbf24" strokeWidth="1.5" fill="none" strokeLinecap="round" style={{animation:'stepRingWave 1.4s ease-out 0.25s infinite'}} opacity="0.5"/>
+    <path d="M 142 42 Q 148 38 142 30" stroke="#fbbf24" strokeWidth="2" fill="none" strokeLinecap="round" style={{animation:'stepRingWave 1.4s ease-out infinite'}}/>
+    <text x="80" y="78" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">按喇叭 ＋ 開危險警示燈</text>
+  </svg>
+);
+const SASafeSpot = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <path d="M 8 78 L 62 38 L 152 38" stroke="#2d3748" strokeWidth="20" fill="none" strokeLinecap="round"/>
+    <path d="M 8 78 L 62 38 L 152 38" stroke="#374151" strokeWidth="14" fill="none" strokeLinecap="round"/>
+    <path d="M 8 78 L 62 38 L 152 38" stroke="#475569" strokeWidth="2" fill="none" strokeLinecap="round" strokeDasharray="10,8"/>
+    <g transform="translate(118, 34) rotate(-4)">
+      <rect x="-18" y="-10" width="36" height="16" fill="#065f46" rx="3"/>
+      <rect x="-12" y="-18" width="24" height="10" fill="#047857" rx="2"/>
+      <circle cx="-15" cy="-8" r="2.5" fill="#f59e0b" className="anim-hazard"/>
+      <circle cx="15" cy="-8" r="2.5" fill="#f59e0b" className="anim-hazard"/>
+    </g>
+    <circle cx="40" cy="32" r="16" fill="#15803d" opacity="0.85"/>
+    <text x="40" y="37" textAnchor="middle" fill="white" fontSize="16" fontWeight="900">✓</text>
+    <text x="80" y="60" textAnchor="middle" fill="#94a3b8" fontSize="7">上坡 / 空地 / 緩衝區</text>
+    <text x="80" y="78" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">找安全地點讓車自然停下</text>
+  </svg>
+);
+const SAHandbrake = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    <rect x="74" y="52" width="12" height="10" fill="#475569" rx="4"/>
+    <line x1="80" y1="52" x2="80" y2="16" stroke="#4b5563" strokeWidth="7" strokeLinecap="round"/>
+    <ellipse cx="80" cy="16" rx="12" ry="8" fill="#334155" stroke="#6b7280" strokeWidth="2"/>
+    <g style={{animation:'stepHandbrakePull 2s ease-in-out infinite', transformOrigin:'80px 16px'}}>
+      <text x="80" y="14" textAnchor="middle" fontSize="18">🤚</text>
+    </g>
+    <path d="M 94 34 Q 112 28 108 16" stroke="#4ade80" strokeWidth="2" fill="none" strokeLinecap="round"/>
+    <text x="118" y="30" fill="#4ade80" fontSize="8">輕拉</text>
+    <rect x="14" y="55" width="50" height="20" fill="#7f1d1d" rx="6" opacity="0.8"/>
+    <text x="39" y="69" textAnchor="middle" fill="white" fontSize="8" fontWeight="700">✗ 猛拉=甩尾</text>
+    <rect x="96" y="55" width="50" height="20" fill="#15803d" rx="6" opacity="0.8"/>
+    <text x="121" y="69" textAnchor="middle" fill="white" fontSize="8" fontWeight="700">✓ 緩慢輕拉</text>
+    <text x="80" y="84" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">緩慢輕拉手煞車</text>
+  </svg>
+);
+
+// == Narrow Road animations ==
+const SANarrowSlowDown = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    {/* Road */}
+    <rect x="55" y="8" width="50" height="74" fill="#2d3748" rx="4"/>
+    <line x1="80" y1="8" x2="80" y2="82" stroke="#475569" strokeWidth="1.5" strokeDasharray="8,6"/>
+    {/* Left/right walls */}
+    <rect x="35" y="8" width="20" height="74" fill="#1e3a1e"/>
+    <rect x="105" y="8" width="20" height="74" fill="#1e3a1e"/>
+    {/* Player car slowing */}
+    <g style={{animation:'stepSlideL 2.4s ease-in-out infinite'}}>
+      <rect x="66" y="48" width="28" height="20" fill="#dc2626" rx="3"/>
+      <rect x="70" y="40" width="20" height="12" fill="#b91c1c" rx="2"/>
+    </g>
+    {/* Oncoming car */}
+    <g transform="translate(80,20) rotate(180)">
+      <rect x="-14" y="-12" width="28" height="18" fill="#2563eb" rx="3"/>
+      <rect x="-8" y="-18" width="16" height="10" fill="#1d4ed8" rx="2"/>
+      <circle cx="-14" cy="-11" r="3" fill="#fef9c3" opacity="0.9"/>
+      <circle cx="14" cy="-11" r="3" fill="#fef9c3" opacity="0.9"/>
+    </g>
+    {/* Speed drop arrow */}
+    <path d="M 128 30 L 128 55" stroke="#4ade80" strokeWidth="3" fill="none" strokeLinecap="round"/>
+    <polygon points="122,50 134,50 128,58" fill="#4ade80"/>
+    <text x="128" y="24" textAnchor="middle" fill="#f87171" fontSize="8" fontWeight="700">↓速</text>
+    <text x="80" y="86" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">立即減速，停車待命</text>
+  </svg>
+);
+const SANarrowPullRight = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    {/* Road */}
+    <rect x="45" y="8" width="70" height="74" fill="#2d3748" rx="4"/>
+    <line x1="80" y1="8" x2="80" y2="82" stroke="#475569" strokeWidth="1.5" strokeDasharray="8,6"/>
+    {/* Mountain walls */}
+    <rect x="25" y="8" width="20" height="74" fill="#1e3a1e"/>
+    <rect x="115" y="8" width="20" height="74" fill="#1e3a1e"/>
+    {/* Car sliding right */}
+    <g style={{animation:'stepSlideR 2s ease-in-out infinite'}}>
+      <rect x="52" y="52" width="28" height="20" fill="#dc2626" rx="3"/>
+      <rect x="56" y="44" width="20" height="12" fill="#b91c1c" rx="2"/>
+      <circle cx="49" cy="52" r="3" fill="#fef3c7" opacity="0.9"/>
+      <circle cx="83" cy="52" r="3" fill="#fef3c7" opacity="0.9"/>
+    </g>
+    {/* Oncoming car on left side */}
+    <g transform="translate(65,22) rotate(180)">
+      <rect x="-12" y="-10" width="24" height="16" fill="#2563eb" rx="3"/>
+      <circle cx="-12" cy="-9" r="3" fill="#fef9c3" opacity="0.9"/>
+      <circle cx="12" cy="-9" r="3" fill="#fef9c3" opacity="0.9"/>
+    </g>
+    {/* Headlight beams */}
+    <line x1="100" y1="54" x2="116" y2="48" stroke="#fef9c3" strokeWidth="1.5" opacity="0.6" strokeDasharray="3,2"/>
+    <line x1="100" y1="60" x2="116" y2="66" stroke="#fef9c3" strokeWidth="1.5" opacity="0.6" strokeDasharray="3,2"/>
+    {/* Arrow right */}
+    <path d="M 96 62 L 108 62 M 104 57 L 110 62 L 104 67" stroke="#4ade80" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+    <text x="80" y="86" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">靠右讓路，開啟頭燈</text>
+  </svg>
+);
+const SANarrowReverse = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    {/* Road narrow */}
+    <rect x="55" y="8" width="50" height="74" fill="#2d3748" rx="4"/>
+    <line x1="80" y1="8" x2="80" y2="82" stroke="#475569" strokeWidth="1.5" strokeDasharray="8,6"/>
+    <rect x="35" y="8" width="20" height="74" fill="#1e3a1e"/>
+    <rect x="105" y="8" width="20" height="74" fill="#1e3a1e"/>
+    {/* Wider spot behind */}
+    <rect x="35" y="55" width="90" height="27" fill="#374151" rx="3" opacity="0.8"/>
+    <text x="80" y="73" textAnchor="middle" fill="#4ade80" fontSize="6" fontWeight="700">較寬處</text>
+    {/* Car reversing (downward) */}
+    <g style={{animation:'stepBounce 1.8s ease-in-out infinite'}}>
+      <rect x="66" y="30" width="28" height="20" fill="#dc2626" rx="3"/>
+      <rect x="70" y="22" width="20" height="12" fill="#b91c1c" rx="2"/>
+      {/* Reverse lights (white at back) */}
+      <circle cx="66" cy="50" r="3" fill="white" opacity="0.9"/>
+      <circle cx="94" cy="50" r="3" fill="white" opacity="0.9"/>
+    </g>
+    {/* Reverse arrow */}
+    <path d="M 130 35 L 130 60" stroke="#fbbf24" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+    <polygon points="124,55 136,55 130,63" fill="#fbbf24"/>
+    <text x="130" y="28" textAnchor="middle" fill="#fbbf24" fontSize="7" fontWeight="700">倒車</text>
+    <text x="80" y="86" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">必要時倒退找寬處</text>
+  </svg>
+);
+const SANarrowPass = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8"/>
+    {/* Road */}
+    <rect x="40" y="8" width="80" height="74" fill="#2d3748" rx="4"/>
+    <line x1="80" y1="8" x2="80" y2="82" stroke="#475569" strokeWidth="1.5" strokeDasharray="8,6"/>
+    <rect x="20" y="8" width="20" height="74" fill="#1e3a1e"/>
+    <rect x="120" y="8" width="20" height="74" fill="#1e3a1e"/>
+    {/* Two cars passing safely */}
+    <g transform="translate(62,60)">
+      <rect x="-12" y="-12" width="24" height="18" fill="#dc2626" rx="3"/>
+      <rect x="-7" y="-20" width="14" height="11" fill="#b91c1c" rx="2"/>
+      <ellipse cx="-8" cy="6" rx="5" ry="4" fill="#111"/>
+      <ellipse cx="8" cy="6" rx="5" ry="4" fill="#111"/>
+    </g>
+    <g transform="translate(98,30) rotate(180)">
+      <rect x="-12" y="-12" width="24" height="18" fill="#2563eb" rx="3"/>
+      <rect x="-7" y="-20" width="14" height="11" fill="#1d4ed8" rx="2"/>
+      <ellipse cx="-8" cy="6" rx="5" ry="4" fill="#111"/>
+      <ellipse cx="8" cy="6" rx="5" ry="4" fill="#111"/>
+    </g>
+    {/* Success badge */}
+    <circle cx="22" cy="22" r="12" fill="#15803d" opacity="0.9"/>
+    <text x="22" y="27" textAnchor="middle" fill="white" fontSize="14" fontWeight="900">✓</text>
+    {/* Speed labels */}
+    <text x="62" y="79" textAnchor="middle" fill="#94a3b8" fontSize="7">步行速度</text>
+    <text x="98" y="14" textAnchor="middle" fill="#94a3b8" fontSize="7">步行速度</text>
+    <text x="80" y="86" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">緩緩通過，注意兩側間距</text>
+  </svg>
+);
+
+const STEP_ANIMS = {
+  'highway-breakdown':   [SAHazardFlash, SACarToShoulder, SATriangle, SAPersonCross, SAPhoneCall, SAHazardFlash],
+  'tire-blowout':        [SASteeringGrip, SALiftFoot, SAHazardFlash, SACarToShoulder, SATriangle, SAPhoneCall],
+  'heavy-rain-fog':      [SAFogLights, SASpeedDrop, SACarGap, SAHazardFlash, SAPullOver, null],
+  'rear-end-collision':  [SACheckInjury, SAHazardFlash, SACamera, SACarToShoulder, SADataExchange, SAPhoneCall, SAPhoneCall],
+  'brake-failure':       [SAStayCalm, SABrakePump, SAGearDown, SAHornHazard, SASafeSpot, SAHandbrake, SAPhoneCall],
+  'narrow-road':         [SANarrowSlowDown, SANarrowPullRight, SACarGap, SANarrowReverse, SANarrowPass],
+};
+
+// ─────────────────────────────────────────
+// SIMULATION STEPS DATA
+// ─────────────────────────────────────────
+const SIM_STEPS = {
+  'highway-breakdown': [
+    {
+      title: '開啟雙黃燈',
+      instruction: '點擊中央三角形警示燈按鈕',
+      target: 'hazard',
+      keys: ['h', 'H'],
+      successMsg: '✓ 雙黃燈已開啟！後方車輛已收到警告',
+      stateChange: { hazardOn: true },
+    },
+    {
+      title: '移向路肩',
+      instruction: '向右拖曳方向盤，緩緩移至右側路肩',
+      target: 'wheel',
+      keys: ['ArrowRight'],
+      successMsg: '✓ 車輛移至路肩，離開危險車道',
+      stateChange: { onShoulder: true, speed: 0 },
+    },
+    {
+      title: '放置警告三角架',
+      instruction: '點擊左側「三角架」按鈕，在車後方放置',
+      target: 'triangle',
+      keys: ['t', 'T'],
+      successMsg: '✓ 三角架已放置，提醒後方來車',
+      stateChange: { trianglePlaced: true },
+    },
+    {
+      title: '撥打救援電話',
+      instruction: '點擊左側「電話」按鈕，撥打高公局 1968',
+      target: 'phone',
+      keys: ['p', 'P'],
+      successMsg: '✓ 救援已通報！請在護欄外耐心等待',
+      stateChange: { phoneActive: true },
+    },
+  ],
+  'tire-blowout': [
+    {
+      title: '緊握方向盤',
+      instruction: '點擊方向盤中心，雙手緊握抵抗偏移、維持直線行駛',
+      target: 'wheel-grip',
+      keys: ['w', 'W'],
+      successMsg: '✓ 方向盤握穩！維持直線，不要急打方向',
+      stateChange: {},
+    },
+    {
+      title: '放開油門自然減速',
+      instruction: '點擊油門踏板放開，讓車子自然降速，切勿急踩煞車',
+      target: 'gas',
+      keys: ['g', 'G'],
+      successMsg: '✓ 油門放開！車速正在自然下降',
+      stateChange: { speed: 45 },
+    },
+    {
+      title: '開啟危險警示燈',
+      instruction: '速度降低後，開啟雙黃燈提醒後方車輛保持距離',
+      target: 'hazard',
+      keys: ['h', 'H'],
+      successMsg: '✓ 雙黃燈開啟！後方車輛已警覺',
+      stateChange: { hazardOn: true },
+    },
+    {
+      title: '輕柔移向路肩',
+      instruction: '車速降至安全範圍後，輕柔地向右引導車輛至路肩',
+      target: 'wheel',
+      keys: ['ArrowRight'],
+      successMsg: '✓ 車輛安全停至路肩，已脫離行車道',
+      stateChange: { onShoulder: true, speed: 0 },
+    },
+    {
+      title: '聯絡道路救援',
+      instruction: '高速公路上絕對不要自行換胎，撥打救援等待專業人員',
+      target: 'phone',
+      keys: ['p', 'P'],
+      successMsg: '✓ 救援通報完成！等待專業人員到場',
+      stateChange: { phoneActive: true },
+    },
+  ],
+  'heavy-rain-fog': [
+    {
+      title: '開啟近光燈與霧燈',
+      instruction: '點擊霧燈按鈕，開啟近光燈與霧燈（切勿用遠光燈！）',
+      target: 'fog',
+      keys: ['f', 'F'],
+      successMsg: '✓ 霧燈已開啟！能見度略有改善',
+      stateChange: { fogOn: true, speed: 52 },
+    },
+    {
+      title: '大幅降低車速',
+      instruction: '輕踩剎車，大幅降低車速（能見度<50m 時不超過 50km/h）',
+      target: 'brake',
+      keys: ['b', 'B'],
+      successMsg: '✓ 車速大幅降低！安全距離拉大',
+      stateChange: { speed: 28 },
+    },
+    {
+      title: '開啟危險警示燈',
+      instruction: '讓後方車輛知道你的存在，避免被追撞',
+      target: 'hazard',
+      keys: ['h', 'H'],
+      successMsg: '✓ 雙黃燈開啟！後方車輛已警覺',
+      stateChange: { hazardOn: true },
+    },
+    {
+      title: '靠邊停車等待',
+      instruction: '能見度極差時向右移至路肩，停車等待霧散再上路',
+      target: 'wheel',
+      keys: ['ArrowRight'],
+      successMsg: '✓ 安全靠邊！等待能見度恢復後再行駛',
+      stateChange: { onShoulder: true, speed: 0 },
+    },
+  ],
+  'rear-end-collision': [
+    {
+      title: '開啟危險警示燈',
+      instruction: '立即開啟雙黃燈，防止後方車輛發生連環追撞',
+      target: 'hazard',
+      keys: ['h', 'H'],
+      successMsg: '✓ 雙黃燈開啟！連環追撞風險大幅降低',
+      stateChange: { hazardOn: true },
+    },
+    {
+      title: '拍照記錄現場',
+      instruction: '移車前先拍照，記錄車損、車牌與事故位置',
+      target: 'triangle',
+      keys: ['t', 'T'],
+      successMsg: '✓ 現場已記錄！移車後證據保全完成',
+      stateChange: { trianglePlaced: true },
+    },
+    {
+      title: '將車移往路肩',
+      instruction: '確認安全後，將車移往不影響交通的路肩',
+      target: 'wheel',
+      keys: ['ArrowRight'],
+      successMsg: '✓ 車輛已移至路肩，不再阻礙交通',
+      stateChange: { onShoulder: true },
+    },
+    {
+      title: '報警並聯絡保險',
+      instruction: '撥打電話報警，並聯絡保險公司報案',
+      target: 'phone',
+      keys: ['p', 'P'],
+      successMsg: '✓ 警方與保險公司已收到通報',
+      stateChange: { phoneActive: true },
+    },
+  ],
+  'brake-failure': [
+    {
+      title: '連續點踩煞車',
+      instruction: '快速連續點踩煞車（非一踩到底），嘗試重建煞車油壓',
+      target: 'brake',
+      keys: ['b', 'B'],
+      successMsg: '✓ 嘗試重建油壓！煞車感稍微恢復',
+      stateChange: { speed: 88 },
+    },
+    {
+      title: '逐步降檔',
+      instruction: '點擊排檔桿向下降檔（5→4→3→2），利用引擎煞車減速',
+      target: 'gear-down',
+      keys: ['d', 'D'],
+      successMsg: '✓ 已降檔！引擎煞車效果明顯，速度下降中',
+      stateChange: { speed: 48, gearDown: true },
+    },
+    {
+      title: '開啟雙黃燈並按喇叭',
+      instruction: '開啟危險警示燈，持續按喇叭警告周圍車輛閃避',
+      target: 'hazard',
+      keys: ['h', 'H'],
+      successMsg: '✓ 警告訊號發出！周圍車輛正在閃避讓路',
+      stateChange: { hazardOn: true },
+    },
+    {
+      title: '移往安全停車點',
+      instruction: '向右尋找上坡路段或空地，讓車子緩緩停下',
+      target: 'wheel',
+      keys: ['ArrowRight'],
+      successMsg: '✓ 找到安全位置！車輛持續減速中',
+      stateChange: { onShoulder: true, speed: 14 },
+    },
+    {
+      title: '緩緩輕拉手煞車',
+      instruction: '車速已很低時，緩緩輕拉手煞車完全停車（切勿猛拉！）',
+      target: 'triangle',
+      keys: ['t', 'T'],
+      successMsg: '✓ 車輛完全停止！立刻聯絡道路救援',
+      stateChange: { speed: 0 },
+    },
+  ],
+  'narrow-road': [
+    {
+      title: '立即煞車減速',
+      instruction: '看到對向來車，立刻點踩煞車，在安全距離內停穩',
+      target: 'brake',
+      keys: ['b', 'B'],
+      successMsg: '✓ 車輛減速停穩！與對向車保持安全距離',
+      stateChange: { speed: 0 },
+    },
+    {
+      title: '靠右讓路',
+      instruction: '向右拖曳方向盤，緊靠右側山壁讓出空間',
+      target: 'wheel',
+      keys: ['ArrowRight'],
+      successMsg: '✓ 靠右完成！對向車輛有更多空間通過',
+      stateChange: { onShoulder: true },
+    },
+    {
+      title: '開啟頭燈示意',
+      instruction: '開啟近光燈，讓對方清楚看到你的位置與意圖',
+      target: 'fog',
+      keys: ['f', 'F'],
+      successMsg: '✓ 燈光已開啟！對方看清你的位置',
+      stateChange: { fogOn: true },
+    },
+    {
+      title: '按喇叭溝通',
+      instruction: '輕按喇叭，示意對方你已讓路，可以緩緩通過',
+      target: 'horn',
+      keys: ['n', 'N'],
+      successMsg: '✓ 溝通成功！對向車輛開始緩緩通過',
+      stateChange: { hazardOn: true },
+    },
+  ],
+};
+
+// Per-scenario simulation configuration (initial state + button overrides)
+const SIM_CONFIGS = {
+  'highway-breakdown': {
+    initCockpit: { hazardOn:false, onShoulder:false, speed:85, fogOn:false, gearDown:false },
+    foggy: false,
+    lb1: { target:'triangle', icon:'🔺', label:'三角架', color:'#22c55e' },
+    lb2: { target:'phone',    icon:'📱', label:'電話',   color:'#60a5fa' },
+  },
+  'tire-blowout': {
+    initCockpit: { hazardOn:false, onShoulder:false, speed:112, fogOn:false, gearDown:false },
+    foggy: false,
+    lb1: { target:'triangle', icon:'🔺', label:'三角架', color:'#22c55e' },
+    lb2: { target:'phone',    icon:'📱', label:'電話',   color:'#60a5fa' },
+  },
+  'heavy-rain-fog': {
+    initCockpit: { hazardOn:false, onShoulder:false, speed:62, fogOn:false, gearDown:false },
+    foggy: true,
+    lb1: { target:'triangle', icon:'🔺', label:'三角架', color:'#22c55e' },
+    lb2: { target:'phone',    icon:'📱', label:'電話',   color:'#60a5fa' },
+  },
+  'rear-end-collision': {
+    initCockpit: { hazardOn:false, onShoulder:false, speed:0, fogOn:false, gearDown:false },
+    foggy: false,
+    lb1: { target:'triangle', icon:'📸', label:'拍照',   color:'#a78bfa' },
+    lb2: { target:'phone',    icon:'📱', label:'電話',   color:'#60a5fa' },
+  },
+  'brake-failure': {
+    initCockpit: { hazardOn:false, onShoulder:false, speed:118, fogOn:false, gearDown:false },
+    foggy: false,
+    lb1: { target:'triangle', icon:'🅿️', label:'手煞車', color:'#ef4444' },
+    lb2: { target:'phone',    icon:'📱', label:'電話',   color:'#60a5fa' },
+  },
+  'narrow-road': {
+    initCockpit: { hazardOn:false, onShoulder:false, speed:42, fogOn:false, gearDown:false },
+    foggy: false,
+    lb1: { target:'fog',  icon:'💡', label:'頭燈', color:'#fbbf24' },
+    lb2: { target:'horn', icon:'📯', label:'喇叭', color:'#a78bfa' },
+  },
+};
+const SIM_CFG_DEFAULT = {
+  initCockpit: { hazardOn:false, onShoulder:false, speed:80, fogOn:false, gearDown:false },
+  foggy: false,
+  lb1: { target:'triangle', icon:'🔺', label:'三角架', color:'#22c55e' },
+  lb2: { target:'phone',    icon:'📱', label:'電話',   color:'#60a5fa' },
+};
+
+// ─────────────────────────────────────────
+// DECISION ANIMATIONS (shown per option in Decision phase)
+// ─────────────────────────────────────────
+
+// == Highway Breakdown ==
+const DA_HB_A = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    <rect x="0" y="52" width="160" height="40" fill="#1e293b"/>
+    <line x1="0" y1="72" x2="160" y2="72" stroke="#334155" strokeWidth="1" strokeDasharray="10,8"/>
+    <g style={{animation:'stepSlideR 1.2s ease-in-out infinite'}}>
+      <rect x="8" y="58" width="38" height="22" fill="#1d4ed8" rx="2"/>
+      <rect x="14" y="50" width="26" height="14" fill="#1e40af" rx="2"/>
+      <circle cx="42" cy="60" r="3.5" fill="#fef3c7" opacity="0.9"/>
+      <circle cx="42" cy="72" r="3.5" fill="#fef3c7" opacity="0.9"/>
+    </g>
+    <rect x="100" y="55" width="48" height="28" fill="#dc2626" rx="3"/>
+    <rect x="108" y="46" width="32" height="16" fill="#b91c1c" rx="2"/>
+    <circle cx="96" cy="60" r="5.5" fill="#fbbf24"/>
+    <rect x="93" y="65" width="6" height="14" fill="#3b82f6" rx="1"/>
+    <line x1="93" y1="68" x2="88" y2="75" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="99" y1="68" x2="104" y2="75" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
+    <text x="80" y="20" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">⚠ 高速車道下車</text>
+    <text x="80" y="34" textAnchor="middle" fill="#f87171" fontSize="8">後車無法及時煞停</text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">被後車撞擊風險極高</text>
+  </svg>
+);
+const DA_HB_B = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    <rect x="0" y="48" width="160" height="44" fill="#1e293b"/>
+    <line x1="0" y1="70" x2="160" y2="70" stroke="#334155" strokeWidth="1.5" strokeDasharray="10,8"/>
+    <rect x="124" y="48" width="36" height="44" fill="#252f3f"/>
+    <line x1="124" y1="48" x2="124" y2="92" stroke="#fbbf24" strokeWidth="1.5"/>
+    <g transform="translate(138,68)">
+      <rect x="-16" y="-14" width="32" height="22" fill="#dc2626" rx="3"/>
+      <rect x="-10" y="-22" width="20" height="12" fill="#b91c1c" rx="2"/>
+      <circle cx="-13" cy="-12" r="4" fill="#f59e0b" className="anim-hazard"/>
+      <circle cx="13" cy="-12" r="4" fill="#f59e0b" className="anim-hazard"/>
+      <circle cx="-13" cy="7" r="4" fill="#f59e0b" className="anim-hazard"/>
+      <circle cx="13" cy="7" r="4" fill="#f59e0b" className="anim-hazard"/>
+    </g>
+    <path d="M 78 68 Q 108 62 120 66" stroke="#4ade80" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+    <polygon points="118,61 122,66 117,70" fill="#4ade80"/>
+    <circle cx="22" cy="24" r="14" fill="#15803d" opacity="0.9"/>
+    <text x="22" y="29" textAnchor="middle" fill="white" fontSize="15" fontWeight="900">✓</text>
+    <text x="96" y="22" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">開雙黃燈</text>
+    <text x="96" y="34" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">移至路肩</text>
+    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">最正確的第一步</text>
+  </svg>
+);
+const DA_HB_C = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    <rect x="0" y="48" width="160" height="44" fill="#1e293b"/>
+    <line x1="0" y1="70" x2="160" y2="70" stroke="#334155" strokeWidth="1" strokeDasharray="10,8"/>
+    <g transform="translate(100,67)">
+      <rect x="-24" y="-16" width="48" height="26" fill="#dc2626" rx="3"/>
+      <rect x="-18" y="-24" width="36" height="14" fill="#b91c1c" rx="2"/>
+      <rect x="-16" y="-22" width="11" height="9" fill="#bfdbfe" rx="1"/>
+      <rect x="5" y="-22" width="11" height="9" fill="#bfdbfe" rx="1"/>
+      <rect x="3" y="-21" width="8" height="7" fill="#22c55e" rx="1" opacity="0.8" style={{animation:'hazard 1.2s ease-in-out infinite'}}/>
+    </g>
+    <text x="100" y="40" textAnchor="middle" fill="#ef4444" fontSize="8">🚫 沒開雙黃燈</text>
+    <g transform="translate(46,67)">
+      <rect x="-18" y="-12" width="36" height="20" fill="#475569" rx="2"/>
+      <rect x="-12" y="-19" width="24" height="11" fill="#374151" rx="2"/>
+      <circle cx="-14" cy="-10" r="3" fill="#ef4444"/>
+      <circle cx="14" cy="-10" r="3" fill="#ef4444"/>
+    </g>
+    <g transform="translate(14,67)">
+      <rect x="-10" y="-9" width="20" height="16" fill="#334155" rx="2"/>
+    </g>
+    <text x="80" y="20" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">停在車道打電話</text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">暴露在高速車流中</text>
+  </svg>
+);
+
+// == Tire Blowout ==
+const DA_TB_A = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    <rect x="0" y="50" width="160" height="42" fill="#1e293b"/>
+    <path d="M 8 74 Q 58 67 90 70" stroke="#111" strokeWidth="5" fill="none" opacity="0.8"/>
+    <path d="M 8 80 Q 58 73 90 76" stroke="#111" strokeWidth="4" fill="none" opacity="0.6"/>
+    <g transform="translate(114,67) rotate(22)">
+      <rect x="-24" y="-14" width="48" height="26" fill="#7c3aed" rx="3"/>
+      <rect x="-18" y="-24" width="36" height="14" fill="#6d28d9" rx="2"/>
+      <circle cx="-20" cy="12" r="6" fill="#111" stroke="#ef4444" strokeWidth="1.5"/>
+      <circle cx="20" cy="12" r="6" fill="#111" stroke="#ef4444" strokeWidth="1.5"/>
+    </g>
+    <text x="36" y="32" textAnchor="middle" fontSize="22">🦶</text>
+    <text x="36" y="20" textAnchor="middle" fill="#ef4444" fontSize="20">↓</text>
+    <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">急踩煞車</text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">後輪鎖死，車輛甩尾失控</text>
+  </svg>
+);
+const DA_TB_B = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    <circle cx="72" cy="54" r="28" fill="none" stroke="#4b5563" strokeWidth="7"/>
+    <circle cx="72" cy="54" r="9" fill="#374151" stroke="#4b5563" strokeWidth="3"/>
+    <line x1="72" y1="45" x2="72" y2="28" stroke="#4b5563" strokeWidth="5" strokeLinecap="round"/>
+    <line x1="65" y1="58" x2="55" y2="72" stroke="#4b5563" strokeWidth="5" strokeLinecap="round"/>
+    <line x1="79" y1="58" x2="89" y2="72" stroke="#4b5563" strokeWidth="5" strokeLinecap="round"/>
+    <g style={{animation:'stepGripPulse 1.4s ease-in-out infinite', transformOrigin:'46px 54px'}}>
+      <circle cx="46" cy="54" r="11" fill="#92400e" opacity="0.8"/>
+      <text x="46" y="58" textAnchor="middle" fontSize="13">✊</text>
+    </g>
+    <g style={{animation:'stepGripPulse 1.4s ease-in-out 0.7s infinite', transformOrigin:'98px 54px'}}>
+      <circle cx="98" cy="54" r="11" fill="#92400e" opacity="0.8"/>
+      <text x="98" y="58" textAnchor="middle" fontSize="13">✊</text>
+    </g>
+    <rect x="118" y="62" width="30" height="18" fill="#374151" rx="3" stroke="#475569" strokeWidth="1.5"/>
+    <text x="133" y="74" textAnchor="middle" fill="#94a3b8" fontSize="8" fontWeight="700">油門</text>
+    <g style={{animation:'stepFootLift 2s ease-in-out infinite', transformOrigin:'133px 52px'}}>
+      <text x="133" y="56" textAnchor="middle" fontSize="15">🦶</text>
+    </g>
+    <text x="133" y="46" textAnchor="middle" fill="#4ade80" fontSize="7">慢放開</text>
+    <circle cx="20" cy="18" r="11" fill="#15803d"/>
+    <text x="20" y="22" textAnchor="middle" fill="white" fontSize="12" fontWeight="900">✓</text>
+    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">緊握方向盤＋自然減速</text>
+  </svg>
+);
+const DA_TB_C = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    <rect x="0" y="48" width="160" height="44" fill="#1e293b"/>
+    <line x1="0" y1="70" x2="160" y2="70" stroke="#334155" strokeWidth="1.5" strokeDasharray="10,8"/>
+    <g transform="translate(92,67) rotate(-32)" className="anim-wobble">
+      <rect x="-24" y="-14" width="48" height="26" fill="#7c3aed" rx="3"/>
+      <rect x="-18" y="-24" width="36" height="14" fill="#6d28d9" rx="2"/>
+    </g>
+    <path d="M 40 68 Q 60 52 80 62 Q 100 72 118 50" stroke="#ef4444" strokeWidth="2" fill="none" strokeLinecap="round" strokeDasharray="5,3"/>
+    <circle cx="30" cy="28" r="18" fill="none" stroke="#4b5563" strokeWidth="5" transform="rotate(45,30,28)"/>
+    <circle cx="30" cy="28" r="6" fill="#374151" stroke="#4b5563" strokeWidth="3"/>
+    <text x="30" y="12" textAnchor="middle" fill="#ef4444" fontSize="9">猛打↺</text>
+    <text x="104" y="22" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">猛打方向盤</text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">車尾甩出，極易翻覆</text>
+  </svg>
+);
+
+// == Heavy Rain / Fog ==
+const DA_HF_A = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#1e293b"/>
+    <rect x="0" y="54" width="160" height="38" fill="#374151"/>
+    <rect width="160" height="100" fill="#94a3b8" opacity="0.28" className="anim-fog"/>
+    <line x1="0" y1="64" x2="38" y2="64" stroke="#f59e0b" strokeWidth="2.5" opacity="0.7"/>
+    <line x1="0" y1="74" x2="46" y2="74" stroke="#f59e0b" strokeWidth="2" opacity="0.5"/>
+    <line x1="0" y1="84" x2="28" y2="84" stroke="#f59e0b" strokeWidth="1.5" opacity="0.4"/>
+    <g transform="translate(104,72)">
+      <rect x="-28" y="-16" width="56" height="26" fill="#065f46" rx="3"/>
+      <rect x="-20" y="-26" width="40" height="14" fill="#047857" rx="2"/>
+      <circle cx="-24" cy="-14" r="4" fill="#fef9c3" opacity="0.9"/>
+      <circle cx="24" cy="-14" r="4" fill="#fef9c3" opacity="0.9"/>
+    </g>
+    <text x="30" y="28" textAnchor="middle" fill="#ef4444" fontSize="18" fontWeight="900">100</text>
+    <text x="30" y="42" textAnchor="middle" fill="#ef4444" fontSize="9">km/h</text>
+    <text x="104" y="20" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="800">霧中仍高速行駛</text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">完全沒有反應時間</text>
+  </svg>
+);
+const DA_HF_B = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#1e293b"/>
+    <rect x="0" y="54" width="160" height="38" fill="#374151"/>
+    <rect width="160" height="100" fill="#94a3b8" opacity="0.18" className="anim-fog"/>
+    <g transform="translate(26,72)">
+      <rect x="-14" y="-10" width="28" height="18" fill="#1d4ed8" rx="2"/>
+      <circle cx="-11" cy="8" r="2.5" fill="#ef4444"/>
+      <circle cx="11" cy="8" r="2.5" fill="#ef4444"/>
+    </g>
+    <line x1="42" y1="72" x2="90" y2="72" stroke="#4ade80" strokeWidth="1.5" strokeDasharray="5,4"/>
+    <text x="66" y="66" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">大車距</text>
+    <g transform="translate(120,72)">
+      <rect x="-24" y="-16" width="48" height="28" fill="#065f46" rx="3"/>
+      <rect x="-18" y="-26" width="36" height="14" fill="#047857" rx="2"/>
+      <circle cx="-20" cy="11" r="4.5" fill="#fbbf24" opacity="0.9"/>
+      <circle cx="20" cy="11" r="4.5" fill="#fbbf24" opacity="0.9"/>
+    </g>
+    <text x="28" y="26" textAnchor="middle" fill="#4ade80" fontSize="18" fontWeight="900">40</text>
+    <text x="28" y="40" textAnchor="middle" fill="#4ade80" fontSize="8">km/h ↓</text>
+    <circle cx="142" cy="18" r="11" fill="#15803d"/>
+    <text x="142" y="22" textAnchor="middle" fill="white" fontSize="12" fontWeight="900">✓</text>
+    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">霧燈＋降速＋大車距</text>
+  </svg>
+);
+const DA_HF_C = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#1e293b"/>
+    <rect x="0" y="54" width="160" height="38" fill="#374151"/>
+    <g transform="translate(106,74)">
+      <rect x="-26" y="-16" width="52" height="28" fill="#065f46" rx="3"/>
+      <rect x="-20" y="-26" width="40" height="14" fill="#047857" rx="2"/>
+      <circle cx="-22" cy="-14" r="5" fill="#fef9c3" opacity="1"/>
+      <circle cx="22" cy="-14" r="5" fill="#fef9c3" opacity="1"/>
+    </g>
+    <path d="M 80 58 L 18 42 L 18 76 Z" fill="#fef9c3" opacity="0.18" className="anim-fog"/>
+    <path d="M 80 58 L 10 30 L 10 86 Z" fill="#fef9c3" opacity="0.1" className="anim-fog"/>
+    <rect x="6" y="30" width="58" height="50" fill="#e2e8f0" opacity="0.25" className="anim-fog"/>
+    <text x="36" y="62" textAnchor="middle" fill="#ef4444" fontSize="26" fontWeight="900">✗</text>
+    <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="800">遠光燈被霧氣反射</text>
+    <text x="80" y="32" textAnchor="middle" fill="#fbbf24" fontSize="8">形成「光牆」更看不清</text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">能見度反而更差</text>
+  </svg>
+);
+
+// == Rear-End Collision ==
+const DA_RE_A = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    <rect x="0" y="50" width="160" height="42" fill="#1e293b"/>
+    <line x1="0" y1="71" x2="160" y2="71" stroke="#334155" strokeWidth="1.5" strokeDasharray="10,8"/>
+    <g transform="translate(52,63)">
+      <rect x="-18" y="-12" width="36" height="20" fill="#1d4ed8" rx="2"/>
+      <rect x="-12" y="-19" width="24" height="11" fill="#1e40af" rx="2"/>
+    </g>
+    <g transform="translate(104,63)">
+      <rect x="-18" y="-12" width="36" height="20" fill="#dc2626" rx="2"/>
+      <rect x="-12" y="-19" width="24" height="11" fill="#b91c1c" rx="2"/>
+    </g>
+    <circle cx="72" cy="43" r="5" fill="#fbbf24"/>
+    <rect x="69" y="48" width="6" height="13" fill="#1d4ed8" rx="1"/>
+    <circle cx="88" cy="43" r="5" fill="#fbbf24"/>
+    <rect x="85" y="48" width="6" height="13" fill="#dc2626" rx="1"/>
+    <line x1="74" y1="51" x2="86" y2="48" stroke="#1d4ed8" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="86" y1="51" x2="74" y2="48" stroke="#dc2626" strokeWidth="2" strokeLinecap="round"/>
+    <g style={{animation:'stepSlideR 1.5s ease-in-out infinite'}}>
+      <rect x="4" y="58" width="28" height="16" fill="#475569" rx="2"/>
+      <circle cx="28" cy="60" r="3" fill="#fef9c3" opacity="0.8"/>
+      <circle cx="28" cy="70" r="3" fill="#fef9c3" opacity="0.8"/>
+    </g>
+    <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="800">車道上爭執</text>
+    <text x="80" y="30" textAnchor="middle" fill="#f87171" fontSize="8">後車無法煞停</text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">阻塞交通，可能再次被撞</text>
+  </svg>
+);
+const DA_RE_B = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    <rect x="0" y="48" width="160" height="44" fill="#1e293b"/>
+    <line x1="0" y1="70" x2="160" y2="70" stroke="#334155" strokeWidth="1.5" strokeDasharray="10,8"/>
+    <rect x="124" y="48" width="36" height="44" fill="#252f3f"/>
+    <line x1="124" y1="48" x2="124" y2="92" stroke="#fbbf24" strokeWidth="1.5"/>
+    <g transform="translate(138,67)">
+      <rect x="-16" y="-14" width="32" height="22" fill="#1d4ed8" rx="3"/>
+      <rect x="-10" y="-22" width="20" height="12" fill="#1e40af" rx="2"/>
+      <circle cx="-13" cy="-12" r="4" fill="#f59e0b" className="anim-hazard"/>
+      <circle cx="13" cy="-12" r="4" fill="#f59e0b" className="anim-hazard"/>
+      <circle cx="-13" cy="7" r="4" fill="#f59e0b" className="anim-hazard"/>
+      <circle cx="13" cy="7" r="4" fill="#f59e0b" className="anim-hazard"/>
+    </g>
+    <path d="M 74 68 Q 104 62 120 65" stroke="#4ade80" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+    <polygon points="118,60 122,65 117,69" fill="#4ade80"/>
+    <circle cx="22" cy="22" r="13" fill="#15803d"/>
+    <text x="22" y="26" textAnchor="middle" fill="white" fontSize="14" fontWeight="900">✓</text>
+    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">先移車，確保現場安全</text>
+  </svg>
+);
+const DA_RE_C = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    <rect x="0" y="48" width="160" height="44" fill="#1e293b"/>
+    <line x1="0" y1="70" x2="160" y2="70" stroke="#334155" strokeWidth="1.5" strokeDasharray="10,8"/>
+    <g transform="translate(118,65)">
+      <rect x="-24" y="-14" width="48" height="26" fill="#1d4ed8" rx="3"/>
+      <rect x="-18" y="-22" width="36" height="14" fill="#1e40af" rx="2"/>
+      <circle cx="-21" cy="11" r="4" fill="#ef4444"/>
+      <circle cx="21" cy="11" r="4" fill="#ef4444"/>
+    </g>
+    <g transform="translate(78,65)">
+      <rect x="-18" y="-12" width="36" height="22" fill="#7c3aed" rx="2"/>
+      <rect x="-12" y="-20" width="24" height="12" fill="#6d28d9" rx="2"/>
+    </g>
+    <g transform="translate(44,65)">
+      <rect x="-16" y="-11" width="32" height="20" fill="#dc2626" rx="2"/>
+      <rect x="-10" y="-18" width="20" height="11" fill="#b91c1c" rx="2"/>
+    </g>
+    <g transform="translate(14,65)">
+      <rect x="-12" y="-9" width="24" height="16" fill="#475569" rx="2"/>
+    </g>
+    <text x="118" y="26" textAnchor="middle" fontSize="18">🚔</text>
+    <text x="118" y="40" textAnchor="middle" fill="#94a3b8" fontSize="8">等警察…</text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">阻塞車流，連環追撞風險</text>
+  </svg>
+);
+
+// == Brake Failure ==
+const DA_BF_A = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    <rect x="48" y="54" width="64" height="30" fill="#374151" rx="5" stroke="#475569" strokeWidth="2"/>
+    <text x="80" y="73" textAnchor="middle" fill="#94a3b8" fontSize="12" fontWeight="700">BRAKE</text>
+    <g style={{animation:'stepBrakePump 0.7s ease-in-out infinite', transformOrigin:'80px 54px'}}>
+      <text x="80" y="44" textAnchor="middle" fontSize="24">🦶</text>
+    </g>
+    <text x="130" y="46" fontSize="20">❌</text>
+    <path d="M 114 68 L 128 58" stroke="#ef4444" strokeWidth="2" fill="none"/>
+    <text x="80" y="20" textAnchor="middle" fill="#fbbf24" fontSize="10" fontWeight="800">只靠踩煞車不夠</text>
+    <text x="80" y="34" textAnchor="middle" fill="#94a3b8" fontSize="8">油壓失效時效果有限</text>
+    <text x="80" y="97" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">需配合降檔才完整</text>
+  </svg>
+);
+const DA_BF_B = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    <rect x="0" y="52" width="160" height="40" fill="#1e293b"/>
+    <path d="M 18 70 Q 58 56 96 72 Q 122 82 148 66" stroke="#ef4444" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeDasharray="5,3"/>
+    <g transform="translate(112,67) rotate(28)">
+      <rect x="-24" y="-14" width="48" height="26" fill="#dc2626" rx="3"/>
+      <rect x="-18" y="-24" width="36" height="14" fill="#b91c1c" rx="2"/>
+    </g>
+    <rect x="30" y="56" width="10" height="8" fill="#475569" rx="4"/>
+    <line x1="35" y1="56" x2="35" y2="22" stroke="#4b5563" strokeWidth="6" strokeLinecap="round"/>
+    <ellipse cx="35" cy="22" rx="10" ry="7" fill="#334155" stroke="#6b7280" strokeWidth="2"/>
+    <g style={{animation:'stepHandbrakePull 1.5s ease-in-out infinite', transformOrigin:'35px 22px'}}>
+      <text x="35" y="20" textAnchor="middle" fontSize="16">🤚</text>
+    </g>
+    <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">猛拉手煞車</text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">後輪鎖死，車尾猛烈甩出</text>
+  </svg>
+);
+const DA_BF_C = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    <rect x="6" y="24" width="44" height="58" fill="#1e293b" rx="8" stroke="#334155" strokeWidth="1"/>
+    <rect x="16" y="50" width="24" height="16" fill="#374151" rx="3"/>
+    <text x="28" y="61" textAnchor="middle" fill="#64748b" fontSize="6" fontWeight="700">BRAKE</text>
+    <g style={{animation:'stepBrakePump 0.85s ease-in-out infinite', transformOrigin:'28px 50px'}}>
+      <text x="28" y="44" textAnchor="middle" fontSize="15">🦶</text>
+    </g>
+    <text x="28" y="76" textAnchor="middle" fill="#4ade80" fontSize="7" fontWeight="700">點踩</text>
+    <rect x="58" y="24" width="44" height="58" fill="#1e293b" rx="8" stroke="#334155" strokeWidth="1"/>
+    <line x1="71" y1="38" x2="71" y2="66" stroke="#334155" strokeWidth="1.5"/>
+    <line x1="89" y1="38" x2="89" y2="66" stroke="#334155" strokeWidth="1.5"/>
+    <line x1="71" y1="52" x2="89" y2="52" stroke="#334155" strokeWidth="1.5"/>
+    {[['3',71,42],['1',71,62],['2',89,42],['N',89,62]].map(([g,x,y]) => (
+      <g key={`da${g}${x}`}>
+        <circle cx={x} cy={y} r="7" fill="#1e293b" stroke="#334155" strokeWidth="1"/>
+        <text x={x} y={y+3} textAnchor="middle" fill="#475569" fontSize="7" fontWeight="700">{g}</text>
+      </g>
+    ))}
+    <g style={{animation:'stepGearDrop 2s ease-in-out infinite'}}>
+      <circle cx="71" cy="62" r="8" fill="#f59e0b"/>
+      <text x="71" y="65" textAnchor="middle" fill="#000" fontSize="7" fontWeight="900">1</text>
+    </g>
+    <text x="80" y="76" textAnchor="middle" fill="#f59e0b" fontSize="7" fontWeight="700">降檔</text>
+    <rect x="110" y="24" width="44" height="58" fill="#1e293b" rx="8" stroke="#334155" strokeWidth="1"/>
+    <circle cx="132" cy="46" r="16" fill="#15803d" opacity="0.85"/>
+    <text x="132" y="51" textAnchor="middle" fill="white" fontSize="18" fontWeight="900">P</text>
+    <text x="132" y="74" textAnchor="middle" fill="#4ade80" fontSize="7" fontWeight="700">安全點</text>
+    <text x="53" y="54" textAnchor="middle" fill="#475569" fontSize="12">→</text>
+    <text x="107" y="54" textAnchor="middle" fill="#475569" fontSize="12">→</text>
+    <circle cx="80" cy="14" r="9" fill="#15803d"/>
+    <text x="80" y="18" textAnchor="middle" fill="white" fontSize="10" fontWeight="900">✓</text>
+    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">三步驟同時進行</text>
+  </svg>
+);
+
+// == Narrow Road DA options ==
+const DA_NR_A = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    {/* Road */}
+    <rect x="45" y="30" width="70" height="62" fill="#1e293b"/>
+    <line x1="80" y1="30" x2="80" y2="92" stroke="#334155" strokeWidth="1.5" strokeDasharray="8,6"/>
+    <rect x="25" y="30" width="20" height="62" fill="#14532d" opacity="0.8"/>
+    <rect x="115" y="30" width="20" height="62" fill="#14532d" opacity="0.8"/>
+    {/* Car veering sharply right, hitting wall */}
+    <g style={{animation:'stepSlideR 0.7s ease-in-out infinite'}}>
+      <rect x="80" y="60" width="28" height="20" fill="#dc2626" rx="3"/>
+      <rect x="84" y="52" width="20" height="12" fill="#b91c1c" rx="2"/>
+    </g>
+    {/* Impact at right wall */}
+    <g transform="translate(113,70)" className="anim-impact">
+      <circle r="7" fill="#f59e0b" opacity="0.8"/>
+      <line x1="-9" y1="-9" x2="9" y2="9" stroke="#fcd34d" strokeWidth="2.5"/>
+      <line x1="9" y1="-9" x2="-9" y2="9" stroke="#fcd34d" strokeWidth="2.5"/>
+    </g>
+    <text x="80" y="20" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">猛打方向盤閃避</text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">撞上山壁，失控翻車</text>
+  </svg>
+);
+const DA_NR_B = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    {/* Road */}
+    <rect x="40" y="30" width="80" height="62" fill="#1e293b"/>
+    <line x1="80" y1="30" x2="80" y2="92" stroke="#334155" strokeWidth="1.5" strokeDasharray="8,6"/>
+    <rect x="20" y="30" width="20" height="62" fill="#14532d" opacity="0.8"/>
+    <rect x="120" y="30" width="20" height="62" fill="#14532d" opacity="0.8"/>
+    {/* Two cars facing each other, stopped */}
+    <g transform="translate(65,70)">
+      <rect x="-14" y="-12" width="28" height="18" fill="#dc2626" rx="3"/>
+      <rect x="-8" y="-20" width="16" height="11" fill="#b91c1c" rx="2"/>
+    </g>
+    <g transform="translate(95,42) rotate(180)">
+      <rect x="-12" y="-10" width="24" height="16" fill="#2563eb" rx="3"/>
+      <rect x="-7" y="-16" width="14" height="9" fill="#1d4ed8" rx="2"/>
+    </g>
+    {/* Horn symbol */}
+    <text x="80" y="58" textAnchor="middle" fontSize="12">📯</text>
+    <circle cx="80" cy="56" r="10" fill="none" stroke="#fbbf24" strokeWidth="1.5" style={{animation:'stepRingWave 1.2s ease-out infinite'}}/>
+    {/* Standoff */}
+    <text x="80" y="20" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="800">按喇叭等對方讓路</text>
+    <text x="80" y="97" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="700">兩車對峙，危機未解除</text>
+  </svg>
+);
+const DA_NR_C = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a"/>
+    {/* Road with wider pocket */}
+    <rect x="38" y="30" width="84" height="62" fill="#1e293b"/>
+    <line x1="80" y1="30" x2="80" y2="92" stroke="#334155" strokeWidth="1.5" strokeDasharray="8,6"/>
+    <rect x="18" y="30" width="20" height="62" fill="#14532d" opacity="0.8"/>
+    <rect x="122" y="30" width="20" height="62" fill="#14532d" opacity="0.8"/>
+    {/* Wider pocket behind player car */}
+    <rect x="18" y="65" width="104" height="27" fill="#374151" rx="3" opacity="0.6"/>
+    <text x="70" y="80" textAnchor="middle" fill="#4ade80" fontSize="6" fontWeight="700">較寬處</text>
+    {/* Player car backed into wide spot */}
+    <g transform="translate(66,76)">
+      <rect x="-14" y="-12" width="28" height="18" fill="#dc2626" rx="3"/>
+      <rect x="-8" y="-20" width="16" height="11" fill="#b91c1c" rx="2"/>
+    </g>
+    {/* Oncoming car passing */}
+    <g style={{animation:'stepSlideL 2.2s ease-in-out infinite'}}>
+      <g transform="translate(100,50) rotate(180)">
+        <rect x="-12" y="-10" width="24" height="16" fill="#2563eb" rx="3"/>
+        <rect x="-7" y="-16" width="14" height="9" fill="#1d4ed8" rx="2"/>
+      </g>
+    </g>
+    {/* Green check */}
+    <circle cx="22" cy="20" r="12" fill="#15803d" opacity="0.9"/>
+    <text x="22" y="25" textAnchor="middle" fill="white" fontSize="14" fontWeight="900">✓</text>
+    <text x="80" y="20" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="800">減速靠右，倒車讓路</text>
+    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">兩車安全錯車通過</text>
+  </svg>
+);
+
+const DA_OPTS = {
+  'highway-breakdown':  [DA_HB_A, DA_HB_B, DA_HB_C],
+  'tire-blowout':       [DA_TB_A, DA_TB_B, DA_TB_C],
+  'heavy-rain-fog':     [DA_HF_A, DA_HF_B, DA_HF_C],
+  'rear-end-collision': [DA_RE_A, DA_RE_B, DA_RE_C],
+  'brake-failure':      [DA_BF_A, DA_BF_B, DA_BF_C],
+  'narrow-road':        [DA_NR_A, DA_NR_B, DA_NR_C],
+};
+
+// ─────────────────────────────────────────
+// TYPEWRITER COMPONENT
+// ─────────────────────────────────────────
+const TypewriterText = ({ text, speed, skip, onDone }) => {
+  const spd = speed || 26;
+  const [count, setCount] = useState(0);
+
+  useEffect(() => { setCount(0); }, [text]);
+
+  useEffect(() => {
+    if (skip) { setCount(text.length); return; }
+    if (count >= text.length) { if (onDone) onDone(); return; }
+    const t = setTimeout(() => setCount(function(c){ return c + 1; }), spd);
+    return function(){ clearTimeout(t); };
+  }, [count, skip, text]);
+
+  const shown = text.slice(0, count);
+  const complete = count >= text.length;
+  const parts = shown.split('\n\n');
+
+  return (
+    <span>
+      {parts.map(function(para, i) {
+        return (
+          <React.Fragment key={i}>
+            {i > 0 && <div style={{marginBottom:10}}/>}
+            <span>{para}</span>
+          </React.Fragment>
+        );
+      })}
+      {!complete && (
+        <span style={{
+          display:'inline-block', marginLeft:1, color:'#f59e0b', fontWeight:400,
+          animation:'twBlink 0.8s ease-in-out infinite'
+        }}>|</span>
+      )}
+    </span>
+  );
+};
+
+// ─────────────────────────────────────────
+// UI COMPONENTS
+// ─────────────────────────────────────────
+const PHASES = ['intro','decision','consequence','learning','quiz','simulation','result'];
+const PHASE_LABELS = ['情境','決策','後果','教學','測驗','模擬','結果'];
+
+const PhaseBar = ({ phase }) => {
+  const idx = PHASES.indexOf(phase);
+  return (
+    <div className="flex items-center justify-center gap-1 mb-5">
+      {PHASE_LABELS.map((label, i) => (
+        <React.Fragment key={i}>
+          <div className="flex items-center gap-1">
+            <div style={{
+              width:24, height:24, borderRadius:'50%', display:'flex',
+              alignItems:'center', justifyContent:'center',
+              fontSize:11, fontWeight:700,
+              background: i < idx ? '#22c55e' : i === idx ? '#f59e0b' : '#334155',
+              color: i <= idx ? '#000' : '#64748b',
+              transition: 'all 0.3s ease',
+            }}>
+              {i < idx ? '✓' : i + 1}
+            </div>
+            <span style={{fontSize:10, display: window.innerWidth > 400 ? 'block' : 'none',
+              color: i <= idx ? '#e2e8f0' : '#475569'}}>
+              {label}
+            </span>
+          </div>
+          {i < PHASE_LABELS.length - 1 && (
+            <div style={{height:2, width:12, background: i < idx ? '#22c55e' : '#334155', transition:'background 0.3s'}}/>
+          )}
+        </React.Fragment>
+      ))}
+    </div>
+  );
+};
+
+// ── Home Screen ──────────────────────────
+const HomeScreen = ({ onSelect, completed }) => (
+  <div style={{minHeight:'100vh', padding:20, background:'linear-gradient(160deg,#0f172a,#1e293b)'}}>
+    <div style={{maxWidth:600, margin:'0 auto'}}>
+      <div className="anim-fade" style={{textAlign:'center', marginBottom:32}}>
+        <div style={{fontSize:52, marginBottom:8}}>🚗</div>
+        <h1 style={{fontSize:26, fontWeight:900, color:'white', margin:'0 0 8px'}}>台灣駕駛緊急應變訓練</h1>
+        <p style={{fontSize:13, color:'#64748b', margin:0}}>學習正確應對突發狀況，成為更安全的駕駛人</p>
+      </div>
+      <div style={{display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:12, marginBottom:24}}>
+        {[
+          {val: SCENARIOS.length, label:'情境數', color:'#fbbf24'},
+          {val: completed.length, label:'已完成', color:'#4ade80'},
+          {val: completed.length > 0 ? Math.round(completed.length/SCENARIOS.length*100)+'%' : '0%', label:'進度', color:'#60a5fa'},
+        ].map((s, i) => (
+          <div key={i} style={{background:'#1e293b', borderRadius:16, padding:'14px 8px', textAlign:'center', border:'1px solid #334155'}}>
+            <div style={{fontSize:26, fontWeight:900, color:s.color}}>{s.val}</div>
+            <div style={{fontSize:11, color:'#64748b', marginTop:4}}>{s.label}</div>
+          </div>
+        ))}
+      </div>
+      <div style={{display:'flex', flexDirection:'column', gap:10}}>
+        {SCENARIOS.map(sc => {
+          const SceneComp = SCENE_COMPONENTS[sc.id];
+          const done = completed.includes(sc.id);
+          return (
+            <button key={sc.id} onClick={() => onSelect(sc)} style={{
+              display:'flex', alignItems:'center', gap:14, padding:14,
+              background:'#1e293b', borderRadius:20,
+              border: done ? '1px solid #16a34a' : '1px solid #334155',
+              cursor:'pointer', textAlign:'left', transition:'border-color 0.2s, box-shadow 0.2s',
+              width:'100%',
+            }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = sc.accent}
+            onMouseLeave={e => e.currentTarget.style.borderColor = done ? '#16a34a' : '#334155'}
+            >
+              <div style={{width:80, height:56, borderRadius:12, overflow:'hidden', flexShrink:0, background:'#0f172a'}}>
+                {SceneComp && <SceneComp />}
+              </div>
+              <div style={{flex:1, minWidth:0}}>
+                <div style={{display:'flex', alignItems:'center', gap:8, marginBottom:3}}>
+                  <span style={{color:'white', fontWeight:700, fontSize:14}}>{sc.title}</span>
+                  {done && <span style={{color:'#4ade80', fontSize:11}}>✓ 完成</span>}
+                </div>
+                <div style={{color:'#64748b', fontSize:11, marginBottom:4}}>{sc.subtitle}</div>
+                <div style={{fontSize:11, fontWeight:600, color:sc.difficultyColor}}>難度：{sc.difficulty}</div>
+              </div>
+              <div style={{color:'#475569', fontSize:18}}>›</div>
+            </button>
+          );
+        })}
+      </div>
+      <p style={{textAlign:'center', color:'#334155', fontSize:10, marginTop:24}}>
+        ⚠️ 本訓練內容僅供學習參考，實際緊急情況請依現場狀況判斷
+      </p>
+    </div>
+  </div>
+);
+
+// ── Intro Phase (cinematic) ───────────────
+const IntroPhase = ({ scenario, onNext }) => {
+  const SceneComp = SCENE_COMPONENTS[scenario.id];
+  const { story } = scenario;
+  const [skip, setSkip] = useState(false);
+  const [textDone, setTextDone] = useState(false);
+
+  useEffect(function(){ setSkip(false); setTextDone(false); }, [scenario.id]);
+
+  return (
+    <div className="anim-fade">
+      {/* Larger scene animation */}
+      <div style={{borderRadius:20, overflow:'hidden', marginBottom:14, height:220,
+        border:'1px solid #334155', position:'relative', background:'#0f172a'}}>
+        {SceneComp && <SceneComp />}
+        {/* Time / Location pills overlaid */}
+        <div style={{position:'absolute', top:10, left:10, display:'flex', flexWrap:'wrap', gap:6}}>
+          <div style={{
+            padding:'4px 10px', borderRadius:20, fontSize:11, fontWeight:600,
+            background:'rgba(0,0,0,0.72)', color:'#93c5fd',
+            border:'1px solid rgba(96,165,250,0.3)', backdropFilter:'blur(4px)',
+          }}>
+            🕙 {story.time}
+          </div>
+          <div style={{
+            padding:'4px 10px', borderRadius:20, fontSize:11, fontWeight:600,
+            background:'rgba(0,0,0,0.72)', color:'#94a3b8',
+            border:'1px solid rgba(148,163,184,0.2)', backdropFilter:'blur(4px)',
+          }}>
+            📍 {story.location}
+          </div>
+        </div>
+      </div>
+
+      {/* Character + narrative */}
+      <div style={{background:'#1e293b', borderRadius:20, padding:18, marginBottom:14, border:'1px solid #334155'}}>
+        {/* Character header */}
+        <div style={{display:'flex', alignItems:'center', gap:12, marginBottom:14,
+          paddingBottom:12, borderBottom:'1px solid #2d3748'}}>
+          <div style={{
+            width:52, height:52, borderRadius:'50%', background:'#0f172a',
+            display:'flex', alignItems:'center', justifyContent:'center',
+            fontSize:30, border:'2px solid #334155', flexShrink:0,
+          }}>
+            {story.character.avatar}
+          </div>
+          <div style={{flex:1}}>
+            <div style={{color:'white', fontWeight:800, fontSize:16, marginBottom:2}}>{story.character.name}</div>
+            <div style={{color:'#64748b', fontSize:12}}>{story.character.age} 歲・{story.character.role}</div>
+          </div>
+          <div style={{
+            padding:'6px 12px', borderRadius:12, fontSize:10, fontWeight:700,
+            background:'rgba(245,158,11,0.1)', color:'#fbbf24',
+            border:'1px solid rgba(245,158,11,0.25)',
+          }}>
+            {scenario.difficulty}
+          </div>
+        </div>
+
+        {/* Typewriter narrative */}
+        <div style={{color:'#cbd5e1', fontSize:13, lineHeight:1.9, minHeight:72}}>
+          <TypewriterText
+            text={story.narrative}
+            speed={24}
+            skip={skip}
+            onDone={function(){ setTextDone(true); }}
+          />
+        </div>
+
+        {/* Skip button */}
+        {!textDone && !skip && (
+          <button
+            onClick={function(){ setSkip(true); setTextDone(true); }}
+            style={{
+              marginTop:12, padding:'4px 12px', fontSize:11, color:'#475569',
+              background:'transparent', border:'1px solid #334155', borderRadius:8,
+              cursor:'pointer', transition:'color 0.15s, border-color 0.15s',
+            }}
+            onMouseEnter={function(e){ e.currentTarget.style.color='#94a3b8'; e.currentTarget.style.borderColor='#475569'; }}
+            onMouseLeave={function(e){ e.currentTarget.style.color='#475569'; e.currentTarget.style.borderColor='#334155'; }}
+          >
+            跳過 ›
+          </button>
+        )}
+      </div>
+
+      <button onClick={onNext} style={{
+        width:'100%', padding:'16px', borderRadius:20, fontWeight:800, fontSize:16,
+        color:'#000', border:'none', cursor:'pointer',
+        background:'linear-gradient(135deg,#f59e0b,#d97706)',
+        transition:'opacity 0.15s',
+      }}>
+        進入情境 →
+      </button>
+    </div>
+  );
+};
+
+// ── Decision Phase (with DA animations) ──
+const DecisionPhase = ({ scenario, onDecide }) => {
+  const daOpts = DA_OPTS[scenario.id] || [];
+  const optLabels = ['A', 'B', 'C', 'D'];
+
+  return (
+    <div className="anim-fade">
+      <div style={{background:'#1e293b', borderRadius:20, padding:18, marginBottom:14, border:'1px solid #334155'}}>
+        <div style={{color:'#f59e0b', fontSize:12, fontWeight:700, marginBottom:8}}>🤔 緊急決策</div>
+        <p style={{color:'white', fontWeight:700, fontSize:15, lineHeight:1.65, margin:0}}>
+          {scenario.decision.question}
+        </p>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', gap:10}}>
+        {scenario.decision.options.map(function(opt, idx) {
+          const DA = daOpts[idx];
+          return (
+            <button key={opt.id} onClick={function(){ onDecide(opt); }} style={{
+              display:'flex', flexDirection:'column', padding:0,
+              background:'#1e293b', borderRadius:18,
+              border:'1px solid #334155', cursor:'pointer', textAlign:'left',
+              overflow:'hidden', width:'100%',
+              transition:'border-color 0.15s, transform 0.12s',
+            }}
+            onMouseEnter={function(e){ e.currentTarget.style.borderColor='#f59e0b'; e.currentTarget.style.transform='translateY(-2px)'; }}
+            onMouseLeave={function(e){ e.currentTarget.style.borderColor='#334155'; e.currentTarget.style.transform='translateY(0)'; }}
+            >
+              {DA && (
+                <div style={{height:118, background:'#0f172a', borderBottom:'1px solid #1e293b', pointerEvents:'none', flexShrink:0}}>
+                  <DA />
+                </div>
+              )}
+              <div style={{display:'flex', alignItems:'center', gap:12, padding:'12px 16px'}}>
+                <div style={{
+                  width:28, height:28, borderRadius:'50%', background:'#334155',
+                  flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center',
+                  fontSize:12, fontWeight:800, color:'#94a3b8',
+                }}>
+                  {optLabels[idx]}
+                </div>
+                <span style={{color:'#e2e8f0', fontSize:13, lineHeight:1.65}}>{opt.text}</span>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+// ── Consequence Phase ─────────────────────
+const ConsequencePhase = ({ scenario, choice, onNext }) => {
+  const ok = choice.correct === true;
+  return (
+    <div className="anim-fade">
+      <div style={{
+        borderRadius:20, padding:20, marginBottom:16,
+        background: ok ? 'rgba(21,128,61,0.2)' : 'rgba(185,28,28,0.2)',
+        border: `1px solid ${ok ? '#16a34a' : '#dc2626'}`,
+      }}>
+        <div style={{fontWeight:800, fontSize:17, marginBottom:10, color: ok ? '#4ade80' : '#f87171'}}>
+          {ok ? '✅ 判斷正確！' : '❌ 這個選擇很危險'}
+        </div>
+        <p style={{color:'#cbd5e1', lineHeight:1.7, fontSize:13, margin:0}}>
+          {ok
+            ? scenario.decision.correctExplanation
+            : (scenario.decision.wrongExplanation[choice.id] || '這個選擇可能造成危險。')
+          }
+        </p>
+      </div>
+      {!ok && (
+        <div style={{background:'rgba(146,64,14,0.2)', borderRadius:20, padding:16, marginBottom:16, border:'1px solid #92400e'}}>
+          <div style={{color:'#fbbf24', fontWeight:700, fontSize:12, marginBottom:8}}>💡 正確做法</div>
+          <p style={{color:'#d1d5db', fontSize:13, lineHeight:1.7, margin:0}}>{scenario.decision.correctExplanation}</p>
+        </div>
+      )}
+      <button onClick={onNext} style={{
+        width:'100%', padding:'16px', borderRadius:20, fontWeight:800, fontSize:16,
+        color:'#000', border:'none', cursor:'pointer',
+        background:'linear-gradient(135deg,#f59e0b,#d97706)',
+      }}>
+        學習正確流程 →
+      </button>
+    </div>
+  );
+};
+
+// ── Learning Phase ────────────────────────
+const LearningPhase = ({ scenario, onNext }) => {
+  const [current, setCurrent] = useState(0);
+  const [revealed, setRevealed] = useState(new Set([0]));
+
+  const advance = () => {
+    if (current < scenario.steps.length - 1) {
+      const next = current + 1;
+      setCurrent(next);
+      setRevealed(prev => new Set([...prev, next]));
+    }
+  };
+
+  const done = current === scenario.steps.length - 1;
+
+  return (
+    <div className="anim-fade">
+      <div style={{background:'#1e293b', borderRadius:20, padding:16, marginBottom:14, border:'1px solid #334155'}}>
+        <div style={{color:'#f59e0b', fontSize:12, fontWeight:700, marginBottom:4}}>📋 正確應對流程</div>
+        <div style={{color:'#475569', fontSize:11}}>
+          步驟 {Math.min(current+1, scenario.steps.length)} ／ {scenario.steps.length}
+        </div>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', gap:8, marginBottom:14}}>
+        {scenario.steps.map((step, i) => {
+          const isRevealed = revealed.has(i);
+          const isCurrent = i === current;
+          return (
+            <div key={i} style={{
+              borderRadius:18, padding:14, border:`1px solid ${isCurrent ? '#f59e0b' : isRevealed ? '#334155' : '#1e293b'}`,
+              background: isCurrent ? 'rgba(245,158,11,0.12)' : isRevealed ? '#1e293b' : 'rgba(30,41,59,0.4)',
+              opacity: isRevealed ? 1 : 0.25, transition:'all 0.35s ease',
+            }}>
+              <div style={{display:'flex', alignItems:'flex-start', gap:12}}>
+                <div style={{
+                  width:32, height:32, borderRadius:'50%', display:'flex',
+                  alignItems:'center', justifyContent:'center', flexShrink:0,
+                  fontSize:14, fontWeight:800,
+                  background: isRevealed ? '#f59e0b' : '#334155',
+                  color: isRevealed ? '#000' : '#64748b',
+                }}>
+                  {isRevealed ? step.icon : i+1}
+                </div>
+                <div style={{flex:1}}>
+                  <div style={{color:'white', fontWeight:700, fontSize:13, marginBottom:3}}>{step.title}</div>
+                  <div style={{color:'#94a3b8', fontSize:11, lineHeight:1.6}}>{step.desc}</div>
+                  {isCurrent && (function(){
+                    const StepAnim = (STEP_ANIMS[scenario.id] || [])[i];
+                    return StepAnim ? (
+                      <div className="anim-fade" style={{
+                        marginTop:12, height:165, borderRadius:12, overflow:'hidden',
+                        border:'1px solid rgba(245,158,11,0.3)', background:'#0f172a',
+                      }}>
+                        <StepAnim />
+                      </div>
+                    ) : null;
+                  })()}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      {!done ? (
+        <button onClick={advance} style={{
+          width:'100%', padding:'14px', borderRadius:20, fontWeight:800, fontSize:15,
+          color:'#000', border:'none', cursor:'pointer',
+          background:'linear-gradient(135deg,#f59e0b,#d97706)',
+        }}>
+          下一步 →
+        </button>
+      ) : (
+        <button onClick={onNext} style={{
+          width:'100%', padding:'16px', borderRadius:20, fontWeight:800, fontSize:16,
+          color:'#000', border:'none', cursor:'pointer',
+          background:'linear-gradient(135deg,#22c55e,#16a34a)',
+        }}>
+          開始測驗 →
+        </button>
+      )}
+    </div>
+  );
+};
+
+// ── Quiz Phase ────────────────────────────
+const QuizPhase = ({ scenario, onComplete }) => {
+  const [qIdx, setQIdx] = useState(0);
+  const [selected, setSelected] = useState(null);
+  const [answers, setAnswers] = useState([]);
+  const q = scenario.quiz[qIdx];
+
+  const pick = (i) => { if (selected === null) setSelected(i); };
+
+  const next = () => {
+    const newAnswers = [...answers, selected === q.correct];
+    if (qIdx < scenario.quiz.length - 1) {
+      setAnswers(newAnswers);
+      setQIdx(qIdx + 1);
+      setSelected(null);
+    } else {
+      onComplete(newAnswers.filter(Boolean).length, newAnswers.length);
+    }
+  };
+
+  const optionStyle = (i) => {
+    let bg = '#1e293b', border = '#334155', color = '#e2e8f0';
+    if (selected !== null) {
+      if (i === q.correct) { bg='rgba(21,128,61,0.25)'; border='#16a34a'; color='#bbf7d0'; }
+      else if (i === selected) { bg='rgba(185,28,28,0.25)'; border='#dc2626'; color='#fecaca'; }
+      else { bg='rgba(30,41,59,0.4)'; color='#475569'; }
+    }
+    return {bg, border, color};
+  };
+
+  const optLabel = (i, sel, correct) => {
+    if (sel === null) return String.fromCharCode(65+i);
+    if (i === correct) return '✓';
+    if (i === sel) return '✗';
+    return String.fromCharCode(65+i);
+  };
+
+  return (
+    <div className="anim-fade">
+      <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:16}}>
+        <span style={{color:'#64748b', fontSize:12}}>第 {qIdx+1} 題 ／ 共 {scenario.quiz.length} 題</span>
+        <div style={{display:'flex', gap:6}}>
+          {scenario.quiz.map((_, i) => (
+            <div key={i} style={{
+              width:28, height:6, borderRadius:3,
+              background: i < qIdx ? '#22c55e' : i === qIdx ? '#f59e0b' : '#334155',
+              transition:'background 0.3s',
+            }}/>
+          ))}
+        </div>
+      </div>
+      <div style={{background:'#1e293b', borderRadius:20, padding:18, marginBottom:14, border:'1px solid #334155'}}>
+        <div style={{color:'#f59e0b', fontSize:12, fontWeight:700, marginBottom:8}}>📝 測驗</div>
+        <p style={{color:'white', fontWeight:700, fontSize:14, lineHeight:1.65, margin:0}}>{q.question}</p>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', gap:8, marginBottom:14}}>
+        {q.options.map((opt, i) => {
+          const s = optionStyle(i);
+          return (
+            <button key={i} onClick={() => pick(i)} style={{
+              display:'flex', alignItems:'center', gap:12, padding:'12px 16px',
+              background:s.bg, borderRadius:16, border:`1px solid ${s.border}`,
+              cursor: selected === null ? 'pointer' : 'default', textAlign:'left',
+              transition:'all 0.15s', width:'100%',
+            }}>
+              <div style={{
+                width:28, height:28, borderRadius:'50%', display:'flex',
+                alignItems:'center', justifyContent:'center', flexShrink:0,
+                fontSize:12, fontWeight:800,
+                background: selected !== null && i === q.correct ? '#22c55e'
+                  : selected === i && selected !== q.correct ? '#dc2626' : '#334155',
+                color:'white',
+              }}>
+                {optLabel(i, selected, q.correct)}
+              </div>
+              <span style={{fontSize:13, color:s.color, lineHeight:1.5}}>{opt}</span>
+            </button>
+          );
+        })}
+      </div>
+      {selected !== null && (
+        <div className="anim-slide" style={{
+          borderRadius:16, padding:14, marginBottom:14, fontSize:12,
+          background: selected === q.correct ? 'rgba(21,128,61,0.15)' : '#1e293b',
+          border: `1px solid ${selected === q.correct ? '#16a34a' : '#334155'}`,
+          color:'#cbd5e1', lineHeight:1.7,
+        }}>
+          <strong style={{color: selected === q.correct ? '#4ade80' : '#fbbf24'}}>
+            {selected === q.correct ? '✅ 正確！' : '💡 解析：'}
+          </strong>{' '}{q.explanation}
+        </div>
+      )}
+      {selected !== null && (
+        <button onClick={next} className="anim-slide" style={{
+          width:'100%', padding:'16px', borderRadius:20, fontWeight:800, fontSize:16,
+          color:'#000', border:'none', cursor:'pointer',
+          background:'linear-gradient(135deg,#f59e0b,#d97706)',
+        }}>
+          {qIdx < scenario.quiz.length - 1 ? '下一題 →' : '查看結果 →'}
+        </button>
+      )}
+    </div>
+  );
+};
+
+// ─────────────────────────────────────────
+// SIMULATION PHASE COMPONENTS
+// ─────────────────────────────────────────
+
+// Windshield POV scene (SVG)
+const SimWindshield = ({ cockpit, foggy }) => {
+  const { hazardOn, onShoulder, trianglePlaced, fogOn } = cockpit;
+  var fogOpacity = foggy ? (fogOn ? 0.46 : 0.78) : 0;
+  return (
+    <svg viewBox="0 0 360 180" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="swSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#020817" />
+          <stop offset="100%" stopColor="#0d1b33" />
+        </linearGradient>
+        <linearGradient id="swRoad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#181818" />
+          <stop offset="100%" stopColor="#2a2a2a" />
+        </linearGradient>
+        {hazardOn && (
+          <radialGradient id="swHazGlow" cx="50%" cy="100%" r="70%">
+            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#f59e0b" stopOpacity="0" />
+          </radialGradient>
+        )}
+      </defs>
+
+      {/* Sky */}
+      <rect width="360" height="112" fill="url(#swSky)" />
+
+      {/* Stars */}
+      {[[18,12],[55,7],[108,20],[162,4],[205,16],[252,9],[304,24],[342,11],[78,32],[322,38],[140,28],[290,15]].map(function(pos, i) {
+        return <circle key={i} cx={pos[0]} cy={pos[1]} r={0.9} fill="white" opacity={0.6 + (i % 3) * 0.15} />;
+      })}
+
+      {/* Far city glow on horizon */}
+      <ellipse cx="180" cy="103" rx="130" ry="18" fill="#1e3a5f" opacity="0.4" />
+      <ellipse cx="180" cy="103" rx="60" ry="8" fill="#3b82f6" opacity="0.1" />
+
+      {/* Road polygon — shifts right when on shoulder */}
+      <polygon
+        points={onShoulder
+          ? '60,180 300,180 252,102 208,102'
+          : '0,180 360,180 235,102 125,102'}
+        fill="url(#swRoad)"
+      />
+
+      {/* Road shoulders */}
+      <polygon
+        points={onShoulder
+          ? '0,180 60,180 208,102 198,102'
+          : '0,180 125,102 115,102 0,175'}
+        fill="#12202e"
+      />
+      <polygon
+        points={onShoulder
+          ? '300,180 360,180 360,175 252,102 262,102'
+          : '360,180 235,102 245,102 360,175'}
+        fill="#12202e"
+      />
+
+      {/* Center lane dashes */}
+      {[0,1,2,3,4].map(function(i) {
+        var t = i / 4;
+        var cx = onShoulder ? 230 : 180;
+        var x = cx - t * (onShoulder ? -10 : 0);
+        var y = 102 + t * 78;
+        var w = 2.5 + t * 4;
+        var h = 7 + t * 14;
+        return <rect key={i} x={x - w/2} y={y} width={w} height={h} fill="white" opacity={0.65} rx={1} />;
+      })}
+
+      {/* Right edge yellow line */}
+      {[0,1,2,3,4].map(function(i) {
+        var t = i / 4;
+        var x = (onShoulder ? 248 : 210) - t * (onShoulder ? 60 : 74);
+        var y = 102 + t * 78;
+        var w = 1.5 + t * 3;
+        var h = 6 + t * 13;
+        return <rect key={i} x={x - w/2} y={y} width={w} height={h} fill="#fbbf24" opacity={0.8} rx={1} />;
+      })}
+
+      {/* Guard rail right */}
+      <line
+        x1={onShoulder ? 310 : 258} y1="102"
+        x2={onShoulder ? 360 : 340} y2="180"
+        stroke="#2d4a6e" strokeWidth="3"
+      />
+      {/* Guard rail posts */}
+      {[0,1,2].map(function(i) {
+        var t = i / 2;
+        var rx = (onShoulder ? 310 : 258) + t * (onShoulder ? 50 : 82);
+        var ry = 102 + t * 78;
+        return <line key={i} x1={rx} y1={ry - 4} x2={rx} y2={ry + 6} stroke="#3b6291" strokeWidth="2" />;
+      })}
+
+      {/* Distant car tail lights */}
+      <circle cx={onShoulder ? 235 : 185} cy="108" r="2.5" fill="#ef4444" opacity="0.9" />
+      <circle cx={onShoulder ? 244 : 194} cy="108" r="2.5" fill="#ef4444" opacity="0.9" />
+      <ellipse cx={onShoulder ? 239 : 189} cy="110" rx="6" ry="2" fill="#ef4444" opacity="0.15" />
+
+      {/* Left A-pillar dark fade */}
+      <rect x="0" y="0" width="32" height="180" fill="#020817" opacity="0.7" />
+      {/* Right A-pillar dark fade */}
+      <rect x="328" y="0" width="32" height="180" fill="#020817" opacity="0.7" />
+
+      {/* Hazard orange glow on windshield */}
+      {hazardOn && (
+        <rect width="360" height="180" fill="url(#swHazGlow)"
+          style={{animation:'hazard 0.75s ease-in-out infinite'}} />
+      )}
+
+      {/* Triangle warning visible ahead (after placed) */}
+      {trianglePlaced && (
+        <g style={{animation:'hazard 1.2s ease-in-out infinite'}}>
+          <polygon points="180,90 172,103 188,103" fill="none" stroke="#ef4444" strokeWidth="1.5" />
+          <text x="180" y="101" textAnchor="middle" fontSize="5" fill="#ef4444" fontWeight="bold">!</text>
+        </g>
+      )}
+
+      {/* "路肩" label when on shoulder */}
+      {onShoulder && (
+        <text x="316" y="168" textAnchor="middle" fontSize="9" fill="#22c55e" fontWeight="bold" opacity="0.8">路肩</text>
+      )}
+
+      {/* Speed motion lines */}
+      {[1,2,3].map(function(i) {
+        return <line key={i} x1={30 + i*130} y1={130 + i*8} x2={18 + i*130} y2={134 + i*8}
+          stroke="white" strokeWidth="0.6" opacity="0.12" />;
+      })}
+
+      {/* FOG / RAIN overlay (heavy-rain-fog scenario) */}
+      {fogOpacity > 0 && (
+        <g>
+          {/* Fog white veil */}
+          <rect width="360" height="180" fill="#b8cee0" opacity={fogOpacity} />
+          {/* Rain streaks (only when fog lights off = worst visibility) */}
+          {!fogOn && [20,55,88,120,155,188,222,255,290,325,350,30,70,110,160,200,240,280,310,340].map(function(x, i) {
+            var yOff = (i * 31) % 140;
+            return (
+              <line key={i}
+                x1={x} y1={yOff}
+                x2={x - 3} y2={yOff + 22}
+                stroke="#8ab4d0" strokeWidth="1" opacity="0.55"
+                style={{animation:'rainFall ' + (0.5 + (i % 4) * 0.12) + 's linear infinite',
+                        animationDelay: (i * 0.08) + 's'}}
+              />
+            );
+          })}
+          {/* Fog-on improvement hint */}
+          {fogOn && (
+            <text x="180" y="96" textAnchor="middle" fontSize="10" fill="#ffffff" fontWeight="700" opacity="0.65">
+              霧燈開啟・能見度改善
+            </text>
+          )}
+        </g>
+      )}
+    </svg>
+  );
+};
+
+// Speedometer gauge (SVG)
+const SimSpeedometer = ({ speed }) => {
+  var max = 140;
+  var pct = Math.min(1, speed / max);
+  var startAngle = -225;
+  var endAngle = 45;
+  var angleDeg = startAngle + pct * (endAngle - startAngle);
+  var rad = angleDeg * Math.PI / 180;
+  var needleX = 40 + 28 * Math.cos(rad);
+  var needleY = 42 + 28 * Math.sin(rad);
+  var arcLen = Math.round(pct * 126);
+  return (
+    <svg viewBox="0 0 80 76" width="80" height="76">
+      <defs>
+        <linearGradient id="ssArc" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#22c55e" />
+          <stop offset="55%" stopColor="#f59e0b" />
+          <stop offset="100%" stopColor="#ef4444" />
+        </linearGradient>
+      </defs>
+      <circle cx="40" cy="42" r="36" fill="#060b14" stroke="#1e3a5f" strokeWidth="2" />
+      <path d="M 12,60 A 29,29 0 1,1 68,60" fill="none" stroke="#1a2535" strokeWidth="5" strokeLinecap="round" />
+      <path d="M 12,60 A 29,29 0 1,1 68,60" fill="none" stroke="url(#ssArc)" strokeWidth="5"
+        strokeLinecap="round" strokeDasharray={arcLen + ' 126'} />
+      <line x1="40" y1="42" x2={needleX} y2={needleY} stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round" />
+      <circle cx="40" cy="42" r="4" fill="#ef4444" />
+      <circle cx="40" cy="42" r="2" fill="#ff6b6b" />
+      <text x="40" y="65" textAnchor="middle" fontSize="11" fontWeight="900" fill="white">{speed}</text>
+      <text x="40" y="73" textAnchor="middle" fontSize="7" fill="#475569">km/h</text>
+    </svg>
+  );
+};
+
+// Dashboard button component
+const SimButton = ({ label, sublabel, active, on, color, onClick, size }) => {
+  var sm = size === 'sm';
+  var w = sm ? 54 : 60;
+  var h = sm ? 50 : 56;
+  return (
+    <button onClick={onClick} style={{
+      width: w, height: h, borderRadius: 10, cursor: 'pointer', padding: 0,
+      background: on ? (color + '22') : active ? 'rgba(245,158,11,0.12)' : '#080d18',
+      border: on ? ('2px solid ' + color) : active ? '2px solid #f59e0b' : '1px solid #1e3a5f',
+      display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3,
+      boxShadow: on ? ('0 0 10px ' + color + '55') : active ? '0 0 14px rgba(245,158,11,0.55)' : 'none',
+      animation: active ? 'simPulse 1s ease-in-out infinite' : 'none',
+      transition: 'all 0.2s',
+      flexShrink: 0,
+    }}>
+      <span style={{fontSize: sm ? 17 : 20, lineHeight: 1}}>{label}</span>
+      <span style={{fontSize: 9, color: on ? color : active ? '#f59e0b' : '#475569', fontWeight: 700, letterSpacing: '0.02em'}}>{sublabel}</span>
+    </button>
+  );
+};
+
+// Steering wheel (interactive — drag for 'wheel', click hub for 'wheel-grip')
+const SimWheel = ({ angle, active, activeGrip, doneGrip, onMouseDown, onTouchStart, onHubClick }) => {
+  return (
+    <div
+      onMouseDown={onMouseDown}
+      onTouchStart={onTouchStart}
+      style={{
+        cursor: active ? 'grab' : 'default',
+        userSelect: 'none',
+        WebkitUserSelect: 'none',
+        touchAction: 'none',
+        animation: active ? 'simGlow 1.4s ease-in-out infinite' : (activeGrip ? 'simGlow 1.4s ease-in-out infinite' : 'none'),
+      }}
+    >
+      <svg viewBox="0 0 140 140" width="130" height="130"
+        style={{transform: 'rotate(' + angle + 'deg)', transition: angle === 0 ? 'transform 0.4s ease' : 'none', display:'block'}}>
+        <defs>
+          <radialGradient id="swHub" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stopColor="#1e2d40" />
+            <stop offset="100%" stopColor="#0a1220" />
+          </radialGradient>
+        </defs>
+        {/* Outer rim */}
+        <circle cx="70" cy="70" r="64" fill="none" stroke={active ? '#f59e0b' : '#253445'} strokeWidth="15" />
+        {/* Rim inner accent */}
+        <circle cx="70" cy="70" r="57" fill="none" stroke={active ? 'rgba(245,158,11,0.18)' : '#111d2a'} strokeWidth="2" />
+        {/* Spokes — 3 spokes at 90°, 210°, 330° */}
+        {[90, 210, 330].map(function(deg, i) {
+          var r = deg * Math.PI / 180;
+          var x1 = 70 + 19 * Math.cos(r);
+          var y1 = 70 + 19 * Math.sin(r);
+          var x2 = 70 + 55 * Math.cos(r);
+          var y2 = 70 + 55 * Math.sin(r);
+          return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={active ? '#f59e0b' : '#253445'} strokeWidth="13" strokeLinecap="round" />;
+        })}
+        {/* Hub center — clickable for wheel-grip */}
+        <circle cx="70" cy="70" r="19"
+          fill="url(#swHub)"
+          stroke={activeGrip ? '#f59e0b' : doneGrip ? '#22c55e' : active ? '#f59e0b' : '#253445'}
+          strokeWidth="2.5"
+          onClick={onHubClick}
+          style={{cursor: activeGrip ? 'pointer' : 'default'}}
+        />
+        {/* Logo mark */}
+        <text x="70" y="75" textAnchor="middle" fontSize="13" fontWeight="900"
+          fill={activeGrip ? '#f59e0b' : doneGrip ? '#22c55e' : active ? '#f59e0b' : '#3b5470'}
+          onClick={onHubClick} style={{cursor: activeGrip ? 'pointer' : 'default'}}>
+          {doneGrip ? '✓' : '◆'}
+        </text>
+        {/* Grip bumps on rim */}
+        {[30, 90, 150, 210, 270, 330].map(function(deg, i) {
+          var r = deg * Math.PI / 180;
+          return <circle key={i} cx={70 + 61 * Math.cos(r)} cy={70 + 61 * Math.sin(r)} r="4"
+            fill={(active || activeGrip) ? 'rgba(245,158,11,0.25)' : '#111d2a'} />;
+        })}
+        {/* Active glow pulse ring (drag or grip) */}
+        {(active || activeGrip) && (
+          <circle cx="70" cy="70" r="64" fill="none" stroke="#f59e0b" strokeWidth="3" opacity="0.4"
+            style={{animation:'simPulse 1s ease-in-out infinite'}} />
+        )}
+        {/* Drag hint */}
+        {active && (
+          <g>
+            <path d="M 98,56 L 118,70 L 98,84" fill="none" stroke="#f59e0b" strokeWidth="3.5"
+              strokeLinecap="round" strokeLinejoin="round" opacity="0.95" />
+            <text x="70" y="112" textAnchor="middle" fontSize="9" fill="#f59e0b" fontWeight="800">向右拖曳 / → 鍵</text>
+          </g>
+        )}
+        {/* Grip hint */}
+        {activeGrip && (
+          <g>
+            <circle cx="70" cy="70" r="19" fill="rgba(245,158,11,0.15)"
+              onClick={onHubClick} style={{cursor:'pointer'}} />
+            <text x="70" y="112" textAnchor="middle" fontSize="9" fill="#f59e0b" fontWeight="800">點擊握緊 / W 鍵</text>
+          </g>
+        )}
+      </svg>
+    </div>
+  );
+};
+
+// Gear shifter (clickable for gear-down)
+const SimGearShifter = ({ activeGearDown, doneGearDown, onGearDown }) => {
+  var positions = [{g:'P',y:18},{g:'R',y:31},{g:'N',y:44},{g:'D',y:57},{g:'2',y:70}];
+  var selIdx = doneGearDown ? 4 : 3; // D → 2 after downshift
+  return (
+    <svg viewBox="0 0 44 96" width="44" height="96"
+      onClick={activeGearDown ? onGearDown : null}
+      style={{cursor: activeGearDown ? 'pointer' : 'default', display:'block'}}
+    >
+      <rect x="4" y="6" width="36" height="82" rx="7" fill="#060b14"
+        stroke={activeGearDown ? '#f59e0b' : doneGearDown ? '#22c55e' : '#1e3a5f'}
+        strokeWidth={activeGearDown || doneGearDown ? 2 : 1.5}
+        style={{animation: activeGearDown ? 'simPulse 1s ease-in-out infinite' : 'none'}}
+      />
+      {positions.map(function(item, i) {
+        var sel = i === selIdx;
+        return (
+          <React.Fragment key={i}>
+            <circle cx="22" cy={item.y} r="8"
+              fill={sel ? (doneGearDown && i===4 ? '#22c55e' : '#f59e0b') : '#0f172a'}
+              stroke={sel ? (doneGearDown && i===4 ? '#22c55e' : '#f59e0b') : '#1e3a5f'}
+              strokeWidth="1.5" />
+            <text x="22" y={item.y + 3.5} textAnchor="middle" fontSize="8" fontWeight="900"
+              fill={sel ? '#000' : '#2d4a6e'}>{item.g}</text>
+          </React.Fragment>
+        );
+      })}
+      {activeGearDown && (
+        <g>
+          <text x="22" y="90" textAnchor="middle" fontSize="7" fill="#f59e0b" fontWeight="800">點擊降檔</text>
+          <path d="M 18,75 L 22,82 L 26,75" fill="none" stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round" />
+        </g>
+      )}
+      {!activeGearDown && (
+        <text x="22" y="92" textAnchor="middle" fontSize="7" fill={doneGearDown ? '#22c55e' : '#2d4a6e'}>排檔</text>
+      )}
+    </svg>
+  );
+};
+
+// Pedals (clickable)
+const SimPedals = ({ activeBrake, activeGas, doneBrake, doneGas, onBrakeClick, onGasClick }) => (
+  <svg viewBox="0 0 130 64" width="130" height="64" style={{overflow:'visible'}}>
+    {/* Brake */}
+    <g onClick={onBrakeClick} style={{cursor: activeBrake ? 'pointer' : 'default'}}>
+      <rect x="6" y="16" width="46" height="36" rx="5"
+        fill={doneBrake ? 'rgba(239,68,68,0.18)' : activeBrake ? 'rgba(245,158,11,0.12)' : '#0a111e'}
+        stroke={doneBrake ? '#ef4444' : activeBrake ? '#f59e0b' : '#1e3a5f'}
+        strokeWidth={activeBrake || doneBrake ? 2 : 1.5}
+        style={{animation: activeBrake ? 'simPulse 1s ease-in-out infinite' : 'none'}}
+      />
+      {[22, 30, 38].map(function(y, i) {
+        return <rect key={i} x="12" y={y} width="34" height="4" rx="2"
+          fill={activeBrake || doneBrake ? '#2d3f55' : '#1a2d45'} />;
+      })}
+      <text x="29" y="60" textAnchor="middle" fontSize="8" fontWeight="700"
+        fill={doneBrake ? '#ef4444' : activeBrake ? '#f59e0b' : '#2d4a6e'}>剎車</text>
+      {activeBrake && <text x="29" y="10" textAnchor="middle" fontSize="7" fill="#f59e0b" fontWeight="800">點擊！</text>}
+    </g>
+    {/* Gas */}
+    <g onClick={onGasClick} style={{cursor: activeGas ? 'pointer' : 'default'}}>
+      <rect x="78" y="24" width="46" height="28" rx="5"
+        fill={doneGas ? 'rgba(34,197,94,0.15)' : activeGas ? 'rgba(245,158,11,0.12)' : '#0a111e'}
+        stroke={doneGas ? '#22c55e' : activeGas ? '#f59e0b' : '#1e3a5f'}
+        strokeWidth={activeGas || doneGas ? 2 : 1.5}
+        style={{animation: activeGas ? 'simPulse 1s ease-in-out infinite' : 'none'}}
+      />
+      {[30, 38].map(function(y, i) {
+        return <rect key={i} x="84" y={y} width="34" height="4" rx="2"
+          fill={activeGas || doneGas ? '#2d3f55' : '#1a2d45'} />;
+      })}
+      <text x="101" y="60" textAnchor="middle" fontSize="8" fontWeight="700"
+        fill={doneGas ? '#22c55e' : activeGas ? '#f59e0b' : '#2d4a6e'}>油門</text>
+      {activeGas && <text x="101" y="10" textAnchor="middle" fontSize="7" fill="#f59e0b" fontWeight="800">點擊放開！</text>}
+    </g>
+  </svg>
+);
+
+// ── Simulation Phase ──────────────────────
+const SimulationPhase = ({ scenario, onComplete }) => {
+  var simSteps = SIM_STEPS[scenario.id] || [];
+  var simCfg   = SIM_CONFIGS[scenario.id] || SIM_CFG_DEFAULT;
+
+  var [stepIdx,   setStepIdx]   = useState(0);
+  var [cockpit,   setCockpit]   = useState(simCfg.initCockpit);
+  var [feedback,  setFeedback]  = useState(null);
+  var [allDone,   setAllDone]   = useState(false);
+  var [wheelAngle,setWheelAngle]= useState(0);
+  // Track completed targets for button "on" states
+  var [doneTgts,  setDoneTgts]  = useState(new Set());
+
+  var dragging     = useRef(false);
+  var dragStartX   = useRef(0);
+  var feedbackLock = useRef(false);
+  var stepIdxRef   = useRef(0);
+  var cockpitRef   = useRef(simCfg.initCockpit);
+  var allDoneRef   = useRef(false);
+  var doneTgtsRef  = useRef(new Set());
+
+  useEffect(function() { stepIdxRef.current  = stepIdx; },  [stepIdx]);
+  useEffect(function() { cockpitRef.current  = cockpit; },  [cockpit]);
+  useEffect(function() { allDoneRef.current  = allDone; },  [allDone]);
+  useEffect(function() { doneTgtsRef.current = doneTgts; }, [doneTgts]);
+
+  function triggerAction(target) {
+    if (feedbackLock.current || allDoneRef.current) return;
+    var idx   = stepIdxRef.current;
+    var steps = SIM_STEPS[scenario.id] || [];
+    var s     = steps[idx];
+    if (!s || target !== s.target) {
+      feedbackLock.current = true;
+      setFeedback('wrong');
+      setTimeout(function() { feedbackLock.current = false; setFeedback(null); }, 900);
+      return;
+    }
+    feedbackLock.current = true;
+    var newCockpit = Object.assign({}, cockpitRef.current, s.stateChange);
+    setCockpit(newCockpit);
+    cockpitRef.current = newCockpit;
+    var newDone = new Set(doneTgtsRef.current);
+    newDone.add(target);
+    setDoneTgts(newDone);
+    doneTgtsRef.current = newDone;
+    setFeedback('success');
+    setTimeout(function() {
+      feedbackLock.current = false;
+      setFeedback(null);
+      if (idx < steps.length - 1) {
+        setStepIdx(function(prev) { return prev + 1; });
+      } else {
+        setAllDone(true);
+        allDoneRef.current = true;
+      }
+    }, 1500);
+  }
+
+  // Keyboard shortcuts
+  useEffect(function() {
+    function handler(e) {
+      if (allDoneRef.current) return;
+      var idx   = stepIdxRef.current;
+      var steps = SIM_STEPS[scenario.id] || [];
+      var s     = steps[idx];
+      if (s && s.keys && s.keys.includes(e.key)) {
+        triggerAction(s.target);
+      }
+    }
+    window.addEventListener('keydown', handler);
+    return function() { window.removeEventListener('keydown', handler); };
+  }, []);
+
+  // Steering wheel drag
+  useEffect(function() {
+    function onMove(e) {
+      if (!dragging.current) return;
+      var x = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : null);
+      if (x === null) return;
+      var delta = x - dragStartX.current;
+      setWheelAngle(Math.max(-90, Math.min(90, delta * 0.7)));
+      if (delta > 52) {
+        dragging.current = false;
+        setWheelAngle(0);
+        triggerAction('wheel');
+      }
+    }
+    function onUp() { if (dragging.current) { dragging.current = false; setWheelAngle(0); } }
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup',   onUp);
+    window.addEventListener('touchmove', onMove, { passive: true });
+    window.addEventListener('touchend',  onUp);
+    return function() {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup',   onUp);
+      window.removeEventListener('touchmove', onMove);
+      window.removeEventListener('touchend',  onUp);
+    };
+  }, []);
+
+  if (!simSteps.length) {
+    return (
+      <div className="anim-fade" style={{textAlign:'center', padding:'40px 20px'}}>
+        <div style={{fontSize:48, marginBottom:16}}>🚧</div>
+        <p style={{color:'#64748b', marginBottom:20, fontSize:14}}>此情境尚未開放模擬模式</p>
+        <button onClick={onComplete} style={{background:'#f59e0b', color:'#000', border:'none', borderRadius:14, padding:'12px 28px', fontWeight:900, fontSize:14, cursor:'pointer'}}>繼續 →</button>
+      </div>
+    );
+  }
+
+  var step = simSteps[stepIdx];
+  function isActive(tgt) { return !allDone && step && step.target === tgt; }
+  function isDone(tgt)   { return doneTgts.has(tgt); }
+  var keyHint = step ? step.keys.map(function(k) {
+    return k === 'ArrowRight' ? '→' : k.toUpperCase();
+  }).join(' / ') : '';
+  var lb1 = simCfg.lb1;
+  var lb2 = simCfg.lb2;
+
+  return (
+    <div className="anim-fade">
+
+      {/* Progress header */}
+      <div style={{background:'#0d1525', borderRadius:16, padding:'10px 14px', marginBottom:10, border:'1px solid #1e3a5f', display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+        <div>
+          <div style={{color:'#f59e0b', fontSize:11, fontWeight:800, marginBottom:2, letterSpacing:'0.05em'}}>🎮 情境模擬</div>
+          <div style={{color:'white', fontWeight:800, fontSize:13}}>
+            {allDone ? '✓ 全部完成' : ('步驟 ' + (stepIdx+1) + '／' + simSteps.length + '：' + step.title)}
+          </div>
+        </div>
+        <div style={{display:'flex', gap:5}}>
+          {simSteps.map(function(_, i) {
+            return <div key={i} style={{
+              width:24, height:7, borderRadius:4,
+              background: (i < stepIdx || allDone) ? '#22c55e' : i===stepIdx ? '#f59e0b' : '#1e3a5f',
+              transition:'background 0.4s',
+            }} />;
+          })}
+        </div>
+      </div>
+
+      {/* Instruction */}
+      {!allDone && (
+        <div style={{background:'rgba(245,158,11,0.08)', border:'1px solid rgba(245,158,11,0.28)', borderRadius:12, padding:'9px 14px', marginBottom:10, textAlign:'center'}}>
+          <div style={{color:'#fbbf24', fontSize:13, fontWeight:800, marginBottom:3}}>{step.instruction}</div>
+          <div style={{color:'#475569', fontSize:11}}>快捷鍵：<span style={{color:'#64748b', fontWeight:700}}>{keyHint}</span></div>
+        </div>
+      )}
+
+      {/* ====== COCKPIT ====== */}
+      <div style={{borderRadius:20, overflow:'hidden', border:'2px solid #1a3050', background:'#04080f', boxShadow:'inset 0 0 40px rgba(0,0,0,0.8)'}}>
+
+        {/* WINDSHIELD */}
+        <div style={{height:180, position:'relative', overflow:'hidden'}}>
+          <SimWindshield cockpit={cockpit} foggy={simCfg.foggy} />
+          <div style={{position:'absolute',top:0,left:0,bottom:0,width:26,background:'linear-gradient(to right,#04080f,transparent)',pointerEvents:'none'}} />
+          <div style={{position:'absolute',top:0,right:0,bottom:0,width:26,background:'linear-gradient(to left,#04080f,transparent)',pointerEvents:'none'}} />
+          <div style={{position:'absolute',bottom:0,left:0,right:0,height:22,background:'linear-gradient(to top,#04080f,transparent)',pointerEvents:'none'}} />
+        </div>
+
+        {/* INTERIOR PANEL */}
+        <div style={{background:'#07101e', borderTop:'1px solid #1a3050', padding:'12px 14px 10px'}}>
+
+          {/* Row 1: Speedometer + Center buttons + Right info */}
+          <div style={{display:'flex', gap:10, alignItems:'flex-start', marginBottom:12}}>
+
+            {/* Speedometer */}
+            <div style={{flexShrink:0}}>
+              <SimSpeedometer speed={cockpit.speed} />
+            </div>
+
+            {/* Center button cluster */}
+            <div style={{flex:1, display:'flex', flexDirection:'column', gap:7, alignItems:'center', paddingTop:4}}>
+              <div style={{display:'flex', gap:8}}>
+                <SimButton label="⚠"  sublabel="雙黃燈"
+                  active={isActive('hazard')} on={isDone('hazard')} color="#f59e0b"
+                  onClick={function() { triggerAction('hazard'); }} />
+                <SimButton label="🔆" sublabel="霧燈"
+                  active={isActive('fog')} on={isDone('fog')} color="#60a5fa"
+                  onClick={function() { triggerAction('fog'); }} />
+              </div>
+              <div style={{display:'flex', gap:8}}>
+                <SimButton label="📢" sublabel="喇叭"
+                  active={isActive('horn')} on={isDone('horn')} color="#a78bfa"
+                  onClick={function() { triggerAction('horn'); }} />
+                <SimButton label="💧" sublabel="雨刷"
+                  active={isActive('wiper')} on={isDone('wiper')} color="#67e8f9"
+                  onClick={function() { triggerAction('wiper'); }} />
+              </div>
+            </div>
+
+            {/* Right: warning lights */}
+            <div style={{flexShrink:0, display:'flex', flexDirection:'column', gap:6, alignItems:'flex-end'}}>
+              <div style={{background:'#060b14', border:'1px solid #1a3050', borderRadius:8, padding:'4px 10px', textAlign:'center', minWidth:44}}>
+                <div style={{color:'#2d4a6e', fontSize:9, marginBottom:1}}>排檔</div>
+                <div style={{color: cockpit.gearDown ? '#22c55e' : '#f59e0b', fontSize:22, fontWeight:900, lineHeight:1}}>
+                  {cockpit.gearDown ? '2' : 'D'}
+                </div>
+              </div>
+              <div style={{display:'flex', flexWrap:'wrap', gap:4, justifyContent:'flex-end', maxWidth:70}}>
+                {[
+                  {icon:'⚠️', on: cockpit.hazardOn, tip:'雙黃'},
+                  {icon:'⚙️', on: true,             tip:'引擎'},
+                  {icon:'💡', on: cockpit.fogOn,    tip:'霧燈'},
+                  {icon:'⛽', on: false,             tip:'油量'},
+                ].map(function(w, i) {
+                  return (
+                    <div key={i} title={w.tip} style={{
+                      width:22, height:22, borderRadius:5,
+                      background: w.on ? 'rgba(245,158,11,0.2)' : '#060b14',
+                      border: w.on ? '1px solid #f59e0b' : '1px solid #1a3050',
+                      display:'flex', alignItems:'center', justifyContent:'center', fontSize:11,
+                      animation: (w.on && w.tip==='雙黃') ? 'hazard 0.75s ease-in-out infinite' : 'none',
+                    }}>{w.icon}</div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2: Left stalk + Steering wheel + Gear shifter */}
+          <div style={{display:'flex', gap:10, alignItems:'center', marginBottom:10, justifyContent:'space-between'}}>
+
+            {/* LEFT STALK: lb1 + lb2 (scenario-specific) */}
+            <div style={{display:'flex', flexDirection:'column', gap:8, flexShrink:0}}>
+              <SimButton
+                label={lb1.icon} sublabel={lb1.label}
+                active={isActive(lb1.target)} on={isDone(lb1.target)} color={lb1.color}
+                onClick={function() { triggerAction(lb1.target); }} size="sm"
+              />
+              <SimButton
+                label={lb2.icon} sublabel={lb2.label}
+                active={isActive(lb2.target)} on={isDone(lb2.target)} color={lb2.color}
+                onClick={function() { triggerAction(lb2.target); }} size="sm"
+              />
+            </div>
+
+            {/* Steering wheel */}
+            <div style={{flex:1, display:'flex', justifyContent:'center'}}>
+              <SimWheel
+                angle={wheelAngle}
+                active={isActive('wheel')}
+                activeGrip={isActive('wheel-grip')}
+                doneGrip={isDone('wheel-grip')}
+                onHubClick={function() { triggerAction('wheel-grip'); }}
+                onMouseDown={function(e) {
+                  if (isActive('wheel')) { dragging.current=true; dragStartX.current=e.clientX; e.preventDefault(); }
+                  else if (isActive('wheel-grip')) { triggerAction('wheel-grip'); }
+                }}
+                onTouchStart={function(e) {
+                  if (isActive('wheel')) { dragging.current=true; dragStartX.current=e.touches[0].clientX; }
+                  else if (isActive('wheel-grip')) { triggerAction('wheel-grip'); }
+                }}
+              />
+            </div>
+
+            {/* Gear shifter */}
+            <div style={{flexShrink:0}}>
+              <SimGearShifter
+                activeGearDown={isActive('gear-down')}
+                doneGearDown={isDone('gear-down')}
+                onGearDown={function() { triggerAction('gear-down'); }}
+              />
+            </div>
+          </div>
+
+          {/* Row 3: Pedals */}
+          <div style={{display:'flex', justifyContent:'flex-start', paddingLeft:8}}>
+            <SimPedals
+              activeBrake={isActive('brake')}
+              activeGas={isActive('gas')}
+              doneBrake={isDone('brake')}
+              doneGas={isDone('gas')}
+              onBrakeClick={function() { triggerAction('brake'); }}
+              onGasClick={function() { triggerAction('gas'); }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Feedback overlay */}
+      {feedback && (
+        <div style={{
+          position:'fixed', top:'50%', left:'50%', transform:'translate(-50%,-50%)',
+          background: feedback==='success' ? 'rgba(21,128,61,0.97)' : 'rgba(185,28,28,0.97)',
+          borderRadius:22, padding:'20px 32px', zIndex:9999, textAlign:'center',
+          boxShadow:'0 24px 70px rgba(0,0,0,0.8)', minWidth:220, pointerEvents:'none',
+        }}>
+          <div style={{fontSize:38, marginBottom:8, lineHeight:1}}>{feedback==='success' ? '✓' : '✗'}</div>
+          <div style={{color:'white', fontWeight:800, fontSize:14, lineHeight:1.6}}>
+            {feedback==='success' ? step.successMsg : '不是這個，再試試！'}
+          </div>
+        </div>
+      )}
+
+      {/* Completion card */}
+      {allDone && (
+        <div className="anim-fade" style={{marginTop:14}}>
+          <div style={{background:'rgba(34,197,94,0.08)', border:'1px solid rgba(34,197,94,0.3)', borderRadius:20, padding:22, marginBottom:14, textAlign:'center'}}>
+            <div style={{fontSize:46, marginBottom:10}}>🎉</div>
+            <div style={{color:'#4ade80', fontWeight:900, fontSize:18, marginBottom:6}}>模擬完成！</div>
+            <div style={{color:'#64748b', fontSize:13}}>你成功完成所有緊急應變步驟</div>
+          </div>
+          <button onClick={onComplete} style={{
+            width:'100%', padding:'14px 0',
+            background:'linear-gradient(135deg,#22c55e,#16a34a)',
+            border:'none', borderRadius:16, color:'white',
+            fontWeight:900, fontSize:15, cursor:'pointer',
+            boxShadow:'0 6px 24px rgba(34,197,94,0.35)',
+          }}>查看最終成績 →</button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// ── Result Phase ──────────────────────────
+const ResultPhase = ({ scenario, score, total, onHome, onRetry }) => {
+  const pct = Math.round(score / total * 100);
+  const grade = pct >= 80 ? {label:'優秀', color:'#4ade80', emoji:'🏆', sub:'你已掌握此情境的應對方式！'}
+              : pct >= 60 ? {label:'良好', color:'#fbbf24', emoji:'👍', sub:'再複習一次，加深記憶'}
+              : {label:'需要加強', color:'#f87171', emoji:'📚', sub:'建議重新學習一次流程'};
+  return (
+    <div className="anim-fade" style={{textAlign:'center'}}>
+      <div style={{fontSize:60, marginBottom:12}}>{grade.emoji}</div>
+      <div style={{fontSize:22, fontWeight:900, color:grade.color, marginBottom:4}}>{grade.label}</div>
+      <div style={{fontSize:48, fontWeight:900, color:'white', marginBottom:4}}>{pct}<span style={{fontSize:20}}>%</span></div>
+      <div style={{color:'#64748b', fontSize:13, marginBottom:6}}>{score} ／ {total} 題答對</div>
+      <div style={{color:'#94a3b8', fontSize:12, marginBottom:24}}>{grade.sub}</div>
+      <div style={{background:'#1e293b', borderRadius:20, padding:18, marginBottom:20, textAlign:'left', border:'1px solid #334155'}}>
+        <div style={{color:'#f59e0b', fontWeight:700, fontSize:12, marginBottom:12}}>🔑 記住這個情境的關鍵步驟</div>
+        {scenario.steps.slice(0,4).map((s, i) => (
+          <div key={i} style={{display:'flex', alignItems:'center', gap:10, marginBottom:8}}>
+            <span style={{fontSize:16}}>{s.icon}</span>
+            <span style={{color:'#cbd5e1', fontSize:12}}>{s.title}</span>
+          </div>
+        ))}
+        {scenario.steps.length > 4 && (
+          <div style={{color:'#475569', fontSize:11, marginTop:4}}>...共 {scenario.steps.length} 個步驟</div>
+        )}
+      </div>
+      <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:10}}>
+        <button onClick={onRetry} style={{
+          padding:'14px', borderRadius:18, fontWeight:800, color:'white',
+          background:'transparent', border:'1px solid #475569', cursor:'pointer',
+          fontSize:14, transition:'border-color 0.15s',
+        }}
+        onMouseEnter={e => e.currentTarget.style.borderColor='#f59e0b'}
+        onMouseLeave={e => e.currentTarget.style.borderColor='#475569'}
+        >🔄 再試一次</button>
+        <button onClick={onHome} style={{
+          padding:'14px', borderRadius:18, fontWeight:800, color:'#000',
+          border:'none', cursor:'pointer', fontSize:14,
+          background:'linear-gradient(135deg,#f59e0b,#d97706)',
+        }}>🏠 返回首頁</button>
+      </div>
+    </div>
+  );
+};
+
+// ─────────────────────────────────────────
+// SCENARIO FLOW
+// ─────────────────────────────────────────
+// ── Review Picker (for completed scenarios) ──
+const REVIEW_PHASES = [
+  { id: 'intro',       label: '情境介紹', icon: '📖', desc: '重新閱讀情境故事與人物背景' },
+  { id: 'decision',    label: '緊急決策', icon: '🤔', desc: '重做決策選擇，看看不同後果' },
+  { id: 'consequence', label: '後果說明', icon: '⚡', desc: '查看正確決策的分析說明' },
+  { id: 'learning',    label: '教學步驟', icon: '📚', desc: '複習正確的緊急應對流程' },
+  { id: 'quiz',        label: '知識測驗', icon: '📝', desc: '再次挑戰知識測驗題目' },
+  { id: 'simulation',  label: '情境模擬', icon: '🎮', desc: '重新操作駕駛艙互動模擬' },
+  { id: 'result',      label: '查看成績', icon: '🏆', desc: '重溫上次的測驗成績' },
+];
+
+const ReviewPicker = ({ scenario, onPick, onRestart }) => {
+  return (
+    <div className="anim-fade">
+      {/* Header */}
+      <div style={{textAlign:'center', marginBottom:20}}>
+        <div style={{fontSize:44, marginBottom:10}}>✅</div>
+        <div style={{color:'#4ade80', fontWeight:900, fontSize:19, marginBottom:6}}>已完成此情境</div>
+        <div style={{color:'#64748b', fontSize:13}}>選擇想複習的環節，或從頭再來一遍</div>
+      </div>
+
+      {/* Phase cards */}
+      <div style={{display:'flex', flexDirection:'column', gap:8, marginBottom:14}}>
+        {REVIEW_PHASES.map(function(p, idx) {
+          var noSim = p.id === 'simulation' && !(SIM_STEPS[scenario.id] && SIM_STEPS[scenario.id].length);
+          return (
+            <button
+              key={p.id}
+              onClick={function() { if (!noSim) onPick(p.id); }}
+              disabled={noSim}
+              style={{
+                display:'flex', alignItems:'center', gap:14, padding:'12px 16px',
+                background:'#1e293b', borderRadius:16, border:'1px solid #334155',
+                cursor: noSim ? 'not-allowed' : 'pointer', width:'100%', textAlign:'left',
+                opacity: noSim ? 0.35 : 1, transition:'border-color 0.15s, background 0.15s',
+              }}
+              onMouseEnter={function(e) { if (!noSim) { e.currentTarget.style.borderColor='#f59e0b'; e.currentTarget.style.background='rgba(245,158,11,0.05)'; }}}
+              onMouseLeave={function(e) { e.currentTarget.style.borderColor='#334155'; e.currentTarget.style.background='#1e293b'; }}
+            >
+              {/* Step number badge */}
+              <div style={{
+                width:22, height:22, borderRadius:'50%', background:'#0f172a',
+                border:'1px solid #334155', display:'flex', alignItems:'center',
+                justifyContent:'center', fontSize:10, fontWeight:800, color:'#475569',
+                flexShrink:0,
+              }}>{idx + 1}</div>
+              {/* Icon */}
+              <div style={{
+                width:40, height:40, borderRadius:12, background:'#0f172a',
+                border:'1px solid #334155', display:'flex', alignItems:'center',
+                justifyContent:'center', fontSize:20, flexShrink:0,
+              }}>{p.icon}</div>
+              {/* Text */}
+              <div style={{flex:1, minWidth:0}}>
+                <div style={{color:'white', fontWeight:700, fontSize:14}}>{p.label}</div>
+                <div style={{color:'#475569', fontSize:11.5, marginTop:2}}>{p.desc}</div>
+              </div>
+              <div style={{color:'#334155', fontSize:18, flexShrink:0}}>›</div>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Restart button */}
+      <button
+        onClick={onRestart}
+        style={{
+          width:'100%', padding:'13px', background:'transparent',
+          border:'1px solid #475569', borderRadius:14, color:'#94a3b8',
+          fontWeight:700, fontSize:14, cursor:'pointer', transition:'all 0.15s',
+        }}
+        onMouseEnter={function(e) { e.currentTarget.style.borderColor='#f59e0b'; e.currentTarget.style.color='#f59e0b'; }}
+        onMouseLeave={function(e) { e.currentTarget.style.borderColor='#475569'; e.currentTarget.style.color='#94a3b8'; }}
+      >🔄 從頭開始</button>
+    </div>
+  );
+};
+
+// ─────────────────────────────────────────
+// SCENARIO FLOW
+// ─────────────────────────────────────────
+const ScenarioFlow = ({ scenario, onBack, onComplete, isCompleted }) => {
+  const [phase, setPhase] = useState(isCompleted ? 'pick' : 'intro');
+  const [choice, setChoice] = useState(null);
+  const [quizResult, setQuizResult] = useState(null);
+
+  const handleDecide = (opt) => { setChoice(opt); setPhase('consequence'); };
+  const handleQuizDone = (score, total) => {
+    setQuizResult({ score, total });
+    if (SIM_STEPS[scenario.id] && SIM_STEPS[scenario.id].length > 0) {
+      setPhase('simulation');
+    } else {
+      setPhase('result');
+      onComplete(scenario.id);
+    }
+  };
+  const handleSimDone = () => { setPhase('result'); onComplete(scenario.id); };
+  const handleRetry  = () => { setPhase('intro'); setChoice(null); setQuizResult(null); };
+
+  // Jump to any phase directly (review mode)
+  const handlePick = (targetPhase) => {
+    // Phases that need prior state: seed sensible defaults
+    if (targetPhase === 'consequence') {
+      // Show the correct/first option's consequence
+      const opts = scenario.decision.options;
+      setChoice(opts.find(function(o) { return o.correct; }) || opts[0]);
+    }
+    if (targetPhase === 'result') {
+      // Use a full score as placeholder if no real result stored
+      if (!quizResult) setQuizResult({ score: scenario.quiz.length, total: scenario.quiz.length });
+    }
+    setPhase(targetPhase);
+  };
+
+  const handleRestart = () => { setPhase('intro'); setChoice(null); setQuizResult(null); };
+
+  // Show "複習模式" chip in header when completed and mid-flow
+  const inReview = isCompleted && phase !== 'pick';
+
+  return (
+    <div style={{minHeight:'100vh', padding:'16px', background:'linear-gradient(160deg,#0f172a,#1e293b)'}}>
+      <div style={{maxWidth:520, margin:'0 auto'}}>
+
+        {/* Header */}
+        <div style={{display:'flex', alignItems:'center', gap:10, marginBottom:16}}>
+          <button onClick={phase === 'pick' ? onBack : function() { setPhase('pick'); }}
+            style={{
+              background:'transparent', border:'1px solid #334155', borderRadius:12,
+              color:'#94a3b8', padding:'6px 12px', cursor:'pointer', fontSize:13,
+              transition:'color 0.15s, border-color 0.15s', flexShrink:0,
+            }}
+            onMouseEnter={function(e) { e.currentTarget.style.color='white'; e.currentTarget.style.borderColor='#64748b'; }}
+            onMouseLeave={function(e) { e.currentTarget.style.color='#94a3b8'; e.currentTarget.style.borderColor='#334155'; }}
+          >
+            {(phase === 'pick' || !isCompleted) ? '← 返回' : '☰ 選單'}
+          </button>
+          <div style={{color:'white', fontWeight:800, fontSize:15, flex:1, minWidth:0, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>{scenario.title}</div>
+          {inReview && (
+            <div style={{
+              background:'rgba(34,197,94,0.15)', border:'1px solid rgba(34,197,94,0.4)',
+              borderRadius:20, padding:'3px 10px', fontSize:11, color:'#4ade80', fontWeight:700, flexShrink:0,
+            }}>複習中</div>
+          )}
+        </div>
+
+        {/* Phase bar — hidden on picker screen */}
+        {phase !== 'pick' && <PhaseBar phase={phase} />}
+
+        {phase === 'pick'        && <ReviewPicker scenario={scenario} onPick={handlePick} onRestart={handleRestart} />}
+        {phase === 'intro'       && <IntroPhase scenario={scenario} onNext={() => setPhase('decision')} />}
+        {phase === 'decision'    && <DecisionPhase scenario={scenario} onDecide={handleDecide} />}
+        {phase === 'consequence' && choice && <ConsequencePhase scenario={scenario} choice={choice} onNext={() => setPhase('learning')} />}
+        {phase === 'learning'    && <LearningPhase scenario={scenario} onNext={() => setPhase('quiz')} />}
+        {phase === 'quiz'        && <QuizPhase scenario={scenario} onComplete={handleQuizDone} />}
+        {phase === 'simulation'  && <SimulationPhase scenario={scenario} onComplete={handleSimDone} />}
+        {phase === 'result'      && quizResult && (
+          <ResultPhase scenario={scenario} score={quizResult.score} total={quizResult.total}
+            onHome={onBack} onRetry={handleRetry} />
+        )}
+      </div>
+    </div>
+  );
+};
+
+// ─────────────────────────────────────────
+// ROOT APP
+// ─────────────────────────────────────────
+const App = () => {
+  const [view, setView] = useState('home');
+  const [current, setCurrent] = useState(null);
+  const [completed, setCompleted] = useState([]);
+
+  const select = (sc) => { setCurrent(sc); setView('scenario'); };
+  const complete = (id) => setCompleted(prev => prev.includes(id) ? prev : [...prev, id]);
+  const back = () => { setView('home'); setCurrent(null); };
+
+  if (view === 'scenario' && current) {
+    return <ScenarioFlow scenario={current} onBack={back} onComplete={complete} isCompleted={completed.includes(current.id)} />;
+  }
+  return <HomeScreen onSelect={select} completed={completed} />;
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

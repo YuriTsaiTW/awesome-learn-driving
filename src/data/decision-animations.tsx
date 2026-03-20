@@ -1,0 +1,795 @@
+import type { ScenarioId } from '../types/scenario';
+
+// == Highway Breakdown ==
+const DA_HB_A = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    <rect x="0" y="52" width="160" height="40" fill="#1e293b" />
+    <line x1="0" y1="72" x2="160" y2="72" stroke="#334155" strokeWidth="1" strokeDasharray="10,8" />
+    <g style={{ animation: 'stepSlideR 1.2s ease-in-out infinite' }}>
+      <rect x="8" y="58" width="38" height="22" fill="#1d4ed8" rx="2" />
+      <rect x="14" y="50" width="26" height="14" fill="#1e40af" rx="2" />
+      <circle cx="42" cy="60" r="3.5" fill="#fef3c7" opacity="0.9" />
+      <circle cx="42" cy="72" r="3.5" fill="#fef3c7" opacity="0.9" />
+    </g>
+    <rect x="100" y="55" width="48" height="28" fill="#dc2626" rx="3" />
+    <rect x="108" y="46" width="32" height="16" fill="#b91c1c" rx="2" />
+    <circle cx="96" cy="60" r="5.5" fill="#fbbf24" />
+    <rect x="93" y="65" width="6" height="14" fill="#3b82f6" rx="1" />
+    <line x1="93" y1="68" x2="88" y2="75" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" />
+    <line x1="99" y1="68" x2="104" y2="75" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" />
+    <text x="80" y="20" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+      ⚠ 高速車道下車
+    </text>
+    <text x="80" y="34" textAnchor="middle" fill="#f87171" fontSize="8">
+      後車無法及時煞停
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+      被後車撞擊風險極高
+    </text>
+  </svg>
+);
+const DA_HB_B = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
+    <line
+      x1="0"
+      y1="70"
+      x2="160"
+      y2="70"
+      stroke="#334155"
+      strokeWidth="1.5"
+      strokeDasharray="10,8"
+    />
+    <rect x="124" y="48" width="36" height="44" fill="#252f3f" />
+    <line x1="124" y1="48" x2="124" y2="92" stroke="#fbbf24" strokeWidth="1.5" />
+    <g transform="translate(138,68)">
+      <rect x="-16" y="-14" width="32" height="22" fill="#dc2626" rx="3" />
+      <rect x="-10" y="-22" width="20" height="12" fill="#b91c1c" rx="2" />
+      <circle cx="-13" cy="-12" r="4" fill="#f59e0b" className="anim-hazard" />
+      <circle cx="13" cy="-12" r="4" fill="#f59e0b" className="anim-hazard" />
+      <circle cx="-13" cy="7" r="4" fill="#f59e0b" className="anim-hazard" />
+      <circle cx="13" cy="7" r="4" fill="#f59e0b" className="anim-hazard" />
+    </g>
+    <path
+      d="M 78 68 Q 108 62 120 66"
+      stroke="#4ade80"
+      strokeWidth="2.5"
+      fill="none"
+      strokeLinecap="round"
+    />
+    <polygon points="118,61 122,66 117,70" fill="#4ade80" />
+    <circle cx="22" cy="24" r="14" fill="#15803d" opacity="0.9" />
+    <text x="22" y="29" textAnchor="middle" fill="white" fontSize="15" fontWeight="900">
+      ✓
+    </text>
+    <text x="96" y="22" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">
+      開雙黃燈
+    </text>
+    <text x="96" y="34" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">
+      移至路肩
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+      最正確的第一步
+    </text>
+  </svg>
+);
+const DA_HB_C = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
+    <line x1="0" y1="70" x2="160" y2="70" stroke="#334155" strokeWidth="1" strokeDasharray="10,8" />
+    <g transform="translate(100,67)">
+      <rect x="-24" y="-16" width="48" height="26" fill="#dc2626" rx="3" />
+      <rect x="-18" y="-24" width="36" height="14" fill="#b91c1c" rx="2" />
+      <rect x="-16" y="-22" width="11" height="9" fill="#bfdbfe" rx="1" />
+      <rect x="5" y="-22" width="11" height="9" fill="#bfdbfe" rx="1" />
+      <rect
+        x="3"
+        y="-21"
+        width="8"
+        height="7"
+        fill="#22c55e"
+        rx="1"
+        opacity="0.8"
+        style={{ animation: 'hazard 1.2s ease-in-out infinite' }}
+      />
+    </g>
+    <text x="100" y="40" textAnchor="middle" fill="#ef4444" fontSize="8">
+      🚫 沒開雙黃燈
+    </text>
+    <g transform="translate(46,67)">
+      <rect x="-18" y="-12" width="36" height="20" fill="#475569" rx="2" />
+      <rect x="-12" y="-19" width="24" height="11" fill="#374151" rx="2" />
+      <circle cx="-14" cy="-10" r="3" fill="#ef4444" />
+      <circle cx="14" cy="-10" r="3" fill="#ef4444" />
+    </g>
+    <g transform="translate(14,67)">
+      <rect x="-10" y="-9" width="20" height="16" fill="#334155" rx="2" />
+    </g>
+    <text x="80" y="20" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+      停在車道打電話
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+      暴露在高速車流中
+    </text>
+  </svg>
+);
+
+// == Tire Blowout ==
+const DA_TB_A = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    <rect x="0" y="50" width="160" height="42" fill="#1e293b" />
+    <path d="M 8 74 Q 58 67 90 70" stroke="#111" strokeWidth="5" fill="none" opacity="0.8" />
+    <path d="M 8 80 Q 58 73 90 76" stroke="#111" strokeWidth="4" fill="none" opacity="0.6" />
+    <g transform="translate(114,67) rotate(22)">
+      <rect x="-24" y="-14" width="48" height="26" fill="#7c3aed" rx="3" />
+      <rect x="-18" y="-24" width="36" height="14" fill="#6d28d9" rx="2" />
+      <circle cx="-20" cy="12" r="6" fill="#111" stroke="#ef4444" strokeWidth="1.5" />
+      <circle cx="20" cy="12" r="6" fill="#111" stroke="#ef4444" strokeWidth="1.5" />
+    </g>
+    <text x="36" y="32" textAnchor="middle" fontSize="22">
+      🦶
+    </text>
+    <text x="36" y="20" textAnchor="middle" fill="#ef4444" fontSize="20">
+      ↓
+    </text>
+    <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+      急踩煞車
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+      後輪鎖死，車輛甩尾失控
+    </text>
+  </svg>
+);
+const DA_TB_B = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    <circle cx="72" cy="54" r="28" fill="none" stroke="#4b5563" strokeWidth="7" />
+    <circle cx="72" cy="54" r="9" fill="#374151" stroke="#4b5563" strokeWidth="3" />
+    <line x1="72" y1="45" x2="72" y2="28" stroke="#4b5563" strokeWidth="5" strokeLinecap="round" />
+    <line x1="65" y1="58" x2="55" y2="72" stroke="#4b5563" strokeWidth="5" strokeLinecap="round" />
+    <line x1="79" y1="58" x2="89" y2="72" stroke="#4b5563" strokeWidth="5" strokeLinecap="round" />
+    <g
+      style={{ animation: 'stepGripPulse 1.4s ease-in-out infinite', transformOrigin: '46px 54px' }}
+    >
+      <circle cx="46" cy="54" r="11" fill="#92400e" opacity="0.8" />
+      <text x="46" y="58" textAnchor="middle" fontSize="13">
+        ✊
+      </text>
+    </g>
+    <g
+      style={{
+        animation: 'stepGripPulse 1.4s ease-in-out 0.7s infinite',
+        transformOrigin: '98px 54px',
+      }}
+    >
+      <circle cx="98" cy="54" r="11" fill="#92400e" opacity="0.8" />
+      <text x="98" y="58" textAnchor="middle" fontSize="13">
+        ✊
+      </text>
+    </g>
+    <rect
+      x="118"
+      y="62"
+      width="30"
+      height="18"
+      fill="#374151"
+      rx="3"
+      stroke="#475569"
+      strokeWidth="1.5"
+    />
+    <text x="133" y="74" textAnchor="middle" fill="#94a3b8" fontSize="8" fontWeight="700">
+      油門
+    </text>
+    <g style={{ animation: 'stepFootLift 2s ease-in-out infinite', transformOrigin: '133px 52px' }}>
+      <text x="133" y="56" textAnchor="middle" fontSize="15">
+        🦶
+      </text>
+    </g>
+    <text x="133" y="46" textAnchor="middle" fill="#4ade80" fontSize="7">
+      慢放開
+    </text>
+    <circle cx="20" cy="18" r="11" fill="#15803d" />
+    <text x="20" y="22" textAnchor="middle" fill="white" fontSize="12" fontWeight="900">
+      ✓
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+      緊握方向盤＋自然減速
+    </text>
+  </svg>
+);
+const DA_TB_C = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
+    <line
+      x1="0"
+      y1="70"
+      x2="160"
+      y2="70"
+      stroke="#334155"
+      strokeWidth="1.5"
+      strokeDasharray="10,8"
+    />
+    <g transform="translate(92,67) rotate(-32)" className="anim-wobble">
+      <rect x="-24" y="-14" width="48" height="26" fill="#7c3aed" rx="3" />
+      <rect x="-18" y="-24" width="36" height="14" fill="#6d28d9" rx="2" />
+    </g>
+    <path
+      d="M 40 68 Q 60 52 80 62 Q 100 72 118 50"
+      stroke="#ef4444"
+      strokeWidth="2"
+      fill="none"
+      strokeLinecap="round"
+      strokeDasharray="5,3"
+    />
+    <circle
+      cx="30"
+      cy="28"
+      r="18"
+      fill="none"
+      stroke="#4b5563"
+      strokeWidth="5"
+      transform="rotate(45,30,28)"
+    />
+    <circle cx="30" cy="28" r="6" fill="#374151" stroke="#4b5563" strokeWidth="3" />
+    <text x="30" y="12" textAnchor="middle" fill="#ef4444" fontSize="9">
+      猛打↺
+    </text>
+    <text x="104" y="22" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+      猛打方向盤
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+      車尾甩出，極易翻覆
+    </text>
+  </svg>
+);
+
+// == Heavy Rain / Fog ==
+const DA_HF_A = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#1e293b" />
+    <rect x="0" y="54" width="160" height="38" fill="#374151" />
+    <rect width="160" height="100" fill="#94a3b8" opacity="0.28" className="anim-fog" />
+    <line x1="0" y1="64" x2="38" y2="64" stroke="#f59e0b" strokeWidth="2.5" opacity="0.7" />
+    <line x1="0" y1="74" x2="46" y2="74" stroke="#f59e0b" strokeWidth="2" opacity="0.5" />
+    <line x1="0" y1="84" x2="28" y2="84" stroke="#f59e0b" strokeWidth="1.5" opacity="0.4" />
+    <g transform="translate(104,72)">
+      <rect x="-28" y="-16" width="56" height="26" fill="#065f46" rx="3" />
+      <rect x="-20" y="-26" width="40" height="14" fill="#047857" rx="2" />
+      <circle cx="-24" cy="-14" r="4" fill="#fef9c3" opacity="0.9" />
+      <circle cx="24" cy="-14" r="4" fill="#fef9c3" opacity="0.9" />
+    </g>
+    <text x="30" y="28" textAnchor="middle" fill="#ef4444" fontSize="18" fontWeight="900">
+      100
+    </text>
+    <text x="30" y="42" textAnchor="middle" fill="#ef4444" fontSize="9">
+      km/h
+    </text>
+    <text x="104" y="20" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="800">
+      霧中仍高速行駛
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+      完全沒有反應時間
+    </text>
+  </svg>
+);
+const DA_HF_B = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#1e293b" />
+    <rect x="0" y="54" width="160" height="38" fill="#374151" />
+    <rect width="160" height="100" fill="#94a3b8" opacity="0.18" className="anim-fog" />
+    <g transform="translate(26,72)">
+      <rect x="-14" y="-10" width="28" height="18" fill="#1d4ed8" rx="2" />
+      <circle cx="-11" cy="8" r="2.5" fill="#ef4444" />
+      <circle cx="11" cy="8" r="2.5" fill="#ef4444" />
+    </g>
+    <line
+      x1="42"
+      y1="72"
+      x2="90"
+      y2="72"
+      stroke="#4ade80"
+      strokeWidth="1.5"
+      strokeDasharray="5,4"
+    />
+    <text x="66" y="66" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+      大車距
+    </text>
+    <g transform="translate(120,72)">
+      <rect x="-24" y="-16" width="48" height="28" fill="#065f46" rx="3" />
+      <rect x="-18" y="-26" width="36" height="14" fill="#047857" rx="2" />
+      <circle cx="-20" cy="11" r="4.5" fill="#fbbf24" opacity="0.9" />
+      <circle cx="20" cy="11" r="4.5" fill="#fbbf24" opacity="0.9" />
+    </g>
+    <text x="28" y="26" textAnchor="middle" fill="#4ade80" fontSize="18" fontWeight="900">
+      40
+    </text>
+    <text x="28" y="40" textAnchor="middle" fill="#4ade80" fontSize="8">
+      km/h ↓
+    </text>
+    <circle cx="142" cy="18" r="11" fill="#15803d" />
+    <text x="142" y="22" textAnchor="middle" fill="white" fontSize="12" fontWeight="900">
+      ✓
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+      霧燈＋降速＋大車距
+    </text>
+  </svg>
+);
+const DA_HF_C = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#1e293b" />
+    <rect x="0" y="54" width="160" height="38" fill="#374151" />
+    <g transform="translate(106,74)">
+      <rect x="-26" y="-16" width="52" height="28" fill="#065f46" rx="3" />
+      <rect x="-20" y="-26" width="40" height="14" fill="#047857" rx="2" />
+      <circle cx="-22" cy="-14" r="5" fill="#fef9c3" opacity="1" />
+      <circle cx="22" cy="-14" r="5" fill="#fef9c3" opacity="1" />
+    </g>
+    <path d="M 80 58 L 18 42 L 18 76 Z" fill="#fef9c3" opacity="0.18" className="anim-fog" />
+    <path d="M 80 58 L 10 30 L 10 86 Z" fill="#fef9c3" opacity="0.1" className="anim-fog" />
+    <rect x="6" y="30" width="58" height="50" fill="#e2e8f0" opacity="0.25" className="anim-fog" />
+    <text x="36" y="62" textAnchor="middle" fill="#ef4444" fontSize="26" fontWeight="900">
+      ✗
+    </text>
+    <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="800">
+      遠光燈被霧氣反射
+    </text>
+    <text x="80" y="32" textAnchor="middle" fill="#fbbf24" fontSize="8">
+      形成「光牆」更看不清
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+      能見度反而更差
+    </text>
+  </svg>
+);
+
+// == Rear-End Collision ==
+const DA_RE_A = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    <rect x="0" y="50" width="160" height="42" fill="#1e293b" />
+    <line
+      x1="0"
+      y1="71"
+      x2="160"
+      y2="71"
+      stroke="#334155"
+      strokeWidth="1.5"
+      strokeDasharray="10,8"
+    />
+    <g transform="translate(52,63)">
+      <rect x="-18" y="-12" width="36" height="20" fill="#1d4ed8" rx="2" />
+      <rect x="-12" y="-19" width="24" height="11" fill="#1e40af" rx="2" />
+    </g>
+    <g transform="translate(104,63)">
+      <rect x="-18" y="-12" width="36" height="20" fill="#dc2626" rx="2" />
+      <rect x="-12" y="-19" width="24" height="11" fill="#b91c1c" rx="2" />
+    </g>
+    <circle cx="72" cy="43" r="5" fill="#fbbf24" />
+    <rect x="69" y="48" width="6" height="13" fill="#1d4ed8" rx="1" />
+    <circle cx="88" cy="43" r="5" fill="#fbbf24" />
+    <rect x="85" y="48" width="6" height="13" fill="#dc2626" rx="1" />
+    <line x1="74" y1="51" x2="86" y2="48" stroke="#1d4ed8" strokeWidth="2" strokeLinecap="round" />
+    <line x1="86" y1="51" x2="74" y2="48" stroke="#dc2626" strokeWidth="2" strokeLinecap="round" />
+    <g style={{ animation: 'stepSlideR 1.5s ease-in-out infinite' }}>
+      <rect x="4" y="58" width="28" height="16" fill="#475569" rx="2" />
+      <circle cx="28" cy="60" r="3" fill="#fef9c3" opacity="0.8" />
+      <circle cx="28" cy="70" r="3" fill="#fef9c3" opacity="0.8" />
+    </g>
+    <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="800">
+      車道上爭執
+    </text>
+    <text x="80" y="30" textAnchor="middle" fill="#f87171" fontSize="8">
+      後車無法煞停
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+      阻塞交通，可能再次被撞
+    </text>
+  </svg>
+);
+const DA_RE_B = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
+    <line
+      x1="0"
+      y1="70"
+      x2="160"
+      y2="70"
+      stroke="#334155"
+      strokeWidth="1.5"
+      strokeDasharray="10,8"
+    />
+    <rect x="124" y="48" width="36" height="44" fill="#252f3f" />
+    <line x1="124" y1="48" x2="124" y2="92" stroke="#fbbf24" strokeWidth="1.5" />
+    <g transform="translate(138,67)">
+      <rect x="-16" y="-14" width="32" height="22" fill="#1d4ed8" rx="3" />
+      <rect x="-10" y="-22" width="20" height="12" fill="#1e40af" rx="2" />
+      <circle cx="-13" cy="-12" r="4" fill="#f59e0b" className="anim-hazard" />
+      <circle cx="13" cy="-12" r="4" fill="#f59e0b" className="anim-hazard" />
+      <circle cx="-13" cy="7" r="4" fill="#f59e0b" className="anim-hazard" />
+      <circle cx="13" cy="7" r="4" fill="#f59e0b" className="anim-hazard" />
+    </g>
+    <path
+      d="M 74 68 Q 104 62 120 65"
+      stroke="#4ade80"
+      strokeWidth="2.5"
+      fill="none"
+      strokeLinecap="round"
+    />
+    <polygon points="118,60 122,65 117,69" fill="#4ade80" />
+    <circle cx="22" cy="22" r="13" fill="#15803d" />
+    <text x="22" y="26" textAnchor="middle" fill="white" fontSize="14" fontWeight="900">
+      ✓
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+      先移車，確保現場安全
+    </text>
+  </svg>
+);
+const DA_RE_C = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
+    <line
+      x1="0"
+      y1="70"
+      x2="160"
+      y2="70"
+      stroke="#334155"
+      strokeWidth="1.5"
+      strokeDasharray="10,8"
+    />
+    <g transform="translate(118,65)">
+      <rect x="-24" y="-14" width="48" height="26" fill="#1d4ed8" rx="3" />
+      <rect x="-18" y="-22" width="36" height="14" fill="#1e40af" rx="2" />
+      <circle cx="-21" cy="11" r="4" fill="#ef4444" />
+      <circle cx="21" cy="11" r="4" fill="#ef4444" />
+    </g>
+    <g transform="translate(78,65)">
+      <rect x="-18" y="-12" width="36" height="22" fill="#7c3aed" rx="2" />
+      <rect x="-12" y="-20" width="24" height="12" fill="#6d28d9" rx="2" />
+    </g>
+    <g transform="translate(44,65)">
+      <rect x="-16" y="-11" width="32" height="20" fill="#dc2626" rx="2" />
+      <rect x="-10" y="-18" width="20" height="11" fill="#b91c1c" rx="2" />
+    </g>
+    <g transform="translate(14,65)">
+      <rect x="-12" y="-9" width="24" height="16" fill="#475569" rx="2" />
+    </g>
+    <text x="118" y="26" textAnchor="middle" fontSize="18">
+      🚔
+    </text>
+    <text x="118" y="40" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      等警察…
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+      阻塞車流，連環追撞風險
+    </text>
+  </svg>
+);
+
+// == Brake Failure ==
+const DA_BF_A = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    <rect
+      x="48"
+      y="54"
+      width="64"
+      height="30"
+      fill="#374151"
+      rx="5"
+      stroke="#475569"
+      strokeWidth="2"
+    />
+    <text x="80" y="73" textAnchor="middle" fill="#94a3b8" fontSize="12" fontWeight="700">
+      BRAKE
+    </text>
+    <g
+      style={{ animation: 'stepBrakePump 0.7s ease-in-out infinite', transformOrigin: '80px 54px' }}
+    >
+      <text x="80" y="44" textAnchor="middle" fontSize="24">
+        🦶
+      </text>
+    </g>
+    <text x="130" y="46" fontSize="20">
+      ❌
+    </text>
+    <path d="M 114 68 L 128 58" stroke="#ef4444" strokeWidth="2" fill="none" />
+    <text x="80" y="20" textAnchor="middle" fill="#fbbf24" fontSize="10" fontWeight="800">
+      只靠踩煞車不夠
+    </text>
+    <text x="80" y="34" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      油壓失效時效果有限
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">
+      需配合降檔才完整
+    </text>
+  </svg>
+);
+const DA_BF_B = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    <rect x="0" y="52" width="160" height="40" fill="#1e293b" />
+    <path
+      d="M 18 70 Q 58 56 96 72 Q 122 82 148 66"
+      stroke="#ef4444"
+      strokeWidth="2.5"
+      fill="none"
+      strokeLinecap="round"
+      strokeDasharray="5,3"
+    />
+    <g transform="translate(112,67) rotate(28)">
+      <rect x="-24" y="-14" width="48" height="26" fill="#dc2626" rx="3" />
+      <rect x="-18" y="-24" width="36" height="14" fill="#b91c1c" rx="2" />
+    </g>
+    <rect x="30" y="56" width="10" height="8" fill="#475569" rx="4" />
+    <line x1="35" y1="56" x2="35" y2="22" stroke="#4b5563" strokeWidth="6" strokeLinecap="round" />
+    <ellipse cx="35" cy="22" rx="10" ry="7" fill="#334155" stroke="#6b7280" strokeWidth="2" />
+    <g
+      style={{
+        animation: 'stepHandbrakePull 1.5s ease-in-out infinite',
+        transformOrigin: '35px 22px',
+      }}
+    >
+      <text x="35" y="20" textAnchor="middle" fontSize="16">
+        🤚
+      </text>
+    </g>
+    <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+      猛拉手煞車
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+      後輪鎖死，車尾猛烈甩出
+    </text>
+  </svg>
+);
+const DA_BF_C = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    <rect
+      x="6"
+      y="24"
+      width="44"
+      height="58"
+      fill="#1e293b"
+      rx="8"
+      stroke="#334155"
+      strokeWidth="1"
+    />
+    <rect x="16" y="50" width="24" height="16" fill="#374151" rx="3" />
+    <text x="28" y="61" textAnchor="middle" fill="#64748b" fontSize="6" fontWeight="700">
+      BRAKE
+    </text>
+    <g
+      style={{
+        animation: 'stepBrakePump 0.85s ease-in-out infinite',
+        transformOrigin: '28px 50px',
+      }}
+    >
+      <text x="28" y="44" textAnchor="middle" fontSize="15">
+        🦶
+      </text>
+    </g>
+    <text x="28" y="76" textAnchor="middle" fill="#4ade80" fontSize="7" fontWeight="700">
+      點踩
+    </text>
+    <rect
+      x="58"
+      y="24"
+      width="44"
+      height="58"
+      fill="#1e293b"
+      rx="8"
+      stroke="#334155"
+      strokeWidth="1"
+    />
+    <line x1="71" y1="38" x2="71" y2="66" stroke="#334155" strokeWidth="1.5" />
+    <line x1="89" y1="38" x2="89" y2="66" stroke="#334155" strokeWidth="1.5" />
+    <line x1="71" y1="52" x2="89" y2="52" stroke="#334155" strokeWidth="1.5" />
+    {[
+      ['3', 71, 42],
+      ['1', 71, 62],
+      ['2', 89, 42],
+      ['N', 89, 62],
+    ].map(([g, x, y]) => (
+      <g key={`da${g}${x}`}>
+        <circle cx={x} cy={y} r="7" fill="#1e293b" stroke="#334155" strokeWidth="1" />
+        <text
+          x={x}
+          y={(y as number) + 3}
+          textAnchor="middle"
+          fill="#475569"
+          fontSize="7"
+          fontWeight="700"
+        >
+          {g}
+        </text>
+      </g>
+    ))}
+    <g style={{ animation: 'stepGearDrop 2s ease-in-out infinite' }}>
+      <circle cx="71" cy="62" r="8" fill="#f59e0b" />
+      <text x="71" y="65" textAnchor="middle" fill="#000" fontSize="7" fontWeight="900">
+        1
+      </text>
+    </g>
+    <text x="80" y="76" textAnchor="middle" fill="#f59e0b" fontSize="7" fontWeight="700">
+      降檔
+    </text>
+    <rect
+      x="110"
+      y="24"
+      width="44"
+      height="58"
+      fill="#1e293b"
+      rx="8"
+      stroke="#334155"
+      strokeWidth="1"
+    />
+    <circle cx="132" cy="46" r="16" fill="#15803d" opacity="0.85" />
+    <text x="132" y="51" textAnchor="middle" fill="white" fontSize="18" fontWeight="900">
+      P
+    </text>
+    <text x="132" y="74" textAnchor="middle" fill="#4ade80" fontSize="7" fontWeight="700">
+      安全點
+    </text>
+    <text x="53" y="54" textAnchor="middle" fill="#475569" fontSize="12">
+      →
+    </text>
+    <text x="107" y="54" textAnchor="middle" fill="#475569" fontSize="12">
+      →
+    </text>
+    <circle cx="80" cy="14" r="9" fill="#15803d" />
+    <text x="80" y="18" textAnchor="middle" fill="white" fontSize="10" fontWeight="900">
+      ✓
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+      三步驟同時進行
+    </text>
+  </svg>
+);
+
+// == Narrow Road DA options ==
+const DA_NR_A = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Road */}
+    <rect x="45" y="30" width="70" height="62" fill="#1e293b" />
+    <line
+      x1="80"
+      y1="30"
+      x2="80"
+      y2="92"
+      stroke="#334155"
+      strokeWidth="1.5"
+      strokeDasharray="8,6"
+    />
+    <rect x="25" y="30" width="20" height="62" fill="#14532d" opacity="0.8" />
+    <rect x="115" y="30" width="20" height="62" fill="#14532d" opacity="0.8" />
+    {/* Car veering sharply right, hitting wall */}
+    <g style={{ animation: 'stepSlideR 0.7s ease-in-out infinite' }}>
+      <rect x="80" y="60" width="28" height="20" fill="#dc2626" rx="3" />
+      <rect x="84" y="52" width="20" height="12" fill="#b91c1c" rx="2" />
+    </g>
+    {/* Impact at right wall */}
+    <g transform="translate(113,70)" className="anim-impact">
+      <circle r="7" fill="#f59e0b" opacity="0.8" />
+      <line x1="-9" y1="-9" x2="9" y2="9" stroke="#fcd34d" strokeWidth="2.5" />
+      <line x1="9" y1="-9" x2="-9" y2="9" stroke="#fcd34d" strokeWidth="2.5" />
+    </g>
+    <text x="80" y="20" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+      猛打方向盤閃避
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+      撞上山壁，失控翻車
+    </text>
+  </svg>
+);
+const DA_NR_B = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Road */}
+    <rect x="40" y="30" width="80" height="62" fill="#1e293b" />
+    <line
+      x1="80"
+      y1="30"
+      x2="80"
+      y2="92"
+      stroke="#334155"
+      strokeWidth="1.5"
+      strokeDasharray="8,6"
+    />
+    <rect x="20" y="30" width="20" height="62" fill="#14532d" opacity="0.8" />
+    <rect x="120" y="30" width="20" height="62" fill="#14532d" opacity="0.8" />
+    {/* Two cars facing each other, stopped */}
+    <g transform="translate(65,70)">
+      <rect x="-14" y="-12" width="28" height="18" fill="#dc2626" rx="3" />
+      <rect x="-8" y="-20" width="16" height="11" fill="#b91c1c" rx="2" />
+    </g>
+    <g transform="translate(95,42) rotate(180)">
+      <rect x="-12" y="-10" width="24" height="16" fill="#2563eb" rx="3" />
+      <rect x="-7" y="-16" width="14" height="9" fill="#1d4ed8" rx="2" />
+    </g>
+    {/* Horn symbol */}
+    <text x="80" y="58" textAnchor="middle" fontSize="12">
+      📯
+    </text>
+    <circle
+      cx="80"
+      cy="56"
+      r="10"
+      fill="none"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      style={{ animation: 'stepRingWave 1.2s ease-out infinite' }}
+    />
+    {/* Standoff */}
+    <text x="80" y="20" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="800">
+      按喇叭等對方讓路
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="700">
+      兩車對峙，危機未解除
+    </text>
+  </svg>
+);
+const DA_NR_C = () => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Road with wider pocket */}
+    <rect x="38" y="30" width="84" height="62" fill="#1e293b" />
+    <line
+      x1="80"
+      y1="30"
+      x2="80"
+      y2="92"
+      stroke="#334155"
+      strokeWidth="1.5"
+      strokeDasharray="8,6"
+    />
+    <rect x="18" y="30" width="20" height="62" fill="#14532d" opacity="0.8" />
+    <rect x="122" y="30" width="20" height="62" fill="#14532d" opacity="0.8" />
+    {/* Wider pocket behind player car */}
+    <rect x="18" y="65" width="104" height="27" fill="#374151" rx="3" opacity="0.6" />
+    <text x="70" y="80" textAnchor="middle" fill="#4ade80" fontSize="6" fontWeight="700">
+      較寬處
+    </text>
+    {/* Player car backed into wide spot */}
+    <g transform="translate(66,76)">
+      <rect x="-14" y="-12" width="28" height="18" fill="#dc2626" rx="3" />
+      <rect x="-8" y="-20" width="16" height="11" fill="#b91c1c" rx="2" />
+    </g>
+    {/* Oncoming car passing */}
+    <g style={{ animation: 'stepSlideL 2.2s ease-in-out infinite' }}>
+      <g transform="translate(100,50) rotate(180)">
+        <rect x="-12" y="-10" width="24" height="16" fill="#2563eb" rx="3" />
+        <rect x="-7" y="-16" width="14" height="9" fill="#1d4ed8" rx="2" />
+      </g>
+    </g>
+    {/* Green check */}
+    <circle cx="22" cy="20" r="12" fill="#15803d" opacity="0.9" />
+    <text x="22" y="25" textAnchor="middle" fill="white" fontSize="14" fontWeight="900">
+      ✓
+    </text>
+    <text x="80" y="20" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="800">
+      減速靠右，倒車讓路
+    </text>
+    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+      兩車安全錯車通過
+    </text>
+  </svg>
+);
+
+export const DA_OPTS: Partial<Record<ScenarioId, React.FC[]>> = {
+  'highway-breakdown': [DA_HB_A, DA_HB_B, DA_HB_C],
+  'tire-blowout': [DA_TB_A, DA_TB_B, DA_TB_C],
+  'heavy-rain-fog': [DA_HF_A, DA_HF_B, DA_HF_C],
+  'rear-end-collision': [DA_RE_A, DA_RE_B, DA_RE_C],
+  'brake-failure': [DA_BF_A, DA_BF_B, DA_BF_C],
+  'narrow-road': [DA_NR_A, DA_NR_B, DA_NR_C],
+};
