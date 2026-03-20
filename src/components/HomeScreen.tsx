@@ -19,11 +19,9 @@ const HomeScreen = ({ onSelect, completed }: HomeScreenProps) => (
       <div className="anim-fade" style={{ textAlign: 'center', marginBottom: 32 }}>
         <div style={{ fontSize: 52, marginBottom: 8 }}>🚗</div>
         <h1 style={{ fontSize: 26, fontWeight: 900, color: 'white', margin: '0 0 8px' }}>
-          台灣駕駛緊急應變訓練
+          Awesome Learn Driving
         </h1>
-        <p style={{ fontSize: 13, color: '#64748b', margin: 0 }}>
-          學習正確應對突發狀況，成為更安全的駕駛人
-        </p>
+        <p style={{ fontSize: 13, color: '#64748b', margin: 0 }}>Safe Driving Makes Happy Life</p>
       </div>
       <div
         style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, marginBottom: 24 }}
