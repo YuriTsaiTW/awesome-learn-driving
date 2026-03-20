@@ -1,4 +1,5 @@
 import type { Scenario, DecisionOption } from '../types/scenario';
+import { DA_OPTS } from '../data/decision-animations';
 
 interface ConsequencePhaseProps {
   scenario: Scenario;
@@ -8,8 +9,26 @@ interface ConsequencePhaseProps {
 
 const ConsequencePhase = ({ scenario, choice, onNext }: ConsequencePhaseProps) => {
   const ok = choice.correct === true;
+  const daOpts = DA_OPTS[scenario.id] || [];
+  const daIdx = choice.id === 'a' ? 0 : choice.id === 'b' ? 1 : 2;
+  const DA = daOpts[daIdx];
+
   return (
     <div className="anim-fade">
+      {DA && (
+        <div
+          style={{
+            borderRadius: 16,
+            overflow: 'hidden',
+            marginBottom: 16,
+            border: `2px solid ${ok ? '#16a34a' : '#dc2626'}`,
+          }}
+        >
+          <div style={{ height: 160, background: '#0f172a' }}>
+            <DA showConsequence={true} />
+          </div>
+        </div>
+      )}
       <div
         style={{
           borderRadius: 20,

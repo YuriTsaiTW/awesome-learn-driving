@@ -69,7 +69,7 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
                     flexShrink: 0,
                   }}
                 >
-                  <DA />
+                  <DA showConsequence={false} />
                 </div>
               )}
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px' }}>
