@@ -1,6 +1,6 @@
 # awesome-learn-driving
 
-### 駕駛小白的緊急應變教練 — 在螢幕上先把該怕的都怕過一遍
+### Safe Driving Makes Happy Life
 
 **[線上體驗 Demo](https://yuritsaitw.github.io/awesome-learn-driving/)**
 
