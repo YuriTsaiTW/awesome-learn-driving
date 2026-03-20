@@ -1,7 +1,11 @@
 import type { ScenarioId } from '../types/scenario';
 
+interface DAProps {
+  showConsequence?: boolean;
+}
+
 // == Highway Breakdown ==
-const DA_HB_A = () => (
+const DA_HB_A = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="52" width="160" height="40" fill="#1e293b" />
@@ -18,18 +22,22 @@ const DA_HB_A = () => (
     <rect x="93" y="65" width="6" height="14" fill="#3b82f6" rx="1" />
     <line x1="93" y1="68" x2="88" y2="75" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" />
     <line x1="99" y1="68" x2="104" y2="75" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" />
-    <text x="80" y="20" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
-      ⚠ 高速車道下車
-    </text>
-    <text x="80" y="34" textAnchor="middle" fill="#f87171" fontSize="8">
-      後車無法及時煞停
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
-      被後車撞擊風險極高
-    </text>
+    {showConsequence && (
+      <>
+        <text x="80" y="20" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          ⚠ 高速車道下車
+        </text>
+        <text x="80" y="34" textAnchor="middle" fill="#f87171" fontSize="8">
+          後車無法及時煞停
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          被後車撞擊風險極高
+        </text>
+      </>
+    )}
   </svg>
 );
-const DA_HB_B = () => (
+const DA_HB_B = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
@@ -54,28 +62,32 @@ const DA_HB_B = () => (
     </g>
     <path
       d="M 78 68 Q 108 62 120 66"
-      stroke="#4ade80"
+      stroke={showConsequence ? '#4ade80' : '#94a3b8'}
       strokeWidth="2.5"
       fill="none"
       strokeLinecap="round"
     />
-    <polygon points="118,61 122,66 117,70" fill="#4ade80" />
-    <circle cx="22" cy="24" r="14" fill="#15803d" opacity="0.9" />
-    <text x="22" y="29" textAnchor="middle" fill="white" fontSize="15" fontWeight="900">
-      ✓
-    </text>
-    <text x="96" y="22" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">
-      開雙黃燈
-    </text>
-    <text x="96" y="34" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">
-      移至路肩
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
-      最正確的第一步
-    </text>
+    <polygon points="118,61 122,66 117,70" fill={showConsequence ? '#4ade80' : '#94a3b8'} />
+    {showConsequence && (
+      <>
+        <circle cx="22" cy="24" r="14" fill="#15803d" opacity="0.9" />
+        <text x="22" y="29" textAnchor="middle" fill="white" fontSize="15" fontWeight="900">
+          ✓
+        </text>
+        <text x="96" y="22" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">
+          開雙黃燈
+        </text>
+        <text x="96" y="34" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">
+          移至路肩
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+          最正確的第一步
+        </text>
+      </>
+    )}
   </svg>
 );
-const DA_HB_C = () => (
+const DA_HB_C = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
@@ -96,9 +108,11 @@ const DA_HB_C = () => (
         style={{ animation: 'hazard 1.2s ease-in-out infinite' }}
       />
     </g>
-    <text x="100" y="40" textAnchor="middle" fill="#ef4444" fontSize="8">
-      🚫 沒開雙黃燈
-    </text>
+    {showConsequence && (
+      <text x="100" y="40" textAnchor="middle" fill="#ef4444" fontSize="8">
+        🚫 沒開雙黃燈
+      </text>
+    )}
     <g transform="translate(46,67)">
       <rect x="-18" y="-12" width="36" height="20" fill="#475569" rx="2" />
       <rect x="-12" y="-19" width="24" height="11" fill="#374151" rx="2" />
@@ -108,17 +122,21 @@ const DA_HB_C = () => (
     <g transform="translate(14,67)">
       <rect x="-10" y="-9" width="20" height="16" fill="#334155" rx="2" />
     </g>
-    <text x="80" y="20" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
-      停在車道打電話
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
-      暴露在高速車流中
-    </text>
+    {showConsequence && (
+      <>
+        <text x="80" y="20" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          停在車道打電話
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          暴露在高速車流中
+        </text>
+      </>
+    )}
   </svg>
 );
 
 // == Tire Blowout ==
-const DA_TB_A = () => (
+const DA_TB_A = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="50" width="160" height="42" fill="#1e293b" />
@@ -133,18 +151,28 @@ const DA_TB_A = () => (
     <text x="36" y="32" textAnchor="middle" fontSize="22">
       🦶
     </text>
-    <text x="36" y="20" textAnchor="middle" fill="#ef4444" fontSize="20">
+    <text
+      x="36"
+      y="20"
+      textAnchor="middle"
+      fill={showConsequence ? '#ef4444' : '#94a3b8'}
+      fontSize="20"
+    >
       ↓
     </text>
-    <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
-      急踩煞車
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
-      後輪鎖死，車輛甩尾失控
-    </text>
+    {showConsequence && (
+      <>
+        <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          急踩煞車
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          後輪鎖死，車輛甩尾失控
+        </text>
+      </>
+    )}
   </svg>
 );
-const DA_TB_B = () => (
+const DA_TB_B = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <circle cx="72" cy="54" r="28" fill="none" stroke="#4b5563" strokeWidth="7" />
@@ -189,19 +217,29 @@ const DA_TB_B = () => (
         🦶
       </text>
     </g>
-    <text x="133" y="46" textAnchor="middle" fill="#4ade80" fontSize="7">
+    <text
+      x="133"
+      y="46"
+      textAnchor="middle"
+      fill={showConsequence ? '#4ade80' : '#94a3b8'}
+      fontSize="7"
+    >
       慢放開
     </text>
-    <circle cx="20" cy="18" r="11" fill="#15803d" />
-    <text x="20" y="22" textAnchor="middle" fill="white" fontSize="12" fontWeight="900">
-      ✓
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
-      緊握方向盤＋自然減速
-    </text>
+    {showConsequence && (
+      <>
+        <circle cx="20" cy="18" r="11" fill="#15803d" />
+        <text x="20" y="22" textAnchor="middle" fill="white" fontSize="12" fontWeight="900">
+          ✓
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+          緊握方向盤＋自然減速
+        </text>
+      </>
+    )}
   </svg>
 );
-const DA_TB_C = () => (
+const DA_TB_C = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
@@ -220,7 +258,7 @@ const DA_TB_C = () => (
     </g>
     <path
       d="M 40 68 Q 60 52 80 62 Q 100 72 118 50"
-      stroke="#ef4444"
+      stroke={showConsequence ? '#ef4444' : '#94a3b8'}
       strokeWidth="2"
       fill="none"
       strokeLinecap="round"
@@ -236,20 +274,24 @@ const DA_TB_C = () => (
       transform="rotate(45,30,28)"
     />
     <circle cx="30" cy="28" r="6" fill="#374151" stroke="#4b5563" strokeWidth="3" />
-    <text x="30" y="12" textAnchor="middle" fill="#ef4444" fontSize="9">
-      猛打↺
-    </text>
-    <text x="104" y="22" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
-      猛打方向盤
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
-      車尾甩出，極易翻覆
-    </text>
+    {showConsequence && (
+      <>
+        <text x="30" y="12" textAnchor="middle" fill="#ef4444" fontSize="9">
+          猛打↺
+        </text>
+        <text x="104" y="22" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          猛打方向盤
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          車尾甩出，極易翻覆
+        </text>
+      </>
+    )}
   </svg>
 );
 
 // == Heavy Rain / Fog ==
-const DA_HF_A = () => (
+const DA_HF_A = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#1e293b" />
     <rect x="0" y="54" width="160" height="38" fill="#374151" />
@@ -263,21 +305,38 @@ const DA_HF_A = () => (
       <circle cx="-24" cy="-14" r="4" fill="#fef9c3" opacity="0.9" />
       <circle cx="24" cy="-14" r="4" fill="#fef9c3" opacity="0.9" />
     </g>
-    <text x="30" y="28" textAnchor="middle" fill="#ef4444" fontSize="18" fontWeight="900">
+    <text
+      x="30"
+      y="28"
+      textAnchor="middle"
+      fill={showConsequence ? '#ef4444' : '#94a3b8'}
+      fontSize="18"
+      fontWeight="900"
+    >
       100
     </text>
-    <text x="30" y="42" textAnchor="middle" fill="#ef4444" fontSize="9">
+    <text
+      x="30"
+      y="42"
+      textAnchor="middle"
+      fill={showConsequence ? '#ef4444' : '#94a3b8'}
+      fontSize="9"
+    >
       km/h
     </text>
-    <text x="104" y="20" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="800">
-      霧中仍高速行駛
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
-      完全沒有反應時間
-    </text>
+    {showConsequence && (
+      <>
+        <text x="104" y="20" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="800">
+          霧中仍高速行駛
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          完全沒有反應時間
+        </text>
+      </>
+    )}
   </svg>
 );
-const DA_HF_B = () => (
+const DA_HF_B = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#1e293b" />
     <rect x="0" y="54" width="160" height="38" fill="#374151" />
@@ -292,11 +351,18 @@ const DA_HF_B = () => (
       y1="72"
       x2="90"
       y2="72"
-      stroke="#4ade80"
+      stroke={showConsequence ? '#4ade80' : '#94a3b8'}
       strokeWidth="1.5"
       strokeDasharray="5,4"
     />
-    <text x="66" y="66" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+    <text
+      x="66"
+      y="66"
+      textAnchor="middle"
+      fill={showConsequence ? '#4ade80' : '#94a3b8'}
+      fontSize="8"
+      fontWeight="700"
+    >
       大車距
     </text>
     <g transform="translate(120,72)">
@@ -305,22 +371,39 @@ const DA_HF_B = () => (
       <circle cx="-20" cy="11" r="4.5" fill="#fbbf24" opacity="0.9" />
       <circle cx="20" cy="11" r="4.5" fill="#fbbf24" opacity="0.9" />
     </g>
-    <text x="28" y="26" textAnchor="middle" fill="#4ade80" fontSize="18" fontWeight="900">
+    <text
+      x="28"
+      y="26"
+      textAnchor="middle"
+      fill={showConsequence ? '#4ade80' : '#94a3b8'}
+      fontSize="18"
+      fontWeight="900"
+    >
       40
     </text>
-    <text x="28" y="40" textAnchor="middle" fill="#4ade80" fontSize="8">
+    <text
+      x="28"
+      y="40"
+      textAnchor="middle"
+      fill={showConsequence ? '#4ade80' : '#94a3b8'}
+      fontSize="8"
+    >
       km/h ↓
     </text>
-    <circle cx="142" cy="18" r="11" fill="#15803d" />
-    <text x="142" y="22" textAnchor="middle" fill="white" fontSize="12" fontWeight="900">
-      ✓
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
-      霧燈＋降速＋大車距
-    </text>
+    {showConsequence && (
+      <>
+        <circle cx="142" cy="18" r="11" fill="#15803d" />
+        <text x="142" y="22" textAnchor="middle" fill="white" fontSize="12" fontWeight="900">
+          ✓
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+          霧燈＋降速＋大車距
+        </text>
+      </>
+    )}
   </svg>
 );
-const DA_HF_C = () => (
+const DA_HF_C = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#1e293b" />
     <rect x="0" y="54" width="160" height="38" fill="#374151" />
@@ -333,23 +416,27 @@ const DA_HF_C = () => (
     <path d="M 80 58 L 18 42 L 18 76 Z" fill="#fef9c3" opacity="0.18" className="anim-fog" />
     <path d="M 80 58 L 10 30 L 10 86 Z" fill="#fef9c3" opacity="0.1" className="anim-fog" />
     <rect x="6" y="30" width="58" height="50" fill="#e2e8f0" opacity="0.25" className="anim-fog" />
-    <text x="36" y="62" textAnchor="middle" fill="#ef4444" fontSize="26" fontWeight="900">
-      ✗
-    </text>
-    <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="800">
-      遠光燈被霧氣反射
-    </text>
-    <text x="80" y="32" textAnchor="middle" fill="#fbbf24" fontSize="8">
-      形成「光牆」更看不清
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
-      能見度反而更差
-    </text>
+    {showConsequence && (
+      <>
+        <text x="36" y="62" textAnchor="middle" fill="#ef4444" fontSize="26" fontWeight="900">
+          ✗
+        </text>
+        <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="800">
+          遠光燈被霧氣反射
+        </text>
+        <text x="80" y="32" textAnchor="middle" fill="#fbbf24" fontSize="8">
+          形成「光牆」更看不清
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          能見度反而更差
+        </text>
+      </>
+    )}
   </svg>
 );
 
 // == Rear-End Collision ==
-const DA_RE_A = () => (
+const DA_RE_A = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="50" width="160" height="42" fill="#1e293b" />
@@ -381,18 +468,22 @@ const DA_RE_A = () => (
       <circle cx="28" cy="60" r="3" fill="#fef9c3" opacity="0.8" />
       <circle cx="28" cy="70" r="3" fill="#fef9c3" opacity="0.8" />
     </g>
-    <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="800">
-      車道上爭執
-    </text>
-    <text x="80" y="30" textAnchor="middle" fill="#f87171" fontSize="8">
-      後車無法煞停
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
-      阻塞交通，可能再次被撞
-    </text>
+    {showConsequence && (
+      <>
+        <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="800">
+          車道上爭執
+        </text>
+        <text x="80" y="30" textAnchor="middle" fill="#f87171" fontSize="8">
+          後車無法煞停
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          阻塞交通，可能再次被撞
+        </text>
+      </>
+    )}
   </svg>
 );
-const DA_RE_B = () => (
+const DA_RE_B = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
@@ -417,22 +508,26 @@ const DA_RE_B = () => (
     </g>
     <path
       d="M 74 68 Q 104 62 120 65"
-      stroke="#4ade80"
+      stroke={showConsequence ? '#4ade80' : '#94a3b8'}
       strokeWidth="2.5"
       fill="none"
       strokeLinecap="round"
     />
-    <polygon points="118,60 122,65 117,69" fill="#4ade80" />
-    <circle cx="22" cy="22" r="13" fill="#15803d" />
-    <text x="22" y="26" textAnchor="middle" fill="white" fontSize="14" fontWeight="900">
-      ✓
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
-      先移車，確保現場安全
-    </text>
+    <polygon points="118,60 122,65 117,69" fill={showConsequence ? '#4ade80' : '#94a3b8'} />
+    {showConsequence && (
+      <>
+        <circle cx="22" cy="22" r="13" fill="#15803d" />
+        <text x="22" y="26" textAnchor="middle" fill="white" fontSize="14" fontWeight="900">
+          ✓
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+          先移車，確保現場安全
+        </text>
+      </>
+    )}
   </svg>
 );
-const DA_RE_C = () => (
+const DA_RE_C = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
@@ -468,14 +563,16 @@ const DA_RE_C = () => (
     <text x="118" y="40" textAnchor="middle" fill="#94a3b8" fontSize="8">
       等警察…
     </text>
-    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
-      阻塞車流，連環追撞風險
-    </text>
+    {showConsequence && (
+      <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+        阻塞車流，連環追撞風險
+      </text>
+    )}
   </svg>
 );
 
 // == Brake Failure ==
-const DA_BF_A = () => (
+const DA_BF_A = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect
@@ -498,28 +595,32 @@ const DA_BF_A = () => (
         🦶
       </text>
     </g>
-    <text x="130" y="46" fontSize="20">
-      ❌
-    </text>
-    <path d="M 114 68 L 128 58" stroke="#ef4444" strokeWidth="2" fill="none" />
-    <text x="80" y="20" textAnchor="middle" fill="#fbbf24" fontSize="10" fontWeight="800">
-      只靠踩煞車不夠
-    </text>
-    <text x="80" y="34" textAnchor="middle" fill="#94a3b8" fontSize="8">
-      油壓失效時效果有限
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">
-      需配合降檔才完整
-    </text>
+    {showConsequence && (
+      <>
+        <text x="130" y="46" fontSize="20">
+          ❌
+        </text>
+        <path d="M 114 68 L 128 58" stroke="#ef4444" strokeWidth="2" fill="none" />
+        <text x="80" y="20" textAnchor="middle" fill="#fbbf24" fontSize="10" fontWeight="800">
+          只靠踩煞車不夠
+        </text>
+        <text x="80" y="34" textAnchor="middle" fill="#94a3b8" fontSize="8">
+          油壓失效時效果有限
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">
+          需配合降檔才完整
+        </text>
+      </>
+    )}
   </svg>
 );
-const DA_BF_B = () => (
+const DA_BF_B = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="52" width="160" height="40" fill="#1e293b" />
     <path
       d="M 18 70 Q 58 56 96 72 Q 122 82 148 66"
-      stroke="#ef4444"
+      stroke={showConsequence ? '#ef4444' : '#94a3b8'}
       strokeWidth="2.5"
       fill="none"
       strokeLinecap="round"
@@ -542,15 +643,19 @@ const DA_BF_B = () => (
         🤚
       </text>
     </g>
-    <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
-      猛拉手煞車
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
-      後輪鎖死，車尾猛烈甩出
-    </text>
+    {showConsequence && (
+      <>
+        <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          猛拉手煞車
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          後輪鎖死，車尾猛烈甩出
+        </text>
+      </>
+    )}
   </svg>
 );
-const DA_BF_C = () => (
+const DA_BF_C = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect
@@ -577,7 +682,14 @@ const DA_BF_C = () => (
         🦶
       </text>
     </g>
-    <text x="28" y="76" textAnchor="middle" fill="#4ade80" fontSize="7" fontWeight="700">
+    <text
+      x="28"
+      y="76"
+      textAnchor="middle"
+      fill={showConsequence ? '#4ade80' : '#94a3b8'}
+      fontSize="7"
+      fontWeight="700"
+    >
       點踩
     </text>
     <rect
@@ -619,7 +731,14 @@ const DA_BF_C = () => (
         1
       </text>
     </g>
-    <text x="80" y="76" textAnchor="middle" fill="#f59e0b" fontSize="7" fontWeight="700">
+    <text
+      x="80"
+      y="76"
+      textAnchor="middle"
+      fill={showConsequence ? '#f59e0b' : '#94a3b8'}
+      fontSize="7"
+      fontWeight="700"
+    >
       降檔
     </text>
     <rect
@@ -632,11 +751,18 @@ const DA_BF_C = () => (
       stroke="#334155"
       strokeWidth="1"
     />
-    <circle cx="132" cy="46" r="16" fill="#15803d" opacity="0.85" />
+    <circle cx="132" cy="46" r="16" fill={showConsequence ? '#15803d' : '#475569'} opacity="0.85" />
     <text x="132" y="51" textAnchor="middle" fill="white" fontSize="18" fontWeight="900">
       P
     </text>
-    <text x="132" y="74" textAnchor="middle" fill="#4ade80" fontSize="7" fontWeight="700">
+    <text
+      x="132"
+      y="74"
+      textAnchor="middle"
+      fill={showConsequence ? '#4ade80' : '#94a3b8'}
+      fontSize="7"
+      fontWeight="700"
+    >
       安全點
     </text>
     <text x="53" y="54" textAnchor="middle" fill="#475569" fontSize="12">
@@ -645,18 +771,22 @@ const DA_BF_C = () => (
     <text x="107" y="54" textAnchor="middle" fill="#475569" fontSize="12">
       →
     </text>
-    <circle cx="80" cy="14" r="9" fill="#15803d" />
-    <text x="80" y="18" textAnchor="middle" fill="white" fontSize="10" fontWeight="900">
-      ✓
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
-      三步驟同時進行
-    </text>
+    {showConsequence && (
+      <>
+        <circle cx="80" cy="14" r="9" fill="#15803d" />
+        <text x="80" y="18" textAnchor="middle" fill="white" fontSize="10" fontWeight="900">
+          ✓
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+          三步驟同時進行
+        </text>
+      </>
+    )}
   </svg>
 );
 
 // == Narrow Road DA options ==
-const DA_NR_A = () => (
+const DA_NR_A = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road */}
@@ -683,15 +813,19 @@ const DA_NR_A = () => (
       <line x1="-9" y1="-9" x2="9" y2="9" stroke="#fcd34d" strokeWidth="2.5" />
       <line x1="9" y1="-9" x2="-9" y2="9" stroke="#fcd34d" strokeWidth="2.5" />
     </g>
-    <text x="80" y="20" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
-      猛打方向盤閃避
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
-      撞上山壁，失控翻車
-    </text>
+    {showConsequence && (
+      <>
+        <text x="80" y="20" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          猛打方向盤閃避
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          撞上山壁，失控翻車
+        </text>
+      </>
+    )}
   </svg>
 );
-const DA_NR_B = () => (
+const DA_NR_B = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road */}
@@ -729,16 +863,20 @@ const DA_NR_B = () => (
       strokeWidth="1.5"
       style={{ animation: 'stepRingWave 1.2s ease-out infinite' }}
     />
-    {/* Standoff */}
-    <text x="80" y="20" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="800">
-      按喇叭等對方讓路
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="700">
-      兩車對峙，危機未解除
-    </text>
+    {showConsequence && (
+      <>
+        {/* Standoff */}
+        <text x="80" y="20" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="800">
+          按喇叭等對方讓路
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="700">
+          兩車對峙，危機未解除
+        </text>
+      </>
+    )}
   </svg>
 );
-const DA_NR_C = () => (
+const DA_NR_C = ({ showConsequence = false }: DAProps) => (
   <svg viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road with wider pocket */}
@@ -756,7 +894,14 @@ const DA_NR_C = () => (
     <rect x="122" y="30" width="20" height="62" fill="#14532d" opacity="0.8" />
     {/* Wider pocket behind player car */}
     <rect x="18" y="65" width="104" height="27" fill="#374151" rx="3" opacity="0.6" />
-    <text x="70" y="80" textAnchor="middle" fill="#4ade80" fontSize="6" fontWeight="700">
+    <text
+      x="70"
+      y="80"
+      textAnchor="middle"
+      fill={showConsequence ? '#4ade80' : '#94a3b8'}
+      fontSize="6"
+      fontWeight="700"
+    >
       較寬處
     </text>
     {/* Player car backed into wide spot */}
@@ -771,21 +916,27 @@ const DA_NR_C = () => (
         <rect x="-7" y="-16" width="14" height="9" fill="#1d4ed8" rx="2" />
       </g>
     </g>
-    {/* Green check */}
-    <circle cx="22" cy="20" r="12" fill="#15803d" opacity="0.9" />
-    <text x="22" y="25" textAnchor="middle" fill="white" fontSize="14" fontWeight="900">
-      ✓
-    </text>
-    <text x="80" y="20" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="800">
-      減速靠右，倒車讓路
-    </text>
-    <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
-      兩車安全錯車通過
-    </text>
+    {showConsequence && (
+      <>
+        {/* Green check */}
+        <circle cx="22" cy="20" r="12" fill="#15803d" opacity="0.9" />
+        <text x="22" y="25" textAnchor="middle" fill="white" fontSize="14" fontWeight="900">
+          ✓
+        </text>
+        <text x="80" y="20" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="800">
+          減速靠右，倒車讓路
+        </text>
+      </>
+    )}
+    {showConsequence && (
+      <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+        兩車安全錯車通過
+      </text>
+    )}
   </svg>
 );
 
-export const DA_OPTS: Partial<Record<ScenarioId, React.FC[]>> = {
+export const DA_OPTS: Partial<Record<ScenarioId, React.FC<DAProps>[]>> = {
   'highway-breakdown': [DA_HB_A, DA_HB_B, DA_HB_C],
   'tire-blowout': [DA_TB_A, DA_TB_B, DA_TB_C],
   'heavy-rain-fog': [DA_HF_A, DA_HF_B, DA_HF_C],
