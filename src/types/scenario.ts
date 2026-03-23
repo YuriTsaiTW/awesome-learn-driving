@@ -45,7 +45,11 @@ export type ScenarioId =
   | 'heavy-rain-fog'
   | 'rear-end-collision'
   | 'brake-failure'
-  | 'narrow-road';
+  | 'narrow-road'
+  | 'intersection-crash'
+  | 'scooter-weaving'
+  | 'drowsy-driving'
+  | 'hydroplaning';
 
 export interface Scenario {
   id: ScenarioId;

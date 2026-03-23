@@ -1038,6 +1038,367 @@ const SANarrowPass = () => (
   </svg>
 );
 
+// == Intersection Crash ==
+const SALookBothWays = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Eyes looking left and right */}
+    <ellipse cx="55" cy="40" rx="20" ry="14" fill="white" />
+    <ellipse cx="105" cy="40" rx="20" ry="14" fill="white" />
+    <circle
+      cx="48"
+      cy="40"
+      r="7"
+      fill="#1e293b"
+      style={{ animation: 'stepSlideR 2s ease-in-out infinite' }}
+    />
+    <circle
+      cx="98"
+      cy="40"
+      r="7"
+      fill="#1e293b"
+      style={{ animation: 'stepSlideR 2s ease-in-out infinite' }}
+    />
+    {/* Arrows */}
+    <polygon points="10,40 22,34 22,46" fill="#ef4444" opacity="0.7" />
+    <polygon points="150,40 138,34 138,46" fill="#ef4444" opacity="0.7" />
+    <text x="80" y="80" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">
+      左右確認再起步
+    </text>
+  </svg>
+);
+
+const SABrakeStop = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Brake pedal */}
+    <rect x="55" y="15" width="50" height="55" fill="#1e293b" rx="6" />
+    <rect x="62" y="22" width="36" height="42" fill="#ef4444" rx="4" className="anim-impact" />
+    <text x="80" y="48" textAnchor="middle" fill="white" fontSize="12" fontWeight="800">
+      STOP
+    </text>
+    {/* Foot pressing */}
+    <path d="M 80 68 L 70 78 Q 80 82 90 78 Z" fill="#fbbf24" opacity="0.8" />
+    <text x="80" y="85" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+      立即踩煞車停住
+    </text>
+  </svg>
+);
+
+// == Scooter Weaving ==
+const SACheckMirror = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Mirror frame */}
+    <rect x="30" y="10" width="100" height="55" fill="#374151" rx="8" />
+    <rect x="34" y="14" width="92" height="47" fill="#1e293b" rx="6" />
+    {/* Scooter reflection in mirror */}
+    <g transform="translate(95,38)">
+      <ellipse cx="0" cy="5" rx="6" ry="3" fill="#111" />
+      <rect x="-3" y="-5" width="6" height="9" fill="#7c3aed" rx="1" />
+      <circle cx="0" cy="-8" r="3" fill="#fbbf24" />
+    </g>
+    {/* Head turning indicator */}
+    <path d="M 60 38 Q 50 32 42 38" stroke="#f59e0b" strokeWidth="2" fill="none" />
+    <polygon points="40,36 42,38 44,35" fill="#f59e0b" />
+    {/* A-pillar label */}
+    <rect x="28" y="12" width="6" height="51" fill="#475569" rx="2" />
+    <text
+      x="31"
+      y="42"
+      textAnchor="middle"
+      fill="#94a3b8"
+      fontSize="6"
+      transform="rotate(-90,31,42)"
+    >
+      A柱
+    </text>
+    <text x="80" y="82" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">
+      確認後視鏡與 A 柱死角
+    </text>
+  </svg>
+);
+
+const SASignalEarly = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Turn signal indicator */}
+    <polygon points="80,15 110,40 80,65 50,40" fill="none" stroke="#22c55e" strokeWidth="3" />
+    <polygon points="80,22 103,40 80,58 57,40" fill="#22c55e" className="anim-hazard" />
+    {/* Arrow inside */}
+    <polygon points="75,40 90,32 90,48" fill="#0f172a" />
+    {/* Distance marker */}
+    <line x1="30" y1="75" x2="130" y2="75" stroke="#64748b" strokeWidth="1.5" />
+    <line x1="30" y1="71" x2="30" y2="79" stroke="#64748b" strokeWidth="1.5" />
+    <line x1="130" y1="71" x2="130" y2="79" stroke="#64748b" strokeWidth="1.5" />
+    <text x="80" y="84" textAnchor="middle" fill="#22c55e" fontSize="8" fontWeight="700">
+      提前 30 公尺打方向燈
+    </text>
+  </svg>
+);
+
+const SACheckAndTurn = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Road with turn */}
+    <rect x="60" y="0" width="40" height="90" fill="#2d3748" />
+    <rect x="60" y="50" width="100" height="40" fill="#2d3748" />
+    {/* Car turning */}
+    <g transform="translate(80,42)">
+      <rect x="-10" y="-8" width="20" height="14" fill="#1d4ed8" rx="2" />
+      <rect x="-6" y="-14" width="12" height="8" fill="#1e40af" rx="1" />
+    </g>
+    {/* Check mark */}
+    <circle cx="130" cy="25" r="14" fill="#15803d" opacity="0.9" />
+    <text x="130" y="30" textAnchor="middle" fill="white" fontSize="15" fontWeight="900">
+      ✓
+    </text>
+    <text x="80" y="84" textAnchor="middle" fill="#22c55e" fontSize="8" fontWeight="700">
+      確認安全後再完成轉彎
+    </text>
+  </svg>
+);
+
+// == Drowsy Driving ==
+const SAFatigueSign = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Drowsy face */}
+    <circle cx="80" cy="38" r="24" fill="#fbbf24" />
+    {/* Heavy eyelids */}
+    <ellipse cx="70" cy="34" rx="7" ry="4" fill="white" />
+    <ellipse cx="90" cy="34" rx="7" ry="4" fill="white" />
+    <rect
+      x="63"
+      y="28"
+      width="14"
+      height="8"
+      fill="#fbbf24"
+      rx="2"
+      style={{ animation: 'stepSlideD 2s ease-in-out infinite' }}
+    />
+    <rect
+      x="83"
+      y="28"
+      width="14"
+      height="8"
+      fill="#fbbf24"
+      rx="2"
+      style={{ animation: 'stepSlideD 2s ease-in-out infinite' }}
+    />
+    <circle cx="70" cy="36" r="3" fill="#1e293b" />
+    <circle cx="90" cy="36" r="3" fill="#1e293b" />
+    {/* Yawning mouth */}
+    <ellipse cx="80" cy="50" rx="8" ry="5" fill="#92400e" />
+    {/* Zzz */}
+    <text x="115" y="22" fill="#94a3b8" fontSize="10" opacity="0.6" className="anim-smoke">
+      z
+    </text>
+    <text
+      x="125"
+      y="14"
+      fill="#94a3b8"
+      fontSize="14"
+      opacity="0.4"
+      className="anim-smoke"
+      style={{ animationDelay: '0.4s' }}
+    >
+      Z
+    </text>
+    <text x="80" y="80" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="700">
+      辨識疲勞警訊
+    </text>
+  </svg>
+);
+
+const SAParkSleep = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Parking area */}
+    <rect x="20" y="45" width="120" height="30" fill="#1e293b" rx="4" />
+    {/* Car parked */}
+    <g transform="translate(80,55)">
+      <rect x="-20" y="-10" width="40" height="18" fill="#475569" rx="3" />
+      <rect x="-12" y="-18" width="24" height="11" fill="#374151" rx="2" />
+      <ellipse cx="-12" cy="8" rx="5" ry="3" fill="#111" />
+      <ellipse cx="12" cy="8" rx="5" ry="3" fill="#111" />
+    </g>
+    {/* Zzz */}
+    <text
+      x="105"
+      y="30"
+      fill="#60a5fa"
+      fontSize="12"
+      className="anim-smoke"
+      style={{ animationDelay: '0s' }}
+    >
+      z
+    </text>
+    <text
+      x="115"
+      y="20"
+      fill="#60a5fa"
+      fontSize="16"
+      className="anim-smoke"
+      style={{ animationDelay: '0.3s' }}
+    >
+      Z
+    </text>
+    <text
+      x="128"
+      y="10"
+      fill="#60a5fa"
+      fontSize="20"
+      className="anim-smoke"
+      style={{ animationDelay: '0.6s' }}
+    >
+      Z
+    </text>
+    {/* P sign */}
+    <rect x="25" y="20" width="18" height="22" fill="#3b82f6" rx="3" />
+    <text x="34" y="37" textAnchor="middle" fill="white" fontSize="14" fontWeight="900">
+      P
+    </text>
+    <text x="80" y="84" textAnchor="middle" fill="#60a5fa" fontSize="8" fontWeight="700">
+      停車熄火小睡 15～20 分鐘
+    </text>
+  </svg>
+);
+
+const SACoffee = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Coffee cup */}
+    <rect x="55" y="30" width="40" height="35" fill="#78716c" rx="4" />
+    <rect x="52" y="28" width="46" height="6" fill="#a8a29e" rx="3" />
+    <path d="M 95 40 Q 108 42 108 52 Q 108 62 95 60" stroke="#a8a29e" strokeWidth="3" fill="none" />
+    {/* Steam */}
+    <path
+      d="M 68 28 Q 65 18 70 12"
+      stroke="#94a3b8"
+      strokeWidth="2"
+      fill="none"
+      opacity="0.5"
+      className="anim-smoke"
+    />
+    <path
+      d="M 78 26 Q 75 16 80 10"
+      stroke="#94a3b8"
+      strokeWidth="2"
+      fill="none"
+      opacity="0.4"
+      className="anim-smoke"
+      style={{ animationDelay: '0.3s' }}
+    />
+    <path
+      d="M 88 28 Q 85 18 90 12"
+      stroke="#94a3b8"
+      strokeWidth="2"
+      fill="none"
+      opacity="0.5"
+      className="anim-smoke"
+      style={{ animationDelay: '0.6s' }}
+    />
+    {/* Coffee liquid */}
+    <rect x="57" y="34" width="36" height="14" fill="#92400e" rx="2" />
+    <text x="80" y="82" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="700">
+      搭配咖啡因提神（20～30 分鐘生效）
+    </text>
+  </svg>
+);
+
+const SANoGo = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* No driving sign */}
+    <circle cx="80" cy="38" r="24" fill="none" stroke="#ef4444" strokeWidth="4" />
+    <line x1="63" y1="21" x2="97" y2="55" stroke="#ef4444" strokeWidth="4" />
+    {/* Car icon inside */}
+    <g transform="translate(80,38)">
+      <rect x="-12" y="-6" width="24" height="12" fill="#64748b" rx="2" />
+      <rect x="-8" y="-12" width="16" height="8" fill="#475569" rx="1" />
+    </g>
+    {/* Taxi / ride alternative */}
+    <rect x="120" y="28" width="30" height="20" fill="#fbbf24" rx="3" />
+    <text x="135" y="42" textAnchor="middle" fill="#0f172a" fontSize="7" fontWeight="800">
+      TAXI
+    </text>
+    <text x="80" y="80" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+      仍疲倦就改搭車或叫代駕
+    </text>
+  </svg>
+);
+
+// == Hydroplaning ==
+const SAWaitTraction = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Tire cross-section */}
+    <circle cx="80" cy="38" r="24" fill="#374151" />
+    <circle cx="80" cy="38" r="18" fill="#475569" />
+    <circle cx="80" cy="38" r="8" fill="#64748b" />
+    {/* Water layer underneath */}
+    <rect x="40" y="58" width="80" height="8" fill="#60a5fa" opacity="0.4" rx="4" />
+    <rect x="50" y="56" width="60" height="6" fill="#93c5fd" opacity="0.3" rx="3" />
+    {/* Tread grooves */}
+    <line x1="68" y1="18" x2="68" y2="58" stroke="#1e293b" strokeWidth="2" />
+    <line x1="80" y1="14" x2="80" y2="62" stroke="#1e293b" strokeWidth="2" />
+    <line x1="92" y1="18" x2="92" y2="58" stroke="#1e293b" strokeWidth="2" />
+    {/* Speed decreasing arrow */}
+    <path d="M 130 20 L 130 55" stroke="#22c55e" strokeWidth="3" />
+    <polygon points="124,52 130,60 136,52" fill="#22c55e" />
+    <text x="130" y="72" textAnchor="middle" fill="#22c55e" fontSize="7">
+      減速中
+    </text>
+    <text x="60" y="80" textAnchor="middle" fill="#60a5fa" fontSize="8" fontWeight="700">
+      等待輪胎恢復抓地力
+    </text>
+  </svg>
+);
+
+const SACheckTires = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Tire */}
+    <circle cx="65" cy="40" r="22" fill="#374151" />
+    <circle cx="65" cy="40" r="16" fill="#475569" />
+    <circle cx="65" cy="40" r="6" fill="#64748b" />
+    {/* Tread pattern */}
+    {[-15, -5, 5, 15].map((offset) => (
+      <line
+        key={offset}
+        x1={65 + offset}
+        y1="20"
+        x2={65 + offset}
+        y2="60"
+        stroke="#1e293b"
+        strokeWidth="2.5"
+      />
+    ))}
+    {/* Measurement indicator */}
+    <line x1="100" y1="30" x2="100" y2="50" stroke="#f59e0b" strokeWidth="2" />
+    <line x1="96" y1="30" x2="104" y2="30" stroke="#f59e0b" strokeWidth="2" />
+    <line x1="96" y1="50" x2="104" y2="50" stroke="#f59e0b" strokeWidth="2" />
+    <text x="115" y="42" fill="#f59e0b" fontSize="8" fontWeight="700">
+      ≥1.6mm
+    </text>
+    {/* Magnifying glass */}
+    <circle cx="125" cy="58" r="10" fill="none" stroke="#94a3b8" strokeWidth="2" />
+    <line
+      x1="132"
+      y1="65"
+      x2="140"
+      y2="73"
+      stroke="#94a3b8"
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
+    <text x="80" y="82" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="700">
+      檢查胎紋深度與胎壓
+    </text>
+  </svg>
+);
+
 export const STEP_ANIMS: Partial<Record<ScenarioId, (React.FC | null)[]>> = {
   'highway-breakdown': [
     SAHazardFlash,
@@ -1075,4 +1436,29 @@ export const STEP_ANIMS: Partial<Record<ScenarioId, (React.FC | null)[]>> = {
     SAPhoneCall,
   ],
   'narrow-road': [SANarrowSlowDown, SANarrowPullRight, SACarGap, SANarrowReverse, SANarrowPass],
+  'intersection-crash': [
+    SALookBothWays,
+    SABrakeStop,
+    SAHornHazard,
+    SAHazardFlash,
+    SACamera,
+    SAPhoneCall,
+  ],
+  'scooter-weaving': [
+    SACheckMirror,
+    SASignalEarly,
+    SASpeedDrop,
+    SABrakeStop,
+    SAHornHazard,
+    SACheckAndTurn,
+  ],
+  'drowsy-driving': [SAFatigueSign, SAHazardFlash, SAPullOver, SAParkSleep, SACoffee, SANoGo],
+  hydroplaning: [
+    SALiftFoot,
+    SASteeringGrip,
+    SAWaitTraction,
+    SAHazardFlash,
+    SAPullOver,
+    SACheckTires,
+  ],
 };

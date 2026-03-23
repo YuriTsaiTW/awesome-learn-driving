@@ -407,6 +407,338 @@ const NarrowRoadScene = () => (
   </svg>
 );
 
+const IntersectionCrashScene = () => (
+  <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <rect width="300" height="180" fill="#1a2744" />
+    {/* Sky */}
+    <rect width="300" height="80" fill="#0f172a" />
+    {/* Horizontal road */}
+    <rect x="0" y="80" width="300" height="55" fill="#2d3748" />
+    {/* Vertical road */}
+    <rect x="110" y="0" width="80" height="180" fill="#2d3748" />
+    {/* Lane markings horizontal */}
+    <line
+      x1="0"
+      y1="107"
+      x2="110"
+      y2="107"
+      stroke="#64748b"
+      strokeWidth="1.5"
+      strokeDasharray="10,8"
+    />
+    <line
+      x1="190"
+      y1="107"
+      x2="300"
+      y2="107"
+      stroke="#64748b"
+      strokeWidth="1.5"
+      strokeDasharray="10,8"
+    />
+    {/* Lane markings vertical */}
+    <line
+      x1="150"
+      y1="0"
+      x2="150"
+      y2="80"
+      stroke="#64748b"
+      strokeWidth="1.5"
+      strokeDasharray="10,8"
+    />
+    <line
+      x1="150"
+      y1="135"
+      x2="150"
+      y2="180"
+      stroke="#64748b"
+      strokeWidth="1.5"
+      strokeDasharray="10,8"
+    />
+    {/* Crosswalk */}
+    {[82, 86, 90, 94, 98].map((y) => (
+      <rect key={y} x="110" y={y} width="80" height="2.5" fill="#e2e8f0" opacity="0.5" />
+    ))}
+    {/* Traffic light */}
+    <rect x="94" y="58" width="14" height="36" fill="#374151" rx="3" />
+    <circle cx="101" cy="68" r="4" fill="#22c55e" />
+    <circle cx="101" cy="80" r="4" fill="#374151" />
+    <circle cx="101" cy="88" r="4" fill="#374151" />
+    {/* Player car going up from bottom */}
+    <g transform="translate(160,145)">
+      <rect x="-14" y="-18" width="28" height="30" fill="#1d4ed8" rx="3" />
+      <rect x="-9" y="-24" width="18" height="10" fill="#1e40af" rx="2" />
+      <rect x="-8" y="-23" width="7" height="7" fill="#bfdbfe" rx="1" opacity="0.85" />
+      <rect x="1" y="-23" width="7" height="7" fill="#bfdbfe" rx="1" opacity="0.85" />
+      <ellipse cx="-8" cy="12" rx="5" ry="4" fill="#111" />
+      <ellipse cx="8" cy="12" rx="5" ry="4" fill="#111" />
+    </g>
+    {/* Red-light runner from left */}
+    <g transform="translate(55,95)" className="anim-wobble">
+      <rect x="-18" y="-12" width="36" height="22" fill="#dc2626" rx="3" />
+      <rect x="-12" y="-20" width="24" height="12" fill="#b91c1c" rx="2" />
+      <circle cx="16" cy="-10" r="4" fill="#fef9c3" />
+      <circle cx="16" cy="8" r="4" fill="#fef9c3" />
+      <ellipse cx="-10" cy="10" rx="5" ry="4" fill="#111" />
+      <ellipse cx="10" cy="10" rx="5" ry="4" fill="#111" />
+    </g>
+    {/* Danger indicator */}
+    <text x="120" y="120" fill="#ef4444" fontSize="18" className="anim-impact">
+      ⚠
+    </text>
+    <text x="150" y="174" textAnchor="middle" fill="#ef4444" fontSize="9">
+      ⚠️ 路口綠燈起步・左側闖紅燈車輛衝來
+    </text>
+  </svg>
+);
+
+const ScooterWeavingScene = () => (
+  <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <rect width="300" height="180" fill="#1a2744" />
+    <rect width="300" height="85" fill="#0f172a" />
+    {/* Road */}
+    <rect x="0" y="85" width="300" height="70" fill="#2d3748" />
+    <line
+      x1="0"
+      y1="120"
+      x2="300"
+      y2="120"
+      stroke="#64748b"
+      strokeWidth="1.5"
+      strokeDasharray="18,14"
+    />
+    {/* Buildings background */}
+    <rect x="10" y="30" width="40" height="55" fill="#1e293b" rx="2" />
+    <rect x="60" y="40" width="35" height="45" fill="#1e293b" rx="2" />
+    <rect x="210" y="25" width="45" height="60" fill="#1e293b" rx="2" />
+    <rect x="260" y="35" width="35" height="50" fill="#1e293b" rx="2" />
+    {/* Building windows */}
+    {[18, 30, 42].map((y) =>
+      [22, 34].map((x) => (
+        <rect
+          key={`${x}-${y}`}
+          x={x}
+          y={y}
+          width="6"
+          height="5"
+          fill="#fbbf24"
+          opacity="0.4"
+          rx="1"
+        />
+      )),
+    )}
+    {/* Player car */}
+    <g transform="translate(155,110)">
+      <rect x="-24" y="-14" width="48" height="26" fill="#1d4ed8" rx="4" />
+      <rect x="-16" y="-22" width="32" height="12" fill="#1e40af" rx="2" />
+      <rect x="-14" y="-20" width="12" height="8" fill="#bfdbfe" rx="1" opacity="0.85" />
+      <rect x="2" y="-20" width="12" height="8" fill="#bfdbfe" rx="1" opacity="0.85" />
+      <circle cx="20" cy="-10" r="3" fill="#f59e0b" className="anim-hazard" />
+      <ellipse cx="-16" cy="12" rx="6" ry="4" fill="#111" />
+      <ellipse cx="16" cy="12" rx="6" ry="4" fill="#111" />
+    </g>
+    {/* Scooter weaving */}
+    <g transform="translate(200,128)" style={{ animation: 'stepSlideL 1.8s ease-in-out infinite' }}>
+      <ellipse cx="0" cy="8" rx="10" ry="5" fill="#111827" />
+      <rect x="-5" y="-8" width="10" height="14" fill="#7c3aed" rx="2" />
+      <circle cx="0" cy="-14" r="5" fill="#fbbf24" />
+      <rect x="-3" y="-5" width="6" height="8" fill="#4c1d95" rx="1" />
+    </g>
+    {/* Motion lines */}
+    <line x1="215" y1="125" x2="230" y2="125" stroke="#a78bfa" strokeWidth="1.5" opacity="0.6" />
+    <line x1="218" y1="130" x2="235" y2="130" stroke="#a78bfa" strokeWidth="1" opacity="0.4" />
+    <text x="150" y="174" textAnchor="middle" fill="#8b5cf6" fontSize="9">
+      ⚠️ 市區右轉・機車從右後方高速竄出
+    </text>
+  </svg>
+);
+
+const DrowsyDrivingScene = () => (
+  <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <defs>
+      <linearGradient id="ddSky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#020617" />
+        <stop offset="100%" stopColor="#0f172a" />
+      </linearGradient>
+    </defs>
+    <rect width="300" height="180" fill="url(#ddSky)" />
+    {/* Stars */}
+    {[
+      [30, 15],
+      [80, 25],
+      [130, 10],
+      [200, 20],
+      [250, 30],
+      [270, 12],
+      [45, 40],
+      [170, 35],
+      [220, 8],
+    ].map(([x, y], i) => (
+      <circle
+        key={i}
+        cx={x}
+        cy={y}
+        r={i % 3 === 0 ? 1.5 : 1}
+        fill="white"
+        opacity={0.3 + (i % 4) * 0.15}
+      />
+    ))}
+    {/* Moon */}
+    <circle cx="260" cy="28" r="12" fill="#fef3c7" opacity="0.8" />
+    <circle cx="265" cy="24" r="10" fill="#020617" />
+    {/* Road */}
+    <rect x="0" y="95" width="300" height="65" fill="#2d3748" />
+    <line
+      x1="0"
+      y1="127"
+      x2="300"
+      y2="127"
+      stroke="#64748b"
+      strokeWidth="1.5"
+      strokeDasharray="18,14"
+    />
+    <line x1="0" y1="95" x2="300" y2="95" stroke="#fbbf24" strokeWidth="2" />
+    <line x1="0" y1="160" x2="300" y2="160" stroke="#fbbf24" strokeWidth="2" />
+    {/* Car drifting to the side */}
+    <g transform="translate(150,120) rotate(5)" className="anim-wobble">
+      <rect x="-22" y="-14" width="44" height="26" fill="#475569" rx="4" />
+      <rect x="-14" y="-22" width="28" height="12" fill="#374151" rx="2" />
+      <rect x="-12" y="-20" width="10" height="8" fill="#1e293b" rx="1" opacity="0.6" />
+      <rect x="2" y="-20" width="10" height="8" fill="#1e293b" rx="1" opacity="0.6" />
+      <circle cx="-18" cy="-12" r="3" fill="#fef9c3" opacity="0.4" />
+      <circle cx="18" cy="-12" r="3" fill="#fef9c3" opacity="0.4" />
+      <ellipse cx="-14" cy="12" rx="6" ry="4" fill="#111" />
+      <ellipse cx="14" cy="12" rx="6" ry="4" fill="#111" />
+    </g>
+    {/* Zzz animation */}
+    <text
+      x="175"
+      y="95"
+      fill="#94a3b8"
+      fontSize="14"
+      opacity="0.7"
+      className="anim-smoke"
+      style={{ animationDelay: '0s' }}
+    >
+      z
+    </text>
+    <text
+      x="188"
+      y="82"
+      fill="#94a3b8"
+      fontSize="18"
+      opacity="0.5"
+      className="anim-smoke"
+      style={{ animationDelay: '0.4s' }}
+    >
+      Z
+    </text>
+    <text
+      x="200"
+      y="68"
+      fill="#94a3b8"
+      fontSize="22"
+      opacity="0.3"
+      className="anim-smoke"
+      style={{ animationDelay: '0.8s' }}
+    >
+      Z
+    </text>
+    <text x="150" y="174" textAnchor="middle" fill="#6366f1" fontSize="9">
+      ⚠️ 深夜國道・意識模糊車輛偏移中
+    </text>
+  </svg>
+);
+
+const HydroplaningScene = () => {
+  const drops = Array.from({ length: 32 }, (_, i) => ({
+    x: (i * 37 + 8) % 295,
+    y: (i * 23) % 85,
+    delay: (i * 0.07) % 1.2,
+    dur: 0.5 + (i % 4) * 0.12,
+  }));
+  return (
+    <svg viewBox="0 0 300 180" width="100%" height="100%">
+      <defs>
+        <linearGradient id="hpRain" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#1e293b" />
+          <stop offset="100%" stopColor="#334155" />
+        </linearGradient>
+      </defs>
+      <rect width="300" height="180" fill="url(#hpRain)" />
+      {/* Road with water reflection */}
+      <rect x="0" y="90" width="300" height="65" fill="#1e3a5f" />
+      <rect x="0" y="90" width="300" height="65" fill="#60a5fa" opacity="0.15" />
+      <line
+        x1="0"
+        y1="122"
+        x2="300"
+        y2="122"
+        stroke="#64748b"
+        strokeWidth="1.5"
+        strokeDasharray="18,14"
+        opacity="0.5"
+      />
+      {/* Water splash */}
+      <ellipse cx="150" cy="140" rx="60" ry="6" fill="#60a5fa" opacity="0.2" />
+      <ellipse cx="150" cy="138" rx="40" ry="4" fill="#93c5fd" opacity="0.15" />
+      {/* Car sliding */}
+      <g transform="translate(150,115) rotate(-8)" className="anim-wobble">
+        <rect x="-22" y="-14" width="44" height="26" fill="#0ea5e9" rx="4" />
+        <rect x="-14" y="-22" width="28" height="12" fill="#0284c7" rx="2" />
+        <rect x="-12" y="-20" width="10" height="8" fill="#bfdbfe" rx="1" opacity="0.85" />
+        <rect x="2" y="-20" width="10" height="8" fill="#bfdbfe" rx="1" opacity="0.85" />
+        <ellipse cx="-14" cy="12" rx="6" ry="4" fill="#111" />
+        <ellipse cx="14" cy="12" rx="6" ry="4" fill="#111" />
+      </g>
+      {/* Water spray from tires */}
+      <circle
+        cx="135"
+        cy="128"
+        r="5"
+        fill="#93c5fd"
+        opacity="0.3"
+        className="anim-smoke"
+        style={{ animationDelay: '0s' }}
+      />
+      <circle
+        cx="165"
+        cy="130"
+        r="7"
+        fill="#93c5fd"
+        opacity="0.25"
+        className="anim-smoke"
+        style={{ animationDelay: '0.3s' }}
+      />
+      <circle
+        cx="128"
+        cy="124"
+        r="4"
+        fill="#bfdbfe"
+        opacity="0.2"
+        className="anim-smoke"
+        style={{ animationDelay: '0.6s' }}
+      />
+      {/* Rain drops */}
+      {drops.map((d, i) => (
+        <line
+          key={i}
+          x1={d.x}
+          y1={d.y}
+          x2={d.x - 4}
+          y2={d.y + 16}
+          stroke="#93c5fd"
+          strokeWidth="1.5"
+          opacity="0.5"
+          style={{ animation: `rainFall ${d.dur}s linear ${d.delay}s infinite` }}
+        />
+      ))}
+      <text x="150" y="174" textAnchor="middle" fill="#0ea5e9" fontSize="9">
+        ⚠️ 暴雨積水路面・車輛水漂失控中
+      </text>
+    </svg>
+  );
+};
+
 export const SCENE_COMPONENTS: Partial<Record<ScenarioId, React.FC>> = {
   'highway-breakdown': HighwayScene,
   'tire-blowout': TireBlowoutScene,
@@ -414,4 +746,8 @@ export const SCENE_COMPONENTS: Partial<Record<ScenarioId, React.FC>> = {
   'rear-end-collision': RearEndScene,
   'brake-failure': BrakeFailureScene,
   'narrow-road': NarrowRoadScene,
+  'intersection-crash': IntersectionCrashScene,
+  'scooter-weaving': ScooterWeavingScene,
+  'drowsy-driving': DrowsyDrivingScene,
+  hydroplaning: HydroplaningScene,
 };
