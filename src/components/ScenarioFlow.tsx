@@ -82,12 +82,12 @@ const ScenarioFlow = ({ scenario, onBack, onComplete, isCompleted }: ScenarioFlo
         background: 'linear-gradient(160deg,#0f172a,#1e293b)',
       }}
     >
-      <div style={{ maxWidth: 520, margin: '0 auto' }}>
+      <div className="flow-inner">
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
           <button
             onClick={
-              phase === 'pick'
+              phase === 'pick' || !isCompleted
                 ? onBack
                 : function () {
                     setPhase('pick');

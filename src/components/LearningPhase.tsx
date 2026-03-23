@@ -78,10 +78,18 @@ const LearningPhase = ({ scenario, onNext }: LearningPhaseProps) => {
                   {isRevealed ? step.icon : i + 1}
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ color: 'white', fontWeight: 700, fontSize: 13, marginBottom: 3 }}>
+                  <div
+                    className="step-label"
+                    style={{ color: 'white', fontWeight: 700, fontSize: 13, marginBottom: 3 }}
+                  >
                     {step.title}
                   </div>
-                  <div style={{ color: '#94a3b8', fontSize: 11, lineHeight: 1.6 }}>{step.desc}</div>
+                  <div
+                    className="step-desc"
+                    style={{ color: '#94a3b8', fontSize: 11, lineHeight: 1.6 }}
+                  >
+                    {step.desc}
+                  </div>
                   {isCurrent &&
                     (function () {
                       const StepAnim = (STEP_ANIMS[scenario.id] || [])[i];

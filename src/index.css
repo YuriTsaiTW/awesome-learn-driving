@@ -336,3 +336,138 @@ body {
     filter: drop-shadow(0 0 20px rgba(245, 158, 11, 1));
   }
 }
+
+/* === Desktop Responsive Layouts (≥1024px) === */
+
+/* Defaults (mobile-first) */
+.home-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.flow-inner {
+  max-width: 520px;
+  margin: 0 auto;
+}
+.scenario-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.intro-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.intro-scene-wrap {
+  height: 220px;
+}
+.decision-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+@media (min-width: 1024px) {
+  /* Wider containers */
+  .home-inner {
+    max-width: 1100px;
+  }
+  .flow-inner {
+    max-width: 900px;
+  }
+
+  /* HomeScreen: 2-column scenario grid */
+  .scenario-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .scenario-thumb {
+    width: 100px !important;
+    height: 68px !important;
+  }
+  .scenario-card-title {
+    font-size: 15px !important;
+  }
+
+  /* IntroPhase: side-by-side scene + narrative */
+  .intro-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+  }
+  .intro-scene-wrap {
+    height: auto;
+    min-height: 380px;
+  }
+
+  /* DecisionPhase: 3-column option grid */
+  .decision-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .decision-opt-anim {
+    height: 160px !important;
+  }
+
+  /* QuizPhase: 2-column option grid */
+  .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* PhaseBar */
+  .phasebar-dot {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 14px !important;
+  }
+  .phasebar-label {
+    font-size: 13px !important;
+    display: block !important;
+  }
+  .phasebar-line {
+    width: 20px !important;
+  }
+
+  /* Text size boosts */
+  .home-title {
+    font-size: 34px !important;
+  }
+  .scenario-card-title {
+    font-size: 16px !important;
+  }
+  .intro-text {
+    font-size: 16px !important;
+    line-height: 2 !important;
+  }
+  .decision-q {
+    font-size: 18px !important;
+    line-height: 1.7 !important;
+  }
+  .quiz-q {
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+  }
+  .opt-text {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+  .step-label {
+    font-size: 15px !important;
+  }
+  .step-desc {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+  }
+}

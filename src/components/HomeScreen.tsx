@@ -15,10 +15,13 @@ const HomeScreen = ({ onSelect, completed }: HomeScreenProps) => (
       background: 'linear-gradient(160deg,#0f172a,#1e293b)',
     }}
   >
-    <div style={{ maxWidth: 600, margin: '0 auto' }}>
+    <div className="home-inner">
       <div className="anim-fade" style={{ textAlign: 'center', marginBottom: 32 }}>
         <div style={{ fontSize: 52, marginBottom: 8 }}>🚗</div>
-        <h1 style={{ fontSize: 26, fontWeight: 900, color: 'white', margin: '0 0 8px' }}>
+        <h1
+          className="home-title"
+          style={{ fontSize: 26, fontWeight: 900, color: 'white', margin: '0 0 8px' }}
+        >
           Awesome Learn Driving
         </h1>
         <p style={{ fontSize: 13, color: '#64748b', margin: 0 }}>Safe Driving Makes Happy Life</p>
@@ -53,7 +56,7 @@ const HomeScreen = ({ onSelect, completed }: HomeScreenProps) => (
           </div>
         ))}
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div className="scenario-list">
         {SCENARIOS.map((sc) => {
           const SceneComp = SCENE_COMPONENTS[sc.id];
           const done = completed.includes(sc.id);
@@ -80,6 +83,7 @@ const HomeScreen = ({ onSelect, completed }: HomeScreenProps) => (
               }
             >
               <div
+                className="scenario-thumb"
                 style={{
                   width: 80,
                   height: 56,
@@ -93,7 +97,12 @@ const HomeScreen = ({ onSelect, completed }: HomeScreenProps) => (
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 3 }}>
-                  <span style={{ color: 'white', fontWeight: 700, fontSize: 14 }}>{sc.title}</span>
+                  <span
+                    className="scenario-card-title"
+                    style={{ color: 'white', fontWeight: 700, fontSize: 14 }}
+                  >
+                    {sc.title}
+                  </span>
                   {done && <span style={{ color: '#4ade80', fontSize: 11 }}>✓ 完成</span>}
                 </div>
                 <div style={{ color: '#64748b', fontSize: 11, marginBottom: 4 }}>{sc.subtitle}</div>

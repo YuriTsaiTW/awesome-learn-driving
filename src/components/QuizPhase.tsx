@@ -95,11 +95,14 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
         <div style={{ color: '#f59e0b', fontSize: 12, fontWeight: 700, marginBottom: 8 }}>
           📝 測驗
         </div>
-        <p style={{ color: 'white', fontWeight: 700, fontSize: 14, lineHeight: 1.65, margin: 0 }}>
+        <p
+          className="quiz-q"
+          style={{ color: 'white', fontWeight: 700, fontSize: 14, lineHeight: 1.65, margin: 0 }}
+        >
           {q.question}
         </p>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 14 }}>
+      <div className="quiz-options">
         {q.options.map((opt, i) => {
           const s = optionStyle(i);
           return (
@@ -142,7 +145,9 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
               >
                 {optLabel(i, selected, q.correct)}
               </div>
-              <span style={{ fontSize: 13, color: s.color, lineHeight: 1.5 }}>{opt}</span>
+              <span className="opt-text" style={{ fontSize: 13, color: s.color, lineHeight: 1.5 }}>
+                {opt}
+              </span>
             </button>
           );
         })}

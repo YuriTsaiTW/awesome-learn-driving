@@ -24,11 +24,14 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
         <div style={{ color: '#f59e0b', fontSize: 12, fontWeight: 700, marginBottom: 8 }}>
           🤔 緊急決策
         </div>
-        <p style={{ color: 'white', fontWeight: 700, fontSize: 15, lineHeight: 1.65, margin: 0 }}>
+        <p
+          className="decision-q"
+          style={{ color: 'white', fontWeight: 700, fontSize: 15, lineHeight: 1.65, margin: 0 }}
+        >
           {scenario.decision.question}
         </p>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div className="decision-list">
         {scenario.decision.options.map(function (opt, idx) {
           const DA = daOpts[idx];
           return (
@@ -61,6 +64,7 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
             >
               {DA && (
                 <div
+                  className="decision-opt-anim"
                   style={{
                     height: 118,
                     background: '#0f172a',
@@ -90,7 +94,12 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
                 >
                   {optLabels[idx]}
                 </div>
-                <span style={{ color: '#e2e8f0', fontSize: 13, lineHeight: 1.65 }}>{opt.text}</span>
+                <span
+                  className="opt-text"
+                  style={{ color: '#e2e8f0', fontSize: 13, lineHeight: 1.65 }}
+                >
+                  {opt.text}
+                </span>
               </div>
             </button>
           );

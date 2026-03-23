@@ -13,6 +13,7 @@ const PhaseBar = ({ phase }: PhaseBarProps) => {
         <React.Fragment key={i}>
           <div className="flex items-center gap-1">
             <div
+              className="phasebar-dot"
               style={{
                 width: 24,
                 height: 24,
@@ -30,6 +31,7 @@ const PhaseBar = ({ phase }: PhaseBarProps) => {
               {i < idx ? '\u2713' : i + 1}
             </div>
             <span
+              className="phasebar-label"
               style={{
                 fontSize: 10,
                 display: window.innerWidth > 400 ? 'block' : 'none',
@@ -41,6 +43,7 @@ const PhaseBar = ({ phase }: PhaseBarProps) => {
           </div>
           {i < PHASE_LABELS.length - 1 && (
             <div
+              className="phasebar-line"
               style={{
                 height: 2,
                 width: 12,
