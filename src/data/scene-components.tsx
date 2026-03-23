@@ -67,70 +67,121 @@ const HighwayScene = () => (
 
 const TireBlowoutScene = () => (
   <svg viewBox="0 0 300 180" width="100%" height="100%">
-    <rect width="300" height="180" fill="#1a2744" />
-    <rect width="300" height="90" fill="#0f172a" />
-    <rect x="0" y="90" width="300" height="65" fill="#2d3748" />
+    <defs>
+      <linearGradient id="skyBlowout" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#0f172a" />
+        <stop offset="100%" stopColor="#1e3a5f" />
+      </linearGradient>
+    </defs>
+    {/* Sky */}
+    <rect width="300" height="180" fill="url(#skyBlowout)" />
+    {/* Road */}
+    <rect x="0" y="105" width="300" height="75" fill="#1e293b" />
+    <line x1="0" y1="107" x2="300" y2="107" stroke="#475569" strokeWidth="1" />
     <line
       x1="0"
-      y1="122"
+      y1="143"
       x2="300"
-      y2="122"
+      y2="143"
       stroke="#64748b"
       strokeWidth="1.5"
-      strokeDasharray="18,14"
+      strokeDasharray="20,14"
     />
-    <path
-      d="M 60 130 Q 130 126 180 128"
-      stroke="#1f2937"
-      strokeWidth="4"
-      fill="none"
-      opacity="0.7"
-    />
-    <path
-      d="M 60 135 Q 130 131 180 133"
-      stroke="#111827"
-      strokeWidth="3"
-      fill="none"
-      opacity="0.5"
-    />
-    <g transform="translate(148,108)" className="anim-wobble">
-      <rect x="-42" y="-20" width="84" height="34" fill="#7c3aed" rx="4" />
-      <rect x="-30" y="-32" width="60" height="17" fill="#6d28d9" rx="3" />
-      <rect x="-26" y="-30" width="22" height="12" fill="#bfdbfe" rx="1" opacity="0.85" />
-      <rect x="4" y="-30" width="22" height="12" fill="#bfdbfe" rx="1" opacity="0.85" />
-      <ellipse cx="-28" cy="14" rx="11" ry="7" fill="#111827" />
-      <ellipse cx="-28" cy="14" rx="6" ry="3.5" fill="#374151" />
-      <ellipse cx="28" cy="16" rx="13" ry="4" fill="#111827" opacity="0.6" />
-      <path d="M 18 12 Q 28 7 38 12" stroke="#6b7280" strokeWidth="2.5" fill="none" />
-      <text x="24" y="30" fontSize="14" textAnchor="middle">
-        💥
-      </text>
-      <circle cx="-38" cy="-18" r="3" fill="#f59e0b" className="anim-hazard" />
-      <circle cx="38" cy="-18" r="3" fill="#f59e0b" className="anim-hazard" />
+    {/* Car — silver/grey, wobbling */}
+    <g transform="translate(148,110)">
+      <g className="anim-wobble">
+        {/* Body */}
+        <rect x="-50" y="-18" width="100" height="28" fill="#64748b" rx="5" />
+        {/* Cabin */}
+        <rect x="-32" y="-34" width="64" height="20" fill="#475569" rx="6" />
+        {/* Windshield */}
+        <rect x="-28" y="-32" width="26" height="14" fill="#93c5fd" rx="2" opacity="0.6" />
+        {/* Rear window */}
+        <rect x="4" y="-32" width="22" height="14" fill="#93c5fd" rx="2" opacity="0.5" />
+        {/* Left wheel (normal) */}
+        <ellipse cx="-32" cy="12" rx="13" ry="10" fill="#111827" />
+        <ellipse cx="-32" cy="12" rx="7" ry="5.5" fill="#334155" />
+        {/* Right wheel (blown — flat) */}
+        <ellipse cx="32" cy="16" rx="14" ry="5" fill="#111827" />
+        <ellipse cx="32" cy="16" rx="7" ry="2.5" fill="#334155" />
+        {/* Burst shards */}
+        <line
+          x1="20"
+          y1="8"
+          x2="14"
+          y2="1"
+          stroke="#ef4444"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <line
+          x1="27"
+          y1="6"
+          x2="25"
+          y2="-1"
+          stroke="#ef4444"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <line
+          x1="34"
+          y1="7"
+          x2="36"
+          y2="0"
+          stroke="#f97316"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <line
+          x1="40"
+          y1="10"
+          x2="46"
+          y2="4"
+          stroke="#ef4444"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        {/* Hazard lights — on car corners */}
+        <circle cx="-48" cy="-12" r="3.5" fill="#f59e0b" className="anim-hazard" />
+        <circle cx="48" cy="-12" r="3.5" fill="#f59e0b" className="anim-hazard" />
+        {/* Headlight */}
+        <rect x="48" y="-5" width="5" height="3" fill="#fef9c3" rx="1" opacity="0.9" />
+        {/* Tail light */}
+        <rect x="-53" y="-5" width="5" height="3" fill="#fca5a5" rx="1" opacity="0.8" />
+      </g>
     </g>
+    {/* Tire smoke from blown wheel */}
     <circle
-      cx="176"
-      cy="108"
-      r="6"
-      fill="#6b7280"
+      cx="180"
+      cy="110"
+      r="5"
+      fill="#374151"
       className="anim-smoke"
       style={{ animationDelay: '0s' }}
     />
     <circle
-      cx="184"
-      cy="102"
-      r="9"
-      fill="#4b5563"
+      cx="188"
+      cy="103"
+      r="8"
+      fill="#1f2937"
       className="anim-smoke"
-      style={{ animationDelay: '0.4s' }}
+      style={{ animationDelay: '0.35s' }}
     />
     <circle
-      cx="170"
-      cy="98"
-      r="7"
-      fill="#6b7280"
+      cx="172"
+      cy="99"
+      r="6"
+      fill="#374151"
       className="anim-smoke"
-      style={{ animationDelay: '0.8s' }}
+      style={{ animationDelay: '0.7s' }}
+    />
+    {/* Skid mark */}
+    <path
+      d="M 145 128 Q 172 124 202 131"
+      stroke="#111827"
+      strokeWidth="5"
+      fill="none"
+      opacity="0.6"
     />
     <text x="150" y="174" textAnchor="middle" fill="#64748b" fontSize="9">
       高速公路・時速 110 km/h・右前輪爆胎
@@ -242,12 +293,14 @@ const RearEndScene = () => (
       <ellipse cx="-28" cy="14" rx="10" ry="6" fill="#111" />
       <ellipse cx="28" cy="14" rx="10" ry="6" fill="#111" />
     </g>
-    <g transform="translate(130,110)" className="anim-impact">
-      <circle r="8" fill="#fbbf24" opacity="0.9" />
-      <line x1="-12" y1="-12" x2="12" y2="12" stroke="#f59e0b" strokeWidth="3" />
-      <line x1="12" y1="-12" x2="-12" y2="12" stroke="#f59e0b" strokeWidth="3" />
-      <line x1="0" y1="-14" x2="0" y2="14" stroke="#fcd34d" strokeWidth="2" />
-      <line x1="-14" y1="0" x2="14" y2="0" stroke="#fcd34d" strokeWidth="2" />
+    <g transform="translate(130,110)">
+      <g className="anim-impact" style={{ transformOrigin: '0px 0px' }}>
+        <circle r="8" fill="#fbbf24" opacity="0.9" />
+        <line x1="-12" y1="-12" x2="12" y2="12" stroke="#f59e0b" strokeWidth="3" />
+        <line x1="12" y1="-12" x2="-12" y2="12" stroke="#f59e0b" strokeWidth="3" />
+        <line x1="0" y1="-14" x2="0" y2="14" stroke="#fcd34d" strokeWidth="2" />
+        <line x1="-14" y1="0" x2="14" y2="0" stroke="#fcd34d" strokeWidth="2" />
+      </g>
     </g>
     <text x="150" y="174" textAnchor="middle" fill="#64748b" fontSize="9">
       市區路口・等待紅燈時被追撞
@@ -312,7 +365,11 @@ const BrakeFailureScene = () => (
       km/h
     </text>
     <circle cx="210" cy="75" r="32" fill="#7f1d1d" />
-    <circle cx="210" cy="75" r="29" fill="#ef4444" className="anim-impact" />
+    <g transform="translate(210,75)">
+      <g className="anim-impact" style={{ transformOrigin: '0px 0px' }}>
+        <circle cx="0" cy="0" r="29" fill="#ef4444" />
+      </g>
+    </g>
     <text x="210" y="70" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">
       BRAKE
     </text>
@@ -353,9 +410,9 @@ const NarrowRoadScene = () => (
     <polygon points="0,130 0,75 40,30 70,60 95,130" fill="#15291a" />
     <polygon points="300,130 300,55 255,18 215,52 190,130" fill="#1e3a1e" />
     <polygon points="300,130 300,65 262,28 238,55 205,130" fill="#15291a" />
-    <rect x="90" y="80" width="120" height="100" fill="url(#nrRoad)" />
-    <line x1="90" y1="80" x2="90" y2="180" stroke="#fbbf24" strokeWidth="2.5" />
-    <line x1="210" y1="80" x2="210" y2="180" stroke="#fbbf24" strokeWidth="2.5" />
+    <rect x="110" y="80" width="80" height="100" fill="url(#nrRoad)" />
+    <line x1="110" y1="80" x2="110" y2="180" stroke="#fbbf24" strokeWidth="2.5" />
+    <line x1="190" y1="80" x2="190" y2="180" stroke="#fbbf24" strokeWidth="2.5" />
     <line
       x1="150"
       y1="85"
@@ -365,10 +422,10 @@ const NarrowRoadScene = () => (
       strokeWidth="1.5"
       strokeDasharray="12,10"
     />
-    <rect x="78" y="100" width="12" height="80" fill="#374151" />
-    <rect x="80" y="100" width="8" height="80" fill="#475569" opacity="0.5" />
-    <rect x="210" y="100" width="12" height="80" fill="#374151" />
-    <rect x="212" y="100" width="8" height="80" fill="#475569" opacity="0.5" />
+    <rect x="98" y="100" width="12" height="80" fill="#374151" />
+    <rect x="100" y="100" width="8" height="80" fill="#475569" opacity="0.5" />
+    <rect x="190" y="100" width="12" height="80" fill="#374151" />
+    <rect x="192" y="100" width="8" height="80" fill="#475569" opacity="0.5" />
     <g transform="translate(150,155)">
       <rect x="-22" y="-18" width="44" height="30" fill="#dc2626" rx="4" />
       <rect x="-14" y="-28" width="28" height="14" fill="#b91c1c" rx="3" />
@@ -473,18 +530,24 @@ const IntersectionCrashScene = () => (
       <ellipse cx="8" cy="12" rx="5" ry="4" fill="#111" />
     </g>
     {/* Red-light runner from left */}
-    <g transform="translate(55,95)" className="anim-wobble">
-      <rect x="-18" y="-12" width="36" height="22" fill="#dc2626" rx="3" />
-      <rect x="-12" y="-20" width="24" height="12" fill="#b91c1c" rx="2" />
-      <circle cx="16" cy="-10" r="4" fill="#fef9c3" />
-      <circle cx="16" cy="8" r="4" fill="#fef9c3" />
-      <ellipse cx="-10" cy="10" rx="5" ry="4" fill="#111" />
-      <ellipse cx="10" cy="10" rx="5" ry="4" fill="#111" />
+    <g transform="translate(55,95)">
+      <g className="anim-wobble" style={{ transformOrigin: '0px 0px' }}>
+        <rect x="-18" y="-12" width="36" height="22" fill="#dc2626" rx="3" />
+        <rect x="-12" y="-20" width="24" height="12" fill="#b91c1c" rx="2" />
+        <circle cx="16" cy="-10" r="4" fill="#fef9c3" />
+        <circle cx="16" cy="8" r="4" fill="#fef9c3" />
+        <ellipse cx="-10" cy="10" rx="5" ry="4" fill="#111" />
+        <ellipse cx="10" cy="10" rx="5" ry="4" fill="#111" />
+      </g>
     </g>
     {/* Danger indicator */}
-    <text x="120" y="120" fill="#ef4444" fontSize="18" className="anim-impact">
-      ⚠
-    </text>
+    <g transform="translate(120,115)">
+      <g className="anim-hazard">
+        <text x="0" y="0" fill="#ef4444" fontSize="18" textAnchor="middle">
+          ⚠
+        </text>
+      </g>
+    </g>
     <text x="150" y="174" textAnchor="middle" fill="#ef4444" fontSize="9">
       ⚠️ 路口綠燈起步・左側闖紅燈車輛衝來
     </text>
@@ -537,11 +600,13 @@ const ScooterWeavingScene = () => (
       <ellipse cx="16" cy="12" rx="6" ry="4" fill="#111" />
     </g>
     {/* Scooter weaving */}
-    <g transform="translate(200,128)" style={{ animation: 'stepSlideL 1.8s ease-in-out infinite' }}>
-      <ellipse cx="0" cy="8" rx="10" ry="5" fill="#111827" />
-      <rect x="-5" y="-8" width="10" height="14" fill="#7c3aed" rx="2" />
-      <circle cx="0" cy="-14" r="5" fill="#fbbf24" />
-      <rect x="-3" y="-5" width="6" height="8" fill="#4c1d95" rx="1" />
+    <g transform="translate(200,128)">
+      <g style={{ animation: 'stepSlideL 1.8s ease-in-out infinite', transformOrigin: '0px 0px' }}>
+        <ellipse cx="0" cy="8" rx="10" ry="5" fill="#111827" />
+        <rect x="-5" y="-8" width="10" height="14" fill="#7c3aed" rx="2" />
+        <circle cx="0" cy="-14" r="5" fill="#fbbf24" />
+        <rect x="-3" y="-5" width="6" height="8" fill="#4c1d95" rx="1" />
+      </g>
     </g>
     {/* Motion lines */}
     <line x1="215" y1="125" x2="230" y2="125" stroke="#a78bfa" strokeWidth="1.5" opacity="0.6" />
@@ -599,50 +664,40 @@ const DrowsyDrivingScene = () => (
     <line x1="0" y1="95" x2="300" y2="95" stroke="#fbbf24" strokeWidth="2" />
     <line x1="0" y1="160" x2="300" y2="160" stroke="#fbbf24" strokeWidth="2" />
     {/* Car drifting to the side */}
-    <g transform="translate(150,120) rotate(5)" className="anim-wobble">
-      <rect x="-22" y="-14" width="44" height="26" fill="#475569" rx="4" />
-      <rect x="-14" y="-22" width="28" height="12" fill="#374151" rx="2" />
-      <rect x="-12" y="-20" width="10" height="8" fill="#1e293b" rx="1" opacity="0.6" />
-      <rect x="2" y="-20" width="10" height="8" fill="#1e293b" rx="1" opacity="0.6" />
-      <circle cx="-18" cy="-12" r="3" fill="#fef9c3" opacity="0.4" />
-      <circle cx="18" cy="-12" r="3" fill="#fef9c3" opacity="0.4" />
-      <ellipse cx="-14" cy="12" rx="6" ry="4" fill="#111" />
-      <ellipse cx="14" cy="12" rx="6" ry="4" fill="#111" />
+    <g transform="translate(150,120) rotate(5)">
+      <g className="anim-wobble" style={{ transformOrigin: '0px 0px' }}>
+        <rect x="-22" y="-14" width="44" height="26" fill="#475569" rx="4" />
+        <rect x="-14" y="-22" width="28" height="12" fill="#374151" rx="2" />
+        <rect x="-12" y="-20" width="10" height="8" fill="#1e293b" rx="1" opacity="0.6" />
+        <rect x="2" y="-20" width="10" height="8" fill="#1e293b" rx="1" opacity="0.6" />
+        <circle cx="-18" cy="-12" r="3" fill="#fef9c3" opacity="0.4" />
+        <circle cx="18" cy="-12" r="3" fill="#fef9c3" opacity="0.4" />
+        <ellipse cx="-14" cy="12" rx="6" ry="4" fill="#111" />
+        <ellipse cx="14" cy="12" rx="6" ry="4" fill="#111" />
+      </g>
     </g>
     {/* Zzz animation */}
-    <text
-      x="175"
-      y="95"
-      fill="#94a3b8"
-      fontSize="14"
-      opacity="0.7"
-      className="anim-smoke"
-      style={{ animationDelay: '0s' }}
-    >
-      z
-    </text>
-    <text
-      x="188"
-      y="82"
-      fill="#94a3b8"
-      fontSize="18"
-      opacity="0.5"
-      className="anim-smoke"
-      style={{ animationDelay: '0.4s' }}
-    >
-      Z
-    </text>
-    <text
-      x="200"
-      y="68"
-      fill="#94a3b8"
-      fontSize="22"
-      opacity="0.3"
-      className="anim-smoke"
-      style={{ animationDelay: '0.8s' }}
-    >
-      Z
-    </text>
+    <g transform="translate(175,95)">
+      <g className="anim-smoke" style={{ animationDelay: '0s', transformOrigin: '0px 0px' }}>
+        <text x="0" y="0" fill="#94a3b8" fontSize="14" opacity="0.7">
+          z
+        </text>
+      </g>
+    </g>
+    <g transform="translate(188,82)">
+      <g className="anim-smoke" style={{ animationDelay: '0.4s', transformOrigin: '0px 0px' }}>
+        <text x="0" y="0" fill="#94a3b8" fontSize="18" opacity="0.5">
+          Z
+        </text>
+      </g>
+    </g>
+    <g transform="translate(200,68)">
+      <g className="anim-smoke" style={{ animationDelay: '0.8s', transformOrigin: '0px 0px' }}>
+        <text x="0" y="0" fill="#94a3b8" fontSize="22" opacity="0.3">
+          Z
+        </text>
+      </g>
+    </g>
     <text x="150" y="174" textAnchor="middle" fill="#6366f1" fontSize="9">
       ⚠️ 深夜國道・意識模糊車輛偏移中
     </text>
@@ -682,13 +737,15 @@ const HydroplaningScene = () => {
       <ellipse cx="150" cy="140" rx="60" ry="6" fill="#60a5fa" opacity="0.2" />
       <ellipse cx="150" cy="138" rx="40" ry="4" fill="#93c5fd" opacity="0.15" />
       {/* Car sliding */}
-      <g transform="translate(150,115) rotate(-8)" className="anim-wobble">
-        <rect x="-22" y="-14" width="44" height="26" fill="#0ea5e9" rx="4" />
-        <rect x="-14" y="-22" width="28" height="12" fill="#0284c7" rx="2" />
-        <rect x="-12" y="-20" width="10" height="8" fill="#bfdbfe" rx="1" opacity="0.85" />
-        <rect x="2" y="-20" width="10" height="8" fill="#bfdbfe" rx="1" opacity="0.85" />
-        <ellipse cx="-14" cy="12" rx="6" ry="4" fill="#111" />
-        <ellipse cx="14" cy="12" rx="6" ry="4" fill="#111" />
+      <g transform="translate(150,115) rotate(-8)">
+        <g className="anim-wobble" style={{ transformOrigin: '0px 0px' }}>
+          <rect x="-22" y="-14" width="44" height="26" fill="#0ea5e9" rx="4" />
+          <rect x="-14" y="-22" width="28" height="12" fill="#0284c7" rx="2" />
+          <rect x="-12" y="-20" width="10" height="8" fill="#bfdbfe" rx="1" opacity="0.85" />
+          <rect x="2" y="-20" width="10" height="8" fill="#bfdbfe" rx="1" opacity="0.85" />
+          <ellipse cx="-14" cy="12" rx="6" ry="4" fill="#111" />
+          <ellipse cx="14" cy="12" rx="6" ry="4" fill="#111" />
+        </g>
       </g>
       {/* Water spray from tires */}
       <circle
