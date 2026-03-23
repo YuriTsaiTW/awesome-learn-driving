@@ -24,7 +24,7 @@ const ConsequencePhase = ({ scenario, choice, onNext }: ConsequencePhaseProps) =
             border: `2px solid ${ok ? '#16a34a' : '#dc2626'}`,
           }}
         >
-          <div style={{ height: 160, background: '#0f172a' }}>
+          <div className="consequence-anim" style={{ background: '#0f172a' }}>
             <DA showConsequence={true} />
           </div>
         </div>

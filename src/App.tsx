@@ -1,35 +1,50 @@
 import { useState } from 'react';
+import { Routes, Route, useNavigate, useParams, Navigate } from 'react-router-dom';
 import type { Scenario } from './types/scenario';
+import { SCENARIOS } from './data/scenarios';
 import HomeScreen from './components/HomeScreen';
 import ScenarioFlow from './components/ScenarioFlow';
 
-const App = () => {
-  const [view, setView] = useState<'home' | 'scenario'>('home');
-  const [current, setCurrent] = useState<Scenario | null>(null);
-  const [completed, setCompleted] = useState<string[]>([]);
+interface ScenarioRouteProps {
+  completed: string[];
+  onComplete: (id: string) => void;
+}
 
-  const select = (sc: Scenario) => {
-    setCurrent(sc);
-    setView('scenario');
-  };
+function ScenarioRoute({ completed, onComplete }: ScenarioRouteProps) {
+  const { scenarioId } = useParams<{ scenarioId: string }>();
+  const navigate = useNavigate();
+  const scenario = SCENARIOS.find((sc) => sc.id === scenarioId);
+
+  if (!scenario) return <Navigate to="/" replace />;
+
+  return (
+    <ScenarioFlow
+      scenario={scenario}
+      onBack={() => navigate('/')}
+      onComplete={onComplete}
+      isCompleted={completed.includes(scenario.id)}
+    />
+  );
+}
+
+function App() {
+  const [completed, setCompleted] = useState<string[]>([]);
+  const navigate = useNavigate();
+
   const complete = (id: string) =>
     setCompleted((prev) => (prev.includes(id) ? prev : [...prev, id]));
-  const back = () => {
-    setView('home');
-    setCurrent(null);
-  };
 
-  if (view === 'scenario' && current) {
-    return (
-      <ScenarioFlow
-        scenario={current}
-        onBack={back}
-        onComplete={complete}
-        isCompleted={completed.includes(current.id)}
+  const select = (sc: Scenario) => navigate(`/scenario/${sc.id}`);
+
+  return (
+    <Routes>
+      <Route path="/" element={<HomeScreen onSelect={select} completed={completed} />} />
+      <Route
+        path="/scenario/:scenarioId"
+        element={<ScenarioRoute completed={completed} onComplete={complete} />}
       />
-    );
-  }
-  return <HomeScreen onSelect={select} completed={completed} />;
-};
+    </Routes>
+  );
+}
 
 export default App;

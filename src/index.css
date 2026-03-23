@@ -353,6 +353,34 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+.scenario-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.scenario-thumb {
+  width: 80px;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.scenario-card-body {
+  flex: 1;
+  min-width: 0;
+}
+.scenario-arrow {
+  color: #475569;
+  font-size: 18px;
+  flex-shrink: 0;
+}
 .intro-layout {
   display: flex;
   flex-direction: column;
@@ -366,6 +394,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.decision-opt-anim {
+  height: 160px;
+}
+.consequence-anim {
+  height: 240px;
 }
 .quiz-options {
   display: flex;
@@ -383,18 +417,30 @@ body {
     max-width: 900px;
   }
 
-  /* HomeScreen: 2-column scenario grid */
+  /* HomeScreen: 3-column vertical card grid */
   .scenario-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
-  .scenario-thumb {
-    width: 100px !important;
-    height: 68px !important;
+  .scenario-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
   }
-  .scenario-card-title {
-    font-size: 15px !important;
+  .scenario-thumb {
+    width: 100%;
+    height: 180px;
+    border-radius: 0;
+    flex-shrink: unset;
+  }
+  .scenario-card-body {
+    padding: 14px;
+  }
+  .scenario-arrow {
+    display: none;
   }
 
   /* IntroPhase: side-by-side scene + narrative */
@@ -416,7 +462,10 @@ body {
     gap: 14px;
   }
   .decision-opt-anim {
-    height: 160px !important;
+    height: 220px;
+  }
+  .consequence-anim {
+    height: 400px;
   }
 
   /* QuizPhase: 2-column option grid */

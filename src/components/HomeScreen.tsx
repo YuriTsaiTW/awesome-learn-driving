@@ -64,38 +64,20 @@ const HomeScreen = ({ onSelect, completed }: HomeScreenProps) => (
             <button
               key={sc.id}
               onClick={() => onSelect(sc)}
+              className="scenario-card"
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 14,
-                padding: 14,
                 background: '#1e293b',
-                borderRadius: 20,
                 border: done ? '1px solid #16a34a' : '1px solid #334155',
-                cursor: 'pointer',
-                textAlign: 'left',
-                transition: 'border-color 0.2s, box-shadow 0.2s',
-                width: '100%',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.borderColor = sc.accent)}
               onMouseLeave={(e) =>
                 (e.currentTarget.style.borderColor = done ? '#16a34a' : '#334155')
               }
             >
-              <div
-                className="scenario-thumb"
-                style={{
-                  width: 80,
-                  height: 56,
-                  borderRadius: 12,
-                  overflow: 'hidden',
-                  flexShrink: 0,
-                  background: '#0f172a',
-                }}
-              >
+              <div className="scenario-thumb" style={{ background: '#0f172a' }}>
                 {SceneComp && <SceneComp />}
               </div>
-              <div style={{ flex: 1, minWidth: 0 }}>
+              <div className="scenario-card-body">
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 3 }}>
                   <span
                     className="scenario-card-title"
@@ -110,7 +92,7 @@ const HomeScreen = ({ onSelect, completed }: HomeScreenProps) => (
                   難度：{sc.difficulty}
                 </div>
               </div>
-              <div style={{ color: '#475569', fontSize: 18 }}>›</div>
+              <div className="scenario-arrow">›</div>
             </button>
           );
         })}

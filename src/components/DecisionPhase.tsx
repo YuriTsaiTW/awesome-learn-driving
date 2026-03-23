@@ -66,7 +66,6 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
                 <div
                   className="decision-opt-anim"
                   style={{
-                    height: 118,
                     background: '#0f172a',
                     borderBottom: '1px solid #1e293b',
                     pointerEvents: 'none',
