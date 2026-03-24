@@ -291,6 +291,44 @@ body {
 .anim-fog {
   animation: fogPulse 3s ease-in-out infinite;
 }
+@keyframes logoDrive {
+  0% {
+    transform: translateX(-18px) rotate(-4deg);
+    opacity: 0;
+  }
+  40% {
+    transform: translateX(6px) rotate(2deg);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+  80% {
+    transform: translateX(2px) rotate(0.5deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes logoBounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-6px) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(3deg);
+  }
+}
+.anim-logo-drive {
+  display: inline-block;
+  animation:
+    logoDrive 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    logoBounce 2.8s ease-in-out 0.7s infinite;
+}
 
 .btn-choice {
   transition:

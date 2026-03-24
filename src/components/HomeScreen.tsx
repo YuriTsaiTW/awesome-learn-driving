@@ -123,14 +123,16 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
     >
       <div className="home-inner">
         <div className="anim-fade" style={{ textAlign: 'center', marginBottom: 32 }}>
-          <div style={{ fontSize: 52, marginBottom: 8 }}>🚗</div>
+          <div className="anim-logo-drive" style={{ fontSize: 72, marginBottom: 12 }}>
+            🚗
+          </div>
           <h1
             className="home-title"
-            style={{ fontSize: 26, fontWeight: 900, color: 'white', margin: '0 0 8px' }}
+            style={{ fontSize: 34, fontWeight: 900, color: 'white', margin: '0 0 10px' }}
           >
             Awesome Learn Driving
           </h1>
-          <p style={{ fontSize: 13, color: '#64748b', margin: 0 }}>Safe Driving Makes Happy Life</p>
+          <p style={{ fontSize: 15, color: '#64748b', margin: 0 }}>Safe Driving Makes Happy Life</p>
         </div>
         <div
           style={{
