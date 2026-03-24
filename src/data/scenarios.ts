@@ -6,9 +6,12 @@ export const SCENARIOS: Scenario[] = [
     title: '高速公路拋錨',
     subtitle: '車輛突然失去動力',
     icon: '🚗',
-    difficulty: '中等',
+    difficulty: '中',
     difficultyColor: '#fbbf24',
     accent: '#f59e0b',
+    annualFrequency: 3000,
+    frequencyNote:
+      '依高速公路局年報，國道每年故障停車需救援者推估約 3,000 件（各類故障合計 2.5–3.5 萬件，其中達事故或救援通報層級者占比約 10%）。高速公路拋錨若處置不當，極易引發後方追撞，致死風險遠高於一般道路。',
     description:
       '你正在國道1號以時速100公里行駛，突然間引擎發出異響，車輛開始失去動力，儀表板上的警示燈相繼亮起...',
     story: {
@@ -94,6 +97,9 @@ export const SCENARIOS: Scenario[] = [
     icon: '💨',
     difficulty: '高',
     difficultyColor: '#f87171',
+    annualFrequency: 800,
+    frequencyNote:
+      '爆胎在官方事故肇因中歸類為「車輛機械因素」或「輪胎因素」，依交通部警政署統計，此類機械故障肇因每年合計約 800–1,200 件。現代輪胎品質提升後，突發性爆胎已減少，但高速公路爆胎時速度快、操控難度極高，死亡率仍高。',
     accent: '#ef4444',
     description:
       '你在高速公路以時速110公里行駛，突然聽到一聲巨響，車子開始劇烈抖動並向右偏移，方向盤變得很難控制...',
@@ -168,8 +174,11 @@ export const SCENARIOS: Scenario[] = [
     title: '大雨大霧能見度極低',
     subtitle: '視線受阻，危機四伏',
     icon: '🌫️',
-    difficulty: '中等',
+    difficulty: '中',
     difficultyColor: '#fbbf24',
+    annualFrequency: 5000,
+    frequencyNote:
+      '依交通部統計，台灣全國年均道路事故逾 40 萬件，其中因「雨、霧、路面積水」等天候因素占約 1.2–1.5%，推估每年約 5,000 件。雨天行車風險比晴天高 30–50%，山區濃霧能見度驟降時尤為危險。',
     accent: '#60a5fa',
     description:
       '你在山區道路行駛，突然遭遇濃霧，能見度急速降低至不足30公尺，前方幾乎什麼都看不見，後方也有車輛跟隨...',
@@ -259,6 +268,9 @@ export const SCENARIOS: Scenario[] = [
     icon: '💥',
     difficulty: '低',
     difficultyColor: '#4ade80',
+    annualFrequency: 9148,
+    frequencyNote:
+      '依交通部道安資訊平台 114 年全國小型車事故肇因統計，「未保持行車安全距離」為第 2 大肇因，全國 9,148 件／年（初估值，資料來源：roadsafety.tw）。追尾碰撞幾乎皆源於車距不足，路口等紅燈時尤其好發。',
     accent: '#f97316',
     description:
       '你在路口等待紅燈，突然後方傳來一聲撞擊聲，你的車被後方車輛追撞了。撞擊力道不大，你身體沒有明顯不適...',
@@ -331,6 +343,9 @@ export const SCENARIOS: Scenario[] = [
     icon: '🚨',
     difficulty: '高',
     difficultyColor: '#f87171',
+    annualFrequency: 120,
+    frequencyNote:
+      '煞車完全失靈屬極罕見機械事故。現代車輛配備雙迴路液壓煞車系統，即使一組失效仍有備援。依交通部事故調查資料推估，全台每年因煞車機械故障導致事故約 100–150 件。儘管罕見，一旦發生死亡率高，訓練價值極高。',
     accent: '#dc2626',
     description:
       '你在市區道路以時速60公里行駛，前方紅燈亮起，你踩下煞車踏板，卻發現幾乎踩到底，車子還是幾乎沒有減速...',
@@ -441,6 +456,9 @@ export const SCENARIOS: Scenario[] = [
     icon: '🏔️',
     difficulty: '中',
     difficultyColor: '#fb923c',
+    annualFrequency: 4500,
+    frequencyNote:
+      '依道安資訊平台數據，無號誌路口相關肇因（讓車、轉彎）合計為小型車前 10 大肇因。窄路會車多發生於山區省道、農村鄉道，佔無號誌路口事故相當比例，推估每年約 4,500 件涉及狹窄道路的正面衝突或刮撞事故。',
     accent: '#f97316',
     description:
       '你正沿著台3線山區省道單線道行駛，路寬僅約4公尺，前方彎道後突然出現對向來車，兩車距離不到30公尺...',
@@ -533,8 +551,11 @@ export const SCENARIOS: Scenario[] = [
     title: '路口碰撞危機',
     subtitle: '綠燈起步卻遭側撞',
     icon: '🚦',
-    difficulty: '中等',
+    difficulty: '中',
     difficultyColor: '#fbbf24',
+    annualFrequency: 25545,
+    frequencyNote:
+      '依交通部道安資訊平台 114 年全國小型車事故肇因統計，路口相關肇因合計：有號誌路口轉彎車未讓直行車先行 13,448 件 + 無號誌路口轉彎車未讓直行車 6,190 件 + 無號誌路口支線道未讓幹線道 5,907 件 = 25,545 件／年（初估值，資料來源：roadsafety.tw）。路口事故為台灣小型車最大宗事故類型。',
     accent: '#ef4444',
     description:
       '你在市區十字路口等紅燈，綠燈亮起正要起步，左側突然衝出一輛闖紅燈的車輛，直直朝你的駕駛座側衝來...',
@@ -630,8 +651,11 @@ export const SCENARIOS: Scenario[] = [
     title: '機車突然鑽車縫',
     subtitle: '側方機車猛然竄出',
     icon: '🛵',
-    difficulty: '中等',
+    difficulty: '中',
     difficultyColor: '#fbbf24',
+    annualFrequency: 6800,
+    frequencyNote:
+      '依道安資訊平台 114 年全國小型車統計，「起步時未注意安全」6,768 件（第 6 大肇因），其中涉及機車的比例估計超過六成。機車高速鑽車縫多發生在小型車起步、轉彎或切換車道瞬間，推估每年約 6,800 件涉及機車互動的小型車事故（初估值）。',
     accent: '#8b5cf6',
     description:
       '你正在市區道路行駛，準備右轉進入巷口，右後方一台機車突然從車縫高速竄出，擦過你的右側車身...',
@@ -728,6 +752,9 @@ export const SCENARIOS: Scenario[] = [
     icon: '😴',
     difficulty: '高',
     difficultyColor: '#f87171',
+    annualFrequency: 7786,
+    frequencyNote:
+      '依交通部道安資訊平台 114 年全國小型車事故肇因統計，「恍神、緊張、心不在焉分心駕駛」為第 4 大肇因，全國 7,786 件／年（初估值，資料來源：roadsafety.tw）。疲勞駕駛是「恍神」的主要成因之一，與睡眠不足、長時間行駛高度相關。',
     accent: '#6366f1',
     description:
       '深夜長途駕駛，你發現自己的眼皮越來越沉，頭開始不自覺地點了一下。車子似乎偏離了車道，你猛然驚醒...',
@@ -831,6 +858,9 @@ export const SCENARIOS: Scenario[] = [
     icon: '🌊',
     difficulty: '高',
     difficultyColor: '#f87171',
+    annualFrequency: 300,
+    frequencyNote:
+      '水漂（Hydroplaning）為複合因素事故（雨天積水 + 車速過快 + 輪紋磨損），在事故報告中多歸類於「天候因素」或「超速行駛」，難以精確獨立統計。依專家估計，台灣每年涉及水漂失控的事故約 200–400 件，集中於颱風豪雨季節。',
     accent: '#0ea5e9',
     description:
       '暴雨中行駛在高速公路，車子經過一段積水路面，突然方向盤變得異常輕飄，車子完全不聽使喚地開始滑行...',

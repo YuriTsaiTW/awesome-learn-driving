@@ -59,6 +59,10 @@ export interface Scenario {
   difficulty: string;
   difficultyColor: string;
   accent: string;
+  /** Estimated annual accident count in Taiwan (used for frequency sort) */
+  annualFrequency: number;
+  /** Explanation of data source and calculation method */
+  frequencyNote: string;
   description: string;
   story: Story;
   decision: Decision;
