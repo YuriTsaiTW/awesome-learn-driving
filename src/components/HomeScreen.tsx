@@ -109,7 +109,7 @@ function FrequencyInfoPanel() {
 }
 
 function HomeScreen({ onSelect, completed }: HomeScreenProps) {
-  const [sortKey, setSortKey] = useState<SortKey>('default');
+  const [sortKey, setSortKey] = useState<SortKey>('freq-desc');
   const sorted = sortScenarios(SCENARIOS, sortKey);
   const isFreqSort = sortKey === 'freq-desc' || sortKey === 'freq-asc';
 
@@ -123,16 +123,71 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
     >
       <div className="home-inner">
         <div className="anim-fade" style={{ textAlign: 'center', marginBottom: 32 }}>
-          <div className="anim-logo-drive" style={{ fontSize: 72, marginBottom: 12 }}>
-            🚗
+          <div style={{ marginBottom: 12, display: 'flex', justifyContent: 'center' }}>
+            {/* Logo car — same flat SVG style as scenario scene cards */}
+            <svg viewBox="0 0 120 72" width="120" height="72">
+              {/* Body */}
+              <rect x="8" y="34" width="104" height="28" fill="#1d4ed8" rx="6" />
+              {/* Cabin */}
+              <rect x="26" y="14" width="68" height="24" fill="#1e40af" rx="7" />
+              {/* Windshield */}
+              <rect x="30" y="17" width="28" height="16" fill="#93c5fd" rx="3" opacity="0.75" />
+              {/* Rear window */}
+              <rect x="62" y="17" width="24" height="16" fill="#93c5fd" rx="3" opacity="0.6" />
+              {/* Headlight — blinking */}
+              <rect
+                x="106"
+                y="40"
+                width="8"
+                height="6"
+                fill="#fef08a"
+                rx="2"
+                className="anim-head-glow"
+              />
+              {/* Headlight glow beam */}
+              <rect
+                x="114"
+                y="41"
+                width="5"
+                height="4"
+                fill="#fef08a"
+                rx="1"
+                opacity="0.4"
+                className="anim-head-glow"
+              />
+              {/* Tail light — blinking offset */}
+              <rect
+                x="6"
+                y="40"
+                width="6"
+                height="6"
+                fill="#ef4444"
+                rx="2"
+                className="anim-tail-light"
+              />
+              {/* Front wheel */}
+              <ellipse cx="88" cy="62" rx="13" ry="10" fill="#111827" />
+              <g className="anim-wheel-spin">
+                <ellipse cx="88" cy="62" rx="7" ry="5.5" fill="#334155" />
+                <line x1="88" y1="57" x2="88" y2="67" stroke="#475569" strokeWidth="1.5" />
+                <line x1="83" y1="62" x2="93" y2="62" stroke="#475569" strokeWidth="1.5" />
+              </g>
+              {/* Rear wheel */}
+              <ellipse cx="32" cy="62" rx="13" ry="10" fill="#111827" />
+              <g className="anim-wheel-spin">
+                <ellipse cx="32" cy="62" rx="7" ry="5.5" fill="#334155" />
+                <line x1="32" y1="57" x2="32" y2="67" stroke="#475569" strokeWidth="1.5" />
+                <line x1="27" y1="62" x2="37" y2="62" stroke="#475569" strokeWidth="1.5" />
+              </g>
+            </svg>
           </div>
           <h1
             className="home-title"
-            style={{ fontSize: 34, fontWeight: 900, color: 'white', margin: '0 0 10px' }}
+            style={{ fontSize: 48, fontWeight: 900, color: 'white', margin: '0 0 10px' }}
           >
             Awesome Learn Driving
           </h1>
-          <p style={{ fontSize: 15, color: '#64748b', margin: 0 }}>Safe Driving Makes Happy Life</p>
+          <p style={{ fontSize: 20, color: '#64748b', margin: 0 }}>Safe Driving Makes Happy Life</p>
         </div>
         <div
           style={{
