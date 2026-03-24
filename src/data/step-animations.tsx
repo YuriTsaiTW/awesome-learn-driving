@@ -1399,6 +1399,148 @@ const SACheckTires = () => (
   </svg>
 );
 
+// == Right Turn Motorcycle ==
+const SAHugRight = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Top-down road view */}
+    <rect x="0" y="30" width="160" height="50" fill="#2d3748" />
+    <line x1="0" y1="55" x2="130" y2="55" stroke="#64748b" strokeWidth="1" strokeDasharray="8,6" />
+    {/* Right curb */}
+    <rect x="0" y="78" width="160" height="4" fill="#64748b" />
+    {/* Car (top-down) moving toward right curb */}
+    <g style={{ animation: 'stepSlideR 1.8s ease-in-out infinite' }}>
+      <rect x="50" y="62" width="28" height="16" fill="#1d4ed8" rx="3" />
+      <rect x="55" y="60" width="18" height="6" fill="#1e40af" rx="1" />
+    </g>
+    {/* Arrow showing direction */}
+    <path d="M 95 70 L 120 70" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" />
+    <polygon points="120,67 126,70 120,73" fill="#22c55e" />
+    {/* Gap indicator */}
+    <line
+      x1="130"
+      y1="62"
+      x2="130"
+      y2="78"
+      stroke="#ef4444"
+      strokeWidth="1.5"
+      strokeDasharray="3,3"
+    />
+    <text x="143" y="72" textAnchor="middle" fill="#ef4444" fontSize="7">
+      縮小
+    </text>
+    <text x="80" y="86" textAnchor="middle" fill="#22c55e" fontSize="8" fontWeight="700">
+      靠近路緣，縮小右側空間
+    </text>
+  </svg>
+);
+
+const SALetMotoPass = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Road */}
+    <rect x="0" y="30" width="160" height="45" fill="#2d3748" />
+    <line x1="0" y1="52" x2="160" y2="52" stroke="#64748b" strokeWidth="1" strokeDasharray="8,6" />
+    {/* Stopped car */}
+    <rect x="12" y="37" width="40" height="22" fill="#1d4ed8" rx="3" />
+    <rect x="18" y="30" width="28" height="10" fill="#1e40af" rx="2" />
+    {/* Stop hand */}
+    <circle cx="32" cy="16" r="10" fill="#ef4444" opacity="0.9" />
+    <text x="32" y="20" textAnchor="middle" fill="white" fontSize="12">
+      ✋
+    </text>
+    {/* Motorcycle passing by */}
+    <g style={{ animation: 'stepSlideL 1.6s ease-in-out infinite' }}>
+      <rect x="98" y="40" width="10" height="16" fill="#f97316" rx="2" />
+      <circle cx="103" cy="37" r="4" fill="#fbbf24" />
+      <circle cx="97" cy="56" r="3.5" fill="#111" />
+      <circle cx="109" cy="56" r="3.5" fill="#111" />
+      <circle cx="97" cy="42" r="2.5" fill="#fef9c3" opacity="0.9" />
+    </g>
+    {/* Arrow showing moto direction */}
+    <path d="M 135 48 L 155 48" stroke="#f97316" strokeWidth="2" strokeLinecap="round" />
+    <polygon points="155,45 160,48 155,51" fill="#f97316" />
+    <text x="80" y="84" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">
+      停車讓機車先通過
+    </text>
+  </svg>
+);
+
+// == Left Turn Oncoming ==
+const SAWaitAtCenter = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Intersection (top-down) */}
+    <rect x="0" y="30" width="160" height="50" fill="#2d3748" />
+    <rect x="60" y="0" width="40" height="90" fill="#2d3748" />
+    {/* Center line */}
+    <line x1="0" y1="55" x2="60" y2="55" stroke="#fbbf24" strokeWidth="1.5" strokeDasharray="8,6" />
+    <line
+      x1="100"
+      y1="55"
+      x2="160"
+      y2="55"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      strokeDasharray="8,6"
+    />
+    {/* Waiting car in center */}
+    <rect x="63" y="42" width="28" height="16" fill="#1d4ed8" rx="3" />
+    <rect x="68" y="36" width="18" height="8" fill="#1e40af" rx="1" />
+    {/* Left signal blinking */}
+    <circle cx="62" cy="42" r="4" fill="#f59e0b" className="anim-hazard" />
+    {/* Wait indicator */}
+    <circle cx="130" cy="18" r="12" fill="#1e3a5f" stroke="#60a5fa" strokeWidth="2" />
+    <text x="130" y="22" textAnchor="middle" fill="#93c5fd" fontSize="13" fontWeight="900">
+      ⏸
+    </text>
+    <text x="80" y="84" textAnchor="middle" fill="#60a5fa" fontSize="8" fontWeight="700">
+      停等區耐心等待，不硬衝
+    </text>
+  </svg>
+);
+
+const SAWaitOncoming = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Road */}
+    <rect x="0" y="32" width="160" height="44" fill="#2d3748" />
+    <line
+      x1="0"
+      y1="54"
+      x2="160"
+      y2="54"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      strokeDasharray="8,6"
+    />
+    {/* Waiting blue car */}
+    <rect x="10" y="38" width="38" height="22" fill="#1d4ed8" rx="3" />
+    <rect x="16" y="31" width="26" height="10" fill="#1e40af" rx="2" />
+    {/* Oncoming cars passing */}
+    <g style={{ animation: 'stepSlideL 1.5s ease-in-out infinite' }}>
+      <rect x="80" y="57" width="32" height="18" fill="#dc2626" rx="2" />
+      <rect x="85" y="50" width="22" height="9" fill="#b91c1c" rx="1" />
+      <circle cx="79" cy="59" r="3" fill="#fef9c3" opacity="0.9" />
+      <circle cx="79" cy="71" r="3" fill="#fef9c3" opacity="0.9" />
+    </g>
+    <g style={{ animation: 'stepSlideL 1.5s ease-in-out 0.6s infinite' }}>
+      <rect x="115" y="57" width="32" height="18" fill="#7c3aed" rx="2" />
+      <rect x="120" y="50" width="22" height="9" fill="#6d28d9" rx="1" />
+      <circle cx="114" cy="59" r="3" fill="#fef9c3" opacity="0.9" />
+      <circle cx="114" cy="71" r="3" fill="#fef9c3" opacity="0.9" />
+    </g>
+    {/* Check indicator */}
+    <circle cx="130" cy="20" r="12" fill="#15803d" opacity="0.9" />
+    <text x="130" y="25" textAnchor="middle" fill="white" fontSize="15" fontWeight="900">
+      ✓
+    </text>
+    <text x="80" y="84" textAnchor="middle" fill="#22c55e" fontSize="8" fontWeight="700">
+      確認對向全部通過後再左轉
+    </text>
+  </svg>
+);
+
 export const STEP_ANIMS: Partial<Record<ScenarioId, (React.FC | null)[]>> = {
   'highway-breakdown': [
     SAHazardFlash,
@@ -1453,6 +1595,22 @@ export const STEP_ANIMS: Partial<Record<ScenarioId, (React.FC | null)[]>> = {
     SACheckAndTurn,
   ],
   'drowsy-driving': [SAFatigueSign, SAHazardFlash, SAPullOver, SAParkSleep, SACoffee, SANoGo],
+  'right-turn-motorcycle': [
+    SASignalEarly,
+    SAHugRight,
+    SACheckMirror,
+    SALetMotoPass,
+    SACheckAndTurn,
+    SAPersonCross,
+  ],
+  'left-turn-oncoming': [
+    SASignalEarly,
+    SAWaitAtCenter,
+    SAWaitOncoming,
+    SAPersonCross,
+    SACheckAndTurn,
+    SALookBothWays,
+  ],
   hydroplaning: [
     SALiftFoot,
     SASteeringGrip,

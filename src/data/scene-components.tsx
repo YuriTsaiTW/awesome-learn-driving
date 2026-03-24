@@ -796,6 +796,177 @@ const HydroplaningScene = () => {
   );
 };
 
+const RightTurnMotorcycleScene = () => (
+  <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <rect width="300" height="180" fill="#0f172a" />
+    {/* Sky */}
+    <rect width="300" height="90" fill="#0c1424" />
+    {/* Buildings */}
+    <rect x="10" y="50" width="30" height="40" fill="#1e293b" />
+    <rect x="50" y="35" width="25" height="55" fill="#243447" />
+    <rect x="220" y="45" width="35" height="45" fill="#1e293b" />
+    <rect x="265" y="30" width="28" height="60" fill="#243447" />
+    {/* Main road (horizontal) */}
+    <rect x="0" y="90" width="300" height="70" fill="#2d3748" />
+    {/* Right-turn target road (vertical, bottom-right) */}
+    <rect x="195" y="110" width="105" height="70" fill="#2d3748" />
+    {/* Road markings - main road */}
+    <line
+      x1="0"
+      y1="125"
+      x2="190"
+      y2="125"
+      stroke="#64748b"
+      strokeWidth="1.5"
+      strokeDasharray="14,12"
+    />
+    {/* Curb lines */}
+    <line x1="0" y1="90" x2="300" y2="90" stroke="#475569" strokeWidth="2" />
+    <line x1="0" y1="160" x2="195" y2="160" stroke="#475569" strokeWidth="2" />
+    <line x1="300" y1="110" x2="300" y2="180" stroke="#475569" strokeWidth="2" />
+    {/* Intersection markings */}
+    <line x1="195" y1="90" x2="195" y2="110" stroke="#475569" strokeWidth="2" />
+    <line x1="300" y1="90" x2="300" y2="110" stroke="#475569" strokeWidth="2" />
+    {/* Stop line */}
+    <line x1="120" y1="90" x2="120" y2="160" stroke="#f1f5f9" strokeWidth="2" />
+    {/* Traffic light */}
+    <rect x="183" y="28" width="14" height="40" fill="#374151" rx="3" />
+    <circle cx="190" cy="38" r="5" fill="#374151" />
+    <circle cx="190" cy="50" r="5" fill="#22c55e" />
+    <circle cx="190" cy="62" r="5" fill="#374151" />
+    {/* Player car (blue) - at intersection about to turn */}
+    <g transform="translate(148,118)">
+      <rect x="-20" y="-11" width="40" height="20" fill="#1d4ed8" rx="3" />
+      <rect x="-14" y="-18" width="28" height="10" fill="#1e40af" rx="2" />
+      <rect x="-11" y="-16" width="10" height="7" fill="#bfdbfe" rx="1" opacity="0.85" />
+      <rect x="3" y="-16" width="10" height="7" fill="#bfdbfe" rx="1" opacity="0.85" />
+      {/* Right turn signal blinking */}
+      <circle cx="20" cy="-9" r="4" fill="#f59e0b" className="anim-hazard" />
+      <circle cx="-20" cy="-9" r="4" fill="#94a3b8" opacity="0.3" />
+      <ellipse cx="-14" cy="9" rx="8" ry="5" fill="#111" />
+      <ellipse cx="14" cy="9" rx="8" ry="5" fill="#111" />
+    </g>
+    {/* Motorcycle (orange) coming from right, going straight */}
+    <g transform="translate(248,118)">
+      <g className="anim-wobble" style={{ transformOrigin: '0px 0px' }}>
+        <rect x="-5" y="-10" width="10" height="16" fill="#f97316" rx="2" />
+        <circle cx="0" cy="-13" r="4" fill="#fbbf24" />
+        <circle cx="-6" cy="6" r="3.5" fill="#111" />
+        <circle cx="6" cy="6" r="3.5" fill="#111" />
+        {/* Headlight */}
+        <circle cx="-6" cy="-8" r="2.5" fill="#fef9c3" opacity="0.9" />
+      </g>
+    </g>
+    {/* Warning indicator at conflict zone */}
+    <g transform="translate(197,118)">
+      <g className="anim-hazard" style={{ transformOrigin: '0px 0px' }}>
+        <polygon points="0,-14 12,8 -12,8" fill="#ef4444" opacity="0.85" />
+        <text x="0" y="5" textAnchor="middle" fill="white" fontSize="10" fontWeight="900">
+          !
+        </text>
+      </g>
+    </g>
+    <text x="150" y="174" textAnchor="middle" fill="#64748b" fontSize="9">
+      ⚠️ 右轉時機車從右後方直行衝來
+    </text>
+  </svg>
+);
+
+const LeftTurnOncomingScene = () => (
+  <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <rect width="300" height="180" fill="#0f172a" />
+    {/* Sky */}
+    <rect width="300" height="90" fill="#0c1424" />
+    {/* Buildings */}
+    <rect x="10" y="40" width="35" height="50" fill="#1e293b" />
+    <rect x="55" y="30" width="28" height="60" fill="#243447" />
+    <rect x="230" y="42" width="32" height="48" fill="#1e293b" />
+    <rect x="270" y="28" width="25" height="62" fill="#243447" />
+    {/* Main road (horizontal) */}
+    <rect x="0" y="90" width="300" height="70" fill="#2d3748" />
+    {/* Left-turn target road (vertical, bottom-left) */}
+    <rect x="0" y="90" width="90" height="90" fill="#2d3748" />
+    {/* Center divider line */}
+    <line
+      x1="90"
+      y1="125"
+      x2="300"
+      y2="125"
+      stroke="#fbbf24"
+      strokeWidth="2"
+      strokeDasharray="12,10"
+    />
+    <line
+      x1="0"
+      y1="125"
+      x2="85"
+      y2="125"
+      stroke="#fbbf24"
+      strokeWidth="2"
+      strokeDasharray="12,10"
+    />
+    {/* Road edges */}
+    <line x1="0" y1="90" x2="300" y2="90" stroke="#475569" strokeWidth="2" />
+    <line x1="90" y1="160" x2="300" y2="160" stroke="#475569" strokeWidth="2" />
+    {/* Intersection boundary */}
+    <line x1="90" y1="90" x2="90" y2="110" stroke="#475569" strokeWidth="2" />
+    {/* Stop line for player */}
+    <line x1="120" y1="90" x2="120" y2="160" stroke="#f1f5f9" strokeWidth="2" />
+    {/* Traffic light with left-turn arrow */}
+    <rect x="92" y="25" width="16" height="48" fill="#374151" rx="3" />
+    <circle cx="100" cy="36" r="5.5" fill="#374151" />
+    <circle cx="100" cy="50" r="5.5" fill="#22c55e" />
+    <circle cx="100" cy="64" r="5.5" fill="#374151" />
+    {/* Left-turn arrow on green light */}
+    <path
+      d="M 97 50 Q 93 46 97 42"
+      stroke="white"
+      strokeWidth="1.5"
+      fill="none"
+      strokeLinecap="round"
+    />
+    <polygon points="95,42 100,42 97,38" fill="white" />
+    {/* Player car (blue) - waiting to turn left */}
+    <g transform="translate(148,118)">
+      <rect x="-20" y="-11" width="40" height="20" fill="#1d4ed8" rx="3" />
+      <rect x="-14" y="-18" width="28" height="10" fill="#1e40af" rx="2" />
+      <rect x="-11" y="-16" width="10" height="7" fill="#bfdbfe" rx="1" opacity="0.85" />
+      <rect x="3" y="-16" width="10" height="7" fill="#bfdbfe" rx="1" opacity="0.85" />
+      {/* Left turn signal */}
+      <circle cx="-20" cy="-9" r="4" fill="#f59e0b" className="anim-hazard" />
+      <circle cx="20" cy="-9" r="4" fill="#94a3b8" opacity="0.3" />
+      <ellipse cx="-14" cy="9" rx="8" ry="5" fill="#111" />
+      <ellipse cx="14" cy="9" rx="8" ry="5" fill="#111" />
+    </g>
+    {/* Oncoming car (red) rushing from right */}
+    <g transform="translate(240,108)">
+      <g style={{ animation: 'stepSlideL 1.4s ease-in-out infinite' }}>
+        <rect x="-22" y="-12" width="44" height="22" fill="#dc2626" rx="3" />
+        <rect x="-16" y="-20" width="32" height="11" fill="#b91c1c" rx="2" />
+        <rect x="-13" y="-18" width="11" height="7" fill="#bfdbfe" rx="1" opacity="0.85" />
+        <rect x="2" y="-18" width="11" height="7" fill="#bfdbfe" rx="1" opacity="0.85" />
+        {/* Headlights shining toward player */}
+        <circle cx="-22" cy="-10" r="4" fill="#fef9c3" opacity="0.95" />
+        <circle cx="-22" cy="8" r="4" fill="#fef9c3" opacity="0.95" />
+        <ellipse cx="-14" cy="10" rx="8" ry="5" fill="#111" />
+        <ellipse cx="14" cy="10" rx="8" ry="5" fill="#111" />
+      </g>
+    </g>
+    {/* Warning at conflict zone */}
+    <g transform="translate(100,118)">
+      <g className="anim-hazard" style={{ transformOrigin: '0px 0px' }}>
+        <polygon points="0,-14 12,8 -12,8" fill="#ef4444" opacity="0.85" />
+        <text x="0" y="5" textAnchor="middle" fill="white" fontSize="10" fontWeight="900">
+          !
+        </text>
+      </g>
+    </g>
+    <text x="150" y="174" textAnchor="middle" fill="#64748b" fontSize="9">
+      ⚠️ 對向來車高速搶行，左轉時機難判斷
+    </text>
+  </svg>
+);
+
 export const SCENE_COMPONENTS: Partial<Record<ScenarioId, React.FC>> = {
   'highway-breakdown': HighwayScene,
   'tire-blowout': TireBlowoutScene,
@@ -807,4 +978,6 @@ export const SCENE_COMPONENTS: Partial<Record<ScenarioId, React.FC>> = {
   'scooter-weaving': ScooterWeavingScene,
   'drowsy-driving': DrowsyDrivingScene,
   hydroplaning: HydroplaningScene,
+  'right-turn-motorcycle': RightTurnMotorcycleScene,
+  'left-turn-oncoming': LeftTurnOncomingScene,
 };

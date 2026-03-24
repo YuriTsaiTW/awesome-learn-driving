@@ -49,7 +49,9 @@ export type ScenarioId =
   | 'intersection-crash'
   | 'scooter-weaving'
   | 'drowsy-driving'
-  | 'hydroplaning';
+  | 'hydroplaning'
+  | 'right-turn-motorcycle'
+  | 'left-turn-oncoming';
 
 export interface Scenario {
   id: ScenarioId;

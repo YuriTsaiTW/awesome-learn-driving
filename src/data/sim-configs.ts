@@ -56,6 +56,18 @@ export const SIM_CONFIGS: Partial<Record<ScenarioId, SimConfig>> = {
     lb1: { target: 'triangle', icon: '🔺', label: '三角架', color: '#22c55e' },
     lb2: { target: 'phone', icon: '📱', label: '電話', color: '#60a5fa' },
   },
+  'right-turn-motorcycle': {
+    initCockpit: { hazardOn: false, onShoulder: false, speed: 25, fogOn: false, gearDown: false },
+    foggy: false,
+    lb1: { target: 'horn', icon: '↪️', label: '方向燈', color: '#fbbf24' },
+    lb2: { target: 'triangle', icon: '👁', label: '確認右側', color: '#22c55e' },
+  },
+  'left-turn-oncoming': {
+    initCockpit: { hazardOn: false, onShoulder: false, speed: 20, fogOn: false, gearDown: false },
+    foggy: false,
+    lb1: { target: 'horn', icon: '↩️', label: '方向燈', color: '#fbbf24' },
+    lb2: { target: 'triangle', icon: '👁', label: '確認對向', color: '#60a5fa' },
+  },
   hydroplaning: {
     initCockpit: { hazardOn: false, onShoulder: false, speed: 92, fogOn: false, gearDown: false },
     foggy: true,

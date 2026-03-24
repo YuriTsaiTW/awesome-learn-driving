@@ -1302,6 +1302,314 @@ const DA_HP_C = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 
+// == Right Turn Motorcycle ==
+const DA_RT_A = ({ showConsequence = false }: DAProps) => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Road intersection */}
+    <rect x="0" y="50" width="160" height="40" fill="#1e293b" />
+    <rect x="115" y="60" width="45" height="40" fill="#1e293b" />
+    <line x1="0" y1="70" x2="110" y2="70" stroke="#334155" strokeWidth="1" strokeDasharray="8,6" />
+    {/* Player car turning right */}
+    <g transform="translate(75,63)">
+      <rect x="-16" y="-10" width="32" height="18" fill="#1d4ed8" rx="3" />
+      <rect x="-10" y="-17" width="20" height="10" fill="#1e40af" rx="2" />
+      <circle cx="16" cy="-8" r="3.5" fill="#f59e0b" className="anim-hazard" />
+    </g>
+    {/* Motorcycle coming straight from right */}
+    <g transform="translate(130,63)">
+      <g style={{ animation: 'stepSlideL 1.4s ease-in-out infinite' }}>
+        <rect x="-5" y="-10" width="10" height="16" fill="#f97316" rx="2" />
+        <circle cx="0" cy="-13" r="4" fill="#fbbf24" />
+        <circle cx="-5" cy="6" r="3" fill="#111" />
+        <circle cx="5" cy="6" r="3" fill="#111" />
+        <circle cx="-5" cy="-7" r="2" fill="#fef9c3" opacity="0.9" />
+      </g>
+    </g>
+    {/* Collision spark */}
+    <g transform="translate(105,63)">
+      <g className="anim-impact" style={{ transformOrigin: '0px 0px' }}>
+        <circle r="7" fill="#ef4444" opacity="0.9" />
+        <line x1="-10" y1="-10" x2="10" y2="10" stroke="#fbbf24" strokeWidth="2" />
+        <line x1="10" y1="-10" x2="-10" y2="10" stroke="#fbbf24" strokeWidth="2" />
+      </g>
+    </g>
+    {showConsequence && (
+      <>
+        <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          ⚠ 機車從右側直行衝撞
+        </text>
+        <text x="80" y="32" textAnchor="middle" fill="#f87171" fontSize="8">
+          A 柱盲區未確認即右轉
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          右轉捲入事故，機車騎士重傷
+        </text>
+      </>
+    )}
+  </svg>
+);
+
+const DA_RT_B = ({ showConsequence = false }: DAProps) => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Road */}
+    <rect x="0" y="50" width="160" height="40" fill="#1e293b" />
+    <rect x="115" y="60" width="45" height="40" fill="#1e293b" />
+    <line x1="0" y1="70" x2="110" y2="70" stroke="#334155" strokeWidth="1" strokeDasharray="8,6" />
+    {/* Right curb - car hugging it */}
+    <line x1="0" y1="88" x2="115" y2="88" stroke="#64748b" strokeWidth="2" />
+    {/* Player car close to curb */}
+    <g transform="translate(60,76)">
+      <rect x="-16" y="-10" width="32" height="18" fill="#1d4ed8" rx="3" />
+      <rect x="-10" y="-17" width="20" height="10" fill="#1e40af" rx="2" />
+      <circle cx="16" cy="-8" r="3.5" fill="#f59e0b" className="anim-hazard" />
+    </g>
+    {/* Motorcycle passing safely above car */}
+    <g transform="translate(130,60)">
+      <rect x="-5" y="-10" width="10" height="16" fill="#f97316" rx="2" />
+      <circle cx="0" cy="-13" r="4" fill="#fbbf24" />
+      <circle cx="-5" cy="6" r="3" fill="#111" />
+      <circle cx="5" cy="6" r="3" fill="#111" />
+    </g>
+    {/* Safe arrow */}
+    <path
+      d="M 80 75 Q 105 68 118 72"
+      stroke={showConsequence ? '#22c55e' : '#94a3b8'}
+      strokeWidth="2.5"
+      fill="none"
+      strokeLinecap="round"
+    />
+    <polygon points="116,68 120,72 115,76" fill={showConsequence ? '#22c55e' : '#94a3b8'} />
+    {showConsequence && (
+      <>
+        <circle cx="22" cy="22" r="13" fill="#15803d" opacity="0.9" />
+        <text x="22" y="27" textAnchor="middle" fill="white" fontSize="14" fontWeight="900">
+          ✓
+        </text>
+        <text x="96" y="20" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">
+          靠右確認
+        </text>
+        <text x="96" y="32" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">
+          讓機車先通
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+          安全完成右轉，零衝突
+        </text>
+      </>
+    )}
+  </svg>
+);
+
+const DA_RT_C = ({ showConsequence = false }: DAProps) => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Road */}
+    <rect x="0" y="50" width="160" height="40" fill="#1e293b" />
+    <rect x="115" y="60" width="45" height="40" fill="#1e293b" />
+    <line x1="0" y1="70" x2="110" y2="70" stroke="#334155" strokeWidth="1" strokeDasharray="8,6" />
+    {/* Car honking and turning fast */}
+    <g transform="translate(75,63)">
+      <rect x="-16" y="-10" width="32" height="18" fill="#1d4ed8" rx="3" />
+      <rect x="-10" y="-17" width="20" height="10" fill="#1e40af" rx="2" />
+    </g>
+    {/* Horn waves */}
+    <text x="40" y="45" fill="#fbbf24" fontSize="14" fontWeight="900">
+      📯
+    </text>
+    <text x="105" y="35" fill="#f59e0b" fontSize="8">
+      ♩♩♩
+    </text>
+    {/* Motorcycle still there */}
+    <g transform="translate(118,63)">
+      <g className="anim-wobble" style={{ transformOrigin: '0px 0px' }}>
+        <rect x="-5" y="-10" width="10" height="16" fill="#f97316" rx="2" />
+        <circle cx="0" cy="-13" r="4" fill="#fbbf24" />
+        <circle cx="-5" cy="6" r="3" fill="#111" />
+        <circle cx="5" cy="6" r="3" fill="#111" />
+        <circle cx="-5" cy="-7" r="2" fill="#fef9c3" opacity="0.9" />
+      </g>
+    </g>
+    {showConsequence && (
+      <>
+        <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          ⚠ 喇叭無法代替目視
+        </text>
+        <text x="80" y="32" textAnchor="middle" fill="#f87171" fontSize="8">
+          機車來不及反應仍發生碰撞
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          靠右確認才是根本，非按喇叭
+        </text>
+      </>
+    )}
+  </svg>
+);
+
+// == Left Turn Oncoming ==
+const DA_LT_A = ({ showConsequence = false }: DAProps) => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Road */}
+    <rect x="0" y="45" width="160" height="45" fill="#1e293b" />
+    <line
+      x1="0"
+      y1="67"
+      x2="160"
+      y2="67"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      strokeDasharray="8,6"
+    />
+    {/* Player car turning left */}
+    <g transform="translate(65,58)">
+      <rect x="-16" y="-10" width="32" height="18" fill="#1d4ed8" rx="3" />
+      <rect x="-10" y="-17" width="20" height="10" fill="#1e40af" rx="2" />
+      <circle cx="-16" cy="-8" r="3.5" fill="#f59e0b" className="anim-hazard" />
+    </g>
+    {/* Oncoming car at speed */}
+    <g transform="translate(125,75)">
+      <g style={{ animation: 'stepSlideL 1.2s ease-in-out infinite' }}>
+        <rect x="-18" y="-10" width="36" height="18" fill="#dc2626" rx="3" />
+        <rect x="-12" y="-17" width="24" height="10" fill="#b91c1c" rx="2" />
+        <circle cx="-18" cy="-8" r="3.5" fill="#fef9c3" opacity="0.9" />
+        <circle cx="-18" cy="6" r="3.5" fill="#fef9c3" opacity="0.9" />
+      </g>
+    </g>
+    {/* Collision */}
+    <g transform="translate(88,65)">
+      <g className="anim-impact" style={{ transformOrigin: '0px 0px' }}>
+        <circle r="8" fill="#ef4444" opacity="0.85" />
+        <line x1="-11" y1="-11" x2="11" y2="11" stroke="#fbbf24" strokeWidth="2" />
+        <line x1="11" y1="-11" x2="-11" y2="11" stroke="#fbbf24" strokeWidth="2" />
+      </g>
+    </g>
+    {showConsequence && (
+      <>
+        <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          ⚠ 對向車速難以判斷
+        </text>
+        <text x="80" y="32" textAnchor="middle" fill="#f87171" fontSize="8">
+          加速搶行造成正面碰撞
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          高速正面衝撞，死傷率極高
+        </text>
+      </>
+    )}
+  </svg>
+);
+
+const DA_LT_B = ({ showConsequence = false }: DAProps) => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Road */}
+    <rect x="0" y="45" width="160" height="45" fill="#1e293b" />
+    <line
+      x1="0"
+      y1="67"
+      x2="160"
+      y2="67"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      strokeDasharray="8,6"
+    />
+    {/* Player car waiting at center */}
+    <g transform="translate(55,58)">
+      <rect x="-16" y="-10" width="32" height="18" fill="#1d4ed8" rx="3" />
+      <rect x="-10" y="-17" width="20" height="10" fill="#1e40af" rx="2" />
+      <circle cx="-16" cy="-8" r="3.5" fill="#f59e0b" className="anim-hazard" />
+    </g>
+    {/* Oncoming car passing safely */}
+    <g transform="translate(125,76)">
+      <g style={{ animation: 'stepSlideL 1.8s ease-in-out infinite' }}>
+        <rect x="-16" y="-9" width="32" height="16" fill="#dc2626" rx="2" />
+        <rect x="-10" y="-15" width="20" height="8" fill="#b91c1c" rx="1" />
+      </g>
+    </g>
+    {/* Safe left-turn arrow */}
+    <path
+      d="M 55 55 Q 42 40 28 55"
+      stroke={showConsequence ? '#22c55e' : '#64748b'}
+      strokeWidth="2.5"
+      fill="none"
+      strokeLinecap="round"
+    />
+    <polygon points="25,52 28,57 32,53" fill={showConsequence ? '#22c55e' : '#64748b'} />
+    {showConsequence && (
+      <>
+        <circle cx="130" cy="20" r="13" fill="#15803d" opacity="0.9" />
+        <text x="130" y="25" textAnchor="middle" fill="white" fontSize="14" fontWeight="900">
+          ✓
+        </text>
+        <text x="60" y="18" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">
+          等對向通過
+        </text>
+        <text x="60" y="30" textAnchor="middle" fill="#4ade80" fontSize="9" fontWeight="700">
+          安全左轉
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+          耐心等待，零碰撞安全左轉
+        </text>
+      </>
+    )}
+  </svg>
+);
+
+const DA_LT_C = ({ showConsequence = false }: DAProps) => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Road */}
+    <rect x="0" y="45" width="160" height="45" fill="#1e293b" />
+    <line
+      x1="0"
+      y1="67"
+      x2="160"
+      y2="67"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      strokeDasharray="8,6"
+    />
+    {/* Player car slowly drifting into oncoming lane */}
+    <g transform="translate(75,60)">
+      <g style={{ animation: 'stepSlideL 2s ease-in-out infinite' }}>
+        <rect x="-16" y="-10" width="32" height="18" fill="#1d4ed8" rx="3" />
+        <rect x="-10" y="-17" width="20" height="10" fill="#1e40af" rx="2" />
+        <circle cx="-16" cy="-8" r="3.5" fill="#f59e0b" className="anim-hazard" />
+      </g>
+    </g>
+    {/* Oncoming car forced to brake */}
+    <g transform="translate(128,75)">
+      <rect x="-18" y="-10" width="36" height="18" fill="#dc2626" rx="3" />
+      <rect x="-12" y="-17" width="24" height="10" fill="#b91c1c" rx="2" />
+      <circle cx="-18" cy="-8" r="4" fill="#fef9c3" opacity="0.9" />
+      <circle cx="-18" cy="6" r="4" fill="#fef9c3" opacity="0.9" />
+    </g>
+    {/* Danger zone indicator */}
+    <g transform="translate(100,65)">
+      <g className="anim-hazard" style={{ transformOrigin: '0px 0px' }}>
+        <polygon points="0,-12 10,7 -10,7" fill="#ef4444" opacity="0.85" />
+        <text x="0" y="4" textAnchor="middle" fill="white" fontSize="9" fontWeight="900">
+          !
+        </text>
+      </g>
+    </g>
+    {showConsequence && (
+      <>
+        <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          ⚠ 佔用對向車道
+        </text>
+        <text x="80" y="32" textAnchor="middle" fill="#f87171" fontSize="8">
+          對方被迫緊急煞車或碰撞
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          無法控制對向反應，風險極高
+        </text>
+      </>
+    )}
+  </svg>
+);
+
 export const DA_OPTS: Partial<Record<ScenarioId, React.FC<DAProps>[]>> = {
   'highway-breakdown': [DA_HB_A, DA_HB_B, DA_HB_C],
   'tire-blowout': [DA_TB_A, DA_TB_B, DA_TB_C],
@@ -1313,4 +1621,6 @@ export const DA_OPTS: Partial<Record<ScenarioId, React.FC<DAProps>[]>> = {
   'scooter-weaving': [DA_SW_A, DA_SW_B, DA_SW_C],
   'drowsy-driving': [DA_DD_A, DA_DD_B, DA_DD_C],
   hydroplaning: [DA_HP_A, DA_HP_B, DA_HP_C],
+  'right-turn-motorcycle': [DA_RT_A, DA_RT_B, DA_RT_C],
+  'left-turn-oncoming': [DA_LT_A, DA_LT_B, DA_LT_C],
 };
