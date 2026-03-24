@@ -847,13 +847,13 @@ const RightTurnMotorcycleScene = () => (
       <ellipse cx="14" cy="9" rx="8" ry="5" fill="#111" />
     </g>
     {/* Motorcycle (orange) coming from right, going straight */}
-    <g transform="translate(248,118)">
-      <g className="anim-wobble" style={{ transformOrigin: '0px 0px' }}>
+    <g transform="translate(220,118)">
+      <g style={{ animation: 'sceneApproach 1.6s ease-in infinite', transformOrigin: '0px 0px' }}>
+        <ellipse cx="0" cy="8" rx="11" ry="5" fill="#111827" />
         <rect x="-5" y="-10" width="10" height="16" fill="#f97316" rx="2" />
-        <circle cx="0" cy="-13" r="4" fill="#fbbf24" />
-        <circle cx="-6" cy="6" r="3.5" fill="#111" />
-        <circle cx="6" cy="6" r="3.5" fill="#111" />
-        {/* Headlight */}
+        <circle cx="0" cy="-15" r="5" fill="#fbbf24" />
+        <rect x="-3" y="-7" width="6" height="9" fill="#c2410c" rx="1" />
+        {/* Headlight facing left (approaching) */}
         <circle cx="-6" cy="-8" r="2.5" fill="#fef9c3" opacity="0.9" />
       </g>
     </g>
@@ -939,8 +939,8 @@ const LeftTurnOncomingScene = () => (
       <ellipse cx="14" cy="9" rx="8" ry="5" fill="#111" />
     </g>
     {/* Oncoming car (red) rushing from right */}
-    <g transform="translate(240,108)">
-      <g style={{ animation: 'stepSlideL 1.4s ease-in-out infinite' }}>
+    <g transform="translate(250,108)">
+      <g style={{ animation: 'sceneApproach 1.4s ease-in infinite', transformOrigin: '0px 0px' }}>
         <rect x="-22" y="-12" width="44" height="22" fill="#dc2626" rx="3" />
         <rect x="-16" y="-20" width="32" height="11" fill="#b91c1c" rx="2" />
         <rect x="-13" y="-18" width="11" height="7" fill="#bfdbfe" rx="1" opacity="0.85" />

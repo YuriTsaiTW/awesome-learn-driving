@@ -291,6 +291,22 @@ body {
 .anim-fog {
   animation: fogPulse 3s ease-in-out infinite;
 }
+@keyframes sceneApproach {
+  0% {
+    transform: translateX(70px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+}
 @keyframes tailLight {
   0%,
   100% {
