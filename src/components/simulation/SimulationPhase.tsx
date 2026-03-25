@@ -9,6 +9,7 @@ import SimButton from './SimButton';
 import SimWheel from './SimWheel';
 import SimGearShifter from './SimGearShifter';
 import SimPedals from './SimPedals';
+import SimPhoneModal from './SimPhoneModal';
 
 interface SimulationPhaseProps {
   scenario: Scenario;
@@ -26,6 +27,7 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
   const [wheelAngle, setWheelAngle] = useState(0);
   // Track completed targets for button "on" states
   const [doneTgts, setDoneTgts] = useState<Set<string>>(new Set());
+  const [showPhoneModal, setShowPhoneModal] = useState(false);
 
   const dragging = useRef<boolean>(false);
   const dragStartX = useRef<number>(0);
@@ -59,6 +61,15 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
     },
     [doneTgts],
   );
+
+  function handlePhoneButtonClick() {
+    const s = simSteps[stepIdxRef.current];
+    if (s?.target === 'phone' && s.phoneOptions?.length) {
+      setShowPhoneModal(true);
+    } else {
+      triggerAction('phone');
+    }
+  }
 
   function triggerAction(target: string) {
     if (feedbackLock.current || allDoneRef.current) return;
@@ -105,7 +116,11 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
       const steps = SIM_STEPS[scenario.id] || [];
       const s = steps[idx];
       if (s && s.keys && s.keys.includes(e.key)) {
-        triggerAction(s.target);
+        if (s.target === 'phone' && s.phoneOptions?.length) {
+          setShowPhoneModal(true);
+        } else {
+          triggerAction(s.target);
+        }
       }
     }
     window.addEventListener('keydown', handler);
@@ -488,7 +503,11 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
                 on={isDone(lb2.target)}
                 color={lb2.color}
                 onClick={function () {
-                  triggerAction(lb2.target);
+                  if (lb2.target === 'phone') {
+                    handlePhoneButtonClick();
+                  } else {
+                    triggerAction(lb2.target);
+                  }
                 }}
                 size="sm"
               />
@@ -553,6 +572,21 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
           </div>
         </div>
       </div>
+
+      {/* Phone modal */}
+      {showPhoneModal &&
+        (() => {
+          const s = simSteps[stepIdx];
+          return s?.phoneOptions ? (
+            <SimPhoneModal
+              options={s.phoneOptions}
+              onCorrect={function () {
+                setShowPhoneModal(false);
+                triggerAction('phone');
+              }}
+            />
+          ) : null;
+        })()}
 
       {/* Feedback overlay */}
       {feedback && (

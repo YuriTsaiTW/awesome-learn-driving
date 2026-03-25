@@ -9,6 +9,12 @@ export interface CockpitState {
   [key: string]: boolean | number | undefined;
 }
 
+export interface PhoneOption {
+  label: string;
+  number: string;
+  correct: boolean;
+}
+
 export interface SimStep {
   title: string;
   instruction: string;
@@ -16,6 +22,7 @@ export interface SimStep {
   keys: string[];
   successMsg: string;
   stateChange: Partial<CockpitState>;
+  phoneOptions?: PhoneOption[];
 }
 
 export interface SimButtonConfig {
