@@ -100,7 +100,7 @@ const ScenarioFlow = ({ scenario, onBack, onComplete, isCompleted }: ScenarioFlo
               color: '#94a3b8',
               padding: '6px 12px',
               cursor: 'pointer',
-              fontSize: 13,
+              fontSize: 14,
               transition: 'color 0.15s, border-color 0.15s',
               flexShrink: 0,
             }}
@@ -136,7 +136,7 @@ const ScenarioFlow = ({ scenario, onBack, onComplete, isCompleted }: ScenarioFlo
                 border: '1px solid rgba(34,197,94,0.4)',
                 borderRadius: 20,
                 padding: '3px 10px',
-                fontSize: 11,
+                fontSize: 14,
                 color: '#4ade80',
                 fontWeight: 700,
                 flexShrink: 0,

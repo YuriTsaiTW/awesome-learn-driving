@@ -48,7 +48,7 @@ const ConsequencePhase = ({ scenario, choice, onNext }: ConsequencePhaseProps) =
         >
           {ok ? '✅ 判斷正確！' : '❌ 這個選擇很危險'}
         </div>
-        <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: 13, margin: 0 }}>
+        <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: 14, margin: 0 }}>
           {ok
             ? scenario.decision.correctExplanation
             : scenario.decision.wrongExplanation[choice.id] || '這個選擇可能造成危險。'}
@@ -64,10 +64,10 @@ const ConsequencePhase = ({ scenario, choice, onNext }: ConsequencePhaseProps) =
             border: '1px solid #92400e',
           }}
         >
-          <div style={{ color: '#fbbf24', fontWeight: 700, fontSize: 12, marginBottom: 8 }}>
+          <div style={{ color: '#fbbf24', fontWeight: 700, fontSize: 14, marginBottom: 8 }}>
             💡 正確做法
           </div>
-          <p style={{ color: '#d1d5db', fontSize: 13, lineHeight: 1.7, margin: 0 }}>
+          <p style={{ color: '#d1d5db', fontSize: 14, lineHeight: 1.7, margin: 0 }}>
             {scenario.decision.correctExplanation}
           </p>
         </div>

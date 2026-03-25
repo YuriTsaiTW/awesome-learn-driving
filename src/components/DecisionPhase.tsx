@@ -21,7 +21,7 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
           border: '1px solid #334155',
         }}
       >
-        <div style={{ color: '#f59e0b', fontSize: 12, fontWeight: 700, marginBottom: 8 }}>
+        <div style={{ color: '#f59e0b', fontSize: 14, fontWeight: 700, marginBottom: 8 }}>
           🤔 緊急決策
         </div>
         <p
@@ -86,7 +86,7 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: 800,
                     color: '#94a3b8',
                   }}
@@ -95,7 +95,7 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
                 </div>
                 <span
                   className="opt-text"
-                  style={{ color: '#e2e8f0', fontSize: 13, lineHeight: 1.65 }}
+                  style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.65 }}
                 >
                   {opt.text}
                 </span>

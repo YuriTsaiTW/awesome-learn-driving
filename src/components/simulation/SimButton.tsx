@@ -41,7 +41,7 @@ const SimButton = ({ label, sublabel, active, on, color, onClick, size }: SimBut
       <span style={{ fontSize: sm ? 17 : 20, lineHeight: 1 }}>{label}</span>
       <span
         style={{
-          fontSize: 9,
+          fontSize: 14,
           color: on ? color : active ? '#f59e0b' : '#475569',
           fontWeight: 700,
           letterSpacing: '0.02em',

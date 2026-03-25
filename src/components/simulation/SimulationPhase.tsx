@@ -211,7 +211,7 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
           <div
             style={{
               color: '#f59e0b',
-              fontSize: 11,
+              fontSize: 14,
               fontWeight: 800,
               marginBottom: 2,
               letterSpacing: '0.05em',
@@ -219,7 +219,7 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
           >
             🎮 情境模擬
           </div>
-          <div style={{ color: 'white', fontWeight: 800, fontSize: 13 }}>
+          <div style={{ color: 'white', fontWeight: 800, fontSize: 14 }}>
             {allDone
               ? '\u2713 全部完成'
               : '步驟 ' + (stepIdx + 1) + '／' + simSteps.length + '：' + step.title}
@@ -256,10 +256,10 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
             textAlign: 'center',
           }}
         >
-          <div style={{ color: '#fbbf24', fontSize: 13, fontWeight: 800, marginBottom: 3 }}>
+          <div style={{ color: '#fbbf24', fontSize: 14, fontWeight: 800, marginBottom: 3 }}>
             {step.instruction}
           </div>
-          <div style={{ color: '#475569', fontSize: 11 }}>
+          <div style={{ color: '#475569', fontSize: 14 }}>
             快捷鍵：<span style={{ color: '#64748b', fontWeight: 700 }}>{keyHint}</span>
           </div>
         </div>
@@ -405,7 +405,7 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
                   minWidth: 44,
                 }}
               >
-                <div style={{ color: '#2d4a6e', fontSize: 9, marginBottom: 1 }}>排檔</div>
+                <div style={{ color: '#2d4a6e', fontSize: 14, marginBottom: 1 }}>排檔</div>
                 <div
                   style={{
                     color: cockpit.gearDown ? '#22c55e' : '#f59e0b',
@@ -445,7 +445,7 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        fontSize: 11,
+                        fontSize: 14,
                         animation:
                           w.on && w.tip === '雙黃' ? 'hazard 0.75s ease-in-out infinite' : 'none',
                       }}
@@ -598,7 +598,7 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
             <div style={{ color: '#4ade80', fontWeight: 900, fontSize: 18, marginBottom: 6 }}>
               模擬完成！
             </div>
-            <div style={{ color: '#64748b', fontSize: 13 }}>你成功完成所有緊急應變步驟</div>
+            <div style={{ color: '#64748b', fontSize: 14 }}>你成功完成所有緊急應變步驟</div>
           </div>
           <button
             onClick={onComplete}

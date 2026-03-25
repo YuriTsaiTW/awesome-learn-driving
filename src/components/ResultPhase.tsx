@@ -26,10 +26,10 @@ const ResultPhase = ({ scenario, score, total, onHome, onRetry }: ResultPhasePro
         {pct}
         <span style={{ fontSize: 20 }}>%</span>
       </div>
-      <div style={{ color: '#64748b', fontSize: 13, marginBottom: 6 }}>
+      <div style={{ color: '#64748b', fontSize: 14, marginBottom: 6 }}>
         {score} ／ {total} 題答對
       </div>
-      <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 24 }}>{grade.sub}</div>
+      <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 24 }}>{grade.sub}</div>
       <div
         style={{
           background: '#1e293b',
@@ -40,17 +40,17 @@ const ResultPhase = ({ scenario, score, total, onHome, onRetry }: ResultPhasePro
           border: '1px solid #334155',
         }}
       >
-        <div style={{ color: '#f59e0b', fontWeight: 700, fontSize: 12, marginBottom: 12 }}>
+        <div style={{ color: '#f59e0b', fontWeight: 700, fontSize: 14, marginBottom: 12 }}>
           🔑 記住這個情境的關鍵步驟
         </div>
         {scenario.steps.slice(0, 4).map((s, i) => (
           <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
             <span style={{ fontSize: 16 }}>{s.icon}</span>
-            <span style={{ color: '#cbd5e1', fontSize: 12 }}>{s.title}</span>
+            <span style={{ color: '#cbd5e1', fontSize: 14 }}>{s.title}</span>
           </div>
         ))}
         {scenario.steps.length > 4 && (
-          <div style={{ color: '#475569', fontSize: 11, marginTop: 4 }}>
+          <div style={{ color: '#475569', fontSize: 14, marginTop: 4 }}>
             ...共 {scenario.steps.length} 個步驟
           </div>
         )}

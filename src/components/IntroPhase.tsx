@@ -53,7 +53,7 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
               style={{
                 padding: '4px 10px',
                 borderRadius: 20,
-                fontSize: 11,
+                fontSize: 14,
                 fontWeight: 600,
                 background: 'rgba(0,0,0,0.72)',
                 color: '#93c5fd',
@@ -67,7 +67,7 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
               style={{
                 padding: '4px 10px',
                 borderRadius: 20,
-                fontSize: 11,
+                fontSize: 14,
                 fontWeight: 600,
                 background: 'rgba(0,0,0,0.72)',
                 color: '#94a3b8',
@@ -120,7 +120,7 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
               <div style={{ color: 'white', fontWeight: 800, fontSize: 16, marginBottom: 2 }}>
                 {story.character.name}
               </div>
-              <div style={{ color: '#64748b', fontSize: 12 }}>
+              <div style={{ color: '#64748b', fontSize: 14 }}>
                 {story.character.age} 歲・{story.character.role}
               </div>
             </div>
@@ -128,7 +128,7 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
               style={{
                 padding: '6px 12px',
                 borderRadius: 12,
-                fontSize: 10,
+                fontSize: 14,
                 fontWeight: 700,
                 background: 'rgba(245,158,11,0.1)',
                 color: '#fbbf24',
@@ -142,7 +142,7 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
           {/* Typewriter narrative */}
           <div
             className="intro-text"
-            style={{ color: '#cbd5e1', fontSize: 13, lineHeight: 1.9, minHeight: 72 }}
+            style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.9, minHeight: 72 }}
           >
             <TypewriterText
               text={story.narrative}
@@ -164,7 +164,7 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
               style={{
                 marginTop: 12,
                 padding: '4px 12px',
-                fontSize: 11,
+                fontSize: 14,
                 color: '#475569',
                 background: 'transparent',
                 border: '1px solid #334155',

@@ -33,10 +33,10 @@ const LearningPhase = ({ scenario, onNext }: LearningPhaseProps) => {
             border: '1px solid #334155',
           }}
         >
-          <div style={{ color: '#f59e0b', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>
+          <div style={{ color: '#f59e0b', fontSize: 14, fontWeight: 700, marginBottom: 4 }}>
             📋 正確應對流程
           </div>
-          <div style={{ color: '#475569', fontSize: 11 }}>
+          <div style={{ color: '#475569', fontSize: 14 }}>
             步驟 {Math.min(current + 1, scenario.steps.length)} ／ {scenario.steps.length}
           </div>
         </div>
@@ -81,13 +81,13 @@ const LearningPhase = ({ scenario, onNext }: LearningPhaseProps) => {
                   <div style={{ flex: 1 }}>
                     <div
                       className="step-label"
-                      style={{ color: 'white', fontWeight: 700, fontSize: 13, marginBottom: 3 }}
+                      style={{ color: 'white', fontWeight: 700, fontSize: 14, marginBottom: 3 }}
                     >
                       {step.title}
                     </div>
                     <div
                       className="step-desc"
-                      style={{ color: '#94a3b8', fontSize: 11, lineHeight: 1.6 }}
+                      style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}
                     >
                       {step.desc}
                     </div>

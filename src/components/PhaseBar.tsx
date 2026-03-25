@@ -21,7 +21,7 @@ const PhaseBar = ({ phase }: PhaseBarProps) => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: 11,
+                fontSize: 14,
                 fontWeight: 700,
                 background: i < idx ? '#22c55e' : i === idx ? '#f59e0b' : '#334155',
                 color: i <= idx ? '#000' : '#64748b',
@@ -33,7 +33,7 @@ const PhaseBar = ({ phase }: PhaseBarProps) => {
             <span
               className="phasebar-label"
               style={{
-                fontSize: 10,
+                fontSize: 14,
                 display: window.innerWidth > 400 ? 'block' : 'none',
                 color: i <= idx ? '#e2e8f0' : '#475569',
               }}

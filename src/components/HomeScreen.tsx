@@ -56,20 +56,20 @@ function FrequencyInfoPanel() {
           background: 'none',
           border: 'none',
           color: '#94a3b8',
-          fontSize: 12,
+          fontSize: 14,
           cursor: 'pointer',
           textAlign: 'left',
         }}
       >
         <span>📊 資料來源與計算說明</span>
-        <span style={{ fontSize: 10 }}>{open ? '▲ 收起' : '▼ 展開'}</span>
+        <span style={{ fontSize: 14 }}>{open ? '▲ 收起' : '▼ 展開'}</span>
       </button>
       {open && (
         <div
           style={{
             padding: '0 14px 12px',
             color: '#64748b',
-            fontSize: 11,
+            fontSize: 14,
             lineHeight: 1.7,
           }}
         >
@@ -99,7 +99,7 @@ function FrequencyInfoPanel() {
             <li>水漂失控：複合因素難以獨立統計，專家估計 ~300 件</li>
             <li>煞車失靈：現代雙迴路煞車系統極可靠，推估 ~120 件</li>
           </ul>
-          <p style={{ margin: '4px 0 0', color: '#475569', fontSize: 10 }}>
+          <p style={{ margin: '4px 0 0', color: '#475569', fontSize: 14 }}>
             ※ 以上數據均為「小型車為第一當事者」統計，推估值僅供排序參考。
           </p>
         </div>
@@ -220,7 +220,7 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
               }}
             >
               <div style={{ fontSize: 26, fontWeight: 900, color: s.color }}>{s.val}</div>
-              <div style={{ fontSize: 11, color: '#64748b', marginTop: 4 }}>{s.label}</div>
+              <div style={{ fontSize: 14, color: '#64748b', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
@@ -229,7 +229,7 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
         <div style={{ marginBottom: 12 }}>
           <div
             style={{
-              fontSize: 11,
+              fontSize: 14,
               color: '#64748b',
               marginBottom: 8,
               display: 'flex',
@@ -251,7 +251,7 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
                   borderColor: sortKey === opt.key ? '#60a5fa' : '#334155',
                   background: sortKey === opt.key ? '#1e3a5f' : '#1e293b',
                   color: sortKey === opt.key ? '#93c5fd' : '#64748b',
-                  fontSize: 12,
+                  fontSize: 14,
                   cursor: 'pointer',
                   fontWeight: sortKey === opt.key ? 600 : 400,
                   transition: 'all 0.15s',
@@ -295,16 +295,16 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
                     >
                       {sc.title}
                     </span>
-                    {done && <span style={{ color: '#4ade80', fontSize: 11 }}>✓ 完成</span>}
+                    {done && <span style={{ color: '#4ade80', fontSize: 14 }}>✓ 完成</span>}
                   </div>
-                  <div style={{ color: '#64748b', fontSize: 11, marginBottom: 4 }}>
+                  <div style={{ color: '#64748b', fontSize: 14, marginBottom: 4 }}>
                     {sc.subtitle}
                   </div>
-                  <div style={{ fontSize: 11, fontWeight: 600, color: sc.difficultyColor }}>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: sc.difficultyColor }}>
                     難度：{sc.difficulty}
                   </div>
                   {isFreqSort && (
-                    <div style={{ fontSize: 11, color: '#60a5fa', marginTop: 3 }}>
+                    <div style={{ fontSize: 14, color: '#60a5fa', marginTop: 3 }}>
                       年約 {sc.annualFrequency.toLocaleString()} 件
                     </div>
                   )}
@@ -314,7 +314,7 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
             );
           })}
         </div>
-        <p style={{ textAlign: 'center', color: '#334155', fontSize: 10, marginTop: 24 }}>
+        <p style={{ textAlign: 'center', color: '#334155', fontSize: 14, marginTop: 24 }}>
           ⚠️ 本訓練內容僅供學習參考，實際緊急情況請依現場狀況判斷
         </p>
       </div>

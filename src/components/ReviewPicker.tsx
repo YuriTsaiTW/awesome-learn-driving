@@ -17,7 +17,7 @@ const ReviewPicker = ({ scenario, onPick, onRestart }: ReviewPickerProps) => {
         <div style={{ color: '#4ade80', fontWeight: 900, fontSize: 19, marginBottom: 6 }}>
           已完成此情境
         </div>
-        <div style={{ color: '#64748b', fontSize: 13 }}>選擇想複習的環節，或從頭再來一遍</div>
+        <div style={{ color: '#64748b', fontSize: 14 }}>選擇想複習的環節，或從頭再來一遍</div>
       </div>
 
       {/* Phase cards */}
@@ -67,7 +67,7 @@ const ReviewPicker = ({ scenario, onPick, onRestart }: ReviewPickerProps) => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: 10,
+                  fontSize: 14,
                   fontWeight: 800,
                   color: '#475569',
                   flexShrink: 0,
@@ -95,7 +95,7 @@ const ReviewPicker = ({ scenario, onPick, onRestart }: ReviewPickerProps) => {
               {/* Text */}
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ color: 'white', fontWeight: 700, fontSize: 14 }}>{p.label}</div>
-                <div style={{ color: '#475569', fontSize: 11.5, marginTop: 2 }}>{p.desc}</div>
+                <div style={{ color: '#475569', fontSize: 14, marginTop: 2 }}>{p.desc}</div>
               </div>
               <div style={{ color: '#334155', fontSize: 18, flexShrink: 0 }}>›</div>
             </button>

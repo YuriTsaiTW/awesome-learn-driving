@@ -65,7 +65,7 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
           marginBottom: 16,
         }}
       >
-        <span style={{ color: '#64748b', fontSize: 12 }}>
+        <span style={{ color: '#64748b', fontSize: 14 }}>
           第 {qIdx + 1} 題 ／ 共 {scenario.quiz.length} 題
         </span>
         <div style={{ display: 'flex', gap: 6 }}>
@@ -92,7 +92,7 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
           border: '1px solid #334155',
         }}
       >
-        <div style={{ color: '#f59e0b', fontSize: 12, fontWeight: 700, marginBottom: 8 }}>
+        <div style={{ color: '#f59e0b', fontSize: 14, fontWeight: 700, marginBottom: 8 }}>
           📝 測驗
         </div>
         <p
@@ -132,7 +132,7 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   flexShrink: 0,
-                  fontSize: 12,
+                  fontSize: 14,
                   fontWeight: 800,
                   background:
                     selected !== null && i === q.correct
@@ -145,7 +145,7 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
               >
                 {optLabel(i, selected, q.correct)}
               </div>
-              <span className="opt-text" style={{ fontSize: 13, color: s.color, lineHeight: 1.5 }}>
+              <span className="opt-text" style={{ fontSize: 14, color: s.color, lineHeight: 1.5 }}>
                 {opt}
               </span>
             </button>
@@ -159,7 +159,7 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
             borderRadius: 16,
             padding: 14,
             marginBottom: 14,
-            fontSize: 12,
+            fontSize: 14,
             background: selected === q.correct ? 'rgba(21,128,61,0.15)' : '#1e293b',
             border: `1px solid ${selected === q.correct ? '#16a34a' : '#334155'}`,
             color: '#cbd5e1',
