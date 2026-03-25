@@ -232,6 +232,113 @@ const SAPhoneCall = () => (
     </text>
   </svg>
 );
+const SAPhoneCall110 = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    <circle
+      cx="80"
+      cy="45"
+      r="32"
+      fill="none"
+      stroke="#ef4444"
+      strokeWidth="1.5"
+      style={{ animation: 'stepRingWave 1.8s ease-out infinite' }}
+      opacity="0.5"
+    />
+    <circle
+      cx="80"
+      cy="45"
+      r="40"
+      fill="none"
+      stroke="#ef4444"
+      strokeWidth="1"
+      style={{ animation: 'stepRingWave 1.8s ease-out 0.45s infinite' }}
+      opacity="0.25"
+    />
+    <g
+      style={{ animation: 'stepPhoneRing 1.8s ease-in-out infinite', transformOrigin: '80px 45px' }}
+    >
+      <rect
+        x="62"
+        y="18"
+        width="36"
+        height="54"
+        fill="#1e293b"
+        rx="8"
+        stroke="#475569"
+        strokeWidth="2"
+      />
+      <rect x="68" y="24" width="24" height="34" fill="#0f172a" rx="3" />
+      <circle cx="80" cy="63" r="3.5" fill="#334155" />
+      <text x="80" y="36" textAnchor="middle" fill="#f87171" fontSize="13" fontWeight="900">
+        110
+      </text>
+      <text x="80" y="47" textAnchor="middle" fill="#64748b" fontSize="7">
+        報警
+      </text>
+    </g>
+    <text x="80" y="84" textAnchor="middle" fill="#f87171" fontSize="8" fontWeight="700">
+      撥打110報警
+    </text>
+  </svg>
+);
+const SAPhoneCallInsurance = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    <circle
+      cx="80"
+      cy="45"
+      r="32"
+      fill="none"
+      stroke="#60a5fa"
+      strokeWidth="1.5"
+      style={{ animation: 'stepRingWave 1.8s ease-out infinite' }}
+      opacity="0.5"
+    />
+    <circle
+      cx="80"
+      cy="45"
+      r="40"
+      fill="none"
+      stroke="#60a5fa"
+      strokeWidth="1"
+      style={{ animation: 'stepRingWave 1.8s ease-out 0.45s infinite' }}
+      opacity="0.25"
+    />
+    <g
+      style={{ animation: 'stepPhoneRing 1.8s ease-in-out infinite', transformOrigin: '80px 45px' }}
+    >
+      <rect
+        x="62"
+        y="18"
+        width="36"
+        height="54"
+        fill="#1e293b"
+        rx="8"
+        stroke="#475569"
+        strokeWidth="2"
+      />
+      <rect x="68" y="24" width="24" height="34" fill="#0f172a" rx="3" />
+      <circle cx="80" cy="63" r="3.5" fill="#334155" />
+      {/* Shield icon for insurance */}
+      <path
+        d="M80 27 L87 30 L87 38 Q87 43 80 46 Q73 43 73 38 L73 30 Z"
+        fill="#1d4ed8"
+        stroke="#60a5fa"
+        strokeWidth="1"
+      />
+      <text x="80" y="40" textAnchor="middle" fill="#bfdbfe" fontSize="8" fontWeight="700">
+        保險
+      </text>
+      <text x="80" y="50" textAnchor="middle" fill="#64748b" fontSize="7">
+        保險公司
+      </text>
+    </g>
+    <text x="80" y="84" textAnchor="middle" fill="#60a5fa" fontSize="8" fontWeight="700">
+      聯絡保險公司報案
+    </text>
+  </svg>
+);
 const SASteeringGrip = () => (
   <svg viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
@@ -1565,8 +1672,8 @@ export const STEP_ANIMS: Partial<Record<ScenarioId, (React.FC | null)[]>> = {
     SACamera,
     SACarToShoulder,
     SADataExchange,
-    SAPhoneCall,
-    SAPhoneCall,
+    SAPhoneCall110,
+    SAPhoneCallInsurance,
   ],
   'brake-failure': [
     SAStayCalm,
@@ -1584,7 +1691,7 @@ export const STEP_ANIMS: Partial<Record<ScenarioId, (React.FC | null)[]>> = {
     SAHornHazard,
     SAHazardFlash,
     SACamera,
-    SAPhoneCall,
+    SAPhoneCall110,
   ],
   'scooter-weaving': [
     SACheckMirror,
