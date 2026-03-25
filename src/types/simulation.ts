@@ -9,12 +9,6 @@ export interface CockpitState {
   [key: string]: boolean | number | undefined;
 }
 
-export interface PhoneOption {
-  label: string;
-  number: string;
-  correct: boolean;
-}
-
 export interface SimStep {
   title: string;
   instruction: string;
@@ -22,7 +16,8 @@ export interface SimStep {
   keys: string[];
   successMsg: string;
   stateChange: Partial<CockpitState>;
-  phoneOptions?: PhoneOption[];
+  /** If set, phone button opens a dial-pad modal; user must enter this exact number. */
+  phoneNumber?: string;
 }
 
 export interface SimButtonConfig {

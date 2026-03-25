@@ -64,7 +64,7 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
 
   function handlePhoneButtonClick() {
     const s = simSteps[stepIdxRef.current];
-    if (s?.target === 'phone' && s.phoneOptions?.length) {
+    if (s?.target === 'phone' && s.phoneNumber) {
       setShowPhoneModal(true);
     } else {
       triggerAction('phone');
@@ -116,7 +116,7 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
       const steps = SIM_STEPS[scenario.id] || [];
       const s = steps[idx];
       if (s && s.keys && s.keys.includes(e.key)) {
-        if (s.target === 'phone' && s.phoneOptions?.length) {
+        if (s.target === 'phone' && s.phoneNumber) {
           setShowPhoneModal(true);
         } else {
           triggerAction(s.target);
@@ -577,9 +577,9 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
       {showPhoneModal &&
         (() => {
           const s = simSteps[stepIdx];
-          return s?.phoneOptions ? (
+          return s?.phoneNumber ? (
             <SimPhoneModal
-              options={s.phoneOptions}
+              correctNumber={s.phoneNumber}
               onCorrect={function () {
                 setShowPhoneModal(false);
                 triggerAction('phone');

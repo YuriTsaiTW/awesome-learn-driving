@@ -34,11 +34,7 @@ export const SIM_STEPS: Partial<Record<ScenarioId, SimStep[]>> = {
       keys: ['p', 'P'],
       successMsg: '✓ 救援已通報！請在護欄外耐心等待',
       stateChange: { phoneActive: true },
-      phoneOptions: [
-        { label: '高公局道路救援', number: '1968', correct: true },
-        { label: '報警', number: '110', correct: false },
-        { label: '救護車', number: '119', correct: false },
-      ],
+      phoneNumber: '1968',
     },
   ],
   'tire-blowout': [
@@ -81,11 +77,7 @@ export const SIM_STEPS: Partial<Record<ScenarioId, SimStep[]>> = {
       keys: ['p', 'P'],
       successMsg: '✓ 救援通報完成！等待專業人員到場',
       stateChange: { phoneActive: true },
-      phoneOptions: [
-        { label: '高公局道路救援', number: '1968', correct: true },
-        { label: '報警', number: '110', correct: false },
-        { label: '救護車', number: '119', correct: false },
-      ],
+      phoneNumber: '1968',
     },
   ],
   'heavy-rain-fog': [
@@ -154,11 +146,7 @@ export const SIM_STEPS: Partial<Record<ScenarioId, SimStep[]>> = {
       keys: ['p', 'P'],
       successMsg: '✓ 警方與保險公司已收到通報',
       stateChange: { phoneActive: true },
-      phoneOptions: [
-        { label: '報警', number: '110', correct: true },
-        { label: '高公局道路救援', number: '1968', correct: false },
-        { label: '救護車', number: '119', correct: false },
-      ],
+      phoneNumber: '110',
     },
   ],
   'brake-failure': [
@@ -277,11 +265,7 @@ export const SIM_STEPS: Partial<Record<ScenarioId, SimStep[]>> = {
       keys: ['p', 'P'],
       successMsg: '✓ 警方已收到通報！等候到場處理',
       stateChange: { phoneActive: true },
-      phoneOptions: [
-        { label: '報警', number: '110', correct: true },
-        { label: '道路救援', number: '1968', correct: false },
-        { label: '救護車', number: '119', correct: false },
-      ],
+      phoneNumber: '110',
     },
   ],
   'scooter-weaving': [
@@ -350,11 +334,6 @@ export const SIM_STEPS: Partial<Record<ScenarioId, SimStep[]>> = {
       keys: ['p', 'P'],
       successMsg: '✓ 已通知家人！安心休息 15～20 分鐘',
       stateChange: { phoneActive: true },
-      phoneOptions: [
-        { label: '媽媽', number: '家人', correct: true },
-        { label: '老闆', number: '公司', correct: false },
-        { label: '繼續開車', number: '不撥打', correct: false },
-      ],
     },
   ],
   hydroplaning: [
