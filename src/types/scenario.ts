@@ -51,7 +51,9 @@ export type ScenarioId =
   | 'drowsy-driving'
   | 'hydroplaning'
   | 'right-turn-motorcycle'
-  | 'left-turn-oncoming';
+  | 'left-turn-oncoming'
+  | 'cold-weather-cat-check'
+  | 'wildlife-road';
 
 export interface Scenario {
   id: ScenarioId;

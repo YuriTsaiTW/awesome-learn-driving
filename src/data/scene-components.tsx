@@ -967,6 +967,173 @@ const LeftTurnOncomingScene = () => (
   </svg>
 );
 
+const ColdWeatherCatCheckScene = () => (
+  <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <rect width="300" height="180" fill="#0c1424" />
+    {/* Pre-dawn sky */}
+    <rect width="300" height="100" fill="#0c1424" />
+    {/* Parking lot concrete */}
+    <rect x="0" y="100" width="300" height="80" fill="#1c2533" />
+    {/* Parking lot lines */}
+    <line x1="0" y1="100" x2="300" y2="100" stroke="#334155" strokeWidth="1.5" />
+    <line
+      x1="60"
+      y1="100"
+      x2="60"
+      y2="180"
+      stroke="#334155"
+      strokeWidth="1"
+      strokeDasharray="6,6"
+    />
+    <line
+      x1="240"
+      y1="100"
+      x2="240"
+      y2="180"
+      stroke="#334155"
+      strokeWidth="1"
+      strokeDasharray="6,6"
+    />
+    {/* Street lamp glow */}
+    <circle cx="30" cy="40" r="18" fill="#fef08a" opacity="0.08" />
+    <line x1="30" y1="58" x2="30" y2="100" stroke="#475569" strokeWidth="2" />
+    <circle cx="30" cy="40" r="4" fill="#fef08a" opacity="0.6" />
+    {/* Car body */}
+    <rect x="80" y="90" width="160" height="36" fill="#1d4ed8" rx="6" />
+    {/* Cabin */}
+    <path d="M100 78 Q106 66 120 66 L220 66 Q234 66 238 78 L245 90 L93 90Z" fill="#1e40af" />
+    {/* Windows */}
+    <path d="M107 79 Q111 70 120 70 L165 70 L170 79Z" fill="#bfdbfe" opacity="0.8" />
+    <path d="M173 79 L178 70 L218 70 Q228 70 231 79Z" fill="#bfdbfe" opacity="0.6" />
+    {/* Headlights off */}
+    <rect x="236" y="99" width="8" height="6" fill="#374151" rx="1.5" />
+    {/* Tail lights off */}
+    <rect x="78" y="99" width="6" height="6" fill="#374151" rx="1.5" />
+    {/* Front wheel */}
+    <ellipse cx="210" cy="126" rx="16" ry="13" fill="#111827" />
+    <ellipse cx="210" cy="126" rx="9" ry="7" fill="#334155" />
+    {/* Rear wheel */}
+    <ellipse cx="110" cy="126" rx="16" ry="13" fill="#111827" />
+    <ellipse cx="110" cy="126" rx="9" ry="7" fill="#334155" />
+    {/* CAT near front wheel — orange tabby curled up */}
+    <ellipse cx="214" cy="118" rx="10" ry="7" fill="#f97316" />
+    <circle cx="222" cy="112" r="5.5" fill="#f97316" />
+    {/* Cat ears */}
+    <polygon points="219,108 222,104 225,108" fill="#f97316" />
+    <polygon points="217,108 220,104 222,108" fill="#f97316" />
+    {/* Cat face */}
+    <circle cx="221" cy="112" r="1.5" fill="#111827" />
+    <circle cx="224" cy="112" r="1.5" fill="#111827" />
+    {/* Cat tail */}
+    <path
+      d="M204 118 Q198 114 200 108"
+      stroke="#f97316"
+      strokeWidth="3"
+      fill="none"
+      strokeLinecap="round"
+    />
+    {/* Breath/warmth from cat */}
+    <circle cx="228" cy="110" r="2.5" fill="white" opacity="0.15" />
+    <circle cx="232" cy="107" r="1.8" fill="white" opacity="0.1" />
+    {/* Person silhouette approaching from left */}
+    <ellipse cx="35" cy="98" rx="7" ry="9" fill="#334155" />
+    <circle cx="35" cy="82" r="6" fill="#475569" />
+    {/* Question mark thought bubble */}
+    <circle cx="48" cy="70" r="10" fill="#1e293b" stroke="#334155" strokeWidth="1" />
+    <text x="48" y="75" textAnchor="middle" fill="#fbbf24" fontSize="12" fontWeight="900">
+      ?
+    </text>
+    {/* Cold temperature indicator */}
+    <text x="150" y="58" textAnchor="middle" fill="#93c5fd" fontSize="12" fontWeight="700">
+      🌡️ 8°C
+    </text>
+    <text x="150" y="174" textAnchor="middle" fill="#64748b" fontSize="9">
+      ⚠️ 寒冷停車一夜，引擎蓋下可能有貓咪取暖
+    </text>
+  </svg>
+);
+
+const WildlifeRoadScene = () => (
+  <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <rect width="300" height="180" fill="#0f172a" />
+    {/* Dusk sky gradient */}
+    <rect width="300" height="90" fill="#1a0a2e" />
+    <rect width="300" height="40" fill="#2d1054" opacity="0.6" />
+    {/* Mountain silhouettes */}
+    <polygon points="0,90 50,50 100,70 150,40 200,60 250,45 300,65 300,90" fill="#0f172a" />
+    {/* Road */}
+    <rect x="0" y="90" width="300" height="90" fill="#2d3748" />
+    {/* Center line */}
+    <line
+      x1="0"
+      y1="135"
+      x2="300"
+      y2="135"
+      stroke="#fbbf24"
+      strokeWidth="2"
+      strokeDasharray="20,14"
+    />
+    {/* Road edges */}
+    <line x1="0" y1="90" x2="300" y2="90" stroke="#475569" strokeWidth="1.5" />
+    <line x1="0" y1="175" x2="300" y2="175" stroke="#475569" strokeWidth="1.5" />
+    {/* Trees left */}
+    <rect x="5" y="58" width="8" height="35" fill="#1e293b" />
+    <ellipse cx="9" cy="56" rx="16" ry="20" fill="#14532d" />
+    <rect x="28" y="50" width="8" height="43" fill="#1e293b" />
+    <ellipse cx="32" cy="48" rx="18" ry="22" fill="#166534" />
+    {/* Trees right */}
+    <rect x="265" y="55" width="8" height="38" fill="#1e293b" />
+    <ellipse cx="269" cy="52" rx="17" ry="21" fill="#14532d" />
+    <rect x="285" y="48" width="8" height="45" fill="#1e293b" />
+    <ellipse cx="289" cy="46" rx="16" ry="22" fill="#166534" />
+    {/* Wildlife warning sign */}
+    <rect x="48" y="88" width="4" height="40" fill="#64748b" />
+    <polygon points="50,62 70,88 30,88" fill="#fbbf24" />
+    <polygon points="50,66 66,88 34,88" fill="#fbbf24" />
+    {/* Deer/animal silhouette on sign */}
+    <text x="50" y="83" textAnchor="middle" fontSize="14">
+      🦌
+    </text>
+    {/* Animal on road — monkey/small mammal silhouette */}
+    <ellipse cx="155" cy="128" rx="10" ry="7" fill="#374151" />
+    <circle cx="155" cy="118" r="6" fill="#374151" />
+    {/* Animal eyes glowing (tapetum effect) */}
+    <circle cx="152" cy="117" r="2" fill="#fef08a" opacity="0.9" className="anim-head-glow" />
+    <circle cx="158" cy="117" r="2" fill="#fef08a" opacity="0.9" className="anim-head-glow" />
+    {/* Animal tail */}
+    <path
+      d="M165 128 Q175 118 170 108"
+      stroke="#374151"
+      strokeWidth="3"
+      fill="none"
+      strokeLinecap="round"
+    />
+    {/* Car approaching from right */}
+    <g transform="translate(248,115)">
+      <rect x="-30" y="-12" width="52" height="22" fill="#1d4ed8" rx="4" />
+      <rect x="-20" y="-20" width="34" height="10" fill="#1e40af" rx="2" />
+      {/* Headlight beams */}
+      <polygon points="-30,-10 -60,-4 -60,2 -30,8" fill="#fef9c3" opacity="0.25" />
+      <circle cx="-30" cy="-8" r="4" fill="#fef9c3" opacity="0.9" />
+      <circle cx="-30" cy="8" r="4" fill="#fef9c3" opacity="0.9" />
+    </g>
+    {/* Warning flash on animal */}
+    <g
+      transform="translate(155,128)"
+      className="anim-hazard"
+      style={{ transformOrigin: '0px 0px' }}
+    >
+      <polygon points="0,-18 14,6 -14,6" fill="#ef4444" opacity="0.75" />
+      <text x="0" y="3" textAnchor="middle" fill="white" fontSize="9" fontWeight="900">
+        !
+      </text>
+    </g>
+    <text x="150" y="174" textAnchor="middle" fill="#64748b" fontSize="9">
+      ⚠️ 山區黃昏，野生動物出沒頻繁
+    </text>
+  </svg>
+);
+
 export const SCENE_COMPONENTS: Partial<Record<ScenarioId, React.FC>> = {
   'highway-breakdown': HighwayScene,
   'tire-blowout': TireBlowoutScene,
@@ -980,4 +1147,6 @@ export const SCENE_COMPONENTS: Partial<Record<ScenarioId, React.FC>> = {
   hydroplaning: HydroplaningScene,
   'right-turn-motorcycle': RightTurnMotorcycleScene,
   'left-turn-oncoming': LeftTurnOncomingScene,
+  'cold-weather-cat-check': ColdWeatherCatCheckScene,
+  'wildlife-road': WildlifeRoadScene,
 };

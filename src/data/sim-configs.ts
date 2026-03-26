@@ -74,6 +74,18 @@ export const SIM_CONFIGS: Partial<Record<ScenarioId, SimConfig>> = {
     lb1: { target: 'triangle', icon: '🔺', label: '三角架', color: '#22c55e' },
     lb2: { target: 'phone', icon: '📱', label: '電話', color: '#60a5fa' },
   },
+  'cold-weather-cat-check': {
+    initCockpit: { hazardOn: false, onShoulder: false, speed: 0, fogOn: false, gearDown: false },
+    foggy: false,
+    lb1: { target: 'horn', icon: '📯', label: '喇叭', color: '#f59e0b' },
+    lb2: { target: 'triangle', icon: '👁', label: '環視確認', color: '#22c55e' },
+  },
+  'wildlife-road': {
+    initCockpit: { hazardOn: false, onShoulder: false, speed: 55, fogOn: false, gearDown: false },
+    foggy: false,
+    lb1: { target: 'fog', icon: '💡', label: '近光燈', color: '#fbbf24' },
+    lb2: { target: 'triangle', icon: '👁', label: '確認通過', color: '#22c55e' },
+  },
 };
 
 export const SIM_CFG_DEFAULT: SimConfig = {

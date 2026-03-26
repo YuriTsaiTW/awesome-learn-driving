@@ -1803,6 +1803,582 @@ const SAWaitOncoming = () => (
   </svg>
 );
 
+// == cold-weather-cat-check step animations ==
+
+// Step 1: Hand knocking engine hood — vibration waves spread outward
+const SAKnockHood = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Car hood top view */}
+    <rect x="30" y="30" width="100" height="42" fill="#1d4ed8" rx="6" />
+    <rect x="38" y="36" width="84" height="30" fill="#1e40af" rx="4" />
+    {/* Hood center line */}
+    <line
+      x1="80"
+      y1="36"
+      x2="80"
+      y2="66"
+      stroke="#2563eb"
+      strokeWidth="1.5"
+      strokeDasharray="4,3"
+    />
+    {/* Hand palm hitting hood */}
+    <g style={{ animation: 'stepSlideL 1.5s ease-in-out infinite' }}>
+      <ellipse cx="80" cy="22" rx="14" ry="9" fill="#fbbf24" opacity="0.9" />
+      <text x="80" y="26" textAnchor="middle" fontSize="12">
+        ✋
+      </text>
+    </g>
+    {/* Vibration rings */}
+    <circle
+      cx="80"
+      cy="48"
+      r="10"
+      fill="none"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      opacity="0.7"
+      style={{ animation: 'stepSlideL 1.5s ease-in-out infinite', animationDelay: '0.2s' }}
+    />
+    <circle
+      cx="80"
+      cy="48"
+      r="18"
+      fill="none"
+      stroke="#fbbf24"
+      strokeWidth="1"
+      opacity="0.45"
+      style={{ animation: 'stepSlideL 1.5s ease-in-out infinite', animationDelay: '0.4s' }}
+    />
+    <circle
+      cx="80"
+      cy="48"
+      r="26"
+      fill="none"
+      stroke="#fbbf24"
+      strokeWidth="0.8"
+      opacity="0.25"
+      style={{ animation: 'stepSlideL 1.5s ease-in-out infinite', animationDelay: '0.6s' }}
+    />
+    <text x="80" y="84" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      拍擊引擎蓋 2-3 下
+    </text>
+  </svg>
+);
+
+// Step 2: Top-down car view with arrow circling the vehicle
+const SAWalkAroundCar = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Car top-down silhouette */}
+    <rect x="52" y="20" width="56" height="50" fill="#1d4ed8" rx="8" />
+    <rect x="60" y="24" width="40" height="16" fill="#bfdbfe" opacity="0.7" rx="2" />
+    <rect x="60" y="50" width="40" height="16" fill="#bfdbfe" opacity="0.4" rx="2" />
+    {/* Wheels */}
+    <ellipse cx="56" cy="30" rx="5" ry="7" fill="#111827" />
+    <ellipse cx="104" cy="30" rx="5" ry="7" fill="#111827" />
+    <ellipse cx="56" cy="60" rx="5" ry="7" fill="#111827" />
+    <ellipse cx="104" cy="60" rx="5" ry="7" fill="#111827" />
+    {/* Walking person icon going around */}
+    <g style={{ animation: 'stepSlideL 2s linear infinite' }}>
+      <circle cx="80" cy="9" r="5" fill="#4ade80" />
+      <text x="80" y="12" textAnchor="middle" fontSize="7" fill="white">
+        人
+      </text>
+    </g>
+    {/* Arrow path around car */}
+    <path
+      d="M80,10 A44,36 0 1,1 79,10"
+      fill="none"
+      stroke="#4ade80"
+      strokeWidth="1.5"
+      strokeDasharray="8,4"
+      strokeLinecap="round"
+    />
+    <polygon points="80,10 76,14 84,14" fill="#4ade80" />
+    <text x="80" y="84" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      繞車一圈查看輪弧
+    </text>
+  </svg>
+);
+
+// Step 3: Honk alert inside car — sound waves toward running cat
+const SAHonkAlert = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Steering wheel */}
+    <circle cx="50" cy="50" r="22" fill="none" stroke="#475569" strokeWidth="4" />
+    <circle cx="50" cy="50" r="10" fill="#374151" />
+    <line x1="50" y1="28" x2="50" y2="40" stroke="#475569" strokeWidth="3" />
+    <line x1="50" y1="60" x2="50" y2="72" stroke="#475569" strokeWidth="3" />
+    <line x1="28" y1="50" x2="40" y2="50" stroke="#475569" strokeWidth="3" />
+    <line x1="60" y1="50" x2="72" y2="50" stroke="#475569" strokeWidth="3" />
+    {/* Horn button flash */}
+    <circle cx="50" cy="50" r="8" fill="#f59e0b" className="anim-hazard" />
+    <text x="50" y="53" textAnchor="middle" fill="#111827" fontSize="8" fontWeight="900">
+      📯
+    </text>
+    {/* Sound waves */}
+    <path
+      d="M74,42 Q82,50 74,58"
+      fill="none"
+      stroke="#fbbf24"
+      strokeWidth="2"
+      strokeLinecap="round"
+      style={{ animation: 'stepSlideL 1.2s ease-in-out infinite' }}
+    />
+    <path
+      d="M80,38 Q92,50 80,62"
+      fill="none"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      style={{ animation: 'stepSlideL 1.2s ease-in-out infinite', animationDelay: '0.2s' }}
+    />
+    <path
+      d="M86,34 Q102,50 86,66"
+      fill="none"
+      stroke="#fbbf24"
+      strokeWidth="1"
+      strokeLinecap="round"
+      style={{ animation: 'stepSlideL 1.2s ease-in-out infinite', animationDelay: '0.4s' }}
+    />
+    {/* Running cat escaping */}
+    <g style={{ animation: 'stepSlideR 1.5s ease-in-out infinite' }}>
+      <text x="132" y="55" fontSize="18">
+        🐱
+      </text>
+      <text x="122" y="46" textAnchor="middle" fill="#4ade80" fontSize="8">
+        逃！
+      </text>
+    </g>
+    <text x="80" y="84" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      短促喇叭，等待 10 秒
+    </text>
+  </svg>
+);
+
+// Step 4: Idle engine — exhaust, RPM gauge, waiting
+const SAIdleEngine = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Car side view */}
+    <rect x="20" y="40" width="80" height="28" fill="#1d4ed8" rx="4" />
+    <path d="M30 40 Q36 28 46 28 L80 28 Q92 28 96 40Z" fill="#1e40af" />
+    <rect x="38" y="30" width="20" height="10" fill="#bfdbfe" opacity="0.7" rx="1" />
+    <rect x="62" y="30" width="22" height="10" fill="#bfdbfe" opacity="0.5" rx="1" />
+    {/* Wheels */}
+    <circle cx="42" cy="68" r="10" fill="#111827" />
+    <circle cx="42" cy="68" r="5" fill="#334155" />
+    <circle cx="82" cy="68" r="10" fill="#111827" />
+    <circle cx="82" cy="68" r="5" fill="#334155" />
+    {/* Exhaust smoke puffs */}
+    <circle
+      cx="18"
+      cy="62"
+      r="5"
+      fill="#475569"
+      opacity="0.6"
+      style={{ animation: 'stepSlideL 2s ease-in-out infinite' }}
+    />
+    <circle
+      cx="11"
+      cy="56"
+      r="4"
+      fill="#475569"
+      opacity="0.4"
+      style={{ animation: 'stepSlideL 2s ease-in-out infinite', animationDelay: '0.5s' }}
+    />
+    <circle
+      cx="6"
+      cy="50"
+      r="3"
+      fill="#475569"
+      opacity="0.25"
+      style={{ animation: 'stepSlideL 2s ease-in-out infinite', animationDelay: '1s' }}
+    />
+    {/* RPM gauge */}
+    <circle cx="128" cy="42" r="20" fill="#1e293b" stroke="#334155" strokeWidth="1.5" />
+    <text x="128" y="36" textAnchor="middle" fill="#64748b" fontSize="7">
+      RPM
+    </text>
+    <path
+      d="M128,42 L128,26"
+      stroke="#22c55e"
+      strokeWidth="2"
+      strokeLinecap="round"
+      style={{ transformOrigin: '128px 42px', transform: 'rotate(10deg)' }}
+    />
+    <text x="128" y="52" textAnchor="middle" fill="#22c55e" fontSize="8">
+      怠速
+    </text>
+    {/* Timer */}
+    <text x="128" y="68" textAnchor="middle" fill="#fbbf24" fontSize="9">
+      ⏱ 15s
+    </text>
+    <text x="80" y="84" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      原地怠速，聆聽異聲
+    </text>
+  </svg>
+);
+
+// Step 5: Prevention — water bottles as obstacles near car front
+const SAColdPrevention = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Ground */}
+    <rect x="0" y="60" width="160" height="30" fill="#1c2533" />
+    {/* Car front */}
+    <rect x="60" y="28" width="80" height="34" fill="#1d4ed8" rx="4" />
+    <rect x="68" y="22" width="54" height="16" fill="#1e40af" rx="3" />
+    <rect x="76" y="24" width="18" height="12" fill="#bfdbfe" opacity="0.7" rx="1" />
+    <rect x="98" y="24" width="18" height="12" fill="#bfdbfe" opacity="0.5" rx="1" />
+    <rect x="136" y="33" width="6" height="10" fill="#fbbf24" rx="1" />
+    {/* Front wheel */}
+    <ellipse cx="80" cy="62" rx="12" ry="10" fill="#111827" />
+    <ellipse cx="80" cy="62" rx="6" ry="5" fill="#334155" />
+    {/* Water bottle obstacles placed in front */}
+    <rect x="16" y="46" width="8" height="16" fill="#bfdbfe" rx="3" opacity="0.85" />
+    <ellipse cx="20" cy="46" rx="4" ry="2.5" fill="#93c5fd" opacity="0.7" />
+    <rect x="28" y="46" width="8" height="16" fill="#bfdbfe" rx="3" opacity="0.85" />
+    <ellipse cx="32" cy="46" rx="4" ry="2.5" fill="#93c5fd" opacity="0.7" />
+    <rect x="40" y="46" width="8" height="16" fill="#bfdbfe" rx="3" opacity="0.85" />
+    <ellipse cx="44" cy="46" rx="4" ry="2.5" fill="#93c5fd" opacity="0.7" />
+    {/* Cat sees bottles and avoids */}
+    <text x="20" y="42" textAnchor="middle" fontSize="12">
+      🐱
+    </text>
+    <text x="50" y="42" textAnchor="middle" fill="#ef4444" fontSize="10">
+      ✗
+    </text>
+    {/* Arrow showing cat turns away */}
+    <path
+      d="M26,34 Q10,28 6,18"
+      fill="none"
+      stroke="#4ade80"
+      strokeWidth="1.5"
+      strokeDasharray="3,2"
+      strokeLinecap="round"
+    />
+    <polygon points="6,18 2,24 10,22" fill="#4ade80" />
+    <text x="80" y="84" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      放置保特瓶預防貓躲入
+    </text>
+  </svg>
+);
+
+// Step 6: Phone call to animal services — phone with cat paw icon
+const SACallAnimalService = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Phone */}
+    <rect
+      x="52"
+      y="14"
+      width="36"
+      height="58"
+      fill="#1e293b"
+      rx="6"
+      stroke="#334155"
+      strokeWidth="1.5"
+    />
+    <rect x="56" y="20" width="28" height="36" fill="#0f172a" rx="2" />
+    <circle cx="70" cy="64" r="4" fill="#334155" />
+    {/* Phone screen showing animal service */}
+    <text x="70" y="35" textAnchor="middle" fill="#4ade80" fontSize="10">
+      1999
+    </text>
+    <text x="70" y="46" textAnchor="middle" fill="#94a3b8" fontSize="7">
+      動保服務
+    </text>
+    {/* Ringing waves */}
+    <path
+      d="M90,28 Q98,36 90,44"
+      fill="none"
+      stroke="#4ade80"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      style={{ animation: 'stepSlideL 1.2s ease-in-out infinite' }}
+    />
+    <path
+      d="M95,23 Q107,36 95,49"
+      fill="none"
+      stroke="#4ade80"
+      strokeWidth="1"
+      strokeLinecap="round"
+      style={{ animation: 'stepSlideL 1.2s ease-in-out infinite', animationDelay: '0.2s' }}
+    />
+    {/* Cat paw icon */}
+    <text x="118" y="42" textAnchor="middle" fontSize="22">
+      🐾
+    </text>
+    {/* Text */}
+    <text x="80" y="84" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      撥打 1999 動保單位協助
+    </text>
+  </svg>
+);
+
+// == wildlife-road step animations ==
+
+// Step 1: Animal warning sign, speedometer dropping 60→30
+const SAAnimalSignSlowdown = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Warning sign */}
+    <rect x="6" y="56" width="4" height="28" fill="#64748b" />
+    <polygon points="8,20 30,56 -14,56" fill="#fbbf24" transform="translate(8,0)" />
+    <text x="16" y="46" textAnchor="middle" fontSize="14">
+      🦌
+    </text>
+    {/* Speed gauge */}
+    <circle cx="102" cy="45" r="32" fill="#1e293b" stroke="#334155" strokeWidth="2" />
+    <text x="102" y="30" textAnchor="middle" fill="#64748b" fontSize="8">
+      km/h
+    </text>
+    {/* From 60 marker */}
+    <text x="78" y="52" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="700">
+      60
+    </text>
+    {/* Arrow down to 30 */}
+    <path d="M86,48 L94,56" stroke="#fbbf24" strokeWidth="2" strokeLinecap="round" />
+    <polygon points="94,56 88,54 96,50" fill="#fbbf24" />
+    {/* To 30 marker */}
+    <text x="112" y="62" textAnchor="middle" fill="#4ade80" fontSize="10" fontWeight="700">
+      30
+    </text>
+    {/* Needle pointing to low speed */}
+    <line
+      x1="102"
+      y1="45"
+      x2="118"
+      y2="58"
+      stroke="#4ade80"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+    />
+    <circle cx="102" cy="45" r="3" fill="#4ade80" />
+    <text x="80" y="84" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      看到標誌立即降速至 30
+    </text>
+  </svg>
+);
+
+// Step 2: Two-panel comparison — high beam (animal frozen) vs low beam (animal passing)
+const SALowBeamSwitch = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Divider */}
+    <line x1="80" y1="4" x2="80" y2="78" stroke="#334155" strokeWidth="1.5" strokeDasharray="4,3" />
+    {/* Left panel: high beam — animal glowing eyes frozen */}
+    <text x="40" y="14" textAnchor="middle" fill="#ef4444" fontSize="7">
+      遠光燈
+    </text>
+    {/* Beam spread */}
+    <polygon points="20,38 0,18 0,58" fill="#fef9c3" opacity="0.18" />
+    <circle cx="20" cy="38" r="5" fill="#fef9c3" opacity="0.8" />
+    {/* Frozen animal with glowing eyes */}
+    <ellipse cx="52" cy="44" rx="8" ry="6" fill="#374151" />
+    <circle cx="52" cy="36" r="5" fill="#374151" />
+    <circle cx="49" cy="35" r="2.5" fill="#fef08a" className="anim-head-glow" />
+    <circle cx="55" cy="35" r="2.5" fill="#fef08a" className="anim-head-glow" />
+    <text x="52" y="60" textAnchor="middle" fill="#ef4444" fontSize="8">
+      僵住！
+    </text>
+    <text x="40" y="72" textAnchor="middle" fill="#ef4444" fontSize="7">
+      ✗ 危險
+    </text>
+    {/* Right panel: low beam — animal walks safely */}
+    <text x="120" y="14" textAnchor="middle" fill="#4ade80" fontSize="7">
+      近光燈
+    </text>
+    {/* Narrow beam */}
+    <polygon points="100,42 84,34 84,50" fill="#fef9c3" opacity="0.12" />
+    <circle cx="100" cy="42" r="4" fill="#fef9c3" opacity="0.6" />
+    {/* Moving animal */}
+    <g style={{ animation: 'stepSlideR 2s ease-in-out infinite' }}>
+      <ellipse cx="136" cy="46" rx="8" ry="6" fill="#374151" />
+      <circle cx="136" cy="38" r="5" fill="#374151" />
+      <circle cx="133" cy="37" r="1.8" fill="#6b7280" />
+      <circle cx="139" cy="37" r="1.8" fill="#6b7280" />
+    </g>
+    <text x="120" y="72" textAnchor="middle" fill="#4ade80" fontSize="7">
+      ✓ 安全
+    </text>
+    <text x="80" y="84" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      夜間切換近光燈
+    </text>
+  </svg>
+);
+
+// Step 3: Top-down road, car braking, animal in front
+const SABrakeForAnimal = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Road */}
+    <rect x="30" y="0" width="100" height="90" fill="#2d3748" />
+    <line
+      x1="80"
+      y1="0"
+      x2="80"
+      y2="90"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      strokeDasharray="10,8"
+    />
+    {/* Car top-down */}
+    <rect x="58" y="48" width="44" height="28" fill="#1d4ed8" rx="5" />
+    <rect x="64" y="42" width="32" height="10" fill="#1e40af" rx="3" />
+    {/* Brake marks */}
+    <line
+      x1="64"
+      y1="76"
+      x2="62"
+      y2="88"
+      stroke="#ef4444"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+    />
+    <line
+      x1="96"
+      y1="76"
+      x2="98"
+      y2="88"
+      stroke="#ef4444"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+    />
+    {/* Animal ahead */}
+    <text x="80" y="32" textAnchor="middle" fontSize="16">
+      🦔
+    </text>
+    {/* Warning triangle */}
+    <g className="anim-hazard" style={{ transformOrigin: '80px 20px' }}>
+      <polygon points="80,10 88,24 72,24" fill="#ef4444" opacity="0.8" />
+      <text x="80" y="22" textAnchor="middle" fill="white" fontSize="8" fontWeight="900">
+        !
+      </text>
+    </g>
+    <text x="80" y="84" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      穩踩煞車，握穩方向盤
+    </text>
+  </svg>
+);
+
+// Step 4: Side-view car, short sound wave, animal turning away
+const SAShortHonkAnimal = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Road */}
+    <rect x="0" y="54" width="160" height="20" fill="#2d3748" />
+    <line x1="0" y1="54" x2="160" y2="54" stroke="#475569" strokeWidth="1" />
+    {/* Car side */}
+    <rect x="10" y="36" width="60" height="20" fill="#1d4ed8" rx="4" />
+    <path d="M18 36 Q24 24 32 24 L56 24 Q64 24 68 36Z" fill="#1e40af" />
+    <rect x="28" y="26" width="16" height="10" fill="#bfdbfe" opacity="0.7" rx="1" />
+    <rect x="46" y="26" width="16" height="10" fill="#bfdbfe" opacity="0.5" rx="1" />
+    <circle cx="26" cy="56" r="8" fill="#111827" />
+    <circle cx="26" cy="56" r="4" fill="#334155" />
+    <circle cx="58" cy="56" r="8" fill="#111827" />
+    <circle cx="58" cy="56" r="4" fill="#334155" />
+    {/* Horn sound waves (short) */}
+    <path
+      d="M72,44 Q80,48 72,52"
+      fill="none"
+      stroke="#fbbf24"
+      strokeWidth="2"
+      strokeLinecap="round"
+      style={{ animation: 'stepSlideL 1s ease-in-out infinite' }}
+    />
+    <path
+      d="M78,40 Q90,48 78,56"
+      fill="none"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      style={{ animation: 'stepSlideL 1s ease-in-out infinite', animationDelay: '0.15s' }}
+    />
+    {/* Animal turning away */}
+    <g style={{ animation: 'stepSlideR 2s ease-in-out infinite' }}>
+      <text x="118" y="54" textAnchor="middle" fontSize="16">
+        🦔
+      </text>
+      <text x="130" y="42" textAnchor="middle" fill="#4ade80" fontSize="8">
+        離開
+      </text>
+      <path
+        d="M118,40 Q132,32 140,24"
+        fill="none"
+        stroke="#4ade80"
+        strokeWidth="1.5"
+        strokeDasharray="3,2"
+        strokeLinecap="round"
+      />
+      <polygon points="140,24 136,30 144,28" fill="#4ade80" />
+    </g>
+    <text x="80" y="84" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      短促鳴笛，等動物自行離開
+    </text>
+  </svg>
+);
+
+// Step 5: Car stopped, animal walking from road to roadside grass
+const SAWaitAnimalCross = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Road */}
+    <rect x="20" y="30" width="120" height="36" fill="#2d3748" />
+    <line x1="20" y1="30" x2="140" y2="30" stroke="#475569" strokeWidth="1.5" />
+    <line x1="20" y1="66" x2="140" y2="66" stroke="#475569" strokeWidth="1.5" />
+    {/* Center dashes */}
+    <line
+      x1="20"
+      y1="48"
+      x2="140"
+      y2="48"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      strokeDasharray="14,10"
+    />
+    {/* Grass on right side */}
+    <rect x="140" y="30" width="20" height="36" fill="#14532d" />
+    <text x="150" y="50" textAnchor="middle" fontSize="10">
+      🌿
+    </text>
+    {/* Car stopped on left */}
+    <rect x="24" y="36" width="46" height="22" fill="#1d4ed8" rx="4" />
+    <rect x="30" y="30" width="32" height="10" fill="#1e40af" rx="2" />
+    <circle cx="34" cy="58" r="7" fill="#111827" />
+    <circle cx="34" cy="58" r="3.5" fill="#334155" />
+    <circle cx="60" cy="58" r="7" fill="#111827" />
+    <circle cx="60" cy="58" r="3.5" fill="#334155" />
+    {/* Stop indicator */}
+    <circle cx="24" cy="42" r="5" fill="#ef4444" opacity="0.8" />
+    <text x="24" y="45" textAnchor="middle" fill="white" fontSize="7" fontWeight="900">
+      ✋
+    </text>
+    {/* Animal walking from road to grass */}
+    <g style={{ animation: 'stepSlideR 3s linear infinite' }}>
+      <text x="110" y="54" textAnchor="middle" fontSize="14">
+        🦔
+      </text>
+    </g>
+    {/* Path arrow */}
+    <path
+      d="M86,48 Q110,48 138,48"
+      fill="none"
+      stroke="#4ade80"
+      strokeWidth="1.5"
+      strokeDasharray="5,3"
+      strokeLinecap="round"
+    />
+    <polygon points="138,48 132,44 132,52" fill="#4ade80" />
+    <text x="80" y="84" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      耐心等待，確認動物離開後通過
+    </text>
+  </svg>
+);
+
 export const STEP_ANIMS: Partial<Record<ScenarioId, (React.FC | null)[]>> = {
   'highway-breakdown': [
     SAHazardFlash,
@@ -1886,5 +2462,20 @@ export const STEP_ANIMS: Partial<Record<ScenarioId, (React.FC | null)[]>> = {
     SAHazardFlash,
     SAPullOver,
     SACheckTires,
+  ],
+  'cold-weather-cat-check': [
+    SAKnockHood,
+    SAWalkAroundCar,
+    SAHonkAlert,
+    SAIdleEngine,
+    SAColdPrevention,
+    SACallAnimalService,
+  ],
+  'wildlife-road': [
+    SAAnimalSignSlowdown,
+    SALowBeamSwitch,
+    SABrakeForAnimal,
+    SAShortHonkAnimal,
+    SAWaitAnimalCross,
   ],
 };

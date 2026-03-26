@@ -1658,6 +1658,359 @@ const DA_LT_C = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 
+// == cold-weather-cat-check ==
+
+// DA_CC_A: Start engine directly — cat hit by fan belt (wrong)
+const DA_CC_A = ({ showConsequence = false }: DAProps) => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Car front */}
+    <rect x="30" y="40" width="100" height="40" fill="#1d4ed8" rx="5" />
+    <path d="M38 40 Q44 26 56 26 L104 26 Q116 26 120 40Z" fill="#1e40af" />
+    <rect x="56" y="28" width="20" height="12" fill="#bfdbfe" opacity="0.6" rx="1" />
+    <rect x="84" y="28" width="20" height="12" fill="#bfdbfe" opacity="0.4" rx="1" />
+    {/* Engine hood shaking */}
+    <g style={{ animation: 'stepSlideL 0.3s linear infinite' }}>
+      <rect
+        x="36"
+        y="30"
+        width="88"
+        height="12"
+        fill="#1e40af"
+        rx="3"
+        stroke="#374151"
+        strokeWidth="1"
+      />
+      <text x="80" y="40" textAnchor="middle" fill="#fbbf24" fontSize="8">
+        引擎啟動
+      </text>
+    </g>
+    {/* Cat inside with danger signal */}
+    <text x="80" y="62" textAnchor="middle" fontSize="16">
+      🐱
+    </text>
+    <g className="anim-hazard" style={{ transformOrigin: '80px 52px' }}>
+      <polygon points="80,44 90,60 70,60" fill="#ef4444" opacity="0.9" />
+      <text x="80" y="57" textAnchor="middle" fill="white" fontSize="8" fontWeight="900">
+        !
+      </text>
+    </g>
+    {showConsequence && (
+      <>
+        <text x="80" y="16" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          ⚠ 直接發動
+        </text>
+        <text x="80" y="29" textAnchor="middle" fill="#f87171" fontSize="8">
+          風扇葉片瞬間造成動物重傷
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          動物來不及逃脫，危害生命
+        </text>
+      </>
+    )}
+  </svg>
+);
+
+// DA_CC_B: Knock hood + honk, cat jumps out safely (correct)
+const DA_CC_B = ({ showConsequence = false }: DAProps) => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Car front */}
+    <rect x="30" y="42" width="100" height="38" fill="#1d4ed8" rx="5" />
+    <path d="M38 42 Q44 28 56 28 L104 28 Q116 28 120 42Z" fill="#1e40af" />
+    <rect x="56" y="30" width="20" height="12" fill="#bfdbfe" opacity="0.6" rx="1" />
+    <rect x="84" y="30" width="20" height="12" fill="#bfdbfe" opacity="0.4" rx="1" />
+    {/* Hand knocking hood */}
+    <text x="30" y="38" textAnchor="middle" fontSize="14">
+      ✋
+    </text>
+    {/* Knock vibration */}
+    <circle
+      cx="60"
+      cy="35"
+      r="6"
+      fill="none"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      style={{ animation: 'stepSlideL 1s ease-in-out infinite' }}
+      opacity="0.7"
+    />
+    <circle
+      cx="60"
+      cy="35"
+      r="11"
+      fill="none"
+      stroke="#fbbf24"
+      strokeWidth="1"
+      style={{ animation: 'stepSlideL 1s ease-in-out infinite', animationDelay: '0.3s' }}
+      opacity="0.4"
+    />
+    {/* Cat running away safely */}
+    <g style={{ animation: 'stepSlideR 1.5s ease-in-out infinite' }}>
+      <text x="128" y="52" textAnchor="middle" fontSize="16">
+        🐱
+      </text>
+      <text x="128" y="40" textAnchor="middle" fill="#4ade80" fontSize="8">
+        安全！
+      </text>
+    </g>
+    {/* Green check */}
+    <circle cx="80" cy="72" r="10" fill="#22c55e" opacity="0.9" />
+    <text x="80" y="77" textAnchor="middle" fill="white" fontSize="12" fontWeight="900">
+      ✓
+    </text>
+    {showConsequence && (
+      <>
+        <text x="80" y="16" textAnchor="middle" fill="#4ade80" fontSize="10" fontWeight="800">
+          ✓ 輕敲引擎蓋加按喇叭
+        </text>
+        <text x="80" y="29" textAnchor="middle" fill="#86efac" fontSize="8">
+          動物有充裕時間自行離開
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+          人與動物都安全，最佳選擇！
+        </text>
+      </>
+    )}
+  </svg>
+);
+
+// DA_CC_C: Person reaches into hood to grab cat, cat scratches (wrong)
+const DA_CC_C = ({ showConsequence = false }: DAProps) => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Car front with hood open */}
+    <rect x="30" y="50" width="100" height="30" fill="#1d4ed8" rx="5" />
+    {/* Open hood */}
+    <path d="M30 50 L30 30 L130 30 L130 50" fill="none" stroke="#1e40af" strokeWidth="2" />
+    <path d="M30 30 Q80 10 130 30" fill="#1e3a8a" stroke="#1e40af" strokeWidth="1.5" />
+    {/* Engine inside */}
+    <rect x="50" y="34" width="60" height="18" fill="#374151" rx="3" />
+    {/* Person arm reaching in */}
+    <g style={{ animation: 'stepSlideL 1.5s ease-in-out infinite' }}>
+      <line
+        x1="20"
+        y1="22"
+        x2="60"
+        y2="38"
+        stroke="#fbbf24"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <ellipse cx="20" cy="20" rx="8" ry="6" fill="#fbbf24" />
+    </g>
+    {/* Angry cat with scratch marks */}
+    <text x="82" y="46" textAnchor="middle" fontSize="14">
+      😾
+    </text>
+    {/* Scratch effect */}
+    <text
+      x="50"
+      y="28"
+      textAnchor="middle"
+      fill="#ef4444"
+      fontSize="14"
+      fontWeight="900"
+      style={{ animation: 'stepSlideL 0.8s ease-in-out infinite' }}
+    >
+      ✕
+    </text>
+    {showConsequence && (
+      <>
+        <text x="80" y="16" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          ⚠ 強行徒手拉貓
+        </text>
+        <text x="80" y="29" textAnchor="middle" fill="#f87171" fontSize="8">
+          受驚動物抓傷人，且動物二次傷害
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          應讓動物自行離開或聯絡動保
+        </text>
+      </>
+    )}
+  </svg>
+);
+
+// == wildlife-road ==
+
+// DA_WR_A: Car swerves hard, hits barrier / rolls (wrong)
+const DA_WR_A = ({ showConsequence = false }: DAProps) => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Road */}
+    <rect x="0" y="48" width="160" height="44" fill="#2d3748" />
+    <line
+      x1="0"
+      y1="70"
+      x2="160"
+      y2="70"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      strokeDasharray="12,8"
+    />
+    {/* Barrier on right */}
+    <rect x="134" y="48" width="8" height="44" fill="#475569" />
+    {[52, 62, 72, 78, 88].map((y) => (
+      <line key={y} x1="134" y1={y} x2="142" y2={y} stroke="#94a3b8" strokeWidth="1.5" />
+    ))}
+    {/* Car swerving out of lane — tilted */}
+    <g transform="translate(110,60) rotate(25)">
+      <rect x="-22" y="-12" width="44" height="22" fill="#1d4ed8" rx="3" />
+      <rect x="-14" y="-20" width="28" height="12" fill="#1e40af" rx="2" />
+    </g>
+    {/* Collision sparks */}
+    <text x="132" y="56" textAnchor="middle" fill="#fbbf24" fontSize="14" className="anim-hazard">
+      💥
+    </text>
+    {/* Animal safe on other side */}
+    <text x="28" y="66" textAnchor="middle" fontSize="14">
+      🦔
+    </text>
+    {showConsequence && (
+      <>
+        <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          ⚠ 猛打方向盤
+        </text>
+        <text x="80" y="31" textAnchor="middle" fill="#f87171" fontSize="8">
+          車輛失控撞上護欄，比撞動物更危險
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          急打方向盤可能造成翻車或衝出車道
+        </text>
+      </>
+    )}
+  </svg>
+);
+
+// DA_WR_B: Car brakes, animal crosses safely (correct)
+const DA_WR_B = ({ showConsequence = false }: DAProps) => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Road */}
+    <rect x="0" y="46" width="160" height="46" fill="#2d3748" />
+    <line
+      x1="0"
+      y1="69"
+      x2="160"
+      y2="69"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      strokeDasharray="12,8"
+    />
+    {/* Car stopped */}
+    <rect x="14" y="54" width="52" height="24" fill="#1d4ed8" rx="4" />
+    <rect x="22" y="46" width="36" height="12" fill="#1e40af" rx="2" />
+    {/* Brake lights */}
+    <rect x="14" y="57" width="5" height="8" fill="#ef4444" className="anim-tail-light" rx="1" />
+    <rect x="14" y="67" width="5" height="8" fill="#ef4444" className="anim-tail-light" rx="1" />
+    {/* Brake marks */}
+    <line
+      x1="28"
+      y1="78"
+      x2="26"
+      y2="92"
+      stroke="#ef4444"
+      strokeWidth="2"
+      strokeLinecap="round"
+      opacity="0.7"
+    />
+    <line
+      x1="52"
+      y1="78"
+      x2="54"
+      y2="92"
+      stroke="#ef4444"
+      strokeWidth="2"
+      strokeLinecap="round"
+      opacity="0.7"
+    />
+    {/* Animal crossing to safety */}
+    <g style={{ animation: 'stepSlideR 2s linear infinite' }}>
+      <text x="100" y="64" textAnchor="middle" fontSize="16">
+        🦔
+      </text>
+    </g>
+    {/* Arrow showing animal path */}
+    <path
+      d="M80,64 Q110,64 138,58"
+      fill="none"
+      stroke="#4ade80"
+      strokeWidth="1.5"
+      strokeDasharray="4,3"
+      strokeLinecap="round"
+    />
+    {/* Green check */}
+    <circle cx="80" cy="82" r="9" fill="#22c55e" opacity="0.9" />
+    <text x="80" y="87" textAnchor="middle" fill="white" fontSize="11" fontWeight="900">
+      ✓
+    </text>
+    {showConsequence && (
+      <>
+        <text x="80" y="17" textAnchor="middle" fill="#4ade80" fontSize="10" fontWeight="800">
+          ✓ 穩踩煞車，握穩方向盤
+        </text>
+        <text x="80" y="30" textAnchor="middle" fill="#86efac" fontSize="8">
+          動物安全通過，車輛也完好無損
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#4ade80" fontSize="8" fontWeight="700">
+          路殺悲劇成功避免！
+        </text>
+      </>
+    )}
+  </svg>
+);
+
+// DA_WR_C: Car accelerates and hits animal (wrong)
+const DA_WR_C = ({ showConsequence = false }: DAProps) => (
+  <svg viewBox="0 0 160 100" width="100%" height="100%">
+    <rect width="160" height="100" fill="#0f172a" />
+    {/* Road */}
+    <rect x="0" y="46" width="160" height="46" fill="#2d3748" />
+    <line
+      x1="0"
+      y1="69"
+      x2="160"
+      y2="69"
+      stroke="#fbbf24"
+      strokeWidth="1.5"
+      strokeDasharray="12,8"
+    />
+    {/* Car speeding with motion lines */}
+    <g style={{ animation: 'stepSlideR 0.8s linear infinite' }}>
+      <rect x="20" y="54" width="52" height="24" fill="#1d4ed8" rx="4" />
+      <rect x="28" y="46" width="36" height="12" fill="#1e40af" rx="2" />
+      {/* Speed lines */}
+      <line x1="18" y1="58" x2="4" y2="58" stroke="#60a5fa" strokeWidth="1.5" opacity="0.6" />
+      <line x1="18" y1="65" x2="2" y2="65" stroke="#60a5fa" strokeWidth="1.5" opacity="0.6" />
+      <line x1="18" y1="72" x2="4" y2="72" stroke="#60a5fa" strokeWidth="1.5" opacity="0.6" />
+    </g>
+    {/* Animal in path */}
+    <text x="90" y="64" textAnchor="middle" fontSize="16">
+      🦔
+    </text>
+    {/* Collision warning */}
+    <g className="anim-hazard" style={{ transformOrigin: '80px 60px' }}>
+      <polygon points="80,48 92,68 68,68" fill="#ef4444" opacity="0.85" />
+      <text x="80" y="65" textAnchor="middle" fill="white" fontSize="9" fontWeight="900">
+        !
+      </text>
+    </g>
+    {showConsequence && (
+      <>
+        <text x="80" y="18" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="800">
+          ⚠ 加速衝過
+        </text>
+        <text x="80" y="31" textAnchor="middle" fill="#f87171" fontSize="8">
+          直接撞上動物，撞擊可能導致車輛失控
+        </text>
+        <text x="80" y="97" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+          動物反應難以預測，無法確保衝過
+        </text>
+      </>
+    )}
+  </svg>
+);
+
 export const DA_OPTS: Partial<Record<ScenarioId, React.FC<DAProps>[]>> = {
   'highway-breakdown': [DA_HB_A, DA_HB_B, DA_HB_C],
   'tire-blowout': [DA_TB_A, DA_TB_B, DA_TB_C],
@@ -1671,4 +2024,6 @@ export const DA_OPTS: Partial<Record<ScenarioId, React.FC<DAProps>[]>> = {
   hydroplaning: [DA_HP_A, DA_HP_B, DA_HP_C],
   'right-turn-motorcycle': [DA_RT_A, DA_RT_B, DA_RT_C],
   'left-turn-oncoming': [DA_LT_A, DA_LT_B, DA_LT_C],
+  'cold-weather-cat-check': [DA_CC_A, DA_CC_B, DA_CC_C],
+  'wildlife-road': [DA_WR_A, DA_WR_B, DA_WR_C],
 };
