@@ -182,6 +182,70 @@ const SAPersonCross = () => (
     </text>
   </svg>
 );
+const SACrosswalkWatch = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Sidewalks */}
+    <rect x="0" y="0" width="160" height="28" fill="#1e293b" />
+    <rect x="0" y="62" width="160" height="28" fill="#1e293b" />
+    {/* Road surface */}
+    <rect x="0" y="28" width="160" height="34" fill="#334155" />
+    {/* Center line dashes */}
+    {[0, 22, 44, 66, 88, 110, 132].map((x) => (
+      <rect key={x} x={x} y="43" width="16" height="4" fill="#475569" rx="1" />
+    ))}
+    {/* Crosswalk zebra stripes */}
+    {[0, 1, 2, 3, 4].map((i) => (
+      <rect
+        key={i}
+        x={92 + i * 7}
+        y="28"
+        width="4"
+        height="34"
+        fill="rgba(255,255,255,0.55)"
+        rx="1"
+      />
+    ))}
+    {/* Blue car (top-down) stopped before crosswalk */}
+    <g transform="translate(60,45)">
+      <rect x="-20" y="-10" width="26" height="20" fill="#1d4ed8" rx="2" />
+      <rect x="-14" y="-15" width="16" height="8" fill="#1e40af" rx="1" />
+      {/* Brake lights */}
+      <rect x="-20" y="-8" width="5" height="5" fill="#ef4444" rx="1" className="anim-tail-light" />
+      <rect x="-20" y="3" width="5" height="5" fill="#ef4444" rx="1" className="anim-tail-light" />
+    </g>
+    {/* Pedestrian walking across (upward through crosswalk) */}
+    <g transform="translate(108, 45)">
+      <g style={{ animation: 'stepSlideU 2.4s ease-in-out infinite' }}>
+        <circle cx="0" cy="-10" r="5" fill="#fbbf24" />
+        <rect x="-3" y="-5" width="6" height="10" fill="#3b82f6" rx="1" />
+        <line
+          x1="-3"
+          y1="-2"
+          x2="-7"
+          y2="3"
+          stroke="#3b82f6"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+        <line x1="3" y1="-2" x2="7" y2="3" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" />
+        <line
+          x1="-2"
+          y1="5"
+          x2="-4"
+          y2="12"
+          stroke="#3b82f6"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+        <line x1="2" y1="5" x2="4" y2="12" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" />
+      </g>
+    </g>
+    <text x="80" y="84" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">
+      等行人通過後再轉
+    </text>
+  </svg>
+);
 const SAPhoneCall = () => (
   <svg viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
@@ -1068,6 +1132,56 @@ const SANarrowPullRight = () => (
     </text>
   </svg>
 );
+const SANarrowYield = () => (
+  <svg viewBox="0 0 160 90" width="100%" height="100%">
+    <rect width="160" height="90" fill="#0f172a" rx="8" />
+    {/* Road */}
+    <rect x="55" y="8" width="50" height="74" fill="#2d3748" rx="4" />
+    <line x1="80" y1="8" x2="80" y2="82" stroke="#475569" strokeWidth="1.5" strokeDasharray="8,6" />
+    {/* Mountain walls */}
+    <rect x="35" y="8" width="20" height="74" fill="#1e3a1e" />
+    <rect x="105" y="8" width="20" height="74" fill="#1e3a1e" />
+    {/* Downhill label */}
+    <text x="18" y="18" textAnchor="middle" fill="#94a3b8" fontSize="6" fontWeight="700">
+      下坡
+    </text>
+    <text x="18" y="28" textAnchor="middle" fill="#94a3b8" fontSize="8">
+      ↓
+    </text>
+    {/* Uphill label */}
+    <text x="18" y="70" textAnchor="middle" fill="#fbbf24" fontSize="8">
+      ↑
+    </text>
+    <text x="18" y="80" textAnchor="middle" fill="#fbbf24" fontSize="6" fontWeight="700">
+      上坡
+    </text>
+    {/* Downhill car (blue) at top, facing down */}
+    <g transform="translate(68, 26) rotate(180)">
+      <rect x="-12" y="-10" width="24" height="18" fill="#2563eb" rx="3" />
+      <rect x="-8" y="-17" width="16" height="10" fill="#1d4ed8" rx="2" />
+      <circle cx="-10" cy="-9" r="2.5" fill="#fef9c3" opacity="0.9" />
+      <circle cx="10" cy="-9" r="2.5" fill="#fef9c3" opacity="0.9" />
+    </g>
+    {/* Green pass indicator for downhill */}
+    <circle cx="134" cy="26" r="9" fill="#15803d" />
+    <text x="134" y="30" textAnchor="middle" fill="white" fontSize="11" fontWeight="900">
+      ✓
+    </text>
+    {/* Uphill car (red) at bottom, facing up, bouncing = waiting */}
+    <g style={{ animation: 'stepBounce 2s ease-in-out infinite' }}>
+      <rect x="66" y="58" width="28" height="20" fill="#dc2626" rx="3" />
+      <rect x="70" y="50" width="20" height="12" fill="#b91c1c" rx="2" />
+    </g>
+    {/* Yield indicator for uphill */}
+    <circle cx="134" cy="68" r="9" fill="#ef4444" />
+    <text x="134" y="72" textAnchor="middle" fill="white" fontSize="7" fontWeight="900">
+      讓
+    </text>
+    <text x="80" y="86" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="700">
+      上坡讓下坡先行
+    </text>
+  </svg>
+);
 const SANarrowReverse = () => (
   <svg viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
@@ -1178,15 +1292,56 @@ const SALookBothWays = () => (
 const SABrakeStop = () => (
   <svg viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
-    {/* Brake pedal */}
-    <rect x="55" y="15" width="50" height="55" fill="#1e293b" rx="6" />
-    <rect x="62" y="22" width="36" height="42" fill="#ef4444" rx="4" className="anim-impact" />
-    <text x="80" y="48" textAnchor="middle" fill="white" fontSize="12" fontWeight="800">
+    {/* Horizontal road */}
+    <rect x="0" y="32" width="160" height="26" fill="#1e293b" />
+    {/* Vertical road */}
+    <rect x="67" y="0" width="26" height="90" fill="#252f3f" />
+    {/* Road edge lines */}
+    <line x1="0" y1="32" x2="160" y2="32" stroke="#475569" strokeWidth="1" />
+    <line x1="0" y1="58" x2="160" y2="58" stroke="#475569" strokeWidth="1" />
+    {/* Brake skid marks */}
+    <line
+      x1="76"
+      y1="60"
+      x2="76"
+      y2="76"
+      stroke="#ef4444"
+      strokeWidth="1.5"
+      opacity="0.55"
+      strokeDasharray="3,3"
+    />
+    <line
+      x1="84"
+      y1="60"
+      x2="84"
+      y2="76"
+      stroke="#ef4444"
+      strokeWidth="1.5"
+      opacity="0.55"
+      strokeDasharray="3,3"
+    />
+    {/* Blue player car — stopped */}
+    <g transform="translate(80,70)">
+      <rect x="-9" y="-13" width="18" height="21" fill="#1d4ed8" rx="2" />
+      <rect x="-5" y="-18" width="10" height="8" fill="#1e40af" rx="1" />
+      {/* Brake lights — blinking red */}
+      <rect x="-7" y="6" width="5" height="4" fill="#ef4444" rx="1" className="anim-hazard" />
+      <rect x="2" y="6" width="5" height="4" fill="#ef4444" rx="1" className="anim-hazard" />
+    </g>
+    {/* Red car crossing safely in front — animated */}
+    <g transform="translate(80,43)">
+      <g style={{ animation: 'stepSlideRIn 2.2s ease-in-out infinite' }}>
+        <rect x="-12" y="-8" width="24" height="16" fill="#dc2626" rx="2" />
+        <rect x="-7" y="-13" width="14" height="8" fill="#b91c1c" rx="1" />
+      </g>
+    </g>
+    {/* STOP badge */}
+    <rect x="100" y="63" width="34" height="16" fill="#dc2626" rx="4" />
+    <text x="117" y="75" textAnchor="middle" fill="white" fontSize="9" fontWeight="800">
       STOP
     </text>
-    {/* Foot pressing */}
-    <path d="M 80 68 L 70 78 Q 80 82 90 78 Z" fill="#fbbf24" opacity="0.8" />
-    <text x="80" y="85" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
+    {/* Label */}
+    <text x="80" y="88" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="700">
       立即踩煞車停住
     </text>
   </svg>
@@ -1684,7 +1839,13 @@ export const STEP_ANIMS: Partial<Record<ScenarioId, (React.FC | null)[]>> = {
     SAHandbrake,
     SAPhoneCall,
   ],
-  'narrow-road': [SANarrowSlowDown, SANarrowPullRight, SACarGap, SANarrowReverse, SANarrowPass],
+  'narrow-road': [
+    SANarrowSlowDown,
+    SANarrowPullRight,
+    SANarrowYield,
+    SANarrowReverse,
+    SANarrowPass,
+  ],
   'intersection-crash': [
     SALookBothWays,
     SABrakeStop,
@@ -1708,13 +1869,13 @@ export const STEP_ANIMS: Partial<Record<ScenarioId, (React.FC | null)[]>> = {
     SACheckMirror,
     SALetMotoPass,
     SACheckAndTurn,
-    SAPersonCross,
+    SACrosswalkWatch,
   ],
   'left-turn-oncoming': [
     SASignalEarly,
     SAWaitAtCenter,
     SAWaitOncoming,
-    SAPersonCross,
+    SACrosswalkWatch,
     SACheckAndTurn,
     SALookBothWays,
   ],

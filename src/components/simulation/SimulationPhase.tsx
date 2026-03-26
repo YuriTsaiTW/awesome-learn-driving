@@ -10,6 +10,7 @@ import SimWheel from './SimWheel';
 import SimGearShifter from './SimGearShifter';
 import SimPedals from './SimPedals';
 import SimPhoneModal from './SimPhoneModal';
+import SimTriangleModal from './SimTriangleModal';
 
 interface SimulationPhaseProps {
   scenario: Scenario;
@@ -28,6 +29,7 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
   // Track completed targets for button "on" states
   const [doneTgts, setDoneTgts] = useState<Set<string>>(new Set());
   const [showPhoneModal, setShowPhoneModal] = useState(false);
+  const [showTriangleModal, setShowTriangleModal] = useState(false);
 
   const dragging = useRef<boolean>(false);
   const dragStartX = useRef<number>(0);
@@ -68,6 +70,15 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
       setShowPhoneModal(true);
     } else {
       triggerAction('phone');
+    }
+  }
+
+  function handleTriangleButtonClick() {
+    const s = simSteps[stepIdxRef.current];
+    if (s?.target === 'triangle' && s.triangleDistance) {
+      setShowTriangleModal(true);
+    } else {
+      triggerAction('triangle');
     }
   }
 
@@ -118,6 +129,8 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
       if (s && s.keys && s.keys.includes(e.key)) {
         if (s.target === 'phone' && s.phoneNumber) {
           setShowPhoneModal(true);
+        } else if (s.target === 'triangle' && s.triangleDistance) {
+          setShowTriangleModal(true);
         } else {
           triggerAction(s.target);
         }
@@ -492,7 +505,11 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
                 on={isDone(lb1.target)}
                 color={lb1.color}
                 onClick={function () {
-                  triggerAction(lb1.target);
+                  if (lb1.target === 'triangle') {
+                    handleTriangleButtonClick();
+                  } else {
+                    triggerAction(lb1.target);
+                  }
                 }}
                 size="sm"
               />
@@ -572,6 +589,22 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
           </div>
         </div>
       </div>
+
+      {/* Triangle modal */}
+      {showTriangleModal &&
+        (() => {
+          const s = simSteps[stepIdx];
+          return s?.triangleDistance ? (
+            <SimTriangleModal
+              targetMin={s.triangleDistance.min}
+              targetMax={s.triangleDistance.max}
+              onCorrect={function () {
+                setShowTriangleModal(false);
+                triggerAction('triangle');
+              }}
+            />
+          ) : null;
+        })()}
 
       {/* Phone modal */}
       {showPhoneModal &&

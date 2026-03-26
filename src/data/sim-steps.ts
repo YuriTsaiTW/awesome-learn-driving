@@ -26,6 +26,7 @@ export const SIM_STEPS: Partial<Record<ScenarioId, SimStep[]>> = {
       keys: ['t', 'T'],
       successMsg: '✓ 三角架已放置，提醒後方來車',
       stateChange: { trianglePlaced: true },
+      triangleDistance: { min: 30, max: 50 },
     },
     {
       title: '撥打救援電話',

@@ -269,6 +269,47 @@ body {
     transform: rotate(-12deg) translateY(-6px);
   }
 }
+@keyframes stepSlideU {
+  0% {
+    transform: translateY(35px);
+    opacity: 0.4;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 0.4;
+  }
+}
+@keyframes stepSlideRIn {
+  0% {
+    transform: translateX(-55px);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(65px);
+    opacity: 0;
+  }
+}
+@keyframes stepSwerveR {
+  0%,
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(20px, 4px) rotate(30deg);
+  }
+}
 
 .anim-hazard {
   animation: hazard 0.75s ease-in-out infinite;

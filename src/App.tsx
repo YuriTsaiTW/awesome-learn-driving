@@ -19,6 +19,7 @@ function ScenarioRoute({ completed, onComplete }: ScenarioRouteProps) {
 
   return (
     <ScenarioFlow
+      key={scenarioId}
       scenario={scenario}
       onBack={() => navigate('/')}
       onComplete={onComplete}

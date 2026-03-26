@@ -942,15 +942,19 @@ const DA_IC_A = ({ showConsequence = false }: DAProps) => (
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     <rect x="60" y="0" width="40" height="100" fill="#252f3f" />
-    {/* Player car accelerating */}
-    <g transform="translate(80,55)" style={{ animation: 'stepSlideU 1.5s ease-in-out infinite' }}>
-      <rect x="-10" y="-12" width="20" height="20" fill="#1d4ed8" rx="2" />
-      <rect x="-6" y="-18" width="12" height="8" fill="#1e40af" rx="1" />
+    {/* Blue player car accelerating upward — outer: SVG position, inner: CSS anim */}
+    <g transform="translate(80,70)">
+      <g style={{ animation: 'stepSlideU 1.4s ease-in-out infinite' }}>
+        <rect x="-10" y="-14" width="20" height="22" fill="#1d4ed8" rx="2" />
+        <rect x="-6" y="-20" width="12" height="9" fill="#1e40af" rx="1" />
+      </g>
     </g>
-    {/* Red light runner */}
-    <g transform="translate(30,65)">
-      <rect x="-14" y="-10" width="28" height="18" fill="#dc2626" rx="2" />
-      <rect x="-8" y="-16" width="16" height="9" fill="#b91c1c" rx="1" />
+    {/* Red car from left — outer: SVG position, inner: CSS anim */}
+    <g transform="translate(80,60)">
+      <g style={{ animation: 'stepSlideRIn 1.4s ease-in-out infinite' }}>
+        <rect x="-14" y="-9" width="28" height="18" fill="#dc2626" rx="2" />
+        <rect x="-8" y="-15" width="16" height="9" fill="#b91c1c" rx="1" />
+      </g>
     </g>
     {showConsequence && (
       <>
@@ -969,17 +973,53 @@ const DA_IC_B = ({ showConsequence = false }: DAProps) => (
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     <rect x="60" y="0" width="40" height="100" fill="#252f3f" />
-    {/* Player car stopped */}
-    <g transform="translate(80,65)">
-      <rect x="-10" y="-12" width="20" height="20" fill="#1d4ed8" rx="2" />
-      <rect x="-6" y="-18" width="12" height="8" fill="#1e40af" rx="1" />
+    {/* Horn sound waves above blue car */}
+    <g transform="translate(80,74)">
+      <path
+        d="M-9,-2 Q-13,-6 -9,-10"
+        stroke="#a78bfa"
+        strokeWidth="1.5"
+        fill="none"
+        style={{ animation: 'twBlink 0.7s ease-in-out infinite', animationDelay: '0s' }}
+      />
+      <path
+        d="M9,-2 Q13,-6 9,-10"
+        stroke="#a78bfa"
+        strokeWidth="1.5"
+        fill="none"
+        style={{ animation: 'twBlink 0.7s ease-in-out infinite', animationDelay: '0s' }}
+      />
+      <path
+        d="M-13,-1 Q-19,-7 -13,-13"
+        stroke="#a78bfa"
+        strokeWidth="1.2"
+        fill="none"
+        opacity="0.6"
+        style={{ animation: 'twBlink 0.7s ease-in-out infinite', animationDelay: '0.2s' }}
+      />
+      <path
+        d="M13,-1 Q19,-7 13,-13"
+        stroke="#a78bfa"
+        strokeWidth="1.2"
+        fill="none"
+        opacity="0.6"
+        style={{ animation: 'twBlink 0.7s ease-in-out infinite', animationDelay: '0.2s' }}
+      />
     </g>
-    {/* Brake lines */}
-    <line x1="72" y1="72" x2="72" y2="80" stroke="#ef4444" strokeWidth="2" />
-    <line x1="88" y1="72" x2="88" y2="80" stroke="#ef4444" strokeWidth="2" />
-    {/* Red light runner passing safely in front */}
-    <g transform="translate(40,55)" style={{ animation: 'stepSlideR 2s ease-in-out infinite' }}>
-      <rect x="-14" y="-10" width="28" height="18" fill="#dc2626" rx="2" />
+    {/* Player car stopped before intersection, brake lights on */}
+    <g transform="translate(80,91)">
+      <rect x="-10" y="-14" width="20" height="22" fill="#1d4ed8" rx="2" />
+      <rect x="-6" y="-20" width="12" height="9" fill="#1e40af" rx="1" />
+      {/* Brake lights */}
+      <rect x="-8" y="6" width="6" height="4" fill="#ef4444" rx="1" />
+      <rect x="2" y="6" width="6" height="4" fill="#ef4444" rx="1" />
+    </g>
+    {/* Red car passing safely in front — outer: position, inner: CSS anim */}
+    <g transform="translate(80,58)">
+      <g style={{ animation: 'stepSlideRIn 2s ease-in-out infinite' }}>
+        <rect x="-14" y="-9" width="28" height="18" fill="#dc2626" rx="2" />
+        <rect x="-8" y="-15" width="16" height="9" fill="#b91c1c" rx="1" />
+      </g>
     </g>
     {showConsequence && (
       <>
@@ -1002,14 +1042,22 @@ const DA_IC_C = ({ showConsequence = false }: DAProps) => (
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     <rect x="60" y="0" width="40" height="100" fill="#252f3f" />
-    {/* Player car swerving right */}
-    <g transform="translate(105,60) rotate(25)">
-      <rect x="-10" y="-12" width="20" height="20" fill="#1d4ed8" rx="2" />
-      <rect x="-6" y="-18" width="12" height="8" fill="#1e40af" rx="1" />
+    {/* Red car from left — static, shows the incoming threat */}
+    <g transform="translate(28,60)">
+      <rect x="-14" y="-9" width="28" height="18" fill="#dc2626" rx="2" />
+      <rect x="-8" y="-15" width="16" height="9" fill="#b91c1c" rx="1" />
     </g>
-    {/* Another car in the right lane */}
-    <g transform="translate(125,70)">
-      <rect x="-10" y="-8" width="20" height="14" fill="#475569" rx="2" />
+    {/* Gray car in right lane — static obstacle */}
+    <g transform="translate(122,70)">
+      <rect x="-10" y="-14" width="20" height="22" fill="#475569" rx="2" />
+      <rect x="-6" y="-20" width="12" height="9" fill="#334155" rx="1" />
+    </g>
+    {/* Player car swerving right — outer: position, inner: CSS anim */}
+    <g transform="translate(80,68)">
+      <g style={{ animation: 'stepSwerveR 1.5s ease-in-out infinite' }}>
+        <rect x="-10" y="-14" width="20" height="22" fill="#1d4ed8" rx="2" />
+        <rect x="-6" y="-20" width="12" height="9" fill="#1e40af" rx="1" />
+      </g>
     </g>
     {showConsequence && (
       <>

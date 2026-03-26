@@ -18,6 +18,8 @@ export interface SimStep {
   stateChange: Partial<CockpitState>;
   /** If set, phone button opens a dial-pad modal; user must enter this exact number. */
   phoneNumber?: string;
+  /** If set, triangle button opens a walk-distance minigame. */
+  triangleDistance?: { min: number; max: number };
 }
 
 export interface SimButtonConfig {
