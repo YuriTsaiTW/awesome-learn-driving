@@ -41,6 +41,7 @@ function FrequencyInfoPanel() {
         background: '#0f172a',
         border: '1px solid #334155',
         borderRadius: 12,
+        marginTop: 20,
         marginBottom: 16,
         overflow: 'hidden',
       }}
@@ -115,40 +116,124 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
 
   return (
     <div className="home-inner anim-fade">
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3,1fr)',
-          gap: 12,
-          marginBottom: 24,
-        }}
-      >
-        {[
-          { val: SCENARIOS.length, label: '情境數', color: '#fbbf24' },
-          { val: completed.length, label: '已完成', color: '#4ade80' },
-          {
-            val:
-              completed.length > 0
-                ? Math.round((completed.length / SCENARIOS.length) * 100) + '%'
-                : '0%',
-            label: '進度',
-            color: '#60a5fa',
-          },
-        ].map((s, i) => (
-          <div
-            key={i}
-            style={{
-              background: '#1e293b',
-              borderRadius: 16,
-              padding: '14px 8px',
-              textAlign: 'center',
-              border: '1px solid #334155',
-            }}
-          >
-            <div style={{ fontSize: 26, fontWeight: 900, color: s.color }}>{s.val}</div>
-            <div style={{ fontSize: 14, color: '#64748b', marginTop: 4 }}>{s.label}</div>
-          </div>
-        ))}
+      {/* Hero: animated car + title */}
+      <div style={{ textAlign: 'center', paddingBottom: 32, paddingTop: 4 }}>
+        <svg
+          viewBox="0 0 300 160"
+          className="anim-logo-car"
+          style={{ width: '100%', maxWidth: 200, display: 'inline-block' }}
+        >
+          {/* Road */}
+          <rect x="0" y="128" width="300" height="22" fill="#111827" rx="4" />
+          <line
+            x1="0"
+            y1="138"
+            x2="300"
+            y2="138"
+            stroke="#1e293b"
+            strokeWidth="2"
+            strokeDasharray="22 16"
+          />
+          {/* Car body */}
+          <rect x="10" y="72" width="280" height="56" fill="#2563eb" rx="10" />
+          {/* Cabin */}
+          <path d="M60 32 Q68 16 88 16 L212 16 Q232 16 240 32 L258 72 L42 72Z" fill="#1d4ed8" />
+          {/* Windshield */}
+          <path d="M70 36 Q76 22 90 22 L148 22 L160 36Z" fill="#bfdbfe" opacity="0.85" />
+          {/* Rear window */}
+          <path d="M166 36 L178 22 L210 22 Q224 22 230 36Z" fill="#bfdbfe" opacity="0.62" />
+          {/* B-pillar */}
+          <rect x="161" y="19" width="6" height="20" fill="#1e40af" />
+          {/* Headlight */}
+          <rect
+            x="278"
+            y="86"
+            width="18"
+            height="11"
+            fill="#fef08a"
+            rx="3"
+            className="anim-head-glow"
+          />
+          <rect
+            x="296"
+            y="88"
+            width="5"
+            height="7"
+            fill="#fef08a"
+            rx="1.5"
+            opacity="0.35"
+            className="anim-head-glow"
+          />
+          {/* Tail light */}
+          <rect
+            x="4"
+            y="86"
+            width="14"
+            height="11"
+            fill="#ef4444"
+            rx="3"
+            className="anim-tail-light"
+          />
+          {/* Front wheel */}
+          <ellipse cx="222" cy="128" rx="22" ry="18" fill="#111827" />
+          <g className="anim-wheel-spin">
+            <ellipse cx="222" cy="128" rx="12" ry="10" fill="#334155" />
+            <line
+              x1="222"
+              y1="118"
+              x2="222"
+              y2="138"
+              stroke="#60a5fa"
+              strokeWidth="2.5"
+              opacity="0.7"
+            />
+            <line
+              x1="212"
+              y1="128"
+              x2="232"
+              y2="128"
+              stroke="#60a5fa"
+              strokeWidth="2.5"
+              opacity="0.7"
+            />
+          </g>
+          {/* Rear wheel */}
+          <ellipse cx="78" cy="128" rx="22" ry="18" fill="#111827" />
+          <g className="anim-wheel-spin">
+            <ellipse cx="78" cy="128" rx="12" ry="10" fill="#334155" />
+            <line
+              x1="78"
+              y1="118"
+              x2="78"
+              y2="138"
+              stroke="#60a5fa"
+              strokeWidth="2.5"
+              opacity="0.7"
+            />
+            <line
+              x1="68"
+              y1="128"
+              x2="88"
+              y2="128"
+              stroke="#60a5fa"
+              strokeWidth="2.5"
+              opacity="0.7"
+            />
+          </g>
+        </svg>
+        <h1
+          style={{
+            fontSize: 'clamp(24px, 5vw, 36px)',
+            fontWeight: 900,
+            margin: '12px 0 6px',
+            letterSpacing: '-0.03em',
+            lineHeight: 1.1,
+            color: 'white',
+          }}
+        >
+          Awesome Learn Driving
+        </h1>
+        <p style={{ color: '#94a3b8', fontSize: 14, margin: 0 }}>Safe Driving Makes Happy Life</p>
       </div>
 
       {/* Sort controls */}
@@ -156,7 +241,7 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
         <div
           style={{
             fontSize: 14,
-            color: '#64748b',
+            color: '#94a3b8',
             marginBottom: 8,
             display: 'flex',
             alignItems: 'center',
@@ -176,7 +261,7 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
                 border: '1px solid',
                 borderColor: sortKey === opt.key ? '#60a5fa' : '#334155',
                 background: sortKey === opt.key ? '#1e3a5f' : '#1e293b',
-                color: sortKey === opt.key ? '#93c5fd' : '#64748b',
+                color: sortKey === opt.key ? '#93c5fd' : '#94a3b8',
                 fontSize: 14,
                 cursor: 'pointer',
                 fontWeight: sortKey === opt.key ? 600 : 400,
@@ -188,9 +273,6 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
           ))}
         </div>
       </div>
-
-      {/* Frequency data source panel */}
-      {isFreqSort && <FrequencyInfoPanel />}
 
       <div className="scenario-list">
         {sorted.map((sc) => {
@@ -223,7 +305,7 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
                   </span>
                   {done && <span style={{ color: '#4ade80', fontSize: 14 }}>✓ 完成</span>}
                 </div>
-                <div style={{ color: '#64748b', fontSize: 14, marginBottom: 4 }}>{sc.subtitle}</div>
+                <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 4 }}>{sc.subtitle}</div>
                 <div style={{ fontSize: 14, fontWeight: 600, color: sc.difficultyColor }}>
                   難度：{sc.difficulty}
                 </div>
@@ -238,12 +320,13 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
           );
         })}
       </div>
+      <FrequencyInfoPanel />
       <p
         style={{
           textAlign: 'center',
-          color: '#334155',
+          color: '#64748b',
           fontSize: 14,
-          marginTop: 24,
+          marginTop: 16,
           paddingBottom: 8,
         }}
       >

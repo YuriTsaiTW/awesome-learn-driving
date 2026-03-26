@@ -81,7 +81,7 @@ function App() {
   }
 
   return (
-    <AppLayout>
+    <AppLayout completed={completed}>
       <Routes>
         <Route path="/" element={<HomeScreen onSelect={select} completed={completed} />} />
         <Route

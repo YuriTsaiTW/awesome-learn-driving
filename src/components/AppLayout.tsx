@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { SCENARIOS } from '../data/scenarios';
 
 const SIDEBAR_W = 260;
 
 const NAV_ITEMS = [
-  { label: '情境訓練', path: '/', icon: '📋' },
+  { label: '情境訓練', path: '/', icon: '🛞' },
   { label: '筆試測驗', path: '/exam', icon: '📝' },
 ];
 
@@ -16,7 +17,7 @@ function useActiveNav() {
   };
 }
 
-function SidebarBody({ onClose }: { onClose?: () => void }) {
+function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: string[] }) {
   const navigate = useNavigate();
   const isActive = useActiveNav();
 
@@ -27,70 +28,30 @@ function SidebarBody({ onClose }: { onClose?: () => void }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      {/* Logo + title */}
+      {/* Compact brand header */}
       <div style={{ padding: '20px 16px 16px', borderBottom: '1px solid #1e293b' }}>
-        <svg viewBox="0 0 120 72" width="84" height="50" style={{ display: 'block' }}>
-          {/* Body */}
-          <rect x="8" y="34" width="104" height="28" fill="#1d4ed8" rx="6" />
-          {/* Cabin */}
-          <rect x="26" y="14" width="68" height="24" fill="#1e40af" rx="7" />
-          {/* Windshield */}
-          <rect x="30" y="17" width="28" height="16" fill="#93c5fd" rx="3" opacity="0.75" />
-          {/* Rear window */}
-          <rect x="62" y="17" width="24" height="16" fill="#93c5fd" rx="3" opacity="0.6" />
-          {/* Headlight */}
-          <rect
-            x="106"
-            y="40"
-            width="8"
-            height="6"
-            fill="#fef08a"
-            rx="2"
-            className="anim-head-glow"
-          />
-          {/* Headlight beam */}
-          <rect
-            x="114"
-            y="41"
-            width="5"
-            height="4"
-            fill="#fef08a"
-            rx="1"
-            opacity="0.4"
-            className="anim-head-glow"
-          />
-          {/* Tail light */}
-          <rect
-            x="6"
-            y="40"
-            width="6"
-            height="6"
-            fill="#ef4444"
-            rx="2"
-            className="anim-tail-light"
-          />
-          {/* Front wheel */}
-          <ellipse cx="88" cy="62" rx="13" ry="10" fill="#111827" />
-          <g className="anim-wheel-spin">
-            <ellipse cx="88" cy="62" rx="7" ry="5.5" fill="#334155" />
-            <line x1="88" y1="57" x2="88" y2="67" stroke="#475569" strokeWidth="1.5" />
-            <line x1="83" y1="62" x2="93" y2="62" stroke="#475569" strokeWidth="1.5" />
-          </g>
-          {/* Rear wheel */}
-          <ellipse cx="32" cy="62" rx="13" ry="10" fill="#111827" />
-          <g className="anim-wheel-spin">
-            <ellipse cx="32" cy="62" rx="7" ry="5.5" fill="#334155" />
-            <line x1="32" y1="57" x2="32" y2="67" stroke="#475569" strokeWidth="1.5" />
-            <line x1="27" y1="62" x2="37" y2="62" stroke="#475569" strokeWidth="1.5" />
-          </g>
-        </svg>
         <div
-          style={{ fontSize: 14, fontWeight: 900, color: 'white', marginTop: 10, lineHeight: 1.35 }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 8,
+            padding: '8px 12px',
+            borderRadius: 12,
+            background: 'rgba(37,99,235,0.08)',
+            border: '1px solid rgba(96,165,250,0.1)',
+          }}
         >
-          Awesome Learn Driving
-        </div>
-        <div style={{ fontSize: 11, color: '#475569', marginTop: 3 }}>
-          Safe Driving Makes Happy Life
+          <span style={{ fontSize: 18, lineHeight: 1 }}>🚗</span>
+          <span
+            style={{
+              fontSize: 13,
+              fontWeight: 800,
+              color: '#60a5fa',
+              letterSpacing: '-0.01em',
+            }}
+          >
+            Awesome Learn Driving
+          </span>
         </div>
       </div>
 
@@ -113,7 +74,7 @@ function SidebarBody({ onClose }: { onClose?: () => void }) {
                 borderRadius: 12,
                 border: 'none',
                 background: active ? '#1e3a5f' : 'transparent',
-                color: active ? '#93c5fd' : '#64748b',
+                color: active ? '#93c5fd' : '#94a3b8',
                 fontSize: 14,
                 fontWeight: active ? 700 : 400,
                 cursor: 'pointer',
@@ -144,6 +105,63 @@ function SidebarBody({ onClose }: { onClose?: () => void }) {
             </button>
           );
         })}
+
+        {/* Scenario stats — visible only on 情境訓練 routes */}
+        {isActive('/') && (
+          <div
+            style={{
+              margin: '8px 4px 0',
+              padding: '12px 14px',
+              borderRadius: 14,
+              background: '#0f172a',
+              border: '1px solid #1e293b',
+            }}
+          >
+            <div
+              style={{
+                fontSize: 11,
+                color: '#475569',
+                fontWeight: 600,
+                marginBottom: 10,
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+              }}
+            >
+              情境訓練進度
+            </div>
+            {(
+              [
+                { val: SCENARIOS.length, label: '情境數', color: '#fbbf24' },
+                { val: completed.length, label: '已完成', color: '#4ade80' },
+                {
+                  val:
+                    completed.length > 0
+                      ? Math.round((completed.length / SCENARIOS.length) * 100) + '%'
+                      : '0%',
+                  label: '進度',
+                  color: '#60a5fa',
+                },
+              ] as { val: string | number; label: string; color: string }[]
+            ).map(function (s, i, arr) {
+              return (
+                <div
+                  key={s.label}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    paddingBottom: i < arr.length - 1 ? 8 : 0,
+                    marginBottom: i < arr.length - 1 ? 8 : 0,
+                    borderBottom: i < arr.length - 1 ? '1px solid #1e293b' : 'none',
+                  }}
+                >
+                  <span style={{ fontSize: 13, color: '#64748b' }}>{s.label}</span>
+                  <span style={{ fontSize: 15, fontWeight: 800, color: s.color }}>{s.val}</span>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </nav>
 
       {/* Footer links */}
@@ -166,16 +184,16 @@ function SidebarBody({ onClose }: { onClose?: () => void }) {
             gap: 7,
             padding: '8px 12px',
             borderRadius: 10,
-            color: '#475569',
+            color: '#94a3b8',
             fontSize: 13,
             textDecoration: 'none',
             transition: 'color 0.15s',
           }}
           onMouseEnter={function (e) {
-            e.currentTarget.style.color = '#94a3b8';
+            e.currentTarget.style.color = '#e2e8f0';
           }}
           onMouseLeave={function (e) {
-            e.currentTarget.style.color = '#475569';
+            e.currentTarget.style.color = '#94a3b8';
           }}
         >
           <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
@@ -193,16 +211,16 @@ function SidebarBody({ onClose }: { onClose?: () => void }) {
             gap: 7,
             padding: '8px 12px',
             borderRadius: 10,
-            color: '#475569',
+            color: '#94a3b8',
             fontSize: 13,
             textDecoration: 'none',
             transition: 'color 0.15s',
           }}
           onMouseEnter={function (e) {
-            e.currentTarget.style.color = '#94a3b8';
+            e.currentTarget.style.color = '#e2e8f0';
           }}
           onMouseLeave={function (e) {
-            e.currentTarget.style.color = '#475569';
+            e.currentTarget.style.color = '#94a3b8';
           }}
         >
           ☕ 小額支持
@@ -212,14 +230,14 @@ function SidebarBody({ onClose }: { onClose?: () => void }) {
   );
 }
 
-function AppLayout({ children }: { children: React.ReactNode }) {
+function AppLayout({ children, completed }: { children: React.ReactNode; completed: string[] }) {
   const [open, setOpen] = useState(false);
 
   return (
     <div style={{ background: 'linear-gradient(160deg,#0f172a,#1e293b)', minHeight: '100vh' }}>
       {/* Desktop sidebar */}
       <aside className="app-sidebar">
-        <SidebarBody />
+        <SidebarBody completed={completed} />
       </aside>
 
       {/* Mobile top toolbar */}
@@ -298,6 +316,7 @@ function AppLayout({ children }: { children: React.ReactNode }) {
               </button>
             </div>
             <SidebarBody
+              completed={completed}
               onClose={function () {
                 setOpen(false);
               }}
