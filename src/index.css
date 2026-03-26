@@ -449,6 +449,37 @@ body {
   }
 }
 
+/* === App Layout (sidebar + toolbar) === */
+
+/* Mobile: fixed top toolbar */
+.app-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: #0f172a;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 8px;
+  z-index: 30;
+}
+
+/* Desktop: sidebar hidden on mobile */
+.app-sidebar {
+  display: none;
+}
+
+/* Content area */
+.app-content {
+  padding-top: 56px; /* toolbar height */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
 /* === Desktop Responsive Layouts (≥1024px) === */
 
 /* Defaults (mobile-first) */
@@ -458,6 +489,10 @@ body {
 }
 .flow-inner {
   max-width: 520px;
+  margin: 0 auto;
+}
+.exam-inner {
+  max-width: 600px;
   margin: 0 auto;
 }
 .scenario-list {
@@ -521,12 +556,39 @@ body {
 }
 
 @media (min-width: 1024px) {
+  /* Desktop sidebar */
+  .app-toolbar {
+    display: none;
+  }
+  .app-sidebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    background: #0f172a;
+    border-right: 1px solid #1e293b;
+    z-index: 20;
+    overflow-y: auto;
+  }
+  .app-content {
+    margin-left: 260px;
+    padding-top: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+  }
+
   /* Wider containers */
   .home-inner {
     max-width: 1100px;
   }
   .flow-inner {
     max-width: 900px;
+  }
+  .exam-inner {
+    max-width: 800px;
   }
 
   /* HomeScreen: 3-column vertical card grid */

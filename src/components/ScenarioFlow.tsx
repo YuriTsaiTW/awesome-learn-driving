@@ -75,112 +75,96 @@ const ScenarioFlow = ({ scenario, onBack, onComplete, isCompleted }: ScenarioFlo
   const inReview = isCompleted && phase !== 'pick';
 
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        padding: '16px',
-        background: 'linear-gradient(160deg,#0f172a,#1e293b)',
-      }}
-    >
-      <div className="flow-inner">
-        {/* Header */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-          <button
-            onClick={
-              phase === 'pick' || !isCompleted
-                ? onBack
-                : function () {
-                    setPhase('pick');
-                  }
-            }
-            style={{
-              background: 'transparent',
-              border: '1px solid #334155',
-              borderRadius: 12,
-              color: '#94a3b8',
-              padding: '6px 12px',
-              cursor: 'pointer',
-              fontSize: 14,
-              transition: 'color 0.15s, border-color 0.15s',
-              flexShrink: 0,
-            }}
-            onMouseEnter={function (e) {
-              e.currentTarget.style.color = 'white';
-              e.currentTarget.style.borderColor = '#64748b';
-            }}
-            onMouseLeave={function (e) {
-              e.currentTarget.style.color = '#94a3b8';
-              e.currentTarget.style.borderColor = '#334155';
-            }}
-          >
-            {phase === 'pick' || !isCompleted ? '\u2190 返回' : '\u2630 選單'}
-          </button>
+    <div className="flow-inner">
+      {/* Header */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+        <button
+          onClick={
+            phase === 'pick' || !isCompleted
+              ? onBack
+              : function () {
+                  setPhase('pick');
+                }
+          }
+          style={{
+            background: 'transparent',
+            border: '1px solid #334155',
+            borderRadius: 12,
+            color: '#94a3b8',
+            padding: '6px 12px',
+            cursor: 'pointer',
+            fontSize: 14,
+            transition: 'color 0.15s, border-color 0.15s',
+            flexShrink: 0,
+          }}
+          onMouseEnter={function (e) {
+            e.currentTarget.style.color = 'white';
+            e.currentTarget.style.borderColor = '#64748b';
+          }}
+          onMouseLeave={function (e) {
+            e.currentTarget.style.color = '#94a3b8';
+            e.currentTarget.style.borderColor = '#334155';
+          }}
+        >
+          {phase === 'pick' || !isCompleted ? '\u2190 返回' : '\u2630 選單'}
+        </button>
+        <div
+          style={{
+            color: 'white',
+            fontWeight: 800,
+            fontSize: 15,
+            flex: 1,
+            minWidth: 0,
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {scenario.title}
+        </div>
+        {inReview && (
           <div
             style={{
-              color: 'white',
-              fontWeight: 800,
-              fontSize: 15,
-              flex: 1,
-              minWidth: 0,
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              whiteSpace: 'nowrap',
+              background: 'rgba(34,197,94,0.15)',
+              border: '1px solid rgba(34,197,94,0.4)',
+              borderRadius: 20,
+              padding: '3px 10px',
+              fontSize: 14,
+              color: '#4ade80',
+              fontWeight: 700,
+              flexShrink: 0,
             }}
           >
-            {scenario.title}
+            複習中
           </div>
-          {inReview && (
-            <div
-              style={{
-                background: 'rgba(34,197,94,0.15)',
-                border: '1px solid rgba(34,197,94,0.4)',
-                borderRadius: 20,
-                padding: '3px 10px',
-                fontSize: 14,
-                color: '#4ade80',
-                fontWeight: 700,
-                flexShrink: 0,
-              }}
-            >
-              複習中
-            </div>
-          )}
-        </div>
-
-        {/* Phase bar — hidden on picker screen */}
-        {phase !== 'pick' && <PhaseBar phase={phase} />}
-
-        {phase === 'pick' && (
-          <ReviewPicker scenario={scenario} onPick={handlePick} onRestart={handleRestart} />
-        )}
-        {phase === 'intro' && (
-          <IntroPhase scenario={scenario} onNext={() => setPhase('decision')} />
-        )}
-        {phase === 'decision' && <DecisionPhase scenario={scenario} onDecide={handleDecide} />}
-        {phase === 'consequence' && choice && (
-          <ConsequencePhase
-            scenario={scenario}
-            choice={choice}
-            onNext={() => setPhase('learning')}
-          />
-        )}
-        {phase === 'learning' && (
-          <LearningPhase scenario={scenario} onNext={() => setPhase('quiz')} />
-        )}
-        {phase === 'quiz' && <QuizPhase scenario={scenario} onComplete={handleQuizDone} />}
-        {phase === 'simulation' && (
-          <SimulationPhase scenario={scenario} onComplete={handleSimDone} />
-        )}
-        {phase === 'result' && quizResult && (
-          <ResultPhase
-            scenario={scenario}
-            score={quizResult.score}
-            total={quizResult.total}
-            onHome={onBack}
-            onRetry={handleRetry}
-          />
         )}
       </div>
+
+      {/* Phase bar — hidden on picker screen */}
+      {phase !== 'pick' && <PhaseBar phase={phase} />}
+
+      {phase === 'pick' && (
+        <ReviewPicker scenario={scenario} onPick={handlePick} onRestart={handleRestart} />
+      )}
+      {phase === 'intro' && <IntroPhase scenario={scenario} onNext={() => setPhase('decision')} />}
+      {phase === 'decision' && <DecisionPhase scenario={scenario} onDecide={handleDecide} />}
+      {phase === 'consequence' && choice && (
+        <ConsequencePhase scenario={scenario} choice={choice} onNext={() => setPhase('learning')} />
+      )}
+      {phase === 'learning' && (
+        <LearningPhase scenario={scenario} onNext={() => setPhase('quiz')} />
+      )}
+      {phase === 'quiz' && <QuizPhase scenario={scenario} onComplete={handleQuizDone} />}
+      {phase === 'simulation' && <SimulationPhase scenario={scenario} onComplete={handleSimDone} />}
+      {phase === 'result' && quizResult && (
+        <ResultPhase
+          scenario={scenario}
+          score={quizResult.score}
+          total={quizResult.total}
+          onHome={onBack}
+          onRetry={handleRetry}
+        />
+      )}
     </div>
   );
 };
