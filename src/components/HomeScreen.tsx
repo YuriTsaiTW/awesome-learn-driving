@@ -121,83 +121,6 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
         background: 'linear-gradient(160deg,#0f172a,#1e293b)',
       }}
     >
-      {/* Top-right links */}
-      <div
-        style={{
-          position: 'fixed',
-          top: 14,
-          right: 16,
-          display: 'flex',
-          gap: 8,
-          zIndex: 100,
-        }}
-      >
-        <a
-          href="https://github.com/YuriTsaiTW/awesome-learn-driving"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 5,
-            padding: '6px 10px',
-            borderRadius: 10,
-            background: 'rgba(15,23,42,0.85)',
-            border: '1px solid #334155',
-            color: '#94a3b8',
-            fontSize: 13,
-            fontWeight: 600,
-            textDecoration: 'none',
-            backdropFilter: 'blur(6px)',
-            transition: 'border-color 0.15s, color 0.15s',
-          }}
-          onMouseEnter={function (e) {
-            e.currentTarget.style.borderColor = '#64748b';
-            e.currentTarget.style.color = 'white';
-          }}
-          onMouseLeave={function (e) {
-            e.currentTarget.style.borderColor = '#334155';
-            e.currentTarget.style.color = '#94a3b8';
-          }}
-        >
-          {/* GitHub icon */}
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-          </svg>
-          GitHub
-        </a>
-        <a
-          href="https://buymeacoffee.com/yurijournaltw"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 5,
-            padding: '6px 10px',
-            borderRadius: 10,
-            background: 'rgba(251,191,36,0.12)',
-            border: '1px solid rgba(251,191,36,0.35)',
-            color: '#fbbf24',
-            fontSize: 13,
-            fontWeight: 600,
-            textDecoration: 'none',
-            backdropFilter: 'blur(6px)',
-            transition: 'background 0.15s, border-color 0.15s',
-          }}
-          onMouseEnter={function (e) {
-            e.currentTarget.style.background = 'rgba(251,191,36,0.22)';
-            e.currentTarget.style.borderColor = 'rgba(251,191,36,0.6)';
-          }}
-          onMouseLeave={function (e) {
-            e.currentTarget.style.background = 'rgba(251,191,36,0.12)';
-            e.currentTarget.style.borderColor = 'rgba(251,191,36,0.35)';
-          }}
-        >
-          ☕ 小額支持
-        </a>
-      </div>
-
       <div className="home-inner">
         <div className="anim-fade" style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ marginBottom: 12, display: 'flex', justifyContent: 'center' }}>
@@ -394,6 +317,76 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
         <p style={{ textAlign: 'center', color: '#334155', fontSize: 14, marginTop: 24 }}>
           ⚠️ 本訓練內容僅供學習參考，實際緊急情況請依現場狀況判斷
         </p>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: 12,
+            marginTop: 16,
+            paddingBottom: 8,
+            flexWrap: 'wrap',
+          }}
+        >
+          <a
+            href="https://github.com/YuriTsaiTW/awesome-learn-driving"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 6,
+              padding: '6px 14px',
+              borderRadius: 20,
+              border: '1px solid #334155',
+              background: '#1e293b',
+              color: '#94a3b8',
+              fontSize: 14,
+              textDecoration: 'none',
+              transition: 'border-color 0.15s, color 0.15s',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = '#64748b';
+              e.currentTarget.style.color = 'white';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = '#334155';
+              e.currentTarget.style.color = '#94a3b8';
+            }}
+          >
+            <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            GitHub
+          </a>
+          <a
+            href="https://buymeacoffee.com/yurijournaltw"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 6,
+              padding: '6px 14px',
+              borderRadius: 20,
+              border: '1px solid #334155',
+              background: '#1e293b',
+              color: '#94a3b8',
+              fontSize: 14,
+              textDecoration: 'none',
+              transition: 'border-color 0.15s, color 0.15s',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = '#64748b';
+              e.currentTarget.style.color = 'white';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = '#334155';
+              e.currentTarget.style.color = '#94a3b8';
+            }}
+          >
+            ☕ 小額支持
+          </a>
+        </div>
       </div>
     </div>
   );
