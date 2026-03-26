@@ -121,6 +121,83 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
         background: 'linear-gradient(160deg,#0f172a,#1e293b)',
       }}
     >
+      {/* Top-right links */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 14,
+          right: 16,
+          display: 'flex',
+          gap: 8,
+          zIndex: 100,
+        }}
+      >
+        <a
+          href="https://github.com/YuriTsaiTW/awesome-learn-driving"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 5,
+            padding: '6px 10px',
+            borderRadius: 10,
+            background: 'rgba(15,23,42,0.85)',
+            border: '1px solid #334155',
+            color: '#94a3b8',
+            fontSize: 13,
+            fontWeight: 600,
+            textDecoration: 'none',
+            backdropFilter: 'blur(6px)',
+            transition: 'border-color 0.15s, color 0.15s',
+          }}
+          onMouseEnter={function (e) {
+            e.currentTarget.style.borderColor = '#64748b';
+            e.currentTarget.style.color = 'white';
+          }}
+          onMouseLeave={function (e) {
+            e.currentTarget.style.borderColor = '#334155';
+            e.currentTarget.style.color = '#94a3b8';
+          }}
+        >
+          {/* GitHub icon */}
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+          GitHub
+        </a>
+        <a
+          href="https://buymeacoffee.com/yurijournaltw"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 5,
+            padding: '6px 10px',
+            borderRadius: 10,
+            background: 'rgba(251,191,36,0.12)',
+            border: '1px solid rgba(251,191,36,0.35)',
+            color: '#fbbf24',
+            fontSize: 13,
+            fontWeight: 600,
+            textDecoration: 'none',
+            backdropFilter: 'blur(6px)',
+            transition: 'background 0.15s, border-color 0.15s',
+          }}
+          onMouseEnter={function (e) {
+            e.currentTarget.style.background = 'rgba(251,191,36,0.22)';
+            e.currentTarget.style.borderColor = 'rgba(251,191,36,0.6)';
+          }}
+          onMouseLeave={function (e) {
+            e.currentTarget.style.background = 'rgba(251,191,36,0.12)';
+            e.currentTarget.style.borderColor = 'rgba(251,191,36,0.35)';
+          }}
+        >
+          ☕ 請我喝咖啡
+        </a>
+      </div>
+
       <div className="home-inner">
         <div className="anim-fade" style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ marginBottom: 12, display: 'flex', justifyContent: 'center' }}>
