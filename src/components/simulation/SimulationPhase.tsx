@@ -146,6 +146,8 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
   useEffect(function () {
     function onMove(e: MouseEvent | TouchEvent) {
       if (!dragging.current) return;
+      // Prevent page scroll while dragging the wheel on touch devices
+      if ('touches' in e) e.preventDefault();
       const x =
         (e as MouseEvent).clientX !== undefined
           ? (e as MouseEvent).clientX
@@ -169,7 +171,7 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
     }
     window.addEventListener('mousemove', onMove);
     window.addEventListener('mouseup', onUp);
-    window.addEventListener('touchmove', onMove, { passive: true });
+    window.addEventListener('touchmove', onMove, { passive: false });
     window.addEventListener('touchend', onUp);
     return function () {
       window.removeEventListener('mousemove', onMove);
