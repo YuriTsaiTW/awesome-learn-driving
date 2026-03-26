@@ -194,7 +194,7 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
             e.currentTarget.style.borderColor = 'rgba(251,191,36,0.35)';
           }}
         >
-          ☕ 請我喝咖啡
+          ☕ 小額支持
         </a>
       </div>
 
