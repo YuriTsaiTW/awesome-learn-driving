@@ -38,6 +38,8 @@ const inputPath = args['input'];
 const category = args['category'];
 const startId = parseInt(args['start-id'] ?? '1', 10);
 const outputPath = args['output'];
+// For sign categories: path prefix for images (e.g. "signs/tf")
+const imagePrefix = args['image-prefix'] ?? null;
 
 const VALID_CATEGORIES = ['regulation-tf', 'regulation-mc', 'sign-tf', 'sign-mc', 'mechanical'];
 if (!inputPath || !category || !VALID_CATEGORIES.includes(category)) {
@@ -276,14 +278,20 @@ console.log(`Valid questions: ${built.length}`);
 
 if (built.length === 0) { console.error('No questions built — check PDF format.'); process.exit(1); }
 
-const examQuestions = built.map((q, i) => ({
-  id: formatId(startId + i),
-  category,
-  question: q.question,
-  options: q.options,
-  correct: q.correct,
-  explanation: makeExplanation(q),
-}));
+const examQuestions = built.map((q, i) => {
+  const base = {
+    id: formatId(startId + i),
+    category,
+    question: q.question,
+    options: q.options,
+    correct: q.correct,
+    explanation: makeExplanation(q),
+  };
+  if (imagePrefix) {
+    base.image = `${imagePrefix}/${String(i).padStart(3, '0')}.png`;
+  }
+  return base;
+});
 
 // ── Output ───────────────────────────────────────────────────────────────────
 

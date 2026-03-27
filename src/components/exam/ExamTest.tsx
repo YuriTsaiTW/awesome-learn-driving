@@ -279,9 +279,9 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
         {/* Question image */}
         {question.image && (
           <img
-            src={question.image}
+            src={`${import.meta.env.BASE_URL}${question.image}`}
             alt="題目圖片"
-            style={{ display: 'block', maxWidth: '100%', marginBottom: 12, borderRadius: 8 }}
+            style={{ display: 'block', maxWidth: 200, marginBottom: 12, borderRadius: 8 }}
           />
         )}
 

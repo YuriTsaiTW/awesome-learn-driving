@@ -11,6 +11,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/000.png',
   },
   {
     id: 'EQ-5002',
@@ -19,6 +20,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/001.png',
   },
   {
     id: 'EQ-5003',
@@ -27,6 +29,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/002.png',
   },
   {
     id: 'EQ-5004',
@@ -35,6 +38,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/003.png',
   },
   {
     id: 'EQ-5005',
@@ -43,6 +47,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/004.png',
   },
   {
     id: 'EQ-5006',
@@ -51,6 +56,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/005.png',
   },
   {
     id: 'EQ-5007',
@@ -59,6 +65,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/006.png',
   },
   {
     id: 'EQ-5008',
@@ -67,6 +74,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/007.png',
   },
   {
     id: 'EQ-5009',
@@ -75,6 +83,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/008.png',
   },
   {
     id: 'EQ-5010',
@@ -83,6 +92,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/009.png',
   },
   {
     id: 'EQ-5011',
@@ -91,6 +101,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/010.png',
   },
   {
     id: 'EQ-5012',
@@ -99,6 +110,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/011.png',
   },
   {
     id: 'EQ-5013',
@@ -107,6 +119,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/012.png',
   },
   {
     id: 'EQ-5014',
@@ -115,6 +128,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/013.png',
   },
   {
     id: 'EQ-5015',
@@ -123,6 +137,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/014.png',
   },
   {
     id: 'EQ-5016',
@@ -131,6 +146,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/015.png',
   },
   {
     id: 'EQ-5017',
@@ -139,6 +155,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/016.png',
   },
   {
     id: 'EQ-5018',
@@ -147,6 +164,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/017.png',
   },
   {
     id: 'EQ-5019',
@@ -155,6 +173,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/018.png',
   },
   {
     id: 'EQ-5020',
@@ -163,6 +182,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/019.png',
   },
   {
     id: 'EQ-5021',
@@ -171,6 +191,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/020.png',
   },
   {
     id: 'EQ-5022',
@@ -179,6 +200,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/021.png',
   },
   {
     id: 'EQ-5023',
@@ -187,6 +209,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/022.png',
   },
   {
     id: 'EQ-5024',
@@ -195,6 +218,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/023.png',
   },
   {
     id: 'EQ-5025',
@@ -203,6 +227,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/024.png',
   },
   {
     id: 'EQ-5026',
@@ -211,6 +236,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/025.png',
   },
   {
     id: 'EQ-5027',
@@ -219,6 +245,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/026.png',
   },
   {
     id: 'EQ-5028',
@@ -227,6 +254,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/027.png',
   },
   {
     id: 'EQ-5029',
@@ -235,6 +263,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/028.png',
   },
   {
     id: 'EQ-5030',
@@ -243,6 +272,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/029.png',
   },
   {
     id: 'EQ-5031',
@@ -251,6 +281,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/030.png',
   },
   {
     id: 'EQ-5032',
@@ -259,6 +290,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/031.png',
   },
   {
     id: 'EQ-5033',
@@ -267,6 +299,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/032.png',
   },
   {
     id: 'EQ-5034',
@@ -275,6 +308,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/033.png',
   },
   {
     id: 'EQ-5035',
@@ -283,6 +317,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/034.png',
   },
   {
     id: 'EQ-5036',
@@ -291,6 +326,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/035.png',
   },
   {
     id: 'EQ-5037',
@@ -299,6 +335,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/036.png',
   },
   {
     id: 'EQ-5038',
@@ -307,6 +344,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/037.png',
   },
   {
     id: 'EQ-5039',
@@ -315,6 +353,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/038.png',
   },
   {
     id: 'EQ-5040',
@@ -323,6 +362,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/039.png',
   },
   {
     id: 'EQ-5041',
@@ -331,6 +371,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/040.png',
   },
   {
     id: 'EQ-5042',
@@ -339,6 +380,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/041.png',
   },
   {
     id: 'EQ-5043',
@@ -347,6 +389,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/042.png',
   },
   {
     id: 'EQ-5044',
@@ -355,6 +398,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/043.png',
   },
   {
     id: 'EQ-5045',
@@ -363,6 +407,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/044.png',
   },
   {
     id: 'EQ-5046',
@@ -371,6 +416,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/045.png',
   },
   {
     id: 'EQ-5047',
@@ -379,6 +425,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/046.png',
   },
   {
     id: 'EQ-5048',
@@ -387,6 +434,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/047.png',
   },
   {
     id: 'EQ-5049',
@@ -395,6 +443,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/048.png',
   },
   {
     id: 'EQ-5050',
@@ -403,6 +452,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/049.png',
   },
   {
     id: 'EQ-5051',
@@ -411,6 +461,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/050.png',
   },
   {
     id: 'EQ-5052',
@@ -419,6 +470,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/051.png',
   },
   {
     id: 'EQ-5053',
@@ -427,6 +479,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/052.png',
   },
   {
     id: 'EQ-5054',
@@ -435,6 +488,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/053.png',
   },
   {
     id: 'EQ-5055',
@@ -443,6 +497,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/054.png',
   },
   {
     id: 'EQ-5056',
@@ -451,6 +506,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/055.png',
   },
   {
     id: 'EQ-5057',
@@ -459,6 +515,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/056.png',
   },
   {
     id: 'EQ-5058',
@@ -467,6 +524,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/057.png',
   },
   {
     id: 'EQ-5059',
@@ -475,6 +533,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/058.png',
   },
   {
     id: 'EQ-5060',
@@ -483,6 +542,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/059.png',
   },
   {
     id: 'EQ-5061',
@@ -491,6 +551,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/060.png',
   },
   {
     id: 'EQ-5062',
@@ -499,6 +560,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/061.png',
   },
   {
     id: 'EQ-5063',
@@ -507,6 +569,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/062.png',
   },
   {
     id: 'EQ-5064',
@@ -515,6 +578,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/063.png',
   },
   {
     id: 'EQ-5065',
@@ -523,6 +587,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/064.png',
   },
   {
     id: 'EQ-5066',
@@ -531,6 +596,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/065.png',
   },
   {
     id: 'EQ-5067',
@@ -539,6 +605,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/066.png',
   },
   {
     id: 'EQ-5068',
@@ -547,6 +614,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/067.png',
   },
   {
     id: 'EQ-5069',
@@ -555,6 +623,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/068.png',
   },
   {
     id: 'EQ-5070',
@@ -563,6 +632,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/069.png',
   },
   {
     id: 'EQ-5071',
@@ -571,6 +641,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/070.png',
   },
   {
     id: 'EQ-5072',
@@ -579,6 +650,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/071.png',
   },
   {
     id: 'EQ-5073',
@@ -587,6 +659,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/072.png',
   },
   {
     id: 'EQ-5074',
@@ -595,6 +668,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/073.png',
   },
   {
     id: 'EQ-5075',
@@ -603,6 +677,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/074.png',
   },
   {
     id: 'EQ-5076',
@@ -611,6 +686,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/075.png',
   },
   {
     id: 'EQ-5077',
@@ -619,6 +695,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/076.png',
   },
   {
     id: 'EQ-5078',
@@ -627,6 +704,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/077.png',
   },
   {
     id: 'EQ-5079',
@@ -635,6 +713,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/078.png',
   },
   {
     id: 'EQ-5080',
@@ -643,6 +722,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/079.png',
   },
   {
     id: 'EQ-5081',
@@ -651,6 +731,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/080.png',
   },
   {
     id: 'EQ-5082',
@@ -659,6 +740,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/081.png',
   },
   {
     id: 'EQ-5083',
@@ -667,6 +749,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/082.png',
   },
   {
     id: 'EQ-5084',
@@ -675,6 +758,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/083.png',
   },
   {
     id: 'EQ-5085',
@@ -683,6 +767,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/084.png',
   },
   {
     id: 'EQ-5086',
@@ -691,6 +776,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/085.png',
   },
   {
     id: 'EQ-5087',
@@ -699,6 +785,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/086.png',
   },
   {
     id: 'EQ-5088',
@@ -707,6 +794,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/087.png',
   },
   {
     id: 'EQ-5089',
@@ -715,6 +803,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/088.png',
   },
   {
     id: 'EQ-5090',
@@ -723,6 +812,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/089.png',
   },
   {
     id: 'EQ-5091',
@@ -731,6 +821,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/090.png',
   },
   {
     id: 'EQ-5092',
@@ -739,6 +830,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/091.png',
   },
   {
     id: 'EQ-5093',
@@ -747,6 +839,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/092.png',
   },
   {
     id: 'EQ-5094',
@@ -755,6 +848,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/093.png',
   },
   {
     id: 'EQ-5095',
@@ -763,6 +857,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/094.png',
   },
   {
     id: 'EQ-5096',
@@ -771,6 +866,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/095.png',
   },
   {
     id: 'EQ-5097',
@@ -779,6 +875,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/096.png',
   },
   {
     id: 'EQ-5098',
@@ -787,6 +884,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/097.png',
   },
   {
     id: 'EQ-5099',
@@ -795,6 +893,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/098.png',
   },
   {
     id: 'EQ-5100',
@@ -803,6 +902,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/099.png',
   },
   {
     id: 'EQ-5101',
@@ -811,6 +911,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/100.png',
   },
   {
     id: 'EQ-5102',
@@ -819,6 +920,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/101.png',
   },
   {
     id: 'EQ-5103',
@@ -827,6 +929,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/102.png',
   },
   {
     id: 'EQ-5104',
@@ -835,6 +938,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/103.png',
   },
   {
     id: 'EQ-5105',
@@ -843,6 +947,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/104.png',
   },
   {
     id: 'EQ-5106',
@@ -851,6 +956,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/105.png',
   },
   {
     id: 'EQ-5107',
@@ -859,6 +965,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/106.png',
   },
   {
     id: 'EQ-5108',
@@ -867,6 +974,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/107.png',
   },
   {
     id: 'EQ-5109',
@@ -875,6 +983,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/108.png',
   },
   {
     id: 'EQ-5110',
@@ -883,6 +992,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/109.png',
   },
   {
     id: 'EQ-5111',
@@ -891,6 +1001,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/110.png',
   },
   {
     id: 'EQ-5112',
@@ -899,6 +1010,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/111.png',
   },
   {
     id: 'EQ-5113',
@@ -907,6 +1019,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/112.png',
   },
   {
     id: 'EQ-5114',
@@ -915,6 +1028,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/113.png',
   },
   {
     id: 'EQ-5115',
@@ -923,6 +1037,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/114.png',
   },
   {
     id: 'EQ-5116',
@@ -931,6 +1046,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/115.png',
   },
   {
     id: 'EQ-5117',
@@ -939,6 +1055,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/116.png',
   },
   {
     id: 'EQ-5118',
@@ -947,6 +1064,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/117.png',
   },
   {
     id: 'EQ-5119',
@@ -955,6 +1073,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/118.png',
   },
   {
     id: 'EQ-5120',
@@ -963,6 +1082,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/119.png',
   },
   {
     id: 'EQ-5121',
@@ -971,6 +1091,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/120.png',
   },
   {
     id: 'EQ-5122',
@@ -979,6 +1100,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/121.png',
   },
   {
     id: 'EQ-5123',
@@ -987,6 +1109,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/122.png',
   },
   {
     id: 'EQ-5124',
@@ -995,6 +1118,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/123.png',
   },
   {
     id: 'EQ-5125',
@@ -1003,6 +1127,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/124.png',
   },
   {
     id: 'EQ-5126',
@@ -1011,6 +1136,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/125.png',
   },
   {
     id: 'EQ-5127',
@@ -1019,6 +1145,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/126.png',
   },
   {
     id: 'EQ-5128',
@@ -1027,6 +1154,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/127.png',
   },
   {
     id: 'EQ-5129',
@@ -1035,6 +1163,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/128.png',
   },
   {
     id: 'EQ-5130',
@@ -1043,6 +1172,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/129.png',
   },
   {
     id: 'EQ-5131',
@@ -1051,6 +1181,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/130.png',
   },
   {
     id: 'EQ-5132',
@@ -1059,6 +1190,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/131.png',
   },
   {
     id: 'EQ-5133',
@@ -1067,6 +1199,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/132.png',
   },
   {
     id: 'EQ-5134',
@@ -1075,6 +1208,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/133.png',
   },
   {
     id: 'EQ-5135',
@@ -1083,6 +1217,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/134.png',
   },
   {
     id: 'EQ-5136',
@@ -1091,6 +1226,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/135.png',
   },
   {
     id: 'EQ-5137',
@@ -1099,6 +1235,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/136.png',
   },
   {
     id: 'EQ-5138',
@@ -1107,6 +1244,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/137.png',
   },
   {
     id: 'EQ-5139',
@@ -1115,6 +1253,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/138.png',
   },
   {
     id: 'EQ-5140',
@@ -1123,6 +1262,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/139.png',
   },
   {
     id: 'EQ-5141',
@@ -1131,6 +1271,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/140.png',
   },
   {
     id: 'EQ-5142',
@@ -1139,6 +1280,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/141.png',
   },
   {
     id: 'EQ-5143',
@@ -1147,6 +1289,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/142.png',
   },
   {
     id: 'EQ-5144',
@@ -1155,6 +1298,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/143.png',
   },
   {
     id: 'EQ-5145',
@@ -1163,6 +1307,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/144.png',
   },
   {
     id: 'EQ-5146',
@@ -1171,6 +1316,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/145.png',
   },
   {
     id: 'EQ-5147',
@@ -1180,6 +1326,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/146.png',
   },
   {
     id: 'EQ-5148',
@@ -1189,6 +1336,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/147.png',
   },
   {
     id: 'EQ-5149',
@@ -1197,6 +1345,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/148.png',
   },
   {
     id: 'EQ-5150',
@@ -1205,6 +1354,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/149.png',
   },
   {
     id: 'EQ-5151',
@@ -1213,6 +1363,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/150.png',
   },
   {
     id: 'EQ-5152',
@@ -1221,6 +1372,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/151.png',
   },
   {
     id: 'EQ-5153',
@@ -1229,6 +1381,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/152.png',
   },
   {
     id: 'EQ-5154',
@@ -1237,6 +1390,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/153.png',
   },
   {
     id: 'EQ-5155',
@@ -1245,6 +1399,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/154.png',
   },
   {
     id: 'EQ-5156',
@@ -1253,6 +1408,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/155.png',
   },
   {
     id: 'EQ-5157',
@@ -1261,6 +1417,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/156.png',
   },
   {
     id: 'EQ-5158',
@@ -1269,6 +1426,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/157.png',
   },
   {
     id: 'EQ-5159',
@@ -1277,6 +1435,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/158.png',
   },
   {
     id: 'EQ-5160',
@@ -1285,6 +1444,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/159.png',
   },
   {
     id: 'EQ-5161',
@@ -1293,6 +1453,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/160.png',
   },
   {
     id: 'EQ-5162',
@@ -1301,6 +1462,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/161.png',
   },
   {
     id: 'EQ-5163',
@@ -1309,6 +1471,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/162.png',
   },
   {
     id: 'EQ-5164',
@@ -1317,6 +1480,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/163.png',
   },
   {
     id: 'EQ-5165',
@@ -1325,6 +1489,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/164.png',
   },
   {
     id: 'EQ-5166',
@@ -1333,6 +1498,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/165.png',
   },
   {
     id: 'EQ-5167',
@@ -1341,6 +1507,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/166.png',
   },
   {
     id: 'EQ-5168',
@@ -1349,6 +1516,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/167.png',
   },
   {
     id: 'EQ-5169',
@@ -1357,6 +1525,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/168.png',
   },
   {
     id: 'EQ-5170',
@@ -1365,6 +1534,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/169.png',
   },
   {
     id: 'EQ-5171',
@@ -1373,6 +1543,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/170.png',
   },
   {
     id: 'EQ-5172',
@@ -1381,6 +1552,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/171.png',
   },
   {
     id: 'EQ-5173',
@@ -1389,6 +1561,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/172.png',
   },
   {
     id: 'EQ-5174',
@@ -1397,6 +1570,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/173.png',
   },
   {
     id: 'EQ-5175',
@@ -1405,6 +1579,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/174.png',
   },
   {
     id: 'EQ-5176',
@@ -1413,6 +1588,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/175.png',
   },
   {
     id: 'EQ-5177',
@@ -1422,6 +1598,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/176.png',
   },
   {
     id: 'EQ-5178',
@@ -1431,6 +1608,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/177.png',
   },
   {
     id: 'EQ-5179',
@@ -1439,6 +1617,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/178.png',
   },
   {
     id: 'EQ-5180',
@@ -1447,6 +1626,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/179.png',
   },
   {
     id: 'EQ-5181',
@@ -1455,6 +1635,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/180.png',
   },
   {
     id: 'EQ-5182',
@@ -1463,6 +1644,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/181.png',
   },
   {
     id: 'EQ-5183',
@@ -1471,6 +1653,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/182.png',
   },
   {
     id: 'EQ-5184',
@@ -1479,6 +1662,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/183.png',
   },
   {
     id: 'EQ-5185',
@@ -1487,6 +1671,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/184.png',
   },
   {
     id: 'EQ-5186',
@@ -1495,6 +1680,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/185.png',
   },
   {
     id: 'EQ-5187',
@@ -1503,6 +1689,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/186.png',
   },
   {
     id: 'EQ-5188',
@@ -1511,6 +1698,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/187.png',
   },
   {
     id: 'EQ-5189',
@@ -1519,6 +1707,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/188.png',
   },
   {
     id: 'EQ-5190',
@@ -1527,6 +1716,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/189.png',
   },
   {
     id: 'EQ-5191',
@@ -1535,6 +1725,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/190.png',
   },
   {
     id: 'EQ-5192',
@@ -1543,6 +1734,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/191.png',
   },
   {
     id: 'EQ-5193',
@@ -1551,6 +1743,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/192.png',
   },
   {
     id: 'EQ-5194',
@@ -1559,6 +1752,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/193.png',
   },
   {
     id: 'EQ-5195',
@@ -1567,6 +1761,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/194.png',
   },
   {
     id: 'EQ-5196',
@@ -1575,6 +1770,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/195.png',
   },
   {
     id: 'EQ-5197',
@@ -1583,6 +1779,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/196.png',
   },
   {
     id: 'EQ-5198',
@@ -1591,6 +1788,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/197.png',
   },
   {
     id: 'EQ-5199',
@@ -1599,6 +1797,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/198.png',
   },
   {
     id: 'EQ-5200',
@@ -1607,6 +1806,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/199.png',
   },
   {
     id: 'EQ-5201',
@@ -1616,6 +1816,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/200.png',
   },
   {
     id: 'EQ-5202',
@@ -1625,6 +1826,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/201.png',
   },
   {
     id: 'EQ-5203',
@@ -1634,6 +1836,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/202.png',
   },
   {
     id: 'EQ-5204',
@@ -1643,6 +1846,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/203.png',
   },
   {
     id: 'EQ-5205',
@@ -1652,6 +1856,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/204.png',
   },
   {
     id: 'EQ-5206',
@@ -1660,6 +1865,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/205.png',
   },
   {
     id: 'EQ-5207',
@@ -1669,6 +1875,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/206.png',
   },
   {
     id: 'EQ-5208',
@@ -1678,6 +1885,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/207.png',
   },
   {
     id: 'EQ-5209',
@@ -1686,6 +1894,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/208.png',
   },
   {
     id: 'EQ-5210',
@@ -1694,6 +1903,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/209.png',
   },
   {
     id: 'EQ-5211',
@@ -1702,6 +1912,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/210.png',
   },
   {
     id: 'EQ-5212',
@@ -1710,6 +1921,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/211.png',
   },
   {
     id: 'EQ-5213',
@@ -1719,6 +1931,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/212.png',
   },
   {
     id: 'EQ-5214',
@@ -1728,6 +1941,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/213.png',
   },
   {
     id: 'EQ-5215',
@@ -1736,6 +1950,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/214.png',
   },
   {
     id: 'EQ-5216',
@@ -1745,6 +1960,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/215.png',
   },
   {
     id: 'EQ-5217',
@@ -1753,6 +1969,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/216.png',
   },
   {
     id: 'EQ-5218',
@@ -1761,6 +1978,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/217.png',
   },
   {
     id: 'EQ-5219',
@@ -1769,6 +1987,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/218.png',
   },
   {
     id: 'EQ-5220',
@@ -1777,6 +1996,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/219.png',
   },
   {
     id: 'EQ-5221',
@@ -1785,6 +2005,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/220.png',
   },
   {
     id: 'EQ-5222',
@@ -1793,6 +2014,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/221.png',
   },
   {
     id: 'EQ-5223',
@@ -1801,6 +2023,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/222.png',
   },
   {
     id: 'EQ-5224',
@@ -1809,6 +2032,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/223.png',
   },
   {
     id: 'EQ-5225',
@@ -1817,6 +2041,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/224.png',
   },
   {
     id: 'EQ-5226',
@@ -1825,6 +2050,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/225.png',
   },
   {
     id: 'EQ-5227',
@@ -1833,6 +2059,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/226.png',
   },
   {
     id: 'EQ-5228',
@@ -1841,6 +2068,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/227.png',
   },
   {
     id: 'EQ-5229',
@@ -1849,6 +2077,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/228.png',
   },
   {
     id: 'EQ-5230',
@@ -1857,6 +2086,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/229.png',
   },
   {
     id: 'EQ-5231',
@@ -1865,6 +2095,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/230.png',
   },
   {
     id: 'EQ-5232',
@@ -1873,6 +2104,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/231.png',
   },
   {
     id: 'EQ-5233',
@@ -1881,6 +2113,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/232.png',
   },
   {
     id: 'EQ-5234',
@@ -1889,6 +2122,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/233.png',
   },
   {
     id: 'EQ-5235',
@@ -1897,6 +2131,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/234.png',
   },
   {
     id: 'EQ-5236',
@@ -1905,6 +2140,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 1,
     explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    image: 'signs/tf/235.png',
   },
   {
     id: 'EQ-5237',
@@ -1913,6 +2149,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/236.png',
   },
   {
     id: 'EQ-5238',
@@ -1921,6 +2158,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/237.png',
   },
   {
     id: 'EQ-5239',
@@ -1929,6 +2167,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/238.png',
   },
   {
     id: 'EQ-5240',
@@ -1937,5 +2176,6 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     options: ['○（是）', 'X（否）'],
     correct: 0,
     explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    image: 'signs/tf/239.png',
   },
 ];

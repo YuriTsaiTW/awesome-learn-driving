@@ -238,6 +238,13 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
                     borderBottom: wi < wrongItems.length - 1 ? '1px solid #0f172a' : 'none',
                   }}
                 >
+                  {q.image && (
+                    <img
+                      src={`${import.meta.env.BASE_URL}${q.image}`}
+                      alt="題目圖片"
+                      style={{ display: 'block', maxWidth: 120, marginBottom: 8, borderRadius: 6 }}
+                    />
+                  )}
                   <div style={{ color: '#cbd5e1', fontSize: 13, fontWeight: 600, marginBottom: 8 }}>
                     {q.question}
                   </div>

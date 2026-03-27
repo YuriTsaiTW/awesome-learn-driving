@@ -11,6 +11,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['右彎', '左彎', '連續彎路先向 右'],
     correct: 0,
     explanation: '正確答案為「右彎」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/000.png',
   },
   {
     id: 'EQ-7002',
@@ -19,6 +20,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['左彎', '右彎', '連續彎路先向 左'],
     correct: 0,
     explanation: '正確答案為「左彎」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/001.png',
   },
   {
     id: 'EQ-7003',
@@ -27,6 +29,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['連續彎路先向右', '左彎', '連 續彎路先向左'],
     correct: 0,
     explanation: '正確答案為「連續彎路先向右」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/002.png',
   },
   {
     id: 'EQ-7004',
@@ -35,6 +38,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['連續彎路先向左', '右彎', '連 續彎路先向右'],
     correct: 0,
     explanation: '正確答案為「連續彎路先向左」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/003.png',
   },
   {
     id: 'EQ-7005',
@@ -43,6 +47,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['雙向道', '狹路', '岔路'],
     correct: 2,
     explanation: '正確答案為「岔路」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/004.png',
   },
   {
     id: 'EQ-7006',
@@ -51,6 +56,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['岔路', '雙向道', '此路不通'],
     correct: 0,
     explanation: '正確答案為「岔路」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/005.png',
   },
   {
     id: 'EQ-7007',
@@ -59,6 +65,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['右側車道縮減', '狹路', '匝道 會車'],
     correct: 0,
     explanation: '正確答案為「右側車道縮減」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/006.png',
   },
   {
     id: 'EQ-7008',
@@ -67,6 +74,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['狹路', '狹橋', '岔路'],
     correct: 0,
     explanation: '正確答案為「狹路」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/007.png',
   },
   {
     id: 'EQ-7009',
@@ -75,6 +83,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['岔路', '狹橋', '匝道會車'],
     correct: 2,
     explanation: '正確答案為「匝道會車」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/008.png',
   },
   {
     id: 'EQ-7010',
@@ -83,6 +92,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['單行道', '雙向道', '狹路'],
     correct: 1,
     explanation: '正確答案為「雙向道」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/009.png',
   },
   {
     id: 'EQ-7011',
@@ -91,6 +101,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['左彎', '圓環', '岔路'],
     correct: 1,
     explanation: '正確答案為「圓環」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/010.png',
   },
   {
     id: 'EQ-7012',
@@ -99,6 +110,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['路面顛簸', '路面高突', '路面 低窪'],
     correct: 0,
     explanation: '正確答案為「路面顛簸」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/011.png',
   },
   {
     id: 'EQ-7013',
@@ -107,6 +119,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['岔路', '狹橋', '狹路'],
     correct: 1,
     explanation: '正確答案為「狹橋」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/012.png',
   },
   {
     id: 'EQ-7014',
@@ -115,6 +128,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['路面顛簸', '險升坡', '路面高 突'],
     correct: 2,
     explanation: '正確答案為「路面高 突」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/013.png',
   },
   {
     id: 'EQ-7015',
@@ -123,6 +137,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['險降坡', '險升坡', '碼頭'],
     correct: 0,
     explanation: '正確答案為「險降坡」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/014.png',
   },
   {
     id: 'EQ-7016',
@@ -131,6 +146,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['右側斷崖', '注意落石', '左側 斷崖'],
     correct: 2,
     explanation: '正確答案為「左側 斷崖」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/015.png',
   },
   {
     id: 'EQ-7017',
@@ -139,6 +155,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['無柵門鐵路平交道', '有柵門鐵路平 交道', '禁止汽車進入'],
     correct: 0,
     explanation: '正確答案為「無柵門鐵路平交道」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/016.png',
   },
   {
     id: 'EQ-7018',
@@ -147,6 +164,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['注意號誌', '危險', '慢行'],
     correct: 0,
     explanation: '正確答案為「注意號誌」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/017.png',
   },
   {
     id: 'EQ-7019',
@@ -155,6 +173,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止汽車進入', '無柵門鐵路平交 道', '有柵門鐵路平交道'],
     correct: 2,
     explanation: '正確答案為「有柵門鐵路平交道」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/018.png',
   },
   {
     id: 'EQ-7020',
@@ -163,6 +182,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['路面高突', '路滑', '禁止超 車'],
     correct: 1,
     explanation: '正確答案為「路滑」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/019.png',
   },
   {
     id: 'EQ-7021',
@@ -171,6 +191,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['狹路', '隧道', '狹橋'],
     correct: 1,
     explanation: '正確答案為「隧道」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/020.png',
   },
   {
     id: 'EQ-7022',
@@ -179,6 +200,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止汽車進入', '當心台車', '當心行人 '],
     correct: 1,
     explanation: '正確答案為「當心台車」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/021.png',
   },
   {
     id: 'EQ-7023',
@@ -187,6 +209,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['當心行人', '當心兒童', '禁止 行人通行 '],
     correct: 1,
     explanation: '正確答案為「當心兒童」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/022.png',
   },
   {
     id: 'EQ-7024',
@@ -195,6 +218,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['當心兒童', '當心行人', '禁止 行人通行 '],
     correct: 1,
     explanation: '正確答案為「當心行人」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/023.png',
   },
   {
     id: 'EQ-7025',
@@ -203,6 +227,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['停車再開', '讓路', '慢行'],
     correct: 2,
     explanation: '正確答案為「慢行」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/024.png',
   },
   {
     id: 'EQ-7026',
@@ -211,6 +236,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['險降坡', '碼頭、堤岸', '路 滑'],
     correct: 1,
     explanation: '正確答案為「碼頭、堤岸」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/025.png',
   },
   {
     id: 'EQ-7027',
@@ -219,6 +245,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['危險路面', '注意左側落石', '注意右側落石'],
     correct: 2,
     explanation: '正確答案為「注意右側落石」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/026.png',
   },
   {
     id: 'EQ-7028',
@@ -227,6 +254,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['狹橋', '危險', '慢行'],
     correct: 1,
     explanation: '正確答案為「危險」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/027.png',
   },
   {
     id: 'EQ-7029',
@@ -235,6 +263,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['靠右行駛', '單行道', '可以右 轉'],
     correct: 0,
     explanation: '正確答案為「靠右行駛」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/028.png',
   },
   {
     id: 'EQ-7030',
@@ -243,6 +272,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止停車', '停車檢查', '禁止 汽車進入'],
     correct: 1,
     explanation: '正確答案為「停車檢查」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/029.png',
   },
   {
     id: 'EQ-7031',
@@ -251,6 +281,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止行人通行', '停車再開', '禁止任何車輛進入'],
     correct: 2,
     explanation: '正確答案為「禁止任何車輛進入」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/030.png',
   },
   {
     id: 'EQ-7032',
@@ -259,6 +290,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止行人通行', '禁止任何車輛進 入', '禁止四輪以上汽車進入'],
     correct: 2,
     explanation: '正確答案為「禁止四輪以上汽車進入」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/031.png',
   },
   {
     id: 'EQ-7033',
@@ -267,6 +299,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止任何車輛進入', '禁止聯結車進 入', '禁止大貨車及聯結車進入'],
     correct: 1,
     explanation: '正確答案為「禁止聯結車進 入」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/032.png',
   },
   {
     id: 'EQ-7034',
@@ -275,6 +308,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止大型重型機車以外之 機車進入', '禁止四輪以上汽車進入', '禁止任何 機車進入'],
     correct: 0,
     explanation: '正確答案為「禁止大型重型機車以外之 機車進入」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/033.png',
   },
   {
     id: 'EQ-7035',
@@ -283,6 +317,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止任何車輛進入', '禁止四輪以上 汽車及機車進入', '禁止行人通行'],
     correct: 1,
     explanation: '正確答案為「禁止四輪以上 汽車及機車進入」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/034.png',
   },
   {
     id: 'EQ-7036',
@@ -291,6 +326,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止迴車', '禁止左轉', '禁止 超車'],
     correct: 1,
     explanation: '正確答案為「禁止左轉」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/035.png',
   },
   {
     id: 'EQ-7037',
@@ -299,6 +335,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止超車', '禁止會車', '禁止 汽車進入 '],
     correct: 0,
     explanation: '正確答案為「禁止超車」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/036.png',
   },
   {
     id: 'EQ-7038',
@@ -307,6 +344,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止左轉', '禁止迴車', '禁止 會車'],
     correct: 1,
     explanation: '正確答案為「禁止迴車」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/037.png',
   },
   {
     id: 'EQ-7039',
@@ -315,6 +353,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['雙向道', '禁止會車', '分道'],
     correct: 1,
     explanation: '正確答案為「禁止會車」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/038.png',
   },
   {
     id: 'EQ-7040',
@@ -323,6 +362,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['車輛寬度限制', '單行道', '車 輛高度限制'],
     correct: 0,
     explanation: '正確答案為「車輛寬度限制」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/039.png',
   },
   {
     id: 'EQ-7041',
@@ -331,6 +371,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['車輛總重限制', '車輛載重限制', '車輛空重'],
     correct: 0,
     explanation: '正確答案為「車輛總重限制」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/040.png',
   },
   {
     id: 'EQ-7042',
@@ -339,6 +380,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止行人通行', '當心行人', '當心兒童'],
     correct: 0,
     explanation: '正確答案為「禁止行人通行」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/041.png',
   },
   {
     id: 'EQ-7043',
@@ -347,6 +389,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['最低速限', '最高速限', '車輛 總重限制'],
     correct: 1,
     explanation: '正確答案為「最高速限」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/042.png',
   },
   {
     id: 'EQ-7044',
@@ -355,6 +398,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止大貨車及聯結車進入', '禁止大 貨車進入', '禁止汽車進入'],
     correct: 0,
     explanation: '正確答案為「禁止大貨車及聯結車進入」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/043.png',
   },
   {
     id: 'EQ-7045',
@@ -363,6 +407,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['左彎', '左轉方向', '直行後左 轉'],
     correct: 2,
     explanation: '正確答案為「直行後左 轉」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/044.png',
   },
   {
     id: 'EQ-7046',
@@ -371,6 +416,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['單線電化鐵路平交道', '雙線以上電 化鐵路平交道', '單線鐵路平交道'],
     correct: 1,
     explanation: '正確答案為「雙線以上電 化鐵路平交道」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/045.png',
   },
   {
     id: 'EQ-7047',
@@ -379,6 +425,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['車輛長度限制', '車輛寬度限制', '禁止大貨車進入'],
     correct: 0,
     explanation: '正確答案為「車輛長度限制」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/046.png',
   },
   {
     id: 'EQ-7048',
@@ -387,6 +434,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['道路專行車輛', '禁行汽車', '禁止任何車輛進入'],
     correct: 0,
     explanation: '正確答案為「道路專行車輛」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/047.png',
   },
   {
     id: 'EQ-7049',
@@ -395,6 +443,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['圓環遵行方向', '分道', '單行 道'],
     correct: 0,
     explanation: '正確答案為「圓環遵行方向」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/048.png',
   },
   {
     id: 'EQ-7050',
@@ -403,6 +452,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['行人專用', '當心行人', '當心 兒童'],
     correct: 0,
     explanation: '正確答案為「行人專用」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/049.png',
   },
   {
     id: 'EQ-7051',
@@ -411,6 +461,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['省道路線編號', '市、縣道路線編 號', '國道路線編號'],
     correct: 1,
     explanation: '正確答案為「市、縣道路線編 號」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/050.png',
   },
   {
     id: 'EQ-7052',
@@ -419,6 +470,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['遵行方向', '救護站', '岔路'],
     correct: 1,
     explanation: '正確答案為「救護站」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/051.png',
   },
   {
     id: 'EQ-7053',
@@ -427,6 +479,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['岔路', '此路不通', '狹路'],
     correct: 1,
     explanation: '正確答案為「此路不通」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/052.png',
   },
   {
     id: 'EQ-7054',
@@ -435,6 +488,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['省道路線編號', '縣道路線編號', '國道路線編號'],
     correct: 0,
     explanation: '正確答案為「省道路線編號」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/053.png',
   },
   {
     id: 'EQ-7055',
@@ -443,6 +497,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['閃光黃燈', '行車管制號誌', '斑馬線閃光號誌'],
     correct: 1,
     explanation: '正確答案為「行車管制號誌」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/054.png',
   },
   {
     id: 'EQ-7056',
@@ -451,6 +506,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['斑馬線閃光號誌', '特種閃光「黃 燈」號誌', '閃光紅燈號誌'],
     correct: 1,
     explanation: '正確答案為「特種閃光「黃 燈」號誌」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/055.png',
   },
   {
     id: 'EQ-7057',
@@ -459,6 +515,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['行人專用號誌', '閃光黃燈', '行人穿越道號誌'],
     correct: 0,
     explanation: '正確答案為「行人專用號誌」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/056.png',
   },
   {
     id: 'EQ-7058',
@@ -467,6 +524,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['閃光黃燈', '閃光紅燈號誌', '行人穿越道號誌'],
     correct: 2,
     explanation: '正確答案為「行人穿越道號誌」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/057.png',
   },
   {
     id: 'EQ-7059',
@@ -475,6 +533,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['右道封閉', '左道封閉', '車輛 改道'],
     correct: 1,
     explanation: '正確答案為「左道封閉」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/058.png',
   },
   {
     id: 'EQ-7060',
@@ -483,6 +542,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['右道封閉', '左道封閉', '車輛 改道'],
     correct: 0,
     explanation: '正確答案為「右道封閉」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/059.png',
   },
   {
     id: 'EQ-7061',
@@ -491,6 +551,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['道路封閉', '車輛改道', '道路 施工'],
     correct: 2,
     explanation: '正確答案為「道路 施工」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/060.png',
   },
   {
     id: 'EQ-7062',
@@ -499,6 +560,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['左道封閉', '右道封閉', '車輛 改道'],
     correct: 2,
     explanation: '正確答案為「車輛 改道」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/061.png',
   },
   {
     id: 'EQ-7063',
@@ -507,6 +569,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['指示改道方向', '單行道', '右 轉方向指示'],
     correct: 0,
     explanation: '正確答案為「指示改道方向」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/062.png',
   },
   {
     id: 'EQ-7064',
@@ -515,6 +578,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['道路施工', '道路封閉', '車輛 改道'],
     correct: 1,
     explanation: '正確答案為「道路封閉」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/063.png',
   },
   {
     id: 'EQ-7065',
@@ -523,6 +587,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['救護站', '加油站', '修理站'],
     correct: 2,
     explanation: '正確答案為「修理站」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/064.png',
   },
   {
     id: 'EQ-7066',
@@ -531,6 +596,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['直行後右轉', '直行後左轉', '左轉遵行方向'],
     correct: 0,
     explanation: '正確答案為「直行後右轉」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/065.png',
   },
   {
     id: 'EQ-7067',
@@ -539,6 +605,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['人行天橋', '人行地下道', '停 車處'],
     correct: 1,
     explanation: '正確答案為「人行地下道」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/066.png',
   },
   {
     id: 'EQ-7068',
@@ -547,6 +614,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['汽車專行', '大客車專行', '自行車及大型重型機車以外之機車專 行'],
     correct: 2,
     explanation: '正確答案為「自行車及大型重型機車以外之機車專 行」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/067.png',
   },
   {
     id: 'EQ-7069',
@@ -555,6 +623,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['救護站', '修理站', '加油站'],
     correct: 2,
     explanation: '正確答案為「加油站」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/068.png',
   },
   {
     id: 'EQ-7070',
@@ -563,6 +632,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['餐旅服務', '加油站', '修理 站'],
     correct: 0,
     explanation: '正確答案為「餐旅服務」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/069.png',
   },
   {
     id: 'EQ-7071',
@@ -571,6 +641,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['左轉方向', '右轉方向', '左右 轉方向'],
     correct: 1,
     explanation: '正確答案為「右轉方向」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/070.png',
   },
   {
     id: 'EQ-7072',
@@ -579,6 +650,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁制標誌', '車輛故障標誌', '危險標誌'],
     correct: 1,
     explanation: '正確答案為「車輛故障標誌」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/071.png',
   },
   {
     id: 'EQ-7073',
@@ -587,6 +659,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['讓路線', '停止線', '路中障礙物體線'],
     correct: 0,
     explanation: '正確答案為「讓路線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/072.png',
   },
   {
     id: 'EQ-7074',
@@ -595,6 +668,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['停車線', '近障礙物線', '車輛 停放線'],
     correct: 2,
     explanation: '正確答案為「車輛 停放線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/073.png',
   },
   {
     id: 'EQ-7075',
@@ -603,6 +677,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['路面邊線', '車道線', '雙方禁止超車線'],
     correct: 0,
     explanation: '正確答案為「路面邊線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/074.png',
   },
   {
     id: 'EQ-7076',
@@ -611,6 +686,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['近障礙物線', '近鐵路平交道線', '路寬變更線'],
     correct: 2,
     explanation: '正確答案為「路寬變更線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/075.png',
   },
   {
     id: 'EQ-7077',
@@ -619,6 +695,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['斑馬紋行人穿越道線', '車道線', '路面邊線'],
     correct: 1,
     explanation: '正確答案為「車道線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/076.png',
   },
   {
     id: 'EQ-7078',
@@ -627,6 +704,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['近鐵路平交道線', '近障礙物線', '路寬變更線'],
     correct: 0,
     explanation: '正確答案為「近鐵路平交道線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/077.png',
   },
   {
     id: 'EQ-7079',
@@ -635,6 +713,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止停車線', '行車分向線', '指向線'],
     correct: 2,
     explanation: '正確答案為「指向線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/078.png',
   },
   {
     id: 'EQ-7080',
@@ -643,6 +722,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['單向禁止超車線', '雙向禁止超車線', '車道線'],
     correct: 1,
     explanation: '正確答案為「雙向禁止超車線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/079.png',
   },
   {
     id: 'EQ-7081',
@@ -651,6 +731,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['單向禁止超車線', '雙向禁止超車線', '車道線'],
     correct: 0,
     explanation: '正確答案為「單向禁止超車線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/080.png',
   },
   {
     id: 'EQ-7082',
@@ -659,6 +740,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['分向限制線', '雙向禁止超車線', '禁止變換車道線'],
     correct: 2,
     explanation: '正確答案為「禁止變換車道線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/081.png',
   },
   {
     id: 'EQ-7083',
@@ -667,6 +749,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止停車線', '禁 止臨時停車線', '車輛停放線'],
     correct: 0,
     explanation: '正確答案為「禁止停車線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/082.png',
   },
   {
     id: 'EQ-7084',
@@ -675,6 +758,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['禁止停車線', '禁 止臨時停車線', '車輛停放線'],
     correct: 1,
     explanation: '正確答案為「禁 止臨時停車線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/083.png',
   },
   {
     id: 'EQ-7085',
@@ -683,6 +767,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['車道線', '分向限 制線', '行車分向線'],
     correct: 2,
     explanation: '正確答案為「行車分向線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/084.png',
   },
   {
     id: 'EQ-7086',
@@ -691,6 +776,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['斑馬紋行人穿越道 線', '枕木紋行人穿越道線', '停止 線'],
     correct: 0,
     explanation: '正確答案為「斑馬紋行人穿越道 線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/085.png',
   },
   {
     id: 'EQ-7087',
@@ -699,6 +785,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['車輛停放線', '禁止超車線', '停止線'],
     correct: 2,
     explanation: '正確答案為「停止線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/086.png',
   },
   {
     id: 'EQ-7088',
@@ -707,6 +794,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['斑馬紋行人穿越道線', '枕木紋行人穿越道線', '停止線'],
     correct: 1,
     explanation: '正確答案為「枕木紋行人穿越道線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/087.png',
   },
   {
     id: 'EQ-7089',
@@ -715,6 +803,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['分向限制線', '禁止變換車道線', '車道線'],
     correct: 0,
     explanation: '正確答案為「分向限制線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/088.png',
   },
   {
     id: 'EQ-7090',
@@ -723,6 +812,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['路中障礙物體線', '近障礙物線', '路寬變更線'],
     correct: 1,
     explanation: '正確答案為「近障礙物線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/089.png',
   },
   {
     id: 'EQ-7091',
@@ -731,6 +821,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['可以臨時停車', '禁止臨時停 車', '禁止停車'],
     correct: 1,
     explanation: '正確答案為「禁止臨時停 車」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/090.png',
   },
   {
     id: 'EQ-7092',
@@ -739,6 +830,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['轉彎線', '網狀 線', '槽化線'],
     correct: 0,
     explanation: '正確答案為「轉彎線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/091.png',
   },
   {
     id: 'EQ-7093',
@@ -747,6 +839,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['身心障礙者專用停車位', '停止線', '禁止停車線'],
     correct: 0,
     explanation: '正確答案為「身心障礙者專用停車位」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/092.png',
   },
   {
     id: 'EQ-7094',
@@ -755,6 +848,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['全部車輛停止', '前後來車停止，左 右來車通行', '前方來車停止通行'],
     correct: 1,
     explanation: '正確答案為「前後來車停止，左 右來車通行」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/093.png',
   },
   {
     id: 'EQ-7095',
@@ -763,6 +857,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['右方來車左轉彎', '右方來車速行', '左方來車速行'],
     correct: 0,
     explanation: '正確答案為「右方來車左轉彎」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/094.png',
   },
   {
     id: 'EQ-7096',
@@ -771,6 +866,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['右方來車停止', '右方來車左轉彎', '右方來車速行'],
     correct: 0,
     explanation: '正確答案為「右方來車停止」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/095.png',
   },
   {
     id: 'EQ-7097',
@@ -779,6 +875,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['右方來車停止', '左方來車通行', '右方來車速行'],
     correct: 2,
     explanation: '正確答案為「右方來車速行」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/096.png',
   },
   {
     id: 'EQ-7098',
@@ -787,6 +884,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['左方來車速行', '左方來車左轉彎', '右方來車停止'],
     correct: 1,
     explanation: '正確答案為「左方來車左轉彎」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/097.png',
   },
   {
     id: 'EQ-7099',
@@ -795,6 +893,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['前方來車停止通行', '前後來車停 止，左右來車通行', '全部車輛停止'],
     correct: 2,
     explanation: '正確答案為「全部車輛停止」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/098.png',
   },
   {
     id: 'EQ-7100',
@@ -803,6 +902,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['前方來車停止', '前後停止左右通 行', '全部車輛停止'],
     correct: 0,
     explanation: '正確答案為「前方來車停止」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/099.png',
   },
   {
     id: 'EQ-7101',
@@ -811,6 +911,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['右轉 彎', '左轉彎', '讓後車超車'],
     correct: 0,
     explanation: '正確答案為「右轉 彎」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/100.png',
   },
   {
     id: 'EQ-7102',
@@ -819,6 +920,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['右轉彎', '左轉彎', '慢行'],
     correct: 1,
     explanation: '正確答案為「左轉彎」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/101.png',
   },
   {
     id: 'EQ-7103',
@@ -827,6 +929,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['減速暫 停', '讓後車超越', '倒車'],
     correct: 0,
     explanation: '正確答案為「減速暫 停」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/102.png',
   },
   {
     id: 'EQ-7104',
@@ -835,6 +938,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['倒車', '慢行', '讓後 車超越'],
     correct: 2,
     explanation: '正確答案為「讓後 車超越」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/103.png',
   },
   {
     id: 'EQ-7105',
@@ -843,6 +947,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['開亮頭燈', '注意號誌', '按鳴 喇叭'],
     correct: 0,
     explanation: '正確答案為「開亮頭燈」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/104.png',
   },
   {
     id: 'EQ-7106',
@@ -856,6 +961,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     correct: 0,
     explanation:
       '正確答案為「道路指定四輪以上汽車與汽缸總排氣量 550 立方公分以上大型重型機車專行」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/105.png',
   },
   {
     id: 'EQ-7107',
@@ -869,6 +975,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     correct: 1,
     explanation:
       '正確答案為「車道 指定四輪以上汽車及汽缸總排氣量 550 立方公 分以上大型重型機車專行」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/106.png',
   },
   {
     id: 'EQ-7108',
@@ -882,6 +989,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     correct: 0,
     explanation:
       '正確答案為「禁止汽缸總排氣量 550 立方公分以上大 型重型機車進入」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/107.png',
   },
   {
     id: 'EQ-7109',
@@ -890,6 +998,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['車輛長度限制', '最高速限', '行車安全距離限制'],
     correct: 2,
     explanation: '正確答案為「行車安全距離限制」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/108.png',
   },
   {
     id: 'EQ-7110',
@@ -898,6 +1007,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['縣道路線編號', '省道路線 編號', '國道路線編號'],
     correct: 2,
     explanation: '正確答案為「國道路線編號」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/109.png',
   },
   {
     id: 'EQ-7111',
@@ -906,6 +1016,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['前方右側有車插會', '前方左側有車插會', '岔路'],
     correct: 0,
     explanation: '正確答案為「前方右側有車插會」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/110.png',
   },
   {
     id: 'EQ-7112',
@@ -914,6 +1025,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['60公里', '40公里', '80公里'],
     correct: 1,
     explanation: '正確答案為「40公里」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/111.png',
   },
   {
     id: 'EQ-7113',
@@ -922,6 +1034,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['出口', '車道', '地 名。之指示標誌'],
     correct: 1,
     explanation: '正確答案為「車道」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/112.png',
   },
   {
     id: 'EQ-7114',
@@ -930,6 +1043,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['單行道', '遵行方向', '指示改道方向'],
     correct: 2,
     explanation: '正確答案為「指示改道方向」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/113.png',
   },
   {
     id: 'EQ-7115',
@@ -938,6 +1052,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['警告標誌', '車輛故障標 誌', '施工標誌'],
     correct: 1,
     explanation: '正確答案為「車輛故障標 誌」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/114.png',
   },
   {
     id: 'EQ-7116',
@@ -946,6 +1061,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['地名里程指示', '方向里 程指示', '地名方向指示'],
     correct: 2,
     explanation: '正確答案為「地名方向指示」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/115.png',
   },
   {
     id: 'EQ-7117',
@@ -954,6 +1070,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['高速公路出口', '高速公路服務 區', '高速公路指引'],
     correct: 2,
     explanation: '正確答案為「高速公路指引」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/116.png',
   },
   {
     id: 'EQ-7118',
@@ -962,6 +1079,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['道路施工', '車輛改道', '道路封閉'],
     correct: 0,
     explanation: '正確答案為「道路施工」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/117.png',
   },
   {
     id: 'EQ-7119',
@@ -970,6 +1088,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['車道管制號誌，表示本車道封 閉', '前有岔道', '行車管制號誌'],
     correct: 0,
     explanation: '正確答案為「車道管制號誌，表示本車道封 閉」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/118.png',
   },
   {
     id: 'EQ-7120',
@@ -978,6 +1097,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['里程碑', '里程牌', '縣道路線編號'],
     correct: 1,
     explanation: '正確答案為「里程牌」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/119.png',
   },
   {
     id: 'EQ-7121',
@@ -986,6 +1106,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['快慢車道分隔線', '行車分向線', '雙方禁止超車線'],
     correct: 0,
     explanation: '正確答案為「快慢車道分隔線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/120.png',
   },
   {
     id: 'EQ-7122',
@@ -994,6 +1115,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['當心自行車', '當心行人', '當 心機車'],
     correct: 0,
     explanation: '正確答案為「當心自行車」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/121.png',
   },
   {
     id: 'EQ-7123',
@@ -1002,6 +1124,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['近鐵路平交道', '高 (快) 速公路車 輛保持距離', '高 (快) 速公路出口距離'],
     correct: 2,
     explanation: '正確答案為「高 (快) 速公路出口距離」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/122.png',
   },
   {
     id: 'EQ-7124',
@@ -1010,6 +1133,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['高(快)速公路交流道名稱', '地名里 程', '高(快)速公路出口距離'],
     correct: 0,
     explanation: '正確答案為「高(快)速公路交流道名稱」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/123.png',
   },
   {
     id: 'EQ-7125',
@@ -1018,6 +1142,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['產業道路', '縣道路線編號標誌', '區、鄉道路線編號標誌'],
     correct: 2,
     explanation: '正確答案為「區、鄉道路線編號標誌」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/124.png',
   },
   {
     id: 'EQ-7126',
@@ -1026,6 +1151,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['一般公路之省道路線編號標誌', '快 速公路之省道路線編號標誌', '最高速限標 誌'],
     correct: 1,
     explanation: '正確答案為「快 速公路之省道路線編號標誌」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/125.png',
   },
   {
     id: 'EQ-7127',
@@ -1034,6 +1160,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['停車處', '公園', '迴轉道'],
     correct: 0,
     explanation: '正確答案為「停車處」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/126.png',
   },
   {
     id: 'EQ-7128',
@@ -1042,6 +1169,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['捷運車站', '鐵路車站', '高速 鐵路車站 '],
     correct: 0,
     explanation: '正確答案為「捷運車站」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/127.png',
   },
   {
     id: 'EQ-7129',
@@ -1050,6 +1178,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['港埠', '渡口', '修理站'],
     correct: 0,
     explanation: '正確答案為「港埠」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/128.png',
   },
   {
     id: 'EQ-7130',
@@ -1058,6 +1187,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['捷運車站', '鐵路車站', '高速 鐵路車站 '],
     correct: 1,
     explanation: '正確答案為「鐵路車站」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/129.png',
   },
   {
     id: 'EQ-7131',
@@ -1066,6 +1196,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['捷運車站', '鐵路車站', '高速 鐵路車站 '],
     correct: 2,
     explanation: '正確答案為「高速 鐵路車站 」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/130.png',
   },
   {
     id: 'EQ-7132',
@@ -1074,6 +1205,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['公路汽車客運車站或轉運站', '捷運 車站', '計程車招呼站'],
     correct: 0,
     explanation: '正確答案為「公路汽車客運車站或轉運站」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/131.png',
   },
   {
     id: 'EQ-7133',
@@ -1082,6 +1214,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['車道指定自行車專行', '車道指定汽 車專行', '車道指定機車專行'],
     correct: 0,
     explanation: '正確答案為「車道指定自行車專行」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/132.png',
   },
   {
     id: 'EQ-7134',
@@ -1090,6 +1223,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['對角線行人穿 越道線', '網狀線', '自行車穿越道 線'],
     correct: 0,
     explanation: '正確答案為「對角線行人穿 越道線」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/133.png',
   },
   {
     id: 'EQ-7135',
@@ -1098,6 +1232,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['減速慢行', '加速通 過', '檢查輪胎 '],
     correct: 0,
     explanation: '正確答案為「減速慢行」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/134.png',
   },
   {
     id: 'EQ-7136',
@@ -1106,6 +1241,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['右轉', '左轉', '減速暫停'],
     correct: 0,
     explanation: '正確答案為「右轉」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/135.png',
   },
   {
     id: 'EQ-7137',
@@ -1114,5 +1250,6 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     options: ['右轉', '左轉', '減速暫停'],
     correct: 2,
     explanation: '正確答案為「減速暫停」。請參閱相關法規或標誌說明。',
+    image: 'signs/mc/136.png',
   },
 ];
