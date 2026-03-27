@@ -1,4 +1,8 @@
 import type { ExamQuestion } from '../types/exam';
+import { QUESTIONS_REGULATION_TF } from './exam-questions-regulation-tf';
+import { QUESTIONS_REGULATION_MC } from './exam-questions-regulation-mc';
+import { QUESTIONS_SIGN_TF } from './exam-questions-sign-tf';
+import { QUESTIONS_SIGN_MC } from './exam-questions-sign-mc';
 
 /**
  * Seed exam questions converted from the 12 scenario quizzes.
@@ -383,7 +387,18 @@ export const EXAM_QUESTIONS: ExamQuestion[] = [
   },
 ];
 
+/** All official questions from the 2025 public exam bank */
+const OFFICIAL_QUESTIONS: ExamQuestion[] = [
+  ...QUESTIONS_REGULATION_TF,
+  ...QUESTIONS_REGULATION_MC,
+  ...QUESTIONS_SIGN_TF,
+  ...QUESTIONS_SIGN_MC,
+];
+
+/** Combined question pool: scenario-linked + official bank */
+export const ALL_EXAM_QUESTIONS: ExamQuestion[] = [...EXAM_QUESTIONS, ...OFFICIAL_QUESTIONS];
+
 /** Map from question ID to question object for O(1) lookup */
 export const EXAM_QUESTION_MAP = new Map<string, ExamQuestion>(
-  EXAM_QUESTIONS.map((q) => [q.id, q]),
+  ALL_EXAM_QUESTIONS.map((q) => [q.id, q]),
 );

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import type { ExamCategory, ExamProgress, ExamSession, QuestionStatus } from '../../types/exam';
-import { EXAM_QUESTIONS } from '../../data/exam-questions';
+import { ALL_EXAM_QUESTIONS as EXAM_QUESTIONS } from '../../data/exam-questions';
 
 interface ExamConfigProps {
   progress: ExamProgress;

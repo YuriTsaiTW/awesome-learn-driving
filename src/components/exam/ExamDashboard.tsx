@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import type { ExamProgress, ExamSession } from '../../types/exam';
-import { EXAM_QUESTIONS } from '../../data/exam-questions';
+import { ALL_EXAM_QUESTIONS as EXAM_QUESTIONS } from '../../data/exam-questions';
 import { SCENARIOS } from '../../data/scenarios';
 import type { ExamCategory } from '../../types/exam';
 
