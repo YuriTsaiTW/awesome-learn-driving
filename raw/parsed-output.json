@@ -1,0 +1,1110 @@
+[
+  {
+    "id": "EQ-7001",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["右彎", "左彎", "連續彎路先向 右"],
+    "correct": 0,
+    "explanation": "正確答案為「右彎」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7002",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["左彎", "右彎", "連續彎路先向 左"],
+    "correct": 0,
+    "explanation": "正確答案為「左彎」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7003",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["連續彎路先向右", "左彎", "連 續彎路先向左"],
+    "correct": 0,
+    "explanation": "正確答案為「連續彎路先向右」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7004",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["連續彎路先向左", "右彎", "連 續彎路先向右"],
+    "correct": 0,
+    "explanation": "正確答案為「連續彎路先向左」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7005",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["雙向道", "狹路", "岔路"],
+    "correct": 2,
+    "explanation": "正確答案為「岔路」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7006",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["岔路", "雙向道", "此路不通"],
+    "correct": 0,
+    "explanation": "正確答案為「岔路」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7007",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["右側車道縮減", "狹路", "匝道 會車"],
+    "correct": 0,
+    "explanation": "正確答案為「右側車道縮減」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7008",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["狹路", "狹橋", "岔路"],
+    "correct": 0,
+    "explanation": "正確答案為「狹路」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7009",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["岔路", "狹橋", "匝道會車"],
+    "correct": 2,
+    "explanation": "正確答案為「匝道會車」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7010",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["單行道", "雙向道", "狹路"],
+    "correct": 1,
+    "explanation": "正確答案為「雙向道」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7011",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["左彎", "圓環", "岔路"],
+    "correct": 1,
+    "explanation": "正確答案為「圓環」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7012",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["路面顛簸", "路面高突", "路面 低窪"],
+    "correct": 0,
+    "explanation": "正確答案為「路面顛簸」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7013",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["岔路", "狹橋", "狹路"],
+    "correct": 1,
+    "explanation": "正確答案為「狹橋」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7014",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["路面顛簸", "險升坡", "路面高 突"],
+    "correct": 2,
+    "explanation": "正確答案為「路面高 突」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7015",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["險降坡", "險升坡", "碼頭"],
+    "correct": 0,
+    "explanation": "正確答案為「險降坡」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7016",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["右側斷崖", "注意落石", "左側 斷崖"],
+    "correct": 2,
+    "explanation": "正確答案為「左側 斷崖」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7017",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["無柵門鐵路平交道", "有柵門鐵路平 交道", "禁止汽車進入"],
+    "correct": 0,
+    "explanation": "正確答案為「無柵門鐵路平交道」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7018",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["注意號誌", "危險", "慢行"],
+    "correct": 0,
+    "explanation": "正確答案為「注意號誌」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7019",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止汽車進入", "無柵門鐵路平交 道", "有柵門鐵路平交道"],
+    "correct": 2,
+    "explanation": "正確答案為「有柵門鐵路平交道」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7020",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["路面高突", "路滑", "禁止超 車"],
+    "correct": 1,
+    "explanation": "正確答案為「路滑」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7021",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["狹路", "隧道", "狹橋"],
+    "correct": 1,
+    "explanation": "正確答案為「隧道」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7022",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止汽車進入", "當心台車", "當心行人 "],
+    "correct": 1,
+    "explanation": "正確答案為「當心台車」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7023",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["當心行人", "當心兒童", "禁止 行人通行 "],
+    "correct": 1,
+    "explanation": "正確答案為「當心兒童」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7024",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["當心兒童", "當心行人", "禁止 行人通行 "],
+    "correct": 1,
+    "explanation": "正確答案為「當心行人」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7025",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["停車再開", "讓路", "慢行"],
+    "correct": 2,
+    "explanation": "正確答案為「慢行」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7026",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["險降坡", "碼頭、堤岸", "路 滑"],
+    "correct": 1,
+    "explanation": "正確答案為「碼頭、堤岸」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7027",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["危險路面", "注意左側落石", "注意右側落石"],
+    "correct": 2,
+    "explanation": "正確答案為「注意右側落石」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7028",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["狹橋", "危險", "慢行"],
+    "correct": 1,
+    "explanation": "正確答案為「危險」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7029",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["靠右行駛", "單行道", "可以右 轉"],
+    "correct": 0,
+    "explanation": "正確答案為「靠右行駛」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7030",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止停車", "停車檢查", "禁止 汽車進入"],
+    "correct": 1,
+    "explanation": "正確答案為「停車檢查」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7031",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止行人通行", "停車再開", "禁止任何車輛進入"],
+    "correct": 2,
+    "explanation": "正確答案為「禁止任何車輛進入」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7032",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止行人通行", "禁止任何車輛進 入", "禁止四輪以上汽車進入"],
+    "correct": 2,
+    "explanation": "正確答案為「禁止四輪以上汽車進入」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7033",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止任何車輛進入", "禁止聯結車進 入", "禁止大貨車及聯結車進入"],
+    "correct": 1,
+    "explanation": "正確答案為「禁止聯結車進 入」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7034",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止大型重型機車以外之 機車進入", "禁止四輪以上汽車進入", "禁止任何 機車進入"],
+    "correct": 0,
+    "explanation": "正確答案為「禁止大型重型機車以外之 機車進入」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7035",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止任何車輛進入", "禁止四輪以上 汽車及機車進入", "禁止行人通行"],
+    "correct": 1,
+    "explanation": "正確答案為「禁止四輪以上 汽車及機車進入」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7036",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止迴車", "禁止左轉", "禁止 超車"],
+    "correct": 1,
+    "explanation": "正確答案為「禁止左轉」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7037",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止超車", "禁止會車", "禁止 汽車進入 "],
+    "correct": 0,
+    "explanation": "正確答案為「禁止超車」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7038",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止左轉", "禁止迴車", "禁止 會車"],
+    "correct": 1,
+    "explanation": "正確答案為「禁止迴車」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7039",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["雙向道", "禁止會車", "分道"],
+    "correct": 1,
+    "explanation": "正確答案為「禁止會車」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7040",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["車輛寬度限制", "單行道", "車 輛高度限制"],
+    "correct": 0,
+    "explanation": "正確答案為「車輛寬度限制」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7041",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["車輛總重限制", "車輛載重限制", "車輛空重"],
+    "correct": 0,
+    "explanation": "正確答案為「車輛總重限制」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7042",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止行人通行", "當心行人", "當心兒童"],
+    "correct": 0,
+    "explanation": "正確答案為「禁止行人通行」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7043",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["最低速限", "最高速限", "車輛 總重限制"],
+    "correct": 1,
+    "explanation": "正確答案為「最高速限」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7044",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止大貨車及聯結車進入", "禁止大 貨車進入", "禁止汽車進入"],
+    "correct": 0,
+    "explanation": "正確答案為「禁止大貨車及聯結車進入」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7045",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["左彎", "左轉方向", "直行後左 轉"],
+    "correct": 2,
+    "explanation": "正確答案為「直行後左 轉」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7046",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["單線電化鐵路平交道", "雙線以上電 化鐵路平交道", "單線鐵路平交道"],
+    "correct": 1,
+    "explanation": "正確答案為「雙線以上電 化鐵路平交道」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7047",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["車輛長度限制", "車輛寬度限制", "禁止大貨車進入"],
+    "correct": 0,
+    "explanation": "正確答案為「車輛長度限制」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7048",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["道路專行車輛", "禁行汽車", "禁止任何車輛進入"],
+    "correct": 0,
+    "explanation": "正確答案為「道路專行車輛」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7049",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["圓環遵行方向", "分道", "單行 道"],
+    "correct": 0,
+    "explanation": "正確答案為「圓環遵行方向」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7050",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["行人專用", "當心行人", "當心 兒童"],
+    "correct": 0,
+    "explanation": "正確答案為「行人專用」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7051",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["省道路線編號", "市、縣道路線編 號", "國道路線編號"],
+    "correct": 1,
+    "explanation": "正確答案為「市、縣道路線編 號」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7052",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["遵行方向", "救護站", "岔路"],
+    "correct": 1,
+    "explanation": "正確答案為「救護站」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7053",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["岔路", "此路不通", "狹路"],
+    "correct": 1,
+    "explanation": "正確答案為「此路不通」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7054",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["省道路線編號", "縣道路線編號", "國道路線編號"],
+    "correct": 0,
+    "explanation": "正確答案為「省道路線編號」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7055",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["閃光黃燈", "行車管制號誌", "斑馬線閃光號誌"],
+    "correct": 1,
+    "explanation": "正確答案為「行車管制號誌」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7056",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["斑馬線閃光號誌", "特種閃光「黃 燈」號誌", "閃光紅燈號誌"],
+    "correct": 1,
+    "explanation": "正確答案為「特種閃光「黃 燈」號誌」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7057",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["行人專用號誌", "閃光黃燈", "行人穿越道號誌"],
+    "correct": 0,
+    "explanation": "正確答案為「行人專用號誌」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7058",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["閃光黃燈", "閃光紅燈號誌", "行人穿越道號誌"],
+    "correct": 2,
+    "explanation": "正確答案為「行人穿越道號誌」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7059",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["右道封閉", "左道封閉", "車輛 改道"],
+    "correct": 1,
+    "explanation": "正確答案為「左道封閉」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7060",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["右道封閉", "左道封閉", "車輛 改道"],
+    "correct": 0,
+    "explanation": "正確答案為「右道封閉」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7061",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["道路封閉", "車輛改道", "道路 施工"],
+    "correct": 2,
+    "explanation": "正確答案為「道路 施工」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7062",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["左道封閉", "右道封閉", "車輛 改道"],
+    "correct": 2,
+    "explanation": "正確答案為「車輛 改道」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7063",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["指示改道方向", "單行道", "右 轉方向指示"],
+    "correct": 0,
+    "explanation": "正確答案為「指示改道方向」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7064",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["道路施工", "道路封閉", "車輛 改道"],
+    "correct": 1,
+    "explanation": "正確答案為「道路封閉」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7065",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["救護站", "加油站", "修理站"],
+    "correct": 2,
+    "explanation": "正確答案為「修理站」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7066",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["直行後右轉", "直行後左轉", "左轉遵行方向"],
+    "correct": 0,
+    "explanation": "正確答案為「直行後右轉」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7067",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["人行天橋", "人行地下道", "停 車處"],
+    "correct": 1,
+    "explanation": "正確答案為「人行地下道」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7068",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["汽車專行", "大客車專行", "自行車及大型重型機車以外之機車專 行"],
+    "correct": 2,
+    "explanation": "正確答案為「自行車及大型重型機車以外之機車專 行」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7069",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["救護站", "修理站", "加油站"],
+    "correct": 2,
+    "explanation": "正確答案為「加油站」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7070",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["餐旅服務", "加油站", "修理 站"],
+    "correct": 0,
+    "explanation": "正確答案為「餐旅服務」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7071",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["左轉方向", "右轉方向", "左右 轉方向"],
+    "correct": 1,
+    "explanation": "正確答案為「右轉方向」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7072",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁制標誌", "車輛故障標誌", "危險標誌"],
+    "correct": 1,
+    "explanation": "正確答案為「車輛故障標誌」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7073",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["讓路線", "停止線", "路中障礙物體線"],
+    "correct": 0,
+    "explanation": "正確答案為「讓路線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7074",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["停車線", "近障礙物線", "車輛 停放線"],
+    "correct": 2,
+    "explanation": "正確答案為「車輛 停放線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7075",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["路面邊線", "車道線", "雙方禁止超車線"],
+    "correct": 0,
+    "explanation": "正確答案為「路面邊線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7076",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["近障礙物線", "近鐵路平交道線", "路寬變更線"],
+    "correct": 2,
+    "explanation": "正確答案為「路寬變更線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7077",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["斑馬紋行人穿越道線", "車道線", "路面邊線"],
+    "correct": 1,
+    "explanation": "正確答案為「車道線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7078",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["近鐵路平交道線", "近障礙物線", "路寬變更線"],
+    "correct": 0,
+    "explanation": "正確答案為「近鐵路平交道線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7079",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止停車線", "行車分向線", "指向線"],
+    "correct": 2,
+    "explanation": "正確答案為「指向線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7080",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["單向禁止超車線", "雙向禁止超車線", "車道線"],
+    "correct": 1,
+    "explanation": "正確答案為「雙向禁止超車線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7081",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["單向禁止超車線", "雙向禁止超車線", "車道線"],
+    "correct": 0,
+    "explanation": "正確答案為「單向禁止超車線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7082",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["分向限制線", "雙向禁止超車線", "禁止變換車道線"],
+    "correct": 2,
+    "explanation": "正確答案為「禁止變換車道線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7083",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止停車線", "禁 止臨時停車線", "車輛停放線"],
+    "correct": 0,
+    "explanation": "正確答案為「禁止停車線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7084",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["禁止停車線", "禁 止臨時停車線", "車輛停放線"],
+    "correct": 1,
+    "explanation": "正確答案為「禁 止臨時停車線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7085",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["車道線", "分向限 制線", "行車分向線"],
+    "correct": 2,
+    "explanation": "正確答案為「行車分向線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7086",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["斑馬紋行人穿越道 線", "枕木紋行人穿越道線", "停止 線"],
+    "correct": 0,
+    "explanation": "正確答案為「斑馬紋行人穿越道 線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7087",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["車輛停放線", "禁止超車線", "停止線"],
+    "correct": 2,
+    "explanation": "正確答案為「停止線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7088",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["斑馬紋行人穿越道線", "枕木紋行人穿越道線", "停止線"],
+    "correct": 1,
+    "explanation": "正確答案為「枕木紋行人穿越道線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7089",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["分向限制線", "禁止變換車道線", "車道線"],
+    "correct": 0,
+    "explanation": "正確答案為「分向限制線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7090",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["路中障礙物體線", "近障礙物線", "路寬變更線"],
+    "correct": 1,
+    "explanation": "正確答案為「近障礙物線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7091",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["可以臨時停車", "禁止臨時停 車", "禁止停車"],
+    "correct": 1,
+    "explanation": "正確答案為「禁止臨時停 車」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7092",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["轉彎線", "網狀 線", "槽化線"],
+    "correct": 0,
+    "explanation": "正確答案為「轉彎線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7093",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["身心障礙者專用停車位", "停止線", "禁止停車線"],
+    "correct": 0,
+    "explanation": "正確答案為「身心障礙者專用停車位」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7094",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["全部車輛停止", "前後來車停止，左 右來車通行", "前方來車停止通行"],
+    "correct": 1,
+    "explanation": "正確答案為「前後來車停止，左 右來車通行」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7095",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["右方來車左轉彎", "右方來車速行", "左方來車速行"],
+    "correct": 0,
+    "explanation": "正確答案為「右方來車左轉彎」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7096",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["右方來車停止", "右方來車左轉彎", "右方來車速行"],
+    "correct": 0,
+    "explanation": "正確答案為「右方來車停止」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7097",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["右方來車停止", "左方來車通行", "右方來車速行"],
+    "correct": 2,
+    "explanation": "正確答案為「右方來車速行」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7098",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["左方來車速行", "左方來車左轉彎", "右方來車停止"],
+    "correct": 1,
+    "explanation": "正確答案為「左方來車左轉彎」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7099",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["前方來車停止通行", "前後來車停 止，左右來車通行", "全部車輛停止"],
+    "correct": 2,
+    "explanation": "正確答案為「全部車輛停止」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7100",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["前方來車停止", "前後停止左右通 行", "全部車輛停止"],
+    "correct": 0,
+    "explanation": "正確答案為「前方來車停止」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7101",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["右轉 彎", "左轉彎", "讓後車超車"],
+    "correct": 0,
+    "explanation": "正確答案為「右轉 彎」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7102",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["右轉彎", "左轉彎", "慢行"],
+    "correct": 1,
+    "explanation": "正確答案為「左轉彎」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7103",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["減速暫 停", "讓後車超越", "倒車"],
+    "correct": 0,
+    "explanation": "正確答案為「減速暫 停」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7104",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["倒車", "慢行", "讓後 車超越"],
+    "correct": 2,
+    "explanation": "正確答案為「讓後 車超越」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7105",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["開亮頭燈", "注意號誌", "按鳴 喇叭"],
+    "correct": 0,
+    "explanation": "正確答案為「開亮頭燈」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7106",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": [
+      "道路指定四輪以上汽車與汽缸總排氣量 550 立方公分以上大型重型機車專行",
+      "道 路指定自行車與機車專行",
+      "道路禁止四輪 以上汽車與汽缸總排氣量 550 立方公分以上大 型重型機車進入"
+    ],
+    "correct": 0,
+    "explanation": "正確答案為「道路指定四輪以上汽車與汽缸總排氣量 550 立方公分以上大型重型機車專行」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7107",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": [
+      "車道指定四輪以上汽車專行",
+      "車道 指定四輪以上汽車及汽缸總排氣量 550 立方公 分以上大型重型機車專行",
+      "車道指定汽缸 總排氣量 550 立方公分以上大型重型機車專 行"
+    ],
+    "correct": 1,
+    "explanation": "正確答案為「車道 指定四輪以上汽車及汽缸總排氣量 550 立方公 分以上大型重型機車專行」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7108",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": [
+      "禁止汽缸總排氣量 550 立方公分以上大 型重型機車進入",
+      "汽缸總排氣量 550 立方 公分以上大型重型機車專用車道",
+      "禁止自 行車進入"
+    ],
+    "correct": 0,
+    "explanation": "正確答案為「禁止汽缸總排氣量 550 立方公分以上大 型重型機車進入」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7109",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["車輛長度限制", "最高速限", "行車安全距離限制"],
+    "correct": 2,
+    "explanation": "正確答案為「行車安全距離限制」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7110",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["縣道路線編號", "省道路線 編號", "國道路線編號"],
+    "correct": 2,
+    "explanation": "正確答案為「國道路線編號」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7111",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["前方右側有車插會", "前方左側有車插會", "岔路"],
+    "correct": 0,
+    "explanation": "正確答案為「前方右側有車插會」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7112",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["60公里", "40公里", "80公里"],
+    "correct": 1,
+    "explanation": "正確答案為「40公里」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7113",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["出口", "車道", "地 名。之指示標誌"],
+    "correct": 1,
+    "explanation": "正確答案為「車道」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7114",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["單行道", "遵行方向", "指示改道方向"],
+    "correct": 2,
+    "explanation": "正確答案為「指示改道方向」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7115",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["警告標誌", "車輛故障標 誌", "施工標誌"],
+    "correct": 1,
+    "explanation": "正確答案為「車輛故障標 誌」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7116",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["地名里程指示", "方向里 程指示", "地名方向指示"],
+    "correct": 2,
+    "explanation": "正確答案為「地名方向指示」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7117",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["高速公路出口", "高速公路服務 區", "高速公路指引"],
+    "correct": 2,
+    "explanation": "正確答案為「高速公路指引」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7118",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["道路施工", "車輛改道", "道路封閉"],
+    "correct": 0,
+    "explanation": "正確答案為「道路施工」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7119",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["車道管制號誌，表示本車道封 閉", "前有岔道", "行車管制號誌"],
+    "correct": 0,
+    "explanation": "正確答案為「車道管制號誌，表示本車道封 閉」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7120",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["里程碑", "里程牌", "縣道路線編號"],
+    "correct": 1,
+    "explanation": "正確答案為「里程牌」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7121",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["快慢車道分隔線", "行車分向線", "雙方禁止超車線"],
+    "correct": 0,
+    "explanation": "正確答案為「快慢車道分隔線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7122",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["當心自行車", "當心行人", "當 心機車"],
+    "correct": 0,
+    "explanation": "正確答案為「當心自行車」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7123",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["近鐵路平交道", "高 (快) 速公路車 輛保持距離", "高 (快) 速公路出口距離"],
+    "correct": 2,
+    "explanation": "正確答案為「高 (快) 速公路出口距離」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7124",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["高(快)速公路交流道名稱", "地名里 程", "高(快)速公路出口距離"],
+    "correct": 0,
+    "explanation": "正確答案為「高(快)速公路交流道名稱」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7125",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["產業道路", "縣道路線編號標誌", "區、鄉道路線編號標誌"],
+    "correct": 2,
+    "explanation": "正確答案為「區、鄉道路線編號標誌」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7126",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["一般公路之省道路線編號標誌", "快 速公路之省道路線編號標誌", "最高速限標 誌"],
+    "correct": 1,
+    "explanation": "正確答案為「快 速公路之省道路線編號標誌」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7127",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["停車處", "公園", "迴轉道"],
+    "correct": 0,
+    "explanation": "正確答案為「停車處」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7128",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["捷運車站", "鐵路車站", "高速 鐵路車站 "],
+    "correct": 0,
+    "explanation": "正確答案為「捷運車站」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7129",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["港埠", "渡口", "修理站"],
+    "correct": 0,
+    "explanation": "正確答案為「港埠」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7130",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["捷運車站", "鐵路車站", "高速 鐵路車站 "],
+    "correct": 1,
+    "explanation": "正確答案為「鐵路車站」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7131",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["捷運車站", "鐵路車站", "高速 鐵路車站 "],
+    "correct": 2,
+    "explanation": "正確答案為「高速 鐵路車站 」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7132",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["公路汽車客運車站或轉運站", "捷運 車站", "計程車招呼站"],
+    "correct": 0,
+    "explanation": "正確答案為「公路汽車客運車站或轉運站」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7133",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["車道指定自行車專行", "車道指定汽 車專行", "車道指定機車專行"],
+    "correct": 0,
+    "explanation": "正確答案為「車道指定自行車專行」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7134",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["對角線行人穿 越道線", "網狀線", "自行車穿越道 線"],
+    "correct": 0,
+    "explanation": "正確答案為「對角線行人穿 越道線」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7135",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["減速慢行", "加速通 過", "檢查輪胎 "],
+    "correct": 0,
+    "explanation": "正確答案為「減速慢行」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7136",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["右轉", "左轉", "減速暫停"],
+    "correct": 0,
+    "explanation": "正確答案為「右轉」。請參閱相關法規或標誌說明。"
+  },
+  {
+    "id": "EQ-7137",
+    "category": "sign-mc",
+    "question": "如圖所示的標誌，其含義為何？",
+    "options": ["右轉", "左轉", "減速暫停"],
+    "correct": 2,
+    "explanation": "正確答案為「減速暫停」。請參閱相關法規或標誌說明。"
+  }
+]
