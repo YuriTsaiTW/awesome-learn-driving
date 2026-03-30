@@ -147,9 +147,9 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
           }}
           style={{
             background: 'transparent',
-            border: '1px solid #334155',
+            border: '1px solid var(--border-base)',
             borderRadius: 12,
-            color: '#94a3b8',
+            color: 'var(--text-muted)',
             padding: '6px 12px',
             cursor: 'pointer',
             fontSize: 14,
@@ -157,20 +157,24 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
         >
           ← 返回
         </button>
-        <h2 style={{ fontSize: 18, fontWeight: 900, color: 'white', margin: 0 }}>考前設定</h2>
+        <h2 style={{ fontSize: 22, fontWeight: 900, color: 'var(--text-primary)', margin: 0 }}>
+          考前設定
+        </h2>
       </div>
 
       {/* Question count */}
       <div
         style={{
-          background: '#1e293b',
-          border: '1px solid #334155',
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border-base)',
           borderRadius: 20,
           padding: '16px 20px',
           marginBottom: 16,
         }}
       >
-        <div style={{ fontSize: 14, color: '#94a3b8', fontWeight: 600, marginBottom: 12 }}>
+        <div
+          style={{ fontSize: 14, color: 'var(--text-muted)', fontWeight: 600, marginBottom: 12 }}
+        >
           題數
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
@@ -186,9 +190,9 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
                   padding: '6px 16px',
                   borderRadius: 20,
                   border: '1px solid',
-                  borderColor: active ? '#60a5fa' : '#334155',
-                  background: active ? '#1e3a5f' : 'transparent',
-                  color: active ? '#93c5fd' : '#64748b',
+                  borderColor: active ? 'var(--blue)' : 'var(--border-base)',
+                  background: active ? 'var(--bg-active)' : 'transparent',
+                  color: active ? 'var(--blue-light)' : 'var(--text-faint)',
                   fontSize: 14,
                   fontWeight: active ? 700 : 400,
                   cursor: 'pointer',
@@ -206,9 +210,9 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
               padding: '6px 16px',
               borderRadius: 20,
               border: '1px solid',
-              borderColor: countInput === 'custom' ? '#60a5fa' : '#334155',
-              background: countInput === 'custom' ? '#1e3a5f' : 'transparent',
-              color: countInput === 'custom' ? '#93c5fd' : '#64748b',
+              borderColor: countInput === 'custom' ? 'var(--blue)' : 'var(--border-base)',
+              background: countInput === 'custom' ? 'var(--bg-active)' : 'transparent',
+              color: countInput === 'custom' ? 'var(--blue-light)' : 'var(--text-faint)',
               fontSize: 14,
               fontWeight: countInput === 'custom' ? 700 : 400,
               cursor: 'pointer',
@@ -232,9 +236,9 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
               width: 100,
               padding: '6px 10px',
               borderRadius: 10,
-              border: '1px solid #334155',
-              background: '#0f172a',
-              color: 'white',
+              border: '1px solid var(--border-base)',
+              background: 'var(--bg-elevated)',
+              color: 'var(--text-primary)',
               fontSize: 14,
             }}
           />
@@ -244,14 +248,16 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
       {/* Source filter */}
       <div
         style={{
-          background: '#1e293b',
-          border: '1px solid #334155',
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border-base)',
           borderRadius: 20,
           padding: '16px 20px',
           marginBottom: 16,
         }}
       >
-        <div style={{ fontSize: 14, color: '#94a3b8', fontWeight: 600, marginBottom: 12 }}>
+        <div
+          style={{ fontSize: 14, color: 'var(--text-muted)', fontWeight: 600, marginBottom: 12 }}
+        >
           題目來源
         </div>
         {sourceOptions.map(function (opt) {
@@ -265,7 +271,7 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
                 gap: 10,
                 padding: '8px 0',
                 cursor: 'pointer',
-                borderBottom: '1px solid #0f172a',
+                borderBottom: '1px solid var(--bg-elevated)',
               }}
             >
               <input
@@ -274,16 +280,22 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
                 onChange={function () {
                   toggleSource(opt.key);
                 }}
-                style={{ width: 16, height: 16, accentColor: '#60a5fa', cursor: 'pointer' }}
+                style={{ width: 16, height: 16, accentColor: 'var(--blue)', cursor: 'pointer' }}
               />
-              <span style={{ color: checked ? '#94a3b8' : '#475569', fontSize: 14, flex: 1 }}>
+              <span
+                style={{
+                  color: checked ? 'var(--text-muted)' : 'var(--text-disabled)',
+                  fontSize: 14,
+                  flex: 1,
+                }}
+              >
                 {opt.label}
               </span>
               <span
                 style={{
                   fontSize: 12,
-                  color: '#475569',
-                  background: '#0f172a',
+                  color: 'var(--text-disabled)',
+                  background: 'var(--bg-elevated)',
                   padding: '2px 8px',
                   borderRadius: 10,
                 }}
@@ -298,8 +310,8 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
       {/* Category filter */}
       <div
         style={{
-          background: '#1e293b',
-          border: '1px solid #334155',
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border-base)',
           borderRadius: 20,
           padding: '16px 20px',
           marginBottom: 24,
@@ -313,7 +325,7 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
             marginBottom: 12,
           }}
         >
-          <div style={{ fontSize: 14, color: '#94a3b8', fontWeight: 600 }}>分類篩選</div>
+          <div style={{ fontSize: 14, color: 'var(--text-muted)', fontWeight: 600 }}>分類篩選</div>
           <button
             onClick={function () {
               if (categories.size === ALL_CATEGORIES.length) {
@@ -325,7 +337,7 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
             style={{
               background: 'transparent',
               border: 'none',
-              color: '#60a5fa',
+              color: 'var(--blue)',
               fontSize: 12,
               cursor: 'pointer',
             }}
@@ -347,9 +359,9 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
                   padding: '5px 12px',
                   borderRadius: 20,
                   border: '1px solid',
-                  borderColor: active ? '#60a5fa' : '#334155',
-                  background: active ? '#1e3a5f' : 'transparent',
-                  color: active ? '#93c5fd' : '#475569',
+                  borderColor: active ? 'var(--blue)' : 'var(--border-base)',
+                  background: active ? 'var(--bg-active)' : 'transparent',
+                  color: active ? 'var(--blue-light)' : 'var(--text-disabled)',
                   fontSize: 13,
                   cursor: 'pointer',
                   display: 'flex',
@@ -361,8 +373,8 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
                 <span
                   style={{
                     fontSize: 11,
-                    color: active ? '#60a5fa' : '#334155',
-                    background: active ? 'rgba(96,165,250,0.15)' : '#0f172a',
+                    color: active ? 'var(--blue)' : 'var(--border-base)',
+                    background: active ? 'rgba(96,165,250,0.15)' : 'var(--bg-elevated)',
                     padding: '0 5px',
                     borderRadius: 8,
                   }}
@@ -378,8 +390,8 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
       {/* Available count + start */}
       <div
         style={{
-          background: '#1e293b',
-          border: '1px solid #334155',
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border-base)',
           borderRadius: 20,
           padding: '16px 20px',
           marginBottom: 16,
@@ -391,18 +403,20 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
         }}
       >
         <div>
-          <div style={{ fontSize: 13, color: '#64748b', marginBottom: 2 }}>符合條件的題目</div>
+          <div style={{ fontSize: 13, color: 'var(--text-faint)', marginBottom: 2 }}>
+            符合條件的題目
+          </div>
           <div
             style={{
               fontSize: 22,
               fontWeight: 900,
-              color: availableQuestions.length > 0 ? '#4ade80' : '#f87171',
+              color: availableQuestions.length > 0 ? 'var(--green-light)' : 'var(--red-light)',
             }}
           >
             {availableQuestions.length} 題
           </div>
           {finalCount > 0 && finalCount < requestedCount && (
-            <div style={{ fontSize: 12, color: '#f59e0b', marginTop: 2 }}>
+            <div style={{ fontSize: 12, color: 'var(--accent)', marginTop: 2 }}>
               （可用題數不足，將出 {finalCount} 題）
             </div>
           )}
@@ -413,9 +427,10 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
           style={{
             padding: '12px 28px',
             borderRadius: 18,
-            border: finalCount > 0 ? 'none' : '1px solid #334155',
-            background: finalCount > 0 ? 'linear-gradient(135deg,#1d4ed8,#1e40af)' : '#1e293b',
-            color: finalCount > 0 ? 'white' : '#475569',
+            border: finalCount > 0 ? 'none' : '1px solid var(--border-base)',
+            background:
+              finalCount > 0 ? 'linear-gradient(135deg,#1d4ed8,#1e40af)' : 'var(--bg-card)',
+            color: finalCount > 0 ? 'white' : 'var(--text-disabled)',
             fontSize: 15,
             fontWeight: 800,
             cursor: finalCount > 0 ? 'pointer' : 'not-allowed',

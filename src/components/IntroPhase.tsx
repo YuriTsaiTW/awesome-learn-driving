@@ -32,13 +32,13 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
           style={{
             borderRadius: 20,
             overflow: 'hidden',
-            border: '1px solid #334155',
+            border: '1px solid var(--border-base)',
             position: 'relative',
-            background: '#0f172a',
+            background: 'var(--bg-elevated)',
           }}
         >
           {SceneComp && <SceneComp />}
-          {/* Time / Location pills overlaid */}
+          {/* Time / Location pills overlaid — always dark since on top of SVG scene */}
           <div
             style={{
               position: 'absolute',
@@ -55,10 +55,9 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
                 borderRadius: 20,
                 fontSize: 14,
                 fontWeight: 600,
-                background: 'rgba(0,0,0,0.72)',
-                color: '#93c5fd',
-                border: '1px solid rgba(96,165,250,0.3)',
-                backdropFilter: 'blur(4px)',
+                background: 'var(--bg-card)',
+                color: 'var(--blue-light)',
+                border: '1px solid var(--border-base)',
               }}
             >
               🕙 {story.time}
@@ -69,10 +68,9 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
                 borderRadius: 20,
                 fontSize: 14,
                 fontWeight: 600,
-                background: 'rgba(0,0,0,0.72)',
-                color: '#94a3b8',
-                border: '1px solid rgba(148,163,184,0.2)',
-                backdropFilter: 'blur(4px)',
+                background: 'var(--bg-card)',
+                color: 'var(--text-muted)',
+                border: '1px solid var(--border-base)',
               }}
             >
               📍 {story.location}
@@ -83,10 +81,10 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
         {/* Character + narrative */}
         <div
           style={{
-            background: '#1e293b',
+            background: 'var(--bg-card)',
             borderRadius: 20,
             padding: 18,
-            border: '1px solid #334155',
+            border: '1px solid var(--border-base)',
           }}
         >
           {/* Character header */}
@@ -97,7 +95,7 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
               gap: 12,
               marginBottom: 14,
               paddingBottom: 12,
-              borderBottom: '1px solid #2d3748',
+              borderBottom: '1px solid var(--border-base)',
             }}
           >
             <div
@@ -105,22 +103,29 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
                 width: 52,
                 height: 52,
                 borderRadius: '50%',
-                background: '#0f172a',
+                background: 'var(--bg-elevated)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: 30,
-                border: '2px solid #334155',
+                border: '2px solid var(--border-base)',
                 flexShrink: 0,
               }}
             >
               {story.character.avatar}
             </div>
             <div style={{ flex: 1 }}>
-              <div style={{ color: 'white', fontWeight: 800, fontSize: 16, marginBottom: 2 }}>
+              <div
+                style={{
+                  color: 'var(--text-primary)',
+                  fontWeight: 800,
+                  fontSize: 16,
+                  marginBottom: 2,
+                }}
+              >
                 {story.character.name}
               </div>
-              <div style={{ color: '#64748b', fontSize: 14 }}>
+              <div style={{ color: 'var(--text-faint)', fontSize: 14 }}>
                 {story.character.age} 歲・{story.character.role}
               </div>
             </div>
@@ -130,9 +135,9 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
                 borderRadius: 12,
                 fontSize: 14,
                 fontWeight: 700,
-                background: 'rgba(245,158,11,0.1)',
-                color: '#fbbf24',
-                border: '1px solid rgba(245,158,11,0.25)',
+                background: 'var(--accent-bg)',
+                color: 'var(--accent-light)',
+                border: '1px solid var(--accent-border)',
               }}
             >
               {scenario.difficulty}
@@ -142,7 +147,7 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
           {/* Typewriter narrative */}
           <div
             className="intro-text"
-            style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.9, minHeight: 72 }}
+            style={{ color: 'var(--text-body)', fontSize: 14, lineHeight: 1.9, minHeight: 72 }}
           >
             <TypewriterText
               text={story.narrative}
@@ -165,20 +170,20 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
                 marginTop: 12,
                 padding: '4px 12px',
                 fontSize: 14,
-                color: '#475569',
+                color: 'var(--text-disabled)',
                 background: 'transparent',
-                border: '1px solid #334155',
+                border: '1px solid var(--border-base)',
                 borderRadius: 8,
                 cursor: 'pointer',
                 transition: 'color 0.15s, border-color 0.15s',
               }}
               onMouseEnter={function (e) {
-                e.currentTarget.style.color = '#94a3b8';
-                e.currentTarget.style.borderColor = '#475569';
+                e.currentTarget.style.color = 'var(--text-muted)';
+                e.currentTarget.style.borderColor = 'var(--text-disabled)';
               }}
               onMouseLeave={function (e) {
-                e.currentTarget.style.color = '#475569';
-                e.currentTarget.style.borderColor = '#334155';
+                e.currentTarget.style.color = 'var(--text-disabled)';
+                e.currentTarget.style.borderColor = 'var(--border-base)';
               }}
             >
               跳過 ›
@@ -195,10 +200,10 @@ const IntroPhase = ({ scenario, onNext }: IntroPhaseProps) => {
           borderRadius: 20,
           fontWeight: 800,
           fontSize: 16,
-          color: '#000',
+          color: 'var(--cta-fg)',
           border: 'none',
           cursor: 'pointer',
-          background: 'linear-gradient(135deg,#f59e0b,#d97706)',
+          background: 'var(--gradient-cta)',
           transition: 'opacity 0.15s',
         }}
       >

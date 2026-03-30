@@ -38,8 +38,8 @@ function FrequencyInfoPanel() {
   return (
     <div
       style={{
-        background: '#0f172a',
-        border: '1px solid #334155',
+        background: 'var(--bg-elevated)',
+        border: '1px solid var(--border-base)',
         borderRadius: 12,
         marginTop: 20,
         marginBottom: 16,
@@ -56,7 +56,7 @@ function FrequencyInfoPanel() {
           padding: '10px 14px',
           background: 'none',
           border: 'none',
-          color: '#94a3b8',
+          color: 'var(--text-muted)',
           fontSize: 14,
           cursor: 'pointer',
           textAlign: 'left',
@@ -69,17 +69,19 @@ function FrequencyInfoPanel() {
         <div
           style={{
             padding: '0 14px 12px',
-            color: '#64748b',
+            color: 'var(--text-faint)',
             fontSize: 14,
             lineHeight: 1.7,
           }}
         >
-          <p style={{ margin: '0 0 6px', color: '#94a3b8', fontWeight: 600 }}>主要資料來源</p>
+          <p style={{ margin: '0 0 6px', color: 'var(--text-muted)', fontWeight: 600 }}>
+            主要資料來源
+          </p>
           <p style={{ margin: '0 0 8px' }}>
             交通部道安資訊平台（roadsafety.tw）—「事故肇因分析」—
             114年全國小型車事故肇因排行（初估值，產製日期：民國 115 年 3 月 24 日）
           </p>
-          <p style={{ margin: '0 0 6px', color: '#94a3b8', fontWeight: 600 }}>
+          <p style={{ margin: '0 0 6px', color: 'var(--text-muted)', fontWeight: 600 }}>
             直接對應官方數據的情境
           </p>
           <ul style={{ margin: '0 0 8px', paddingLeft: 16 }}>
@@ -91,7 +93,9 @@ function FrequencyInfoPanel() {
             <li>疲勞駕駛：恍神、分心駕駛 7,786 件（小型車第 4 大肇因，含疲勞）</li>
             <li>機車鑽車縫：起步時未注意安全 6,768 件（小型車第 6 大肇因）</li>
           </ul>
-          <p style={{ margin: '0 0 6px', color: '#94a3b8', fontWeight: 600 }}>推估值的情境</p>
+          <p style={{ margin: '0 0 6px', color: 'var(--text-muted)', fontWeight: 600 }}>
+            推估值的情境
+          </p>
           <ul style={{ margin: '0 0 4px', paddingLeft: 16 }}>
             <li>大雨濃霧：天候因素占全國事故約 1.2–1.5%，推估 ~5,000 件</li>
             <li>窄路會車：無號誌路口及山區鄉道事故，推估 ~4,500 件</li>
@@ -100,7 +104,7 @@ function FrequencyInfoPanel() {
             <li>水漂失控：複合因素難以獨立統計，專家估計 ~300 件</li>
             <li>煞車失靈：現代雙迴路煞車系統極可靠，推估 ~120 件</li>
           </ul>
-          <p style={{ margin: '4px 0 0', color: '#475569', fontSize: 14 }}>
+          <p style={{ margin: '4px 0 0', color: 'var(--text-disabled)', fontSize: 14 }}>
             ※ 以上數據均為「小型車為第一當事者」統計，推估值僅供排序參考。
           </p>
         </div>
@@ -116,124 +120,23 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
 
   return (
     <div className="home-inner anim-fade">
-      {/* Hero: animated car + title */}
+      {/* Hero: title */}
       <div style={{ textAlign: 'center', paddingBottom: 32, paddingTop: 4 }}>
-        <svg
-          viewBox="0 0 300 160"
-          className="anim-logo-car"
-          style={{ width: '100%', maxWidth: 200, display: 'inline-block' }}
-        >
-          {/* Road */}
-          <rect x="0" y="128" width="300" height="22" fill="#111827" rx="4" />
-          <line
-            x1="0"
-            y1="138"
-            x2="300"
-            y2="138"
-            stroke="#1e293b"
-            strokeWidth="2"
-            strokeDasharray="22 16"
-          />
-          {/* Car body */}
-          <rect x="10" y="72" width="280" height="56" fill="#2563eb" rx="10" />
-          {/* Cabin */}
-          <path d="M60 32 Q68 16 88 16 L212 16 Q232 16 240 32 L258 72 L42 72Z" fill="#1d4ed8" />
-          {/* Windshield */}
-          <path d="M70 36 Q76 22 90 22 L148 22 L160 36Z" fill="#bfdbfe" opacity="0.85" />
-          {/* Rear window */}
-          <path d="M166 36 L178 22 L210 22 Q224 22 230 36Z" fill="#bfdbfe" opacity="0.62" />
-          {/* B-pillar */}
-          <rect x="161" y="19" width="6" height="20" fill="#1e40af" />
-          {/* Headlight */}
-          <rect
-            x="278"
-            y="86"
-            width="18"
-            height="11"
-            fill="#fef08a"
-            rx="3"
-            className="anim-head-glow"
-          />
-          <rect
-            x="296"
-            y="88"
-            width="5"
-            height="7"
-            fill="#fef08a"
-            rx="1.5"
-            opacity="0.35"
-            className="anim-head-glow"
-          />
-          {/* Tail light */}
-          <rect
-            x="4"
-            y="86"
-            width="14"
-            height="11"
-            fill="#ef4444"
-            rx="3"
-            className="anim-tail-light"
-          />
-          {/* Front wheel */}
-          <ellipse cx="222" cy="128" rx="22" ry="18" fill="#111827" />
-          <g className="anim-wheel-spin">
-            <ellipse cx="222" cy="128" rx="12" ry="10" fill="#334155" />
-            <line
-              x1="222"
-              y1="118"
-              x2="222"
-              y2="138"
-              stroke="#60a5fa"
-              strokeWidth="2.5"
-              opacity="0.7"
-            />
-            <line
-              x1="212"
-              y1="128"
-              x2="232"
-              y2="128"
-              stroke="#60a5fa"
-              strokeWidth="2.5"
-              opacity="0.7"
-            />
-          </g>
-          {/* Rear wheel */}
-          <ellipse cx="78" cy="128" rx="22" ry="18" fill="#111827" />
-          <g className="anim-wheel-spin">
-            <ellipse cx="78" cy="128" rx="12" ry="10" fill="#334155" />
-            <line
-              x1="78"
-              y1="118"
-              x2="78"
-              y2="138"
-              stroke="#60a5fa"
-              strokeWidth="2.5"
-              opacity="0.7"
-            />
-            <line
-              x1="68"
-              y1="128"
-              x2="88"
-              y2="128"
-              stroke="#60a5fa"
-              strokeWidth="2.5"
-              opacity="0.7"
-            />
-          </g>
-        </svg>
         <h1
           style={{
-            fontSize: 'clamp(24px, 5vw, 36px)',
+            fontSize: 'clamp(30px, 5.5vw, 48px)',
             fontWeight: 900,
             margin: '12px 0 6px',
             letterSpacing: '-0.03em',
             lineHeight: 1.1,
-            color: 'white',
+            color: 'var(--text-primary)',
           }}
         >
           Awesome Learn Driving
         </h1>
-        <p style={{ color: '#94a3b8', fontSize: 14, margin: 0 }}>Safe Driving Makes Happy Life</p>
+        <p style={{ color: 'var(--text-muted)', fontSize: 17, margin: 0 }}>
+          🚗 Safe Driving Makes Happy Life 🚗
+        </p>
       </div>
 
       {/* Sort controls */}
@@ -241,7 +144,7 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
         <div
           style={{
             fontSize: 14,
-            color: '#94a3b8',
+            color: 'var(--text-muted)',
             marginBottom: 8,
             display: 'flex',
             alignItems: 'center',
@@ -259,9 +162,9 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
                 padding: '5px 12px',
                 borderRadius: 20,
                 border: '1px solid',
-                borderColor: sortKey === opt.key ? '#60a5fa' : '#334155',
-                background: sortKey === opt.key ? '#1e3a5f' : '#1e293b',
-                color: sortKey === opt.key ? '#93c5fd' : '#94a3b8',
+                borderColor: sortKey === opt.key ? 'var(--blue)' : 'var(--border-base)',
+                background: sortKey === opt.key ? 'var(--bg-active)' : 'var(--bg-card)',
+                color: sortKey === opt.key ? 'var(--blue-light)' : 'var(--text-muted)',
                 fontSize: 14,
                 cursor: 'pointer',
                 fontWeight: sortKey === opt.key ? 600 : 400,
@@ -284,33 +187,39 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
               onClick={() => onSelect(sc)}
               className="scenario-card"
               style={{
-                background: '#1e293b',
-                border: done ? '1px solid #16a34a' : '1px solid #334155',
+                background: 'var(--bg-card)',
+                border: done ? '1px solid var(--green-deep)' : '1px solid var(--border-base)',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.borderColor = sc.accent)}
               onMouseLeave={(e) =>
-                (e.currentTarget.style.borderColor = done ? '#16a34a' : '#334155')
+                (e.currentTarget.style.borderColor = done
+                  ? 'var(--green-deep)'
+                  : 'var(--border-base)')
               }
             >
-              <div className="scenario-thumb" style={{ background: '#0f172a' }}>
+              <div className="scenario-thumb" style={{ background: 'var(--bg-elevated)' }}>
                 {SceneComp && <SceneComp />}
               </div>
               <div className="scenario-card-body">
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 3 }}>
                   <span
                     className="scenario-card-title"
-                    style={{ color: 'white', fontWeight: 700, fontSize: 14 }}
+                    style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 16 }}
                   >
                     {sc.title}
                   </span>
-                  {done && <span style={{ color: '#4ade80', fontSize: 14 }}>✓ 完成</span>}
+                  {done && (
+                    <span style={{ color: 'var(--green-light)', fontSize: 15 }}>✓ 完成</span>
+                  )}
                 </div>
-                <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 4 }}>{sc.subtitle}</div>
+                <div style={{ color: 'var(--text-muted)', fontSize: 15, marginBottom: 4 }}>
+                  {sc.subtitle}
+                </div>
                 <div style={{ fontSize: 14, fontWeight: 600, color: sc.difficultyColor }}>
                   難度：{sc.difficulty}
                 </div>
                 {isFreqSort && (
-                  <div style={{ fontSize: 14, color: '#60a5fa', marginTop: 3 }}>
+                  <div style={{ fontSize: 14, color: 'var(--blue)', marginTop: 3 }}>
                     年約 {sc.annualFrequency.toLocaleString()} 件
                   </div>
                 )}
@@ -324,7 +233,7 @@ function HomeScreen({ onSelect, completed }: HomeScreenProps) {
       <p
         style={{
           textAlign: 'center',
-          color: '#64748b',
+          color: 'var(--text-faint)',
           fontSize: 14,
           marginTop: 16,
           paddingBottom: 8,

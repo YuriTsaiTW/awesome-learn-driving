@@ -1,7 +1,7 @@
 import type { ScenarioId } from '../types/scenario';
 
 const HighwayScene = () => (
-  <svg viewBox="0 0 300 180" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
     <rect width="300" height="180" fill="#1a2744" />
     <defs>
       <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
@@ -66,7 +66,7 @@ const HighwayScene = () => (
 );
 
 const TireBlowoutScene = () => (
-  <svg viewBox="0 0 300 180" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
     <defs>
       <linearGradient id="skyBlowout" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stopColor="#0f172a" />
@@ -197,7 +197,7 @@ const HeavyFogScene = () => {
     dur: 0.7 + (i % 5) * 0.15,
   }));
   return (
-    <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
       <defs>
         <radialGradient id="fogCenter" cx="50%" cy="55%" r="55%">
           <stop offset="0%" stopColor="#94a3b8" stopOpacity="0.65" />
@@ -256,7 +256,7 @@ const HeavyFogScene = () => {
 };
 
 const RearEndScene = () => (
-  <svg viewBox="0 0 300 180" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
     <rect width="300" height="180" fill="#1a2744" />
     <rect width="300" height="90" fill="#0f172a" />
     <rect x="0" y="90" width="300" height="65" fill="#2d3748" />
@@ -309,7 +309,7 @@ const RearEndScene = () => (
 );
 
 const BrakeFailureScene = () => (
-  <svg viewBox="0 0 300 180" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
     <rect width="300" height="180" fill="#0f172a" />
     <rect x="15" y="15" width="270" height="150" fill="#1e293b" rx="16" />
     <rect x="20" y="20" width="260" height="140" fill="#0f172a" rx="12" />
@@ -394,7 +394,7 @@ const BrakeFailureScene = () => (
 );
 
 const NarrowRoadScene = () => (
-  <svg viewBox="0 0 300 180" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
     <defs>
       <linearGradient id="nrSky" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stopColor="#0c1a2e" />
@@ -465,7 +465,7 @@ const NarrowRoadScene = () => (
 );
 
 const IntersectionCrashScene = () => (
-  <svg viewBox="0 0 300 180" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
     <rect width="300" height="180" fill="#1a2744" />
     {/* Sky */}
     <rect width="300" height="80" fill="#0f172a" />
@@ -555,7 +555,7 @@ const IntersectionCrashScene = () => (
 );
 
 const ScooterWeavingScene = () => (
-  <svg viewBox="0 0 300 180" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
     <rect width="300" height="180" fill="#1a2744" />
     <rect width="300" height="85" fill="#0f172a" />
     {/* Road */}
@@ -618,7 +618,7 @@ const ScooterWeavingScene = () => (
 );
 
 const DrowsyDrivingScene = () => (
-  <svg viewBox="0 0 300 180" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
     <defs>
       <linearGradient id="ddSky" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stopColor="#020617" />
@@ -712,7 +712,7 @@ const HydroplaningScene = () => {
     dur: 0.5 + (i % 4) * 0.12,
   }));
   return (
-    <svg viewBox="0 0 300 180" width="100%" height="100%">
+    <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
       <defs>
         <linearGradient id="hpRain" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#1e293b" />
@@ -797,7 +797,7 @@ const HydroplaningScene = () => {
 };
 
 const RightTurnMotorcycleScene = () => (
-  <svg viewBox="0 0 300 180" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
     <rect width="300" height="180" fill="#0f172a" />
     {/* Sky */}
     <rect width="300" height="90" fill="#0c1424" />
@@ -873,7 +873,7 @@ const RightTurnMotorcycleScene = () => (
 );
 
 const LeftTurnOncomingScene = () => (
-  <svg viewBox="0 0 300 180" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
     <rect width="300" height="180" fill="#0f172a" />
     {/* Sky */}
     <rect width="300" height="90" fill="#0c1424" />
@@ -968,7 +968,7 @@ const LeftTurnOncomingScene = () => (
 );
 
 const ColdWeatherCatCheckScene = () => (
-  <svg viewBox="0 0 300 180" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
     <rect width="300" height="180" fill="#0c1424" />
     {/* Pre-dawn sky */}
     <rect width="300" height="100" fill="#0c1424" />
@@ -1054,7 +1054,7 @@ const ColdWeatherCatCheckScene = () => (
 );
 
 const WildlifeRoadScene = () => (
-  <svg viewBox="0 0 300 180" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 300 180" width="100%" height="100%">
     <rect width="300" height="180" fill="#0f172a" />
     {/* Dusk sky gradient */}
     <rect width="300" height="90" fill="#1a0a2e" />

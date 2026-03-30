@@ -26,17 +26,17 @@ const LearningPhase = ({ scenario, onNext }: LearningPhaseProps) => {
       <div className="anim-fade" style={{ paddingBottom: 88 }}>
         <div
           style={{
-            background: '#1e293b',
+            background: 'var(--bg-card)',
             borderRadius: 20,
             padding: 16,
             marginBottom: 14,
-            border: '1px solid #334155',
+            border: '1px solid var(--border-base)',
           }}
         >
-          <div style={{ color: '#f59e0b', fontSize: 14, fontWeight: 700, marginBottom: 4 }}>
+          <div style={{ color: 'var(--accent)', fontSize: 14, fontWeight: 700, marginBottom: 4 }}>
             📋 正確應對流程
           </div>
-          <div style={{ color: '#475569', fontSize: 14 }}>
+          <div style={{ color: 'var(--text-disabled)', fontSize: 14 }}>
             步驟 {Math.min(current + 1, scenario.steps.length)} ／ {scenario.steps.length}
           </div>
         </div>
@@ -50,12 +50,12 @@ const LearningPhase = ({ scenario, onNext }: LearningPhaseProps) => {
                 style={{
                   borderRadius: 18,
                   padding: 14,
-                  border: `1px solid ${isCurrent ? '#f59e0b' : isRevealed ? '#334155' : '#1e293b'}`,
+                  border: `1px solid ${isCurrent ? 'var(--accent)' : isRevealed ? 'var(--border-base)' : 'var(--border-subtle)'}`,
                   background: isCurrent
-                    ? 'rgba(245,158,11,0.12)'
+                    ? 'var(--accent-bg)'
                     : isRevealed
-                      ? '#1e293b'
-                      : 'rgba(30,41,59,0.4)',
+                      ? 'var(--bg-card)'
+                      : 'var(--bg-muted)',
                   opacity: isRevealed ? 1 : 0.25,
                   transition: 'all 0.35s ease',
                 }}
@@ -72,8 +72,8 @@ const LearningPhase = ({ scenario, onNext }: LearningPhaseProps) => {
                       flexShrink: 0,
                       fontSize: 14,
                       fontWeight: 800,
-                      background: isRevealed ? '#f59e0b' : '#334155',
-                      color: isRevealed ? '#000' : '#64748b',
+                      background: isRevealed ? 'var(--accent)' : 'var(--border-base)',
+                      color: isRevealed ? '#000' : 'var(--text-faint)',
                     }}
                   >
                     {isRevealed ? step.icon : i + 1}
@@ -81,13 +81,18 @@ const LearningPhase = ({ scenario, onNext }: LearningPhaseProps) => {
                   <div style={{ flex: 1 }}>
                     <div
                       className="step-label"
-                      style={{ color: 'white', fontWeight: 700, fontSize: 14, marginBottom: 3 }}
+                      style={{
+                        color: 'var(--text-primary)',
+                        fontWeight: 700,
+                        fontSize: 14,
+                        marginBottom: 3,
+                      }}
                     >
                       {step.title}
                     </div>
                     <div
                       className="step-desc"
-                      style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}
+                      style={{ color: 'var(--text-muted)', fontSize: 14, lineHeight: 1.6 }}
                     >
                       {step.desc}
                     </div>
@@ -102,8 +107,8 @@ const LearningPhase = ({ scenario, onNext }: LearningPhaseProps) => {
                               height: 165,
                               borderRadius: 12,
                               overflow: 'hidden',
-                              border: '1px solid rgba(245,158,11,0.3)',
-                              background: '#0f172a',
+                              border: '1px solid var(--accent-border)',
+                              background: 'var(--bg-elevated)',
                             }}
                           >
                             <StepAnim />
@@ -119,17 +124,7 @@ const LearningPhase = ({ scenario, onNext }: LearningPhaseProps) => {
       </div>
 
       {/* Fixed bottom CTA — must be outside .anim-fade to avoid transform stacking context */}
-      <div
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          padding: '12px 16px 20px',
-          background: 'linear-gradient(to top, #0f172a 70%, transparent)',
-          zIndex: 50,
-        }}
-      >
+      <div className="content-cta">
         <div className="flow-inner">
           {!done ? (
             <button
@@ -140,10 +135,10 @@ const LearningPhase = ({ scenario, onNext }: LearningPhaseProps) => {
                 borderRadius: 20,
                 fontWeight: 800,
                 fontSize: 15,
-                color: '#000',
+                color: 'var(--cta-fg)',
                 border: 'none',
                 cursor: 'pointer',
-                background: 'linear-gradient(135deg,#f59e0b,#d97706)',
+                background: 'var(--gradient-cta)',
               }}
             >
               下一步 →
@@ -157,10 +152,10 @@ const LearningPhase = ({ scenario, onNext }: LearningPhaseProps) => {
                 borderRadius: 20,
                 fontWeight: 800,
                 fontSize: 16,
-                color: '#000',
+                color: 'var(--cta-fg)',
                 border: 'none',
                 cursor: 'pointer',
-                background: 'linear-gradient(135deg,#22c55e,#16a34a)',
+                background: 'var(--gradient-cta-green)',
               }}
             >
               開始測驗 →

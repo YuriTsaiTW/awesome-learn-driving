@@ -88,9 +88,9 @@ const ScenarioFlow = ({ scenario, onBack, onComplete, isCompleted }: ScenarioFlo
           }
           style={{
             background: 'transparent',
-            border: '1px solid #334155',
+            border: '1px solid var(--border-base)',
             borderRadius: 12,
-            color: '#94a3b8',
+            color: 'var(--text-muted)',
             padding: '6px 12px',
             cursor: 'pointer',
             fontSize: 14,
@@ -98,19 +98,19 @@ const ScenarioFlow = ({ scenario, onBack, onComplete, isCompleted }: ScenarioFlo
             flexShrink: 0,
           }}
           onMouseEnter={function (e) {
-            e.currentTarget.style.color = 'white';
-            e.currentTarget.style.borderColor = '#64748b';
+            e.currentTarget.style.color = 'var(--text-primary)';
+            e.currentTarget.style.borderColor = 'var(--text-muted)';
           }}
           onMouseLeave={function (e) {
-            e.currentTarget.style.color = '#94a3b8';
-            e.currentTarget.style.borderColor = '#334155';
+            e.currentTarget.style.color = 'var(--text-muted)';
+            e.currentTarget.style.borderColor = 'var(--border-base)';
           }}
         >
           {phase === 'pick' || !isCompleted ? '\u2190 返回' : '\u2630 選單'}
         </button>
         <div
           style={{
-            color: 'white',
+            color: 'var(--text-primary)',
             fontWeight: 800,
             fontSize: 15,
             flex: 1,
@@ -130,7 +130,7 @@ const ScenarioFlow = ({ scenario, onBack, onComplete, isCompleted }: ScenarioFlo
               borderRadius: 20,
               padding: '3px 10px',
               fontSize: 14,
-              color: '#4ade80',
+              color: 'var(--green-light)',
               fontWeight: 700,
               flexShrink: 0,
             }}

@@ -6,7 +6,7 @@ interface DAProps {
 
 // == Highway Breakdown ==
 const DA_HB_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="52" width="160" height="40" fill="#1e293b" />
     <line x1="0" y1="72" x2="160" y2="72" stroke="#334155" strokeWidth="1" strokeDasharray="10,8" />
@@ -38,7 +38,7 @@ const DA_HB_A = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_HB_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     <line
@@ -88,7 +88,7 @@ const DA_HB_B = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_HB_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     <line x1="0" y1="70" x2="160" y2="70" stroke="#334155" strokeWidth="1" strokeDasharray="10,8" />
@@ -137,7 +137,7 @@ const DA_HB_C = ({ showConsequence = false }: DAProps) => (
 
 // == Tire Blowout ==
 const DA_TB_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="50" width="160" height="42" fill="#1e293b" />
     <path d="M 8 74 Q 58 67 90 70" stroke="#111" strokeWidth="5" fill="none" opacity="0.8" />
@@ -173,7 +173,7 @@ const DA_TB_A = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_TB_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <circle cx="72" cy="54" r="28" fill="none" stroke="#4b5563" strokeWidth="7" />
     <circle cx="72" cy="54" r="9" fill="#374151" stroke="#4b5563" strokeWidth="3" />
@@ -240,7 +240,7 @@ const DA_TB_B = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_TB_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     <line
@@ -292,7 +292,7 @@ const DA_TB_C = ({ showConsequence = false }: DAProps) => (
 
 // == Heavy Rain / Fog ==
 const DA_HF_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#1e293b" />
     <rect x="0" y="54" width="160" height="38" fill="#374151" />
     <rect width="160" height="100" fill="#94a3b8" opacity="0.28" className="anim-fog" />
@@ -337,7 +337,7 @@ const DA_HF_A = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_HF_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#1e293b" />
     <rect x="0" y="54" width="160" height="38" fill="#374151" />
     <rect width="160" height="100" fill="#94a3b8" opacity="0.18" className="anim-fog" />
@@ -404,7 +404,7 @@ const DA_HF_B = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_HF_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#1e293b" />
     <rect x="0" y="54" width="160" height="38" fill="#374151" />
     <g transform="translate(106,74)">
@@ -437,7 +437,7 @@ const DA_HF_C = ({ showConsequence = false }: DAProps) => (
 
 // == Rear-End Collision ==
 const DA_RE_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="50" width="160" height="42" fill="#1e293b" />
     <line
@@ -484,7 +484,7 @@ const DA_RE_A = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_RE_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     <line
@@ -528,7 +528,7 @@ const DA_RE_B = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_RE_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     <line
@@ -573,7 +573,7 @@ const DA_RE_C = ({ showConsequence = false }: DAProps) => (
 
 // == Brake Failure ==
 const DA_BF_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect
       x="48"
@@ -615,7 +615,7 @@ const DA_BF_A = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_BF_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="52" width="160" height="40" fill="#1e293b" />
     <path
@@ -656,7 +656,7 @@ const DA_BF_B = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_BF_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect
       x="6"
@@ -787,7 +787,7 @@ const DA_BF_C = ({ showConsequence = false }: DAProps) => (
 
 // == Narrow Road DA options ==
 const DA_NR_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road */}
     <rect x="45" y="30" width="70" height="62" fill="#1e293b" />
@@ -826,7 +826,7 @@ const DA_NR_A = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_NR_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road */}
     <rect x="40" y="30" width="80" height="62" fill="#1e293b" />
@@ -877,7 +877,7 @@ const DA_NR_B = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_NR_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road with wider pocket */}
     <rect x="38" y="30" width="84" height="62" fill="#1e293b" />
@@ -938,7 +938,7 @@ const DA_NR_C = ({ showConsequence = false }: DAProps) => (
 
 // == Intersection Crash ==
 const DA_IC_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     <rect x="60" y="0" width="40" height="100" fill="#252f3f" />
@@ -969,7 +969,7 @@ const DA_IC_A = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_IC_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     <rect x="60" y="0" width="40" height="100" fill="#252f3f" />
@@ -1038,7 +1038,7 @@ const DA_IC_B = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_IC_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     <rect x="60" y="0" width="40" height="100" fill="#252f3f" />
@@ -1074,7 +1074,7 @@ const DA_IC_C = ({ showConsequence = false }: DAProps) => (
 
 // == Scooter Weaving ==
 const DA_SW_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     {/* Car turning right */}
@@ -1101,7 +1101,7 @@ const DA_SW_A = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_SW_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     {/* Car stopped */}
@@ -1134,7 +1134,7 @@ const DA_SW_B = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_SW_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     <rect x="0" y="48" width="160" height="44" fill="#1e293b" />
     <line x1="0" y1="70" x2="160" y2="70" stroke="#334155" strokeWidth="1" strokeDasharray="10,8" />
@@ -1163,7 +1163,7 @@ const DA_SW_C = ({ showConsequence = false }: DAProps) => (
 
 // == Drowsy Driving ==
 const DA_DD_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#020617" />
     <rect x="0" y="50" width="160" height="42" fill="#1e293b" />
     <line x1="0" y1="71" x2="160" y2="71" stroke="#334155" strokeWidth="1" strokeDasharray="10,8" />
@@ -1197,7 +1197,7 @@ const DA_DD_A = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_DD_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#020617" />
     <rect x="0" y="50" width="160" height="42" fill="#1e293b" />
     {/* Rest area */}
@@ -1237,7 +1237,7 @@ const DA_DD_B = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_DD_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#020617" />
     <rect x="0" y="50" width="160" height="42" fill="#1e293b" />
     <line x1="0" y1="71" x2="160" y2="71" stroke="#334155" strokeWidth="1" strokeDasharray="10,8" />
@@ -1269,7 +1269,7 @@ const DA_DD_C = ({ showConsequence = false }: DAProps) => (
 
 // == Hydroplaning ==
 const DA_HP_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#1e293b" />
     <rect x="0" y="48" width="160" height="44" fill="#1e3a5f" />
     <rect x="0" y="48" width="160" height="44" fill="#60a5fa" opacity="0.1" />
@@ -1293,7 +1293,7 @@ const DA_HP_A = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_HP_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#1e293b" />
     <rect x="0" y="48" width="160" height="44" fill="#1e3a5f" />
     <rect x="0" y="48" width="160" height="44" fill="#60a5fa" opacity="0.1" />
@@ -1325,7 +1325,7 @@ const DA_HP_B = ({ showConsequence = false }: DAProps) => (
   </svg>
 );
 const DA_HP_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#1e293b" />
     <rect x="0" y="48" width="160" height="44" fill="#1e3a5f" />
     <rect x="0" y="48" width="160" height="44" fill="#60a5fa" opacity="0.1" />
@@ -1352,7 +1352,7 @@ const DA_HP_C = ({ showConsequence = false }: DAProps) => (
 
 // == Right Turn Motorcycle ==
 const DA_RT_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road intersection */}
     <rect x="0" y="50" width="160" height="40" fill="#1e293b" />
@@ -1399,7 +1399,7 @@ const DA_RT_A = ({ showConsequence = false }: DAProps) => (
 );
 
 const DA_RT_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road */}
     <rect x="0" y="50" width="160" height="40" fill="#1e293b" />
@@ -1450,7 +1450,7 @@ const DA_RT_B = ({ showConsequence = false }: DAProps) => (
 );
 
 const DA_RT_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road */}
     <rect x="0" y="50" width="160" height="40" fill="#1e293b" />
@@ -1496,7 +1496,7 @@ const DA_RT_C = ({ showConsequence = false }: DAProps) => (
 
 // == Left Turn Oncoming ==
 const DA_LT_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road */}
     <rect x="0" y="45" width="160" height="45" fill="#1e293b" />
@@ -1549,7 +1549,7 @@ const DA_LT_A = ({ showConsequence = false }: DAProps) => (
 );
 
 const DA_LT_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road */}
     <rect x="0" y="45" width="160" height="45" fill="#1e293b" />
@@ -1605,7 +1605,7 @@ const DA_LT_B = ({ showConsequence = false }: DAProps) => (
 );
 
 const DA_LT_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road */}
     <rect x="0" y="45" width="160" height="45" fill="#1e293b" />
@@ -1662,7 +1662,7 @@ const DA_LT_C = ({ showConsequence = false }: DAProps) => (
 
 // DA_CC_A: Start engine directly — cat hit by fan belt (wrong)
 const DA_CC_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Car front */}
     <rect x="30" y="40" width="100" height="40" fill="#1d4ed8" rx="5" />
@@ -1713,7 +1713,7 @@ const DA_CC_A = ({ showConsequence = false }: DAProps) => (
 
 // DA_CC_B: Knock hood + honk, cat jumps out safely (correct)
 const DA_CC_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Car front */}
     <rect x="30" y="42" width="100" height="38" fill="#1d4ed8" rx="5" />
@@ -1777,7 +1777,7 @@ const DA_CC_B = ({ showConsequence = false }: DAProps) => (
 
 // DA_CC_C: Person reaches into hood to grab cat, cat scratches (wrong)
 const DA_CC_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Car front with hood open */}
     <rect x="30" y="50" width="100" height="30" fill="#1d4ed8" rx="5" />
@@ -1835,7 +1835,7 @@ const DA_CC_C = ({ showConsequence = false }: DAProps) => (
 
 // DA_WR_A: Car swerves hard, hits barrier / rolls (wrong)
 const DA_WR_A = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road */}
     <rect x="0" y="48" width="160" height="44" fill="#2d3748" />
@@ -1884,7 +1884,7 @@ const DA_WR_A = ({ showConsequence = false }: DAProps) => (
 
 // DA_WR_B: Car brakes, animal crosses safely (correct)
 const DA_WR_B = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road */}
     <rect x="0" y="46" width="160" height="46" fill="#2d3748" />
@@ -1962,7 +1962,7 @@ const DA_WR_B = ({ showConsequence = false }: DAProps) => (
 
 // DA_WR_C: Car accelerates and hits animal (wrong)
 const DA_WR_C = ({ showConsequence = false }: DAProps) => (
-  <svg viewBox="0 0 160 100" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 100" width="100%" height="100%">
     <rect width="160" height="100" fill="#0f172a" />
     {/* Road */}
     <rect x="0" y="46" width="160" height="46" fill="#2d3748" />

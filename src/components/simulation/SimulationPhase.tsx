@@ -185,12 +185,14 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
     return (
       <div className="anim-fade" style={{ textAlign: 'center', padding: '40px 20px' }}>
         <div style={{ fontSize: 48, marginBottom: 16 }}>🚧</div>
-        <p style={{ color: '#64748b', marginBottom: 20, fontSize: 14 }}>此情境尚未開放模擬模式</p>
+        <p style={{ color: 'var(--text-faint)', marginBottom: 20, fontSize: 14 }}>
+          此情境尚未開放模擬模式
+        </p>
         <button
           onClick={onComplete}
           style={{
-            background: '#f59e0b',
-            color: '#000',
+            background: 'var(--accent)',
+            color: 'var(--cta-fg)',
             border: 'none',
             borderRadius: 14,
             padding: '12px 28px',
@@ -227,11 +229,11 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
       {/* Progress header */}
       <div
         style={{
-          background: '#0d1525',
+          background: 'var(--bg-card)',
           borderRadius: 16,
           padding: '10px 14px',
           marginBottom: 10,
-          border: '1px solid #1e3a5f',
+          border: '1px solid var(--border-base)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -240,7 +242,7 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
         <div>
           <div
             style={{
-              color: '#f59e0b',
+              color: 'var(--accent)',
               fontSize: 14,
               fontWeight: 800,
               marginBottom: 2,
@@ -249,7 +251,7 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
           >
             🎮 情境模擬
           </div>
-          <div style={{ color: 'white', fontWeight: 800, fontSize: 14 }}>
+          <div style={{ color: 'var(--text-primary)', fontWeight: 800, fontSize: 14 }}>
             {allDone
               ? '\u2713 全部完成'
               : '步驟 ' + (stepIdx + 1) + '／' + simSteps.length + '：' + step.title}
@@ -265,7 +267,11 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
                   height: 7,
                   borderRadius: 4,
                   background:
-                    i < stepIdx || allDone ? '#22c55e' : i === stepIdx ? '#f59e0b' : '#1e3a5f',
+                    i < stepIdx || allDone
+                      ? 'var(--green)'
+                      : i === stepIdx
+                        ? 'var(--accent)'
+                        : 'var(--border-base)',
                   transition: 'background 0.4s',
                 }}
               />
@@ -278,19 +284,21 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
       {!allDone && (
         <div
           style={{
-            background: 'rgba(245,158,11,0.08)',
-            border: '1px solid rgba(245,158,11,0.28)',
+            background: 'var(--accent-bg)',
+            border: '1px solid var(--accent-border)',
             borderRadius: 12,
             padding: '9px 14px',
             marginBottom: 10,
             textAlign: 'center',
           }}
         >
-          <div style={{ color: '#fbbf24', fontSize: 14, fontWeight: 800, marginBottom: 3 }}>
+          <div
+            style={{ color: 'var(--accent-light)', fontSize: 14, fontWeight: 800, marginBottom: 3 }}
+          >
             {step.instruction}
           </div>
-          <div style={{ color: '#475569', fontSize: 14 }}>
-            快捷鍵：<span style={{ color: '#64748b', fontWeight: 700 }}>{keyHint}</span>
+          <div style={{ color: 'var(--text-disabled)', fontSize: 14 }}>
+            快捷鍵：<span style={{ color: 'var(--text-faint)', fontWeight: 700 }}>{keyHint}</span>
           </div>
         </div>
       )}
@@ -655,8 +663,8 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
         <div className="anim-fade" style={{ marginTop: 14 }}>
           <div
             style={{
-              background: 'rgba(34,197,94,0.08)',
-              border: '1px solid rgba(34,197,94,0.3)',
+              background: 'var(--green-bg-soft)',
+              border: '1px solid var(--green-deep)',
               borderRadius: 20,
               padding: 22,
               marginBottom: 14,
@@ -664,20 +672,29 @@ const SimulationPhase = ({ scenario, onComplete }: SimulationPhaseProps) => {
             }}
           >
             <div style={{ fontSize: 46, marginBottom: 10 }}>🎉</div>
-            <div style={{ color: '#4ade80', fontWeight: 900, fontSize: 18, marginBottom: 6 }}>
+            <div
+              style={{
+                color: 'var(--green-light)',
+                fontWeight: 900,
+                fontSize: 18,
+                marginBottom: 6,
+              }}
+            >
               模擬完成！
             </div>
-            <div style={{ color: '#64748b', fontSize: 14 }}>你成功完成所有緊急應變步驟</div>
+            <div style={{ color: 'var(--text-faint)', fontSize: 14 }}>
+              你成功完成所有緊急應變步驟
+            </div>
           </div>
           <button
             onClick={onComplete}
             style={{
               width: '100%',
               padding: '14px 0',
-              background: 'linear-gradient(135deg,#22c55e,#16a34a)',
+              background: 'var(--gradient-cta-green)',
               border: 'none',
               borderRadius: 16,
-              color: 'white',
+              color: 'var(--cta-fg)',
               fontWeight: 900,
               fontSize: 15,
               cursor: 'pointer',

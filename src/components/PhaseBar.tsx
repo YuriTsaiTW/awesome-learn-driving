@@ -23,8 +23,9 @@ const PhaseBar = ({ phase }: PhaseBarProps) => {
                 justifyContent: 'center',
                 fontSize: 14,
                 fontWeight: 700,
-                background: i < idx ? '#22c55e' : i === idx ? '#f59e0b' : '#334155',
-                color: i <= idx ? '#000' : '#64748b',
+                background:
+                  i < idx ? 'var(--green)' : i === idx ? 'var(--accent)' : 'var(--border-base)',
+                color: i <= idx ? 'var(--cta-fg)' : 'var(--text-faint)',
                 transition: 'all 0.3s ease',
               }}
             >
@@ -34,8 +35,7 @@ const PhaseBar = ({ phase }: PhaseBarProps) => {
               className="phasebar-label"
               style={{
                 fontSize: 14,
-                display: window.innerWidth > 400 ? 'block' : 'none',
-                color: i <= idx ? '#e2e8f0' : '#475569',
+                color: i <= idx ? 'var(--text-secondary)' : 'var(--text-disabled)',
               }}
             >
               {label}
@@ -47,7 +47,7 @@ const PhaseBar = ({ phase }: PhaseBarProps) => {
               style={{
                 height: 2,
                 width: 12,
-                background: i < idx ? '#22c55e' : '#334155',
+                background: i < idx ? 'var(--green)' : 'var(--border-base)',
                 transition: 'background 0.3s',
               }}
             />

@@ -28,21 +28,21 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
   };
 
   const optionStyle = (i: number) => {
-    let bg = '#1e293b',
-      border = '#334155',
-      color = '#e2e8f0';
+    let bg = 'var(--bg-card)',
+      border = 'var(--border-base)',
+      color = 'var(--text-secondary)';
     if (selected !== null) {
       if (i === q.correct) {
-        bg = 'rgba(21,128,61,0.25)';
-        border = '#16a34a';
-        color = '#bbf7d0';
+        bg = 'var(--green-bg)';
+        border = 'var(--green-deep)';
+        color = 'var(--green-text)';
       } else if (i === selected) {
-        bg = 'rgba(185,28,28,0.25)';
-        border = '#dc2626';
-        color = '#fecaca';
+        bg = 'var(--red-bg)';
+        border = 'var(--red)';
+        color = 'var(--red-text)';
       } else {
-        bg = 'rgba(30,41,59,0.4)';
-        color = '#475569';
+        bg = 'var(--bg-muted)';
+        color = 'var(--text-disabled)';
       }
     }
     return { bg, border, color };
@@ -65,7 +65,7 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
           marginBottom: 16,
         }}
       >
-        <span style={{ color: '#64748b', fontSize: 14 }}>
+        <span style={{ color: 'var(--text-faint)', fontSize: 14 }}>
           第 {qIdx + 1} 題 ／ 共 {scenario.quiz.length} 題
         </span>
         <div style={{ display: 'flex', gap: 6 }}>
@@ -76,7 +76,8 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
                 width: 28,
                 height: 6,
                 borderRadius: 3,
-                background: i < qIdx ? '#22c55e' : i === qIdx ? '#f59e0b' : '#334155',
+                background:
+                  i < qIdx ? 'var(--green)' : i === qIdx ? 'var(--accent)' : 'var(--border-base)',
                 transition: 'background 0.3s',
               }}
             />
@@ -85,19 +86,25 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
       </div>
       <div
         style={{
-          background: '#1e293b',
+          background: 'var(--bg-card)',
           borderRadius: 20,
           padding: 18,
           marginBottom: 14,
-          border: '1px solid #334155',
+          border: '1px solid var(--border-base)',
         }}
       >
-        <div style={{ color: '#f59e0b', fontSize: 14, fontWeight: 700, marginBottom: 8 }}>
+        <div style={{ color: 'var(--accent)', fontSize: 14, fontWeight: 700, marginBottom: 8 }}>
           📝 測驗
         </div>
         <p
           className="quiz-q"
-          style={{ color: 'white', fontWeight: 700, fontSize: 14, lineHeight: 1.65, margin: 0 }}
+          style={{
+            color: 'var(--text-primary)',
+            fontWeight: 700,
+            fontSize: 14,
+            lineHeight: 1.65,
+            margin: 0,
+          }}
         >
           {q.question}
         </p>
@@ -136,11 +143,11 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
                   fontWeight: 800,
                   background:
                     selected !== null && i === q.correct
-                      ? '#22c55e'
+                      ? 'var(--green)'
                       : selected === i && selected !== q.correct
-                        ? '#dc2626'
-                        : '#334155',
-                  color: 'white',
+                        ? 'var(--red)'
+                        : 'var(--border-base)',
+                  color: 'var(--text-primary)',
                 }}
               >
                 {optLabel(i, selected, q.correct)}
@@ -160,13 +167,15 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
             padding: 14,
             marginBottom: 14,
             fontSize: 14,
-            background: selected === q.correct ? 'rgba(21,128,61,0.15)' : '#1e293b',
-            border: `1px solid ${selected === q.correct ? '#16a34a' : '#334155'}`,
-            color: '#cbd5e1',
+            background: selected === q.correct ? 'var(--green-bg-soft)' : 'var(--bg-card)',
+            border: `1px solid ${selected === q.correct ? 'var(--green-deep)' : 'var(--border-base)'}`,
+            color: 'var(--text-body)',
             lineHeight: 1.7,
           }}
         >
-          <strong style={{ color: selected === q.correct ? '#4ade80' : '#fbbf24' }}>
+          <strong
+            style={{ color: selected === q.correct ? 'var(--green-light)' : 'var(--accent-light)' }}
+          >
             {selected === q.correct ? '✅ 正確！' : '💡 解析：'}
           </strong>{' '}
           {q.explanation}
@@ -182,10 +191,10 @@ const QuizPhase = ({ scenario, onComplete }: QuizPhaseProps) => {
             borderRadius: 20,
             fontWeight: 800,
             fontSize: 16,
-            color: '#000',
+            color: 'var(--cta-fg)',
             border: 'none',
             cursor: 'pointer',
-            background: 'linear-gradient(135deg,#f59e0b,#d97706)',
+            background: 'var(--gradient-cta)',
           }}
         >
           {qIdx < scenario.quiz.length - 1 ? '下一題 →' : '查看結果 →'}

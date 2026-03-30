@@ -51,11 +51,11 @@ function DonutChart({
         cy={cy}
         r={r}
         fill="none"
-        stroke={color}
+        style={{ stroke: color }}
         strokeWidth={18}
         strokeDasharray={`${dash} ${circ - dash}`}
         strokeDashoffset={-offset}
-        style={{ transform: 'rotate(-90deg)', transformOrigin: `${cx}px ${cy}px` }}
+        transform={`rotate(-90 ${cx} ${cy})`}
       />
     );
   }
@@ -70,12 +70,19 @@ function DonutChart({
     <div style={{ position: 'relative', width: 128, height: 128 }}>
       <svg viewBox="0 0 128 128" width={128} height={128}>
         {/* Background ring */}
-        <circle cx={cx} cy={cy} r={r} fill="none" stroke="#1e293b" strokeWidth={18} />
+        <circle
+          cx={cx}
+          cy={cy}
+          r={r}
+          fill="none"
+          style={{ stroke: 'var(--border-subtle)' }}
+          strokeWidth={18}
+        />
         {total > 0 ? (
           <>
-            {arc(unanswered, unansweredOffset, '#334155')}
-            {arc(incorrect, incorrectOffset, '#f87171')}
-            {arc(correct, correctOffset, '#4ade80')}
+            {arc(unanswered, unansweredOffset, 'var(--border-base)')}
+            {arc(incorrect, incorrectOffset, 'var(--red-light)')}
+            {arc(correct, correctOffset, 'var(--green-light)')}
           </>
         ) : null}
       </svg>
@@ -89,8 +96,12 @@ function DonutChart({
           justifyContent: 'center',
         }}
       >
-        <span style={{ fontSize: 22, fontWeight: 900, color: 'white', lineHeight: 1 }}>{pct}%</span>
-        <span style={{ fontSize: 11, color: '#64748b', marginTop: 2 }}>正確率</span>
+        <span
+          style={{ fontSize: 22, fontWeight: 900, color: 'var(--text-primary)', lineHeight: 1 }}
+        >
+          {pct}%
+        </span>
+        <span style={{ fontSize: 11, color: 'var(--text-faint)', marginTop: 2 }}>正確率</span>
       </div>
     </div>
   );
@@ -112,10 +123,14 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
     <div className="exam-inner anim-fade">
       {/* Header */}
       <div style={{ marginBottom: 24 }}>
-        <h2 style={{ fontSize: 24, fontWeight: 900, color: 'white', margin: '0 0 6px' }}>
+        <h2
+          style={{ fontSize: 30, fontWeight: 900, color: 'var(--text-primary)', margin: '0 0 6px' }}
+        >
           📝 筆試測驗
         </h2>
-        <p style={{ color: '#64748b', fontSize: 14, margin: 0 }}>台灣汽車駕照筆試題庫練習</p>
+        <p style={{ color: 'var(--text-faint)', fontSize: 14, margin: 0 }}>
+          台灣汽車駕照筆試題庫練習
+        </p>
       </div>
 
       {/* Stats row */}
@@ -128,27 +143,29 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
         }}
       >
         {[
-          { val: `${answered}/${total}`, label: '已作答', color: '#fbbf24' },
+          { val: `${answered}/${total}`, label: '已作答', color: 'var(--accent-light)' },
           {
             val: answered > 0 ? Math.round((correct / answered) * 100) + '%' : '—',
             label: '答對率',
-            color: '#4ade80',
+            color: 'var(--green-light)',
           },
-          { val: bookmarkedIds.length, label: '書籤', color: '#f59e0b' },
+          { val: bookmarkedIds.length, label: '書籤', color: 'var(--accent)' },
         ].map(function (s, i) {
           return (
             <div
               key={i}
               style={{
-                background: '#1e293b',
+                background: 'var(--bg-card)',
                 borderRadius: 16,
                 padding: '14px 8px',
                 textAlign: 'center',
-                border: '1px solid #334155',
+                border: '1px solid var(--border-base)',
               }}
             >
               <div style={{ fontSize: 22, fontWeight: 900, color: s.color }}>{s.val}</div>
-              <div style={{ fontSize: 13, color: '#64748b', marginTop: 4 }}>{s.label}</div>
+              <div style={{ fontSize: 13, color: 'var(--text-faint)', marginTop: 4 }}>
+                {s.label}
+              </div>
             </div>
           );
         })}
@@ -157,8 +174,8 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
       {/* Donut + category breakdown */}
       <div
         style={{
-          background: '#1e293b',
-          border: '1px solid #334155',
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border-base)',
           borderRadius: 20,
           padding: '20px',
           marginBottom: 20,
@@ -172,9 +189,9 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
         <div style={{ flex: 1, minWidth: 160 }}>
           {/* Legend */}
           {[
-            { label: '答對', count: correct, color: '#4ade80' },
-            { label: '答錯', count: incorrect, color: '#f87171' },
-            { label: '未答', count: unanswered, color: '#475569' },
+            { label: '答對', count: correct, color: 'var(--green-light)' },
+            { label: '答錯', count: incorrect, color: 'var(--red-light)' },
+            { label: '未答', count: unanswered, color: 'var(--text-disabled)' },
           ].map(function (item) {
             return (
               <div
@@ -190,8 +207,12 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
                     flexShrink: 0,
                   }}
                 />
-                <span style={{ color: '#94a3b8', fontSize: 13, flex: 1 }}>{item.label}</span>
-                <span style={{ color: 'white', fontSize: 13, fontWeight: 700 }}>{item.count}</span>
+                <span style={{ color: 'var(--text-muted)', fontSize: 13, flex: 1 }}>
+                  {item.label}
+                </span>
+                <span style={{ color: 'var(--text-primary)', fontSize: 13, fontWeight: 700 }}>
+                  {item.count}
+                </span>
               </div>
             );
           })}
@@ -201,14 +222,21 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
       {/* Category progress */}
       <div
         style={{
-          background: '#1e293b',
-          border: '1px solid #334155',
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border-base)',
           borderRadius: 20,
           padding: '16px 20px',
           marginBottom: 20,
         }}
       >
-        <div style={{ fontSize: 13, color: '#64748b', fontWeight: 600, marginBottom: 12 }}>
+        <div
+          style={{
+            fontSize: 13,
+            color: 'var(--text-faint)',
+            fontWeight: 600,
+            marginBottom: 12,
+          }}
+        >
           分類進度
         </div>
         {CATEGORIES.map(function (cat) {
@@ -220,19 +248,31 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
           return (
             <div key={cat} style={{ marginBottom: 10 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                <span style={{ fontSize: 13, color: '#94a3b8' }}>{CATEGORY_LABELS[cat]}</span>
-                <span style={{ fontSize: 12, color: '#475569' }}>
+                <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>
+                  {CATEGORY_LABELS[cat]}
+                </span>
+                <span style={{ fontSize: 12, color: 'var(--text-disabled)' }}>
                   {catAnswered}/{catQs.length} 題 · {pct}%
                 </span>
               </div>
               <div
-                style={{ height: 6, background: '#0f172a', borderRadius: 3, overflow: 'hidden' }}
+                style={{
+                  height: 6,
+                  background: 'var(--bg-elevated)',
+                  borderRadius: 3,
+                  overflow: 'hidden',
+                }}
               >
                 <div
                   style={{
                     height: '100%',
                     width: `${pct}%`,
-                    background: pct >= 80 ? '#4ade80' : pct >= 60 ? '#fbbf24' : '#60a5fa',
+                    background:
+                      pct >= 80
+                        ? 'var(--green-light)'
+                        : pct >= 60
+                          ? 'var(--accent-light)'
+                          : 'var(--blue)',
                     borderRadius: 3,
                     transition: 'width 0.4s',
                   }}
@@ -253,9 +293,9 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
             style={{
               padding: '14px',
               borderRadius: 18,
-              border: '1px solid #f59e0b',
-              background: 'rgba(245,158,11,0.1)',
-              color: '#fbbf24',
+              border: '1px solid var(--accent)',
+              background: 'var(--accent-bg)',
+              color: 'var(--accent-light)',
               fontSize: 15,
               fontWeight: 800,
               cursor: 'pointer',
@@ -287,8 +327,8 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
       {bookmarkedQuestions.length > 0 && (
         <div
           style={{
-            background: '#1e293b',
-            border: '1px solid #334155',
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border-base)',
             borderRadius: 20,
             marginBottom: 20,
             overflow: 'hidden',
@@ -297,10 +337,10 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
           <div
             style={{
               padding: '14px 20px',
-              color: '#f59e0b',
+              color: 'var(--accent)',
               fontWeight: 700,
               fontSize: 14,
-              borderBottom: '1px solid #334155',
+              borderBottom: '1px solid var(--border-base)',
             }}
           >
             ★ 書籤題目（{bookmarkedQuestions.length} 題）
@@ -314,10 +354,12 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
                   style={{
                     padding: '10px 0',
                     borderBottom:
-                      idx < bookmarkedQuestions.length - 1 ? '1px solid #1e293b' : 'none',
+                      idx < bookmarkedQuestions.length - 1
+                        ? '1px solid var(--border-subtle)'
+                        : 'none',
                   }}
                 >
-                  <div style={{ color: '#cbd5e1', fontSize: 13, marginBottom: 4 }}>
+                  <div style={{ color: 'var(--text-body)', fontSize: 13, marginBottom: 4 }}>
                     {q.question}
                   </div>
                   {sc && (
@@ -328,7 +370,7 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
                         borderRadius: 10,
                         background: 'rgba(96,165,250,0.15)',
                         border: '1px solid rgba(96,165,250,0.3)',
-                        color: '#60a5fa',
+                        color: 'var(--blue)',
                         fontSize: 11,
                       }}
                     >
@@ -347,9 +389,9 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
                 width: '100%',
                 padding: '10px',
                 borderRadius: 12,
-                border: '1px solid #334155',
+                border: '1px solid var(--border-base)',
                 background: 'transparent',
-                color: '#f59e0b',
+                color: 'var(--accent)',
                 fontSize: 13,
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -365,14 +407,21 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
       {progress.history.length > 0 && (
         <div
           style={{
-            background: '#1e293b',
-            border: '1px solid #334155',
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border-base)',
             borderRadius: 20,
             padding: '16px 20px',
             marginBottom: 20,
           }}
         >
-          <div style={{ fontSize: 13, color: '#64748b', fontWeight: 600, marginBottom: 12 }}>
+          <div
+            style={{
+              fontSize: 13,
+              color: 'var(--text-faint)',
+              fontWeight: 600,
+              marginBottom: 12,
+            }}
+          >
             最近測驗記錄
           </div>
           {progress.history
@@ -390,19 +439,24 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     padding: '8px 0',
-                    borderBottom: '1px solid #0f172a',
+                    borderBottom: '1px solid var(--bg-elevated)',
                     fontSize: 13,
                   }}
                 >
-                  <span style={{ color: '#64748b' }}>
+                  <span style={{ color: 'var(--text-faint)' }}>
                     {d.getMonth() + 1}/{d.getDate()} {String(d.getHours()).padStart(2, '0')}:
                     {String(d.getMinutes()).padStart(2, '0')}
                   </span>
-                  <span style={{ color: '#94a3b8' }}>{h.totalQuestions} 題</span>
+                  <span style={{ color: 'var(--text-muted)' }}>{h.totalQuestions} 題</span>
                   <span
                     style={{
                       fontWeight: 700,
-                      color: pct >= 80 ? '#4ade80' : pct >= 60 ? '#fbbf24' : '#f87171',
+                      color:
+                        pct >= 80
+                          ? 'var(--green-light)'
+                          : pct >= 60
+                            ? 'var(--accent-light)'
+                            : 'var(--red-light)',
                     }}
                   >
                     {pct}%
@@ -423,7 +477,7 @@ function ExamDashboard({ progress, session, onClearProgress }: ExamDashboardProp
             style={{
               background: 'transparent',
               border: 'none',
-              color: '#475569',
+              color: 'var(--text-disabled)',
               fontSize: 12,
               cursor: 'pointer',
               textDecoration: 'underline',

@@ -14,19 +14,25 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
     <div className="anim-fade">
       <div
         style={{
-          background: '#1e293b',
+          background: 'var(--bg-card)',
           borderRadius: 20,
           padding: 18,
           marginBottom: 14,
-          border: '1px solid #334155',
+          border: '1px solid var(--border-base)',
         }}
       >
-        <div style={{ color: '#f59e0b', fontSize: 14, fontWeight: 700, marginBottom: 8 }}>
+        <div style={{ color: 'var(--accent)', fontSize: 14, fontWeight: 700, marginBottom: 8 }}>
           🤔 緊急決策
         </div>
         <p
           className="decision-q"
-          style={{ color: 'white', fontWeight: 700, fontSize: 15, lineHeight: 1.65, margin: 0 }}
+          style={{
+            color: 'var(--text-primary)',
+            fontWeight: 700,
+            fontSize: 15,
+            lineHeight: 1.65,
+            margin: 0,
+          }}
         >
           {scenario.decision.question}
         </p>
@@ -44,9 +50,9 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
                 display: 'flex',
                 flexDirection: 'column',
                 padding: 0,
-                background: '#1e293b',
+                background: 'var(--bg-card)',
                 borderRadius: 18,
-                border: '1px solid #334155',
+                border: '1px solid var(--border-base)',
                 cursor: 'pointer',
                 textAlign: 'left',
                 overflow: 'hidden',
@@ -54,11 +60,11 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
                 transition: 'border-color 0.15s, transform 0.12s',
               }}
               onMouseEnter={function (e) {
-                e.currentTarget.style.borderColor = '#f59e0b';
+                e.currentTarget.style.borderColor = 'var(--accent)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={function (e) {
-                e.currentTarget.style.borderColor = '#334155';
+                e.currentTarget.style.borderColor = 'var(--border-base)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
@@ -66,8 +72,8 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
                 <div
                   className="decision-opt-anim"
                   style={{
-                    background: '#0f172a',
-                    borderBottom: '1px solid #1e293b',
+                    background: 'var(--bg-elevated)',
+                    borderBottom: '1px solid var(--border-subtle)',
                     pointerEvents: 'none',
                     flexShrink: 0,
                   }}
@@ -81,21 +87,21 @@ const DecisionPhase = ({ scenario, onDecide }: DecisionPhaseProps) => {
                     width: 28,
                     height: 28,
                     borderRadius: '50%',
-                    background: '#334155',
+                    background: 'var(--border-base)',
                     flexShrink: 0,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontSize: 14,
                     fontWeight: 800,
-                    color: '#94a3b8',
+                    color: 'var(--text-muted)',
                   }}
                 >
                   {optLabels[idx]}
                 </div>
                 <span
                   className="opt-text"
-                  style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.65 }}
+                  style={{ color: 'var(--text-secondary)', fontSize: 14, lineHeight: 1.65 }}
                 >
                   {opt.text}
                 </span>

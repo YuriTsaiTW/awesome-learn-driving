@@ -53,10 +53,15 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
 
   const grade =
     pct >= 85
-      ? { label: '優秀', color: '#4ade80', emoji: '🏆', sub: '已充分掌握這些題目！' }
+      ? { label: '優秀', color: 'var(--green-light)', emoji: '🏆', sub: '已充分掌握這些題目！' }
       : pct >= 70
-        ? { label: '良好', color: '#fbbf24', emoji: '👍', sub: '再加強一下，就能穩過！' }
-        : { label: '需加強', color: '#f87171', emoji: '📚', sub: '建議重新複習錯題' };
+        ? {
+            label: '良好',
+            color: 'var(--accent-light)',
+            emoji: '👍',
+            sub: '再加強一下，就能穩過！',
+          }
+        : { label: '需加強', color: 'var(--red-light)', emoji: '📚', sub: '建議重新複習錯題' };
 
   const wrongItems = results.filter((r) => !r.correct && r.q);
 
@@ -99,28 +104,37 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
         <div style={{ fontSize: 20, fontWeight: 900, color: grade.color, marginBottom: 4 }}>
           {grade.label}
         </div>
-        <div style={{ fontSize: 44, fontWeight: 900, color: 'white', marginBottom: 4 }}>
+        <div
+          style={{ fontSize: 44, fontWeight: 900, color: 'var(--text-primary)', marginBottom: 4 }}
+        >
           {pct}
           <span style={{ fontSize: 18 }}>%</span>
         </div>
-        <div style={{ color: '#64748b', fontSize: 14, marginBottom: 4 }}>
+        <div style={{ color: 'var(--text-faint)', fontSize: 14, marginBottom: 4 }}>
           {correctCount} ／ {total} 題答對
         </div>
-        <div style={{ color: '#94a3b8', fontSize: 13 }}>{grade.sub}</div>
+        <div style={{ color: 'var(--text-muted)', fontSize: 13 }}>{grade.sub}</div>
       </div>
 
       {/* Category breakdown */}
       {catStats.length > 0 && (
         <div
           style={{
-            background: '#1e293b',
-            border: '1px solid #334155',
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border-base)',
             borderRadius: 20,
             padding: '16px 20px',
             marginBottom: 20,
           }}
         >
-          <div style={{ fontSize: 13, color: '#64748b', fontWeight: 600, marginBottom: 12 }}>
+          <div
+            style={{
+              fontSize: 13,
+              color: 'var(--text-faint)',
+              fontWeight: 600,
+              marginBottom: 12,
+            }}
+          >
             分類分析
           </div>
           {catStats.map(function (cs) {
@@ -128,19 +142,31 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
             return (
               <div key={cs.cat} style={{ marginBottom: 10 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                  <span style={{ fontSize: 13, color: '#94a3b8' }}>{CATEGORY_LABELS[cs.cat]}</span>
-                  <span style={{ fontSize: 12, color: '#475569' }}>
+                  <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>
+                    {CATEGORY_LABELS[cs.cat]}
+                  </span>
+                  <span style={{ fontSize: 12, color: 'var(--text-disabled)' }}>
                     {cs.correct}/{cs.total} · {cpct}%
                   </span>
                 </div>
                 <div
-                  style={{ height: 6, background: '#0f172a', borderRadius: 3, overflow: 'hidden' }}
+                  style={{
+                    height: 6,
+                    background: 'var(--bg-elevated)',
+                    borderRadius: 3,
+                    overflow: 'hidden',
+                  }}
                 >
                   <div
                     style={{
                       height: '100%',
                       width: `${cpct}%`,
-                      background: cpct >= 80 ? '#4ade80' : cpct >= 60 ? '#fbbf24' : '#f87171',
+                      background:
+                        cpct >= 80
+                          ? 'var(--green-light)'
+                          : cpct >= 60
+                            ? 'var(--accent-light)'
+                            : 'var(--red-light)',
                       borderRadius: 3,
                     }}
                   />
@@ -159,9 +185,9 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
             style={{
               padding: '13px',
               borderRadius: 18,
-              border: '1px solid #f87171',
-              background: 'rgba(248,113,113,0.1)',
-              color: '#f87171',
+              border: '1px solid var(--red-light)',
+              background: 'var(--red-bg)',
+              color: 'var(--red-light)',
               fontSize: 13,
               fontWeight: 700,
               cursor: 'pointer',
@@ -175,9 +201,9 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
           style={{
             padding: '13px',
             borderRadius: 18,
-            border: '1px solid #475569',
+            border: '1px solid var(--border-base)',
             background: 'transparent',
-            color: 'white',
+            color: 'var(--text-primary)',
             fontSize: 13,
             fontWeight: 700,
             cursor: 'pointer',
@@ -192,8 +218,8 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
             padding: '13px',
             borderRadius: 18,
             border: 'none',
-            background: 'linear-gradient(135deg,#f59e0b,#d97706)',
-            color: '#000',
+            background: 'var(--gradient-cta)',
+            color: 'var(--cta-fg)',
             fontSize: 13,
             fontWeight: 800,
             cursor: 'pointer',
@@ -207,8 +233,8 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
       {wrongItems.length > 0 && (
         <div
           style={{
-            background: '#1e293b',
-            border: '1px solid #334155',
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border-base)',
             borderRadius: 20,
             overflow: 'hidden',
             marginBottom: 12,
@@ -217,10 +243,10 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
           <div
             style={{
               padding: '14px 20px',
-              color: '#f87171',
+              color: 'var(--red-light)',
               fontWeight: 700,
               fontSize: 14,
-              borderBottom: '1px solid #334155',
+              borderBottom: '1px solid var(--border-base)',
             }}
           >
             ✗ 答錯的題目（{wrongItems.length} 題）
@@ -235,7 +261,8 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
                   key={q.id}
                   style={{
                     padding: '14px 20px',
-                    borderBottom: wi < wrongItems.length - 1 ? '1px solid #0f172a' : 'none',
+                    borderBottom:
+                      wi < wrongItems.length - 1 ? '1px solid var(--bg-elevated)' : 'none',
                   }}
                 >
                   {q.image && (
@@ -245,7 +272,14 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
                       style={{ display: 'block', maxWidth: 120, marginBottom: 8, borderRadius: 6 }}
                     />
                   )}
-                  <div style={{ color: '#cbd5e1', fontSize: 13, fontWeight: 600, marginBottom: 8 }}>
+                  <div
+                    style={{
+                      color: 'var(--text-body)',
+                      fontSize: 13,
+                      fontWeight: 600,
+                      marginBottom: 8,
+                    }}
+                  >
                     {q.question}
                   </div>
                   <div
@@ -263,7 +297,7 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
                             alignItems: 'center',
                             gap: 8,
                             fontSize: 12,
-                            color: isCorrectOpt ? '#4ade80' : '#f87171',
+                            color: isCorrectOpt ? 'var(--green-light)' : 'var(--red-light)',
                           }}
                         >
                           <span
@@ -271,7 +305,7 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
                               width: 20,
                               height: 20,
                               borderRadius: '50%',
-                              border: `1.5px solid ${isCorrectOpt ? '#4ade80' : '#f87171'}`,
+                              border: `1.5px solid ${isCorrectOpt ? 'var(--green-light)' : 'var(--red-light)'}`,
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
@@ -295,7 +329,7 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
                       borderRadius: 10,
                       padding: '8px 10px',
                       fontSize: 12,
-                      color: '#94a3b8',
+                      color: 'var(--text-muted)',
                       lineHeight: 1.6,
                       marginBottom: sc ? 8 : 0,
                     }}
@@ -312,7 +346,7 @@ function ExamResult({ session, onRetry, onRetryWrong, onHome }: ExamResultProps)
                         borderRadius: 10,
                         background: 'rgba(96,165,250,0.12)',
                         border: '1px solid rgba(96,165,250,0.3)',
-                        color: '#60a5fa',
+                        color: 'var(--blue)',
                         fontSize: 12,
                         cursor: 'pointer',
                       }}

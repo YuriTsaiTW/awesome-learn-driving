@@ -167,9 +167,9 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
           onClick={onPause}
           style={{
             background: 'transparent',
-            border: '1px solid #334155',
+            border: '1px solid var(--border-base)',
             borderRadius: 12,
-            color: '#94a3b8',
+            color: 'var(--text-muted)',
             padding: '6px 12px',
             cursor: 'pointer',
             fontSize: 14,
@@ -184,7 +184,7 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
               display: 'flex',
               justifyContent: 'space-between',
               fontSize: 13,
-              color: '#64748b',
+              color: 'var(--text-faint)',
               marginBottom: 4,
             }}
           >
@@ -193,7 +193,14 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
             </span>
             <span>{answeredCount} 已作答</span>
           </div>
-          <div style={{ height: 4, background: '#1e293b', borderRadius: 2, overflow: 'hidden' }}>
+          <div
+            style={{
+              height: 4,
+              background: 'var(--border-subtle)',
+              borderRadius: 2,
+              overflow: 'hidden',
+            }}
+          >
             <div
               style={{
                 height: '100%',
@@ -210,8 +217,8 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
       {/* Question card */}
       <div
         style={{
-          background: '#1e293b',
-          border: '1px solid #334155',
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border-base)',
           borderRadius: 20,
           padding: '18px 20px',
           marginBottom: 14,
@@ -232,8 +239,8 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
               style={{
                 padding: '2px 10px',
                 borderRadius: 10,
-                background: '#0f172a',
-                color: '#60a5fa',
+                background: 'var(--bg-elevated)',
+                color: 'var(--blue)',
                 fontSize: 12,
                 fontWeight: 600,
               }}
@@ -250,7 +257,7 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
                   borderRadius: 10,
                   background: 'rgba(96,165,250,0.12)',
                   border: '1px solid rgba(96,165,250,0.3)',
-                  color: '#60a5fa',
+                  color: 'var(--blue)',
                   fontSize: 12,
                   cursor: 'pointer',
                 }}
@@ -266,7 +273,7 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
               border: 'none',
               fontSize: 20,
               cursor: 'pointer',
-              color: isBookmarked ? '#f59e0b' : '#334155',
+              color: isBookmarked ? 'var(--accent)' : 'var(--border-base)',
               lineHeight: 1,
               padding: '2px 4px',
             }}
@@ -288,7 +295,7 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
         {/* Question text */}
         <div
           className="quiz-q"
-          style={{ color: 'white', fontSize: 15, fontWeight: 600, lineHeight: 1.6 }}
+          style={{ color: 'var(--text-primary)', fontSize: 15, fontWeight: 600, lineHeight: 1.6 }}
         >
           {question.question}
         </div>
@@ -297,24 +304,24 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
       {/* Options */}
       <div className="quiz-options" style={{ marginBottom: 14 }}>
         {question.options.map(function (opt, i) {
-          let bg = '#1e293b';
-          let borderColor = '#334155';
-          let textColor = '#cbd5e1';
+          let bg = 'var(--bg-card)';
+          let borderColor = 'var(--border-base)';
+          let textColor = 'var(--text-body)';
 
           if (isAnswered) {
             if (i === question.correct) {
               bg = 'rgba(74,222,128,0.12)';
-              borderColor = '#4ade80';
-              textColor = '#4ade80';
+              borderColor = 'var(--green-light)';
+              textColor = 'var(--green-light)';
             } else if (i === selected && i !== question.correct) {
               bg = 'rgba(248,113,113,0.12)';
-              borderColor = '#f87171';
-              textColor = '#f87171';
+              borderColor = 'var(--red-light)';
+              textColor = 'var(--red-light)';
             }
           } else if (selected === i) {
-            bg = '#1e3a5f';
-            borderColor = '#60a5fa';
-            textColor = '#93c5fd';
+            bg = 'var(--bg-active)';
+            borderColor = 'var(--blue)';
+            textColor = 'var(--blue-light)';
           }
 
           return (
@@ -363,10 +370,10 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
                 {opt}
               </span>
               {isAnswered && i === question.correct && (
-                <span style={{ color: '#4ade80', fontSize: 16, flexShrink: 0 }}>✓</span>
+                <span style={{ color: 'var(--green-light)', fontSize: 16, flexShrink: 0 }}>✓</span>
               )}
               {isAnswered && i === selected && i !== question.correct && (
-                <span style={{ color: '#f87171', fontSize: 16, flexShrink: 0 }}>✗</span>
+                <span style={{ color: 'var(--red-light)', fontSize: 16, flexShrink: 0 }}>✗</span>
               )}
             </button>
           );
@@ -390,13 +397,13 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
             style={{
               fontSize: 13,
               fontWeight: 700,
-              color: selected === question.correct ? '#4ade80' : '#f87171',
+              color: selected === question.correct ? 'var(--green-light)' : 'var(--red-light)',
               marginBottom: 6,
             }}
           >
             {selected === question.correct ? '✓ 答對了！' : '✗ 答錯了'}
           </div>
-          <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.6 }}>
+          <div style={{ color: 'var(--text-muted)', fontSize: 13, lineHeight: 1.6 }}>
             {question.explanation}
           </div>
         </div>
@@ -444,9 +451,9 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
           const isBookmarkedDot = session.bookmarks.includes(i);
           const isCurrent = i === idx;
 
-          let bg = '#334155'; // unanswered
-          if (isCorrect) bg = '#4ade80';
-          else if (isWrong) bg = '#f87171';
+          let bg = 'var(--border-base)'; // unanswered
+          if (isCorrect) bg = 'var(--green-light)';
+          else if (isWrong) bg = 'var(--red-light)';
 
           return (
             <button
@@ -461,13 +468,13 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
                 borderRadius: '50%',
                 background: bg,
                 border: isCurrent
-                  ? '2px solid white'
+                  ? '2px solid var(--text-primary)'
                   : isBookmarkedDot
-                    ? '2px solid #f59e0b'
+                    ? '2px solid var(--accent)'
                     : '2px solid transparent',
                 cursor: 'pointer',
                 fontSize: 10,
-                color: ans !== null ? '#0f172a' : '#64748b',
+                color: ans !== null ? '#0f172a' : 'var(--text-faint)',
                 fontWeight: 700,
                 display: 'flex',
                 alignItems: 'center',

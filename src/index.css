@@ -1,12 +1,242 @@
 @import 'tailwindcss';
 
+/* === Color Design Tokens (Dark Theme Default) === */
+:root {
+  /* Backgrounds */
+  --bg-base: #0f172a;
+  --bg-card: #1e293b;
+  --bg-elevated: #0f172a;
+  --bg-deep: #0d1525;
+  --bg-active: #1e3a5f;
+  --bg-hover: #1e293b;
+  --bg-muted: rgba(30, 41, 59, 0.4);
+
+  /* Borders */
+  --border-base: #334155;
+  --border-subtle: #1e293b;
+  --border-active: #60a5fa;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-body: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --text-disabled: #475569;
+
+  /* Accent (Amber) */
+  --accent: #f59e0b;
+  --accent-deep: #d97706;
+  --accent-light: #fbbf24;
+  --accent-bg: rgba(245, 158, 11, 0.12);
+  --accent-bg-hover: rgba(245, 158, 11, 0.05);
+  --accent-border: rgba(245, 158, 11, 0.3);
+
+  /* Blue */
+  --blue: #60a5fa;
+  --blue-bg: #1e3a5f;
+  --blue-light: #93c5fd;
+
+  /* Green (success) */
+  --green: #22c55e;
+  --green-light: #4ade80;
+  --green-deep: #16a34a;
+  --green-bg: rgba(21, 128, 61, 0.25);
+  --green-bg-soft: rgba(21, 128, 61, 0.15);
+  --green-text: #bbf7d0;
+
+  /* Red (error) */
+  --red: #dc2626;
+  --red-light: #f87171;
+  --red-bg: rgba(185, 28, 28, 0.25);
+  --red-text: #fecaca;
+
+  /* Orange (warning) */
+  --orange-bg: rgba(146, 64, 14, 0.2);
+  --orange-border: #92400e;
+
+  /* Gradients */
+  --gradient-bg: linear-gradient(160deg, #0f172a, #1e293b);
+  --gradient-footer: linear-gradient(to top, #0f172a 70%, transparent);
+  --gradient-cta: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  --gradient-cta-green: linear-gradient(135deg, var(--green), var(--green-deep));
+
+  /* CTA button foreground text color */
+  --cta-fg: #000;
+}
+
+/* Light theme — set synchronously via ThemeContext before first paint */
+[data-theme='light'] {
+  --bg-base: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-elevated: #f8fafc;
+  --bg-deep: #e2e8f0;
+  --bg-active: #dbeafe;
+  --bg-hover: #f1f5f9;
+  --bg-muted: rgba(241, 245, 249, 0.7);
+
+  --border-base: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  --border-active: #3b82f6;
+
+  --text-primary: #0f172a;
+  --text-secondary: #1e293b;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --text-disabled: #cbd5e1;
+
+  --accent: #f97316;
+  --accent-deep: #ea580c;
+  --accent-light: #fb923c;
+  --accent-bg: rgba(249, 115, 22, 0.1);
+  --accent-bg-hover: rgba(249, 115, 22, 0.05);
+  --accent-border: rgba(249, 115, 22, 0.3);
+
+  --blue: #2563eb;
+  --blue-bg: #dbeafe;
+  --blue-light: #3b82f6;
+
+  --green: #16a34a;
+  --green-light: #22c55e;
+  --green-deep: #15803d;
+  --green-bg: rgba(21, 128, 61, 0.15);
+  --green-bg-soft: rgba(21, 128, 61, 0.1);
+  --green-text: #166534;
+
+  --red: #dc2626;
+  --red-light: #ef4444;
+  --red-bg: rgba(185, 28, 28, 0.15);
+  --red-text: #991b1b;
+
+  --orange-bg: rgba(146, 64, 14, 0.12);
+  --orange-border: #d97706;
+
+  --gradient-bg: linear-gradient(160deg, #f1f5f9, #e2e8f0);
+  --gradient-footer: linear-gradient(to top, #f1f5f9 70%, transparent);
+  --gradient-cta: linear-gradient(135deg, #f97316, #ea580c);
+  --cta-fg: #fff;
+}
+
+/* Animation SVG color adaptation (light theme) */
+/* Scoped to svg.anim-svg — simulation cockpit is excluded */
+
+/* Panel/sky backgrounds */
+[data-theme='light'] svg.anim-svg [fill='#0f172a'] {
+  fill: #f1f5f9;
+}
+[data-theme='light'] svg.anim-svg [fill='#1a2744'] {
+  fill: #dbeafe;
+}
+[data-theme='light'] svg.anim-svg [fill='#0d1525'] {
+  fill: #e2e8f0;
+}
+[data-theme='light'] svg.anim-svg [fill='#1e3a5f'] {
+  fill: #bfdbfe;
+}
+
+/* Road and surface colors */
+[data-theme='light'] svg.anim-svg [fill='#1e293b'] {
+  fill: #64748b;
+}
+[data-theme='light'] svg.anim-svg [fill='#2d3748'] {
+  fill: #94a3b8;
+}
+[data-theme='light'] svg.anim-svg [fill='#374151'] {
+  fill: #94a3b8;
+}
+[data-theme='light'] svg.anim-svg [fill='#334155'] {
+  fill: #cbd5e1;
+}
+[data-theme='light'] svg.anim-svg [fill='#252f3f'] {
+  fill: #94a3b8;
+}
+[data-theme='light'] svg.anim-svg [fill='#4b5563'] {
+  fill: #94a3b8;
+}
+
+/* Very dark elements (windows, interiors) */
+[data-theme='light'] svg.anim-svg [fill='#111827'] {
+  fill: #334155;
+}
+
+/* SVG text labels */
+[data-theme='light'] svg.anim-svg [fill='#94a3b8'] {
+  fill: #475569;
+}
+[data-theme='light'] svg.anim-svg [fill='#64748b'] {
+  fill: #334155;
+}
+[data-theme='light'] svg.anim-svg [fill='#475569'] {
+  fill: #334155;
+}
+
+/* Dark green backgrounds (nature/narrow-road scenes) */
+[data-theme='light'] svg.anim-svg [fill='#1e3a1e'] {
+  fill: #dcfce7;
+}
+[data-theme='light'] svg.anim-svg [fill='#14532d'] {
+  fill: #bbf7d0;
+}
+[data-theme='light'] svg.anim-svg [fill='#065f46'] {
+  fill: #a7f3d0;
+}
+[data-theme='light'] svg.anim-svg [fill='#047857'] {
+  fill: #6ee7b7;
+}
+
+/* Stroke colors */
+[data-theme='light'] svg.anim-svg [stroke='#475569'] {
+  stroke: #94a3b8;
+}
+[data-theme='light'] svg.anim-svg [stroke='#334155'] {
+  stroke: #94a3b8;
+}
+[data-theme='light'] svg.anim-svg [stroke='#64748b'] {
+  stroke: #94a3b8;
+}
+[data-theme='light'] svg.anim-svg [stroke='#4b5563'] {
+  stroke: #94a3b8;
+}
+[data-theme='light'] svg.anim-svg [stroke='#374151'] {
+  stroke: #cbd5e1;
+}
+[data-theme='light'] svg.anim-svg [stroke='#1e293b'] {
+  stroke: #94a3b8;
+}
+[data-theme='light'] svg.anim-svg [stroke='#94a3b8'] {
+  stroke: #64748b;
+}
+
+/* Gradient sky stops (scene daytime conversion) */
+[data-theme='light'] svg.anim-svg stop[stop-color='#0f172a'] {
+  stop-color: #bfdbfe;
+}
+[data-theme='light'] svg.anim-svg stop[stop-color='#1e3a5f'] {
+  stop-color: #93c5fd;
+}
+[data-theme='light'] svg.anim-svg stop[stop-color='#0f1729'] {
+  stop-color: #dbeafe;
+}
+
+/* PhaseBar label: hidden on very narrow screens, shown at ≥400px */
+.phasebar-label {
+  display: none;
+}
+@media (min-width: 400px) {
+  .phasebar-label {
+    display: block;
+  }
+}
+
 * {
   font-family: 'Noto Sans TC', sans-serif;
   box-sizing: border-box;
 }
 body {
   margin: 0;
-  background: #0f172a;
+  background: var(--bg-base);
+  transition: background 0.2s ease;
 }
 
 @keyframes hazard {
@@ -458,13 +688,16 @@ body {
   left: 0;
   right: 0;
   height: 56px;
-  background: #0f172a;
-  border-bottom: 1px solid #1e293b;
+  background: var(--bg-base);
+  border-bottom: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   padding: 0 16px;
   gap: 8px;
   z-index: 30;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 /* Desktop: sidebar hidden on mobile */
@@ -491,6 +724,18 @@ body {
   max-width: 520px;
   margin: 0 auto;
 }
+
+/* Fixed bottom CTA bar — spans only the content area, not the sidebar */
+.content-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px 20px;
+  background: var(--gradient-footer);
+  z-index: 50;
+}
+
 .exam-inner {
   max-width: 600px;
   margin: 0 auto;
@@ -524,7 +769,7 @@ body {
   min-width: 0;
 }
 .scenario-arrow {
-  color: #475569;
+  color: var(--text-disabled);
   font-size: 18px;
   flex-shrink: 0;
 }
@@ -567,10 +812,13 @@ body {
     left: 0;
     bottom: 0;
     width: 260px;
-    background: #0f172a;
-    border-right: 1px solid #1e293b;
+    background: var(--bg-base);
+    border-right: 1px solid var(--border-subtle);
     z-index: 20;
     overflow-y: auto;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
   }
   .app-content {
     margin-left: 260px;
@@ -589,6 +837,11 @@ body {
   }
   .exam-inner {
     max-width: 800px;
+  }
+
+  /* Offset fixed CTA bar by sidebar width on desktop */
+  .content-cta {
+    left: 260px;
   }
 
   /* HomeScreen: 3-column vertical card grid */

@@ -8,6 +8,7 @@ interface SimButtonProps {
   size?: string;
 }
 
+// Cockpit buttons always use dark colors (simulating a real car dashboard)
 const SimButton = ({ label, sublabel, active, on, color, onClick, size }: SimButtonProps) => {
   const sm = size === 'sm';
   const w = sm ? 54 : 60;

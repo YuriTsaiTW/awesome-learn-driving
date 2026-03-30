@@ -21,10 +21,10 @@ const ConsequencePhase = ({ scenario, choice, onNext }: ConsequencePhaseProps) =
             borderRadius: 16,
             overflow: 'hidden',
             marginBottom: 16,
-            border: `2px solid ${ok ? '#16a34a' : '#dc2626'}`,
+            border: `2px solid ${ok ? 'var(--green-deep)' : 'var(--red)'}`,
           }}
         >
-          <div className="consequence-anim" style={{ background: '#0f172a' }}>
+          <div className="consequence-anim" style={{ background: 'var(--bg-elevated)' }}>
             <DA showConsequence={true} />
           </div>
         </div>
@@ -34,8 +34,8 @@ const ConsequencePhase = ({ scenario, choice, onNext }: ConsequencePhaseProps) =
           borderRadius: 20,
           padding: 20,
           marginBottom: 16,
-          background: ok ? 'rgba(21,128,61,0.2)' : 'rgba(185,28,28,0.2)',
-          border: `1px solid ${ok ? '#16a34a' : '#dc2626'}`,
+          background: ok ? 'var(--green-bg)' : 'var(--red-bg)',
+          border: `1px solid ${ok ? 'var(--green-deep)' : 'var(--red)'}`,
         }}
       >
         <div
@@ -43,12 +43,12 @@ const ConsequencePhase = ({ scenario, choice, onNext }: ConsequencePhaseProps) =
             fontWeight: 800,
             fontSize: 17,
             marginBottom: 10,
-            color: ok ? '#4ade80' : '#f87171',
+            color: ok ? 'var(--green-light)' : 'var(--red-light)',
           }}
         >
           {ok ? '✅ 判斷正確！' : '❌ 這個選擇很危險'}
         </div>
-        <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: 14, margin: 0 }}>
+        <p style={{ color: 'var(--text-body)', lineHeight: 1.7, fontSize: 14, margin: 0 }}>
           {ok
             ? scenario.decision.correctExplanation
             : scenario.decision.wrongExplanation[choice.id] || '這個選擇可能造成危險。'}
@@ -57,17 +57,24 @@ const ConsequencePhase = ({ scenario, choice, onNext }: ConsequencePhaseProps) =
       {!ok && (
         <div
           style={{
-            background: 'rgba(146,64,14,0.2)',
+            background: 'var(--orange-bg)',
             borderRadius: 20,
             padding: 16,
             marginBottom: 16,
-            border: '1px solid #92400e',
+            border: '1px solid var(--orange-border)',
           }}
         >
-          <div style={{ color: '#fbbf24', fontWeight: 700, fontSize: 14, marginBottom: 8 }}>
+          <div
+            style={{
+              color: 'var(--accent-light)',
+              fontWeight: 700,
+              fontSize: 14,
+              marginBottom: 8,
+            }}
+          >
             💡 正確做法
           </div>
-          <p style={{ color: '#d1d5db', fontSize: 14, lineHeight: 1.7, margin: 0 }}>
+          <p style={{ color: 'var(--text-body)', fontSize: 14, lineHeight: 1.7, margin: 0 }}>
             {scenario.decision.correctExplanation}
           </p>
         </div>
@@ -80,10 +87,10 @@ const ConsequencePhase = ({ scenario, choice, onNext }: ConsequencePhaseProps) =
           borderRadius: 20,
           fontWeight: 800,
           fontSize: 16,
-          color: '#000',
+          color: 'var(--cta-fg)',
           border: 'none',
           cursor: 'pointer',
-          background: 'linear-gradient(135deg,#f59e0b,#d97706)',
+          background: 'var(--gradient-cta)',
         }}
       >
         學習正確流程 →

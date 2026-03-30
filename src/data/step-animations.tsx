@@ -1,7 +1,7 @@
 import type { ScenarioId } from '../types/scenario';
 
 const SAHazardFlash = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <rect x="57" y="20" width="46" height="50" fill="#475569" rx="5" />
     <rect x="64" y="13" width="32" height="18" fill="#374151" rx="4" />
@@ -60,7 +60,7 @@ const SAHazardFlash = () => (
   </svg>
 );
 const SACarToShoulder = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <rect x="8" y="16" width="144" height="58" fill="#2d3748" rx="4" />
     <line
@@ -93,7 +93,7 @@ const SACarToShoulder = () => (
   </svg>
 );
 const SATriangle = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <rect x="8" y="48" width="144" height="34" fill="#2d3748" rx="4" />
     <line
@@ -124,7 +124,7 @@ const SATriangle = () => (
   </svg>
 );
 const SAPersonCross = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <rect x="0" y="44" width="160" height="38" fill="#2d3748" />
     <rect x="0" y="42" width="160" height="6" fill="#94a3b8" />
@@ -183,7 +183,7 @@ const SAPersonCross = () => (
   </svg>
 );
 const SACrosswalkWatch = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Sidewalks */}
     <rect x="0" y="0" width="160" height="28" fill="#1e293b" />
@@ -247,7 +247,7 @@ const SACrosswalkWatch = () => (
   </svg>
 );
 const SAPhoneCall = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <circle
       cx="80"
@@ -297,7 +297,7 @@ const SAPhoneCall = () => (
   </svg>
 );
 const SAPhoneCall110 = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <circle
       cx="80"
@@ -347,7 +347,7 @@ const SAPhoneCall110 = () => (
   </svg>
 );
 const SAPhoneCallInsurance = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <circle
       cx="80"
@@ -404,7 +404,7 @@ const SAPhoneCallInsurance = () => (
   </svg>
 );
 const SASteeringGrip = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <circle cx="80" cy="44" r="30" fill="none" stroke="#4b5563" strokeWidth="7" />
     <circle cx="80" cy="44" r="10" fill="#374151" stroke="#4b5563" strokeWidth="3" />
@@ -436,7 +436,7 @@ const SASteeringGrip = () => (
   </svg>
 );
 const SALiftFoot = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <rect
       x="88"
@@ -483,7 +483,7 @@ const SALiftFoot = () => (
   </svg>
 );
 const SAFogLights = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <rect
       x="6"
@@ -530,7 +530,7 @@ const SAFogLights = () => (
   </svg>
 );
 const SASpeedDrop = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <circle cx="80" cy="50" r="36" fill="#1e293b" stroke="#334155" strokeWidth="2.5" />
     <path
@@ -576,7 +576,7 @@ const SASpeedDrop = () => (
   </svg>
 );
 const SACarGap = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <rect x="0" y="28" width="160" height="38" fill="#2d3748" />
     <line
@@ -612,7 +612,7 @@ const SACarGap = () => (
   </svg>
 );
 const SAPullOver = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <rect x="8" y="18" width="144" height="54" fill="#2d3748" rx="4" />
     <line
@@ -640,7 +640,7 @@ const SAPullOver = () => (
   </svg>
 );
 const SACamera = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <rect
       x="42"
@@ -688,7 +688,7 @@ const SACamera = () => (
   </svg>
 );
 const SADataExchange = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <circle cx="28" cy="26" r="9" fill="#fbbf24" />
     <rect x="22" y="35" width="12" height="18" fill="#3b82f6" rx="2" />
@@ -736,7 +736,7 @@ const SADataExchange = () => (
   </svg>
 );
 const SACheckInjury = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <circle cx="68" cy="28" r="11" fill="#fbbf24" />
     <rect x="60" y="39" width="16" height="22" fill="#475569" rx="2" />
@@ -795,7 +795,7 @@ const SACheckInjury = () => (
   </svg>
 );
 const SAStayCalm = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <text x="80" y="24" textAnchor="middle" fill="#60a5fa" fontSize="13">
       😤 深呼吸
@@ -815,7 +815,7 @@ const SAStayCalm = () => (
   </svg>
 );
 const SABrakePump = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <rect
       x="44"
@@ -852,7 +852,7 @@ const SABrakePump = () => (
   </svg>
 );
 const SAGearDown = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <line x1="50" y1="18" x2="50" y2="72" stroke="#334155" strokeWidth="2" />
     <line x1="80" y1="18" x2="80" y2="72" stroke="#334155" strokeWidth="2" />
@@ -892,7 +892,7 @@ const SAGearDown = () => (
   </svg>
 );
 const SAHornHazard = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <rect x="42" y="28" width="76" height="36" fill="#334155" rx="6" />
     <rect x="52" y="20" width="56" height="22" fill="#2d3748" rx="4" />
@@ -955,7 +955,7 @@ const SAHornHazard = () => (
   </svg>
 );
 const SASafeSpot = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <path
       d="M 8 78 L 62 38 L 152 38"
@@ -998,7 +998,7 @@ const SASafeSpot = () => (
   </svg>
 );
 const SAHandbrake = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     <rect x="74" y="52" width="12" height="10" fill="#475569" rx="4" />
     <line x1="80" y1="52" x2="80" y2="16" stroke="#4b5563" strokeWidth="7" strokeLinecap="round" />
@@ -1039,7 +1039,7 @@ const SAHandbrake = () => (
 
 // == Narrow Road animations ==
 const SANarrowSlowDown = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Road */}
     <rect x="55" y="8" width="50" height="74" fill="#2d3748" rx="4" />
@@ -1077,7 +1077,7 @@ const SANarrowSlowDown = () => (
   </svg>
 );
 const SANarrowPullRight = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Road */}
     <rect x="45" y="8" width="70" height="74" fill="#2d3748" rx="4" />
@@ -1133,7 +1133,7 @@ const SANarrowPullRight = () => (
   </svg>
 );
 const SANarrowYield = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Road */}
     <rect x="55" y="8" width="50" height="74" fill="#2d3748" rx="4" />
@@ -1183,7 +1183,7 @@ const SANarrowYield = () => (
   </svg>
 );
 const SANarrowReverse = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Road narrow */}
     <rect x="55" y="8" width="50" height="74" fill="#2d3748" rx="4" />
@@ -1221,7 +1221,7 @@ const SANarrowReverse = () => (
   </svg>
 );
 const SANarrowPass = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Road */}
     <rect x="40" y="8" width="80" height="74" fill="#2d3748" rx="4" />
@@ -1261,7 +1261,7 @@ const SANarrowPass = () => (
 
 // == Intersection Crash ==
 const SALookBothWays = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Eyes looking left and right */}
     <ellipse cx="55" cy="40" rx="20" ry="14" fill="white" />
@@ -1290,7 +1290,7 @@ const SALookBothWays = () => (
 );
 
 const SABrakeStop = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Horizontal road */}
     <rect x="0" y="32" width="160" height="26" fill="#1e293b" />
@@ -1349,7 +1349,7 @@ const SABrakeStop = () => (
 
 // == Scooter Weaving ==
 const SACheckMirror = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Mirror frame */}
     <rect x="30" y="10" width="100" height="55" fill="#374151" rx="8" />
@@ -1382,7 +1382,7 @@ const SACheckMirror = () => (
 );
 
 const SASignalEarly = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Turn signal indicator */}
     <polygon points="80,15 110,40 80,65 50,40" fill="none" stroke="#22c55e" strokeWidth="3" />
@@ -1400,7 +1400,7 @@ const SASignalEarly = () => (
 );
 
 const SACheckAndTurn = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Road with turn */}
     <rect x="60" y="0" width="40" height="90" fill="#2d3748" />
@@ -1423,7 +1423,7 @@ const SACheckAndTurn = () => (
 
 // == Drowsy Driving ==
 const SAFatigueSign = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Drowsy face */}
     <circle cx="80" cy="38" r="24" fill="#fbbf24" />
@@ -1474,7 +1474,7 @@ const SAFatigueSign = () => (
 );
 
 const SAParkSleep = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Parking area */}
     <rect x="20" y="45" width="120" height="30" fill="#1e293b" rx="4" />
@@ -1528,7 +1528,7 @@ const SAParkSleep = () => (
 );
 
 const SACoffee = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Coffee cup */}
     <rect x="55" y="30" width="40" height="35" fill="#78716c" rx="4" />
@@ -1570,7 +1570,7 @@ const SACoffee = () => (
 );
 
 const SANoGo = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* No driving sign */}
     <circle cx="80" cy="38" r="24" fill="none" stroke="#ef4444" strokeWidth="4" />
@@ -1593,7 +1593,7 @@ const SANoGo = () => (
 
 // == Hydroplaning ==
 const SAWaitTraction = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Tire cross-section */}
     <circle cx="80" cy="38" r="24" fill="#374151" />
@@ -1619,7 +1619,7 @@ const SAWaitTraction = () => (
 );
 
 const SACheckTires = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Tire */}
     <circle cx="65" cy="40" r="22" fill="#374151" />
@@ -1663,7 +1663,7 @@ const SACheckTires = () => (
 
 // == Right Turn Motorcycle ==
 const SAHugRight = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Top-down road view */}
     <rect x="0" y="30" width="160" height="50" fill="#2d3748" />
@@ -1698,7 +1698,7 @@ const SAHugRight = () => (
 );
 
 const SALetMotoPass = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Road */}
     <rect x="0" y="30" width="160" height="45" fill="#2d3748" />
@@ -1730,7 +1730,7 @@ const SALetMotoPass = () => (
 
 // == Left Turn Oncoming ==
 const SAWaitAtCenter = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Intersection (top-down) */}
     <rect x="0" y="30" width="160" height="50" fill="#2d3748" />
@@ -1763,7 +1763,7 @@ const SAWaitAtCenter = () => (
 );
 
 const SAWaitOncoming = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Road */}
     <rect x="0" y="32" width="160" height="44" fill="#2d3748" />
@@ -1807,7 +1807,7 @@ const SAWaitOncoming = () => (
 
 // Step 1: Hand knocking engine hood — vibration waves spread outward
 const SAKnockHood = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Car hood top view */}
     <rect x="30" y="30" width="100" height="42" fill="#1d4ed8" rx="6" />
@@ -1868,7 +1868,7 @@ const SAKnockHood = () => (
 
 // Step 2: Top-down car view with arrow circling the vehicle
 const SAWalkAroundCar = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Car top-down silhouette */}
     <rect x="52" y="20" width="56" height="50" fill="#1d4ed8" rx="8" />
@@ -1904,7 +1904,7 @@ const SAWalkAroundCar = () => (
 
 // Step 3: Honk alert inside car — sound waves toward running cat
 const SAHonkAlert = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Steering wheel */}
     <circle cx="50" cy="50" r="22" fill="none" stroke="#475569" strokeWidth="4" />
@@ -1960,7 +1960,7 @@ const SAHonkAlert = () => (
 
 // Step 4: Idle engine — exhaust, RPM gauge, waiting
 const SAIdleEngine = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Car side view */}
     <rect x="20" y="40" width="80" height="28" fill="#1d4ed8" rx="4" />
@@ -2024,7 +2024,7 @@ const SAIdleEngine = () => (
 
 // Step 5: Prevention — water bottles as obstacles near car front
 const SAColdPrevention = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Ground */}
     <rect x="0" y="60" width="160" height="30" fill="#1c2533" />
@@ -2069,7 +2069,7 @@ const SAColdPrevention = () => (
 
 // Step 6: Phone call to animal services — phone with cat paw icon
 const SACallAnimalService = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Phone */}
     <rect
@@ -2123,7 +2123,7 @@ const SACallAnimalService = () => (
 
 // Step 1: Animal warning sign, speedometer dropping 60→30
 const SAAnimalSignSlowdown = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Warning sign */}
     <rect x="6" y="56" width="4" height="28" fill="#64748b" />
@@ -2166,7 +2166,7 @@ const SAAnimalSignSlowdown = () => (
 
 // Step 2: Two-panel comparison — high beam (animal frozen) vs low beam (animal passing)
 const SALowBeamSwitch = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Divider */}
     <line x1="80" y1="4" x2="80" y2="78" stroke="#334155" strokeWidth="1.5" strokeDasharray="4,3" />
@@ -2213,7 +2213,7 @@ const SALowBeamSwitch = () => (
 
 // Step 3: Top-down road, car braking, animal in front
 const SABrakeForAnimal = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Road */}
     <rect x="30" y="0" width="100" height="90" fill="#2d3748" />
@@ -2267,7 +2267,7 @@ const SABrakeForAnimal = () => (
 
 // Step 4: Side-view car, short sound wave, animal turning away
 const SAShortHonkAnimal = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Road */}
     <rect x="0" y="54" width="160" height="20" fill="#2d3748" />
@@ -2324,7 +2324,7 @@ const SAShortHonkAnimal = () => (
 
 // Step 5: Car stopped, animal walking from road to roadside grass
 const SAWaitAnimalCross = () => (
-  <svg viewBox="0 0 160 90" width="100%" height="100%">
+  <svg className="anim-svg" viewBox="0 0 160 90" width="100%" height="100%">
     <rect width="160" height="90" fill="#0f172a" rx="8" />
     {/* Road */}
     <rect x="20" y="30" width="120" height="36" fill="#2d3748" />

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { SCENARIOS } from '../data/scenarios';
+import { useTheme } from '../theme/ThemeContext';
 
 const SIDEBAR_W = 260;
 
@@ -17,6 +18,39 @@ function useActiveNav() {
   };
 }
 
+function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
+  return (
+    <button
+      onClick={toggleTheme}
+      aria-label={theme === 'dark' ? '切換為淺色模式' : '切換為深色模式'}
+      title={theme === 'dark' ? '切換為淺色模式' : '切換為深色模式'}
+      style={{
+        background: 'transparent',
+        border: '1px solid var(--border-base)',
+        borderRadius: 8,
+        color: 'var(--text-muted)',
+        fontSize: 16,
+        cursor: 'pointer',
+        padding: '4px 8px',
+        lineHeight: 1,
+        flexShrink: 0,
+        transition: 'color 0.15s, border-color 0.15s',
+      }}
+      onMouseEnter={function (e) {
+        e.currentTarget.style.color = 'var(--accent)';
+        e.currentTarget.style.borderColor = 'var(--accent)';
+      }}
+      onMouseLeave={function (e) {
+        e.currentTarget.style.color = 'var(--text-muted)';
+        e.currentTarget.style.borderColor = 'var(--border-base)';
+      }}
+    >
+      {theme === 'dark' ? '☀️' : '🌙'}
+    </button>
+  );
+}
+
 function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: string[] }) {
   const navigate = useNavigate();
   const isActive = useActiveNav();
@@ -28,31 +62,116 @@ function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: 
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      {/* Compact brand header */}
-      <div style={{ padding: '20px 16px 16px', borderBottom: '1px solid #1e293b' }}>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 8,
-            padding: '8px 12px',
-            borderRadius: 12,
-            background: 'rgba(37,99,235,0.08)',
-            border: '1px solid rgba(96,165,250,0.1)',
-          }}
+      {/* Logo */}
+      <div
+        style={{
+          padding: '20px 20px 14px',
+          borderBottom: '1px solid var(--border-subtle)',
+          textAlign: 'center',
+        }}
+      >
+        <svg
+          viewBox="0 0 300 160"
+          style={{ width: '100%', maxWidth: 160, display: 'inline-block' }}
         >
-          <span style={{ fontSize: 18, lineHeight: 1 }}>🚗</span>
-          <span
-            style={{
-              fontSize: 13,
-              fontWeight: 800,
-              color: '#60a5fa',
-              letterSpacing: '-0.01em',
-            }}
-          >
-            Awesome Learn Driving
-          </span>
-        </div>
+          {/* Road */}
+          <rect x="0" y="128" width="300" height="22" fill="#111827" rx="4" />
+          <line
+            x1="0"
+            y1="138"
+            x2="300"
+            y2="138"
+            stroke="#1e293b"
+            strokeWidth="2"
+            strokeDasharray="22 16"
+          />
+          {/* Car body */}
+          <rect x="10" y="72" width="280" height="56" fill="#2563eb" rx="10" />
+          {/* Cabin */}
+          <path d="M60 32 Q68 16 88 16 L212 16 Q232 16 240 32 L258 72 L42 72Z" fill="#1d4ed8" />
+          {/* Windshield */}
+          <path d="M70 36 Q76 22 90 22 L148 22 L160 36Z" fill="#bfdbfe" opacity="0.85" />
+          {/* Rear window */}
+          <path d="M166 36 L178 22 L210 22 Q224 22 230 36Z" fill="#bfdbfe" opacity="0.62" />
+          {/* B-pillar */}
+          <rect x="161" y="19" width="6" height="20" fill="#1e40af" />
+          {/* Headlight */}
+          <rect
+            x="278"
+            y="86"
+            width="18"
+            height="11"
+            fill="#fef08a"
+            rx="3"
+            className="anim-head-glow"
+          />
+          <rect
+            x="296"
+            y="88"
+            width="5"
+            height="7"
+            fill="#fef08a"
+            rx="1.5"
+            opacity="0.35"
+            className="anim-head-glow"
+          />
+          {/* Tail light */}
+          <rect
+            x="4"
+            y="86"
+            width="14"
+            height="11"
+            fill="#ef4444"
+            rx="3"
+            className="anim-tail-light"
+          />
+          {/* Front wheel */}
+          <ellipse cx="222" cy="128" rx="22" ry="18" fill="#111827" />
+          <g className="anim-wheel-spin">
+            <ellipse cx="222" cy="128" rx="12" ry="10" fill="#334155" />
+            <line
+              x1="222"
+              y1="118"
+              x2="222"
+              y2="138"
+              stroke="#60a5fa"
+              strokeWidth="2.5"
+              opacity="0.7"
+            />
+            <line
+              x1="212"
+              y1="128"
+              x2="232"
+              y2="128"
+              stroke="#60a5fa"
+              strokeWidth="2.5"
+              opacity="0.7"
+            />
+          </g>
+          {/* Rear wheel */}
+          <ellipse cx="78" cy="128" rx="22" ry="18" fill="#111827" />
+          <g className="anim-wheel-spin">
+            <ellipse cx="78" cy="128" rx="12" ry="10" fill="#334155" />
+            <line
+              x1="78"
+              y1="118"
+              x2="78"
+              y2="138"
+              stroke="#60a5fa"
+              strokeWidth="2.5"
+              opacity="0.7"
+            />
+            <line
+              x1="68"
+              y1="128"
+              x2="88"
+              y2="128"
+              stroke="#60a5fa"
+              strokeWidth="2.5"
+              opacity="0.7"
+            />
+          </g>
+        </svg>
       </div>
 
       {/* Navigation */}
@@ -73,8 +192,8 @@ function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: 
                 padding: '10px 12px',
                 borderRadius: 12,
                 border: 'none',
-                background: active ? '#1e3a5f' : 'transparent',
-                color: active ? '#93c5fd' : '#94a3b8',
+                background: active ? 'var(--bg-active)' : 'transparent',
+                color: active ? 'var(--blue-light)' : 'var(--text-muted)',
                 fontSize: 14,
                 fontWeight: active ? 700 : 400,
                 cursor: 'pointer',
@@ -83,7 +202,7 @@ function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: 
                 transition: 'background 0.15s, color 0.15s',
               }}
               onMouseEnter={function (e) {
-                if (!active) e.currentTarget.style.background = '#1e293b';
+                if (!active) e.currentTarget.style.background = 'var(--bg-hover)';
               }}
               onMouseLeave={function (e) {
                 if (!active) e.currentTarget.style.background = 'transparent';
@@ -97,7 +216,7 @@ function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: 
                     width: 6,
                     height: 6,
                     borderRadius: '50%',
-                    background: '#60a5fa',
+                    background: 'var(--blue)',
                     flexShrink: 0,
                   }}
                 />
@@ -110,17 +229,17 @@ function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: 
         {isActive('/') && (
           <div
             style={{
-              margin: '8px 4px 0',
+              margin: '20px 4px 0',
               padding: '12px 14px',
               borderRadius: 14,
-              background: '#0f172a',
-              border: '1px solid #1e293b',
+              background: 'var(--bg-elevated)',
+              border: '1px solid var(--border-subtle)',
             }}
           >
             <div
               style={{
                 fontSize: 11,
-                color: '#475569',
+                color: 'var(--text-disabled)',
                 fontWeight: 600,
                 marginBottom: 10,
                 letterSpacing: '0.05em',
@@ -131,15 +250,15 @@ function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: 
             </div>
             {(
               [
-                { val: SCENARIOS.length, label: '情境數', color: '#fbbf24' },
-                { val: completed.length, label: '已完成', color: '#4ade80' },
+                { val: SCENARIOS.length, label: '情境數', color: 'var(--accent-light)' },
+                { val: completed.length, label: '已完成', color: 'var(--green-light)' },
                 {
                   val:
                     completed.length > 0
                       ? Math.round((completed.length / SCENARIOS.length) * 100) + '%'
                       : '0%',
                   label: '進度',
-                  color: '#60a5fa',
+                  color: 'var(--blue)',
                 },
               ] as { val: string | number; label: string; color: string }[]
             ).map(function (s, i, arr) {
@@ -152,10 +271,10 @@ function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: 
                     alignItems: 'center',
                     paddingBottom: i < arr.length - 1 ? 8 : 0,
                     marginBottom: i < arr.length - 1 ? 8 : 0,
-                    borderBottom: i < arr.length - 1 ? '1px solid #1e293b' : 'none',
+                    borderBottom: i < arr.length - 1 ? '1px solid var(--border-subtle)' : 'none',
                   }}
                 >
-                  <span style={{ fontSize: 13, color: '#64748b' }}>{s.label}</span>
+                  <span style={{ fontSize: 13, color: 'var(--text-faint)' }}>{s.label}</span>
                   <span style={{ fontSize: 15, fontWeight: 800, color: s.color }}>{s.val}</span>
                 </div>
               );
@@ -164,16 +283,29 @@ function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: 
         )}
       </nav>
 
-      {/* Footer links */}
+      {/* Theme toggle + footer links */}
       <div
         style={{
           padding: '10px 8px 20px',
-          borderTop: '1px solid #1e293b',
+          borderTop: '1px solid var(--border-subtle)',
           display: 'flex',
           flexDirection: 'column',
           gap: 2,
         }}
       >
+        {/* Theme toggle row */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '6px 12px',
+          }}
+        >
+          <span style={{ fontSize: 13, color: 'var(--text-faint)' }}>主題</span>
+          <ThemeToggle />
+        </div>
+
         <a
           href="https://github.com/YuriTsaiTW/awesome-learn-driving"
           target="_blank"
@@ -184,16 +316,16 @@ function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: 
             gap: 7,
             padding: '8px 12px',
             borderRadius: 10,
-            color: '#94a3b8',
+            color: 'var(--text-muted)',
             fontSize: 13,
             textDecoration: 'none',
             transition: 'color 0.15s',
           }}
           onMouseEnter={function (e) {
-            e.currentTarget.style.color = '#e2e8f0';
+            e.currentTarget.style.color = 'var(--text-secondary)';
           }}
           onMouseLeave={function (e) {
-            e.currentTarget.style.color = '#94a3b8';
+            e.currentTarget.style.color = 'var(--text-muted)';
           }}
         >
           <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
@@ -211,16 +343,16 @@ function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: 
             gap: 7,
             padding: '8px 12px',
             borderRadius: 10,
-            color: '#94a3b8',
+            color: 'var(--text-muted)',
             fontSize: 13,
             textDecoration: 'none',
             transition: 'color 0.15s',
           }}
           onMouseEnter={function (e) {
-            e.currentTarget.style.color = '#e2e8f0';
+            e.currentTarget.style.color = 'var(--text-secondary)';
           }}
           onMouseLeave={function (e) {
-            e.currentTarget.style.color = '#94a3b8';
+            e.currentTarget.style.color = 'var(--text-muted)';
           }}
         >
           ☕ 小額支持
@@ -234,7 +366,7 @@ function AppLayout({ children, completed }: { children: React.ReactNode; complet
   const [open, setOpen] = useState(false);
 
   return (
-    <div style={{ background: 'linear-gradient(160deg,#0f172a,#1e293b)', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--gradient-bg)', minHeight: '100vh' }}>
       {/* Desktop sidebar */}
       <aside className="app-sidebar">
         <SidebarBody completed={completed} />
@@ -250,7 +382,7 @@ function AppLayout({ children, completed }: { children: React.ReactNode; complet
           style={{
             background: 'transparent',
             border: 'none',
-            color: '#94a3b8',
+            color: 'var(--text-muted)',
             fontSize: 20,
             cursor: 'pointer',
             padding: '4px 8px',
@@ -261,13 +393,8 @@ function AppLayout({ children, completed }: { children: React.ReactNode; complet
         >
           ☰
         </button>
-        <span
-          style={{ color: 'white', fontWeight: 800, fontSize: 15, flex: 1, textAlign: 'center' }}
-        >
-          Awesome Learn Driving
-        </span>
-        {/* Spacer to keep title centered */}
-        <span style={{ width: 36, flexShrink: 0 }} />
+        <span style={{ flex: 1 }} />
+        <ThemeToggle />
       </header>
 
       {/* Mobile overlay + slide-in sidebar */}
@@ -291,8 +418,8 @@ function AppLayout({ children, completed }: { children: React.ReactNode; complet
               left: 0,
               bottom: 0,
               width: SIDEBAR_W,
-              background: '#0f172a',
-              borderRight: '1px solid #1e293b',
+              background: 'var(--bg-base)',
+              borderRight: '1px solid var(--border-subtle)',
               zIndex: 50,
               overflowY: 'auto',
             }}
@@ -305,7 +432,7 @@ function AppLayout({ children, completed }: { children: React.ReactNode; complet
                 style={{
                   background: 'transparent',
                   border: 'none',
-                  color: '#64748b',
+                  color: 'var(--text-faint)',
                   fontSize: 18,
                   cursor: 'pointer',
                   padding: '4px 8px',
