@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { Routes, Route, useNavigate, useParams, Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, useParams, Navigate, useLocation } from 'react-router-dom';
+import { trackPageView } from './utils/analytics';
 import type { Scenario } from './types/scenario';
 import type { ExamProgress, ExamSession } from './types/exam';
 import { SCENARIOS } from './data/scenarios';
@@ -19,6 +20,17 @@ import ExamDashboard from './components/exam/ExamDashboard';
 import ExamConfig from './components/exam/ExamConfig';
 import ExamTest from './components/exam/ExamTest';
 import ExamResult from './components/exam/ExamResult';
+
+function RouteTracker() {
+  const { pathname } = useLocation();
+  useEffect(
+    function () {
+      trackPageView(pathname);
+    },
+    [pathname],
+  );
+  return null;
+}
 
 interface ScenarioRouteProps {
   completed: string[];
@@ -82,6 +94,7 @@ function App() {
 
   return (
     <AppLayout completed={completed}>
+      <RouteTracker />
       <Routes>
         <Route path="/" element={<HomeScreen onSelect={select} completed={completed} />} />
         <Route

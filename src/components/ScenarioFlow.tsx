@@ -1,5 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { Scenario, DecisionOption, Phase } from '../types/scenario';
+import {
+  trackScenarioStart,
+  trackPhaseEnter,
+  trackDecision,
+  trackQuizComplete,
+  trackSimulationComplete,
+  trackScenarioComplete,
+} from '../utils/analytics';
 import { SIM_STEPS } from '../data/sim-steps';
 import PhaseBar from './PhaseBar';
 import ReviewPicker from './ReviewPicker';
@@ -23,20 +31,48 @@ const ScenarioFlow = ({ scenario, onBack, onComplete, isCompleted }: ScenarioFlo
   const [choice, setChoice] = useState<DecisionOption | null>(null);
   const [quizResult, setQuizResult] = useState<{ score: number; total: number } | null>(null);
 
+  // Track scenario start once on mount (only for fresh runs, not review)
+  const trackedStart = useRef(false);
+  useEffect(
+    function () {
+      if (!isCompleted && !trackedStart.current) {
+        trackedStart.current = true;
+        trackScenarioStart(scenario.id, scenario.title);
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  );
+
+  // Track phase changes
+  useEffect(
+    function () {
+      if (phase === 'pick') return;
+      trackPhaseEnter(scenario.id, phase, isCompleted ?? false);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [phase],
+  );
+
   const handleDecide = (opt: DecisionOption) => {
+    trackDecision(scenario.id, opt.correct ?? false);
     setChoice(opt);
     setPhase('consequence');
   };
   const handleQuizDone = (score: number, total: number) => {
+    trackQuizComplete(scenario.id, score, total);
     setQuizResult({ score, total });
     if ((SIM_STEPS[scenario.id]?.length ?? 0) > 0) {
       setPhase('simulation');
     } else {
+      trackScenarioComplete(scenario.id);
       setPhase('result');
       onComplete(scenario.id);
     }
   };
   const handleSimDone = () => {
+    trackSimulationComplete(scenario.id);
+    trackScenarioComplete(scenario.id);
     setPhase('result');
     onComplete(scenario.id);
   };

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { trackExamComplete } from '../../utils/analytics';
 import type { ExamProgress, ExamSession } from '../../types/exam';
 import { EXAM_QUESTION_MAP } from '../../data/exam-questions';
 import { SCENARIOS } from '../../data/scenarios';
@@ -115,6 +116,8 @@ function ExamTest({ session, progress, onUpdate, onComplete, onPause }: ExamTest
       const q = EXAM_QUESTION_MAP.get(qid);
       return q && s.answers[i] === q.correct;
     }).length;
+
+    trackExamComplete(correctCount, s.questionIds.length);
 
     const summary = {
       sessionId: s.sessionId,

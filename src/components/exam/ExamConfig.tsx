@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { trackExamStart } from '../../utils/analytics';
 import type { ExamCategory, ExamProgress, ExamSession, QuestionStatus } from '../../types/exam';
 import { ALL_EXAM_QUESTIONS as EXAM_QUESTIONS } from '../../data/exam-questions';
 
@@ -109,6 +110,7 @@ function ExamConfig({ progress, onStart }: ExamConfigProps) {
       startedAt: Date.now(),
       completed: false,
     };
+    trackExamStart(finalCount, [...categories]);
     onStart(session);
   }
 
