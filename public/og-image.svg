@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0f172a"/>
+
+  <!-- Subtle grid overlay -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.025"/>
+
+  <!-- Road strip -->
+  <rect x="0" y="540" width="1200" height="50" fill="#111827"/>
+  <line x1="0" y1="564" x2="1200" y2="564" stroke="#1e293b" stroke-width="3" stroke-dasharray="88 64"/>
+
+  <!-- Car (centered, car body spans y ~160-430) -->
+  <g transform="translate(330, 130) scale(1.8)">
+    <!-- Car body -->
+    <rect x="10" y="72" width="280" height="56" fill="#2563eb" rx="10"/>
+    <!-- Cabin -->
+    <path d="M60 32 Q68 16 88 16 L212 16 Q232 16 240 32 L258 72 L42 72Z" fill="#1d4ed8"/>
+    <!-- Windshield -->
+    <path d="M70 36 Q76 22 90 22 L148 22 L160 36Z" fill="#bfdbfe" opacity="0.85"/>
+    <!-- Rear window -->
+    <path d="M166 36 L178 22 L210 22 Q224 22 230 36Z" fill="#bfdbfe" opacity="0.62"/>
+    <!-- B-pillar -->
+    <rect x="161" y="19" width="6" height="20" fill="#1e40af"/>
+    <!-- Headlight -->
+    <rect x="278" y="86" width="18" height="11" fill="#fef08a" rx="3"/>
+    <rect x="296" y="88" width="5" height="7" fill="#fef08a" rx="1.5" opacity="0.35"/>
+    <!-- Tail light -->
+    <rect x="4" y="86" width="14" height="11" fill="#ef4444" rx="3"/>
+    <!-- Front wheel -->
+    <ellipse cx="222" cy="128" rx="22" ry="18" fill="#111827"/>
+    <ellipse cx="222" cy="128" rx="12" ry="10" fill="#334155"/>
+    <line x1="222" y1="118" x2="222" y2="138" stroke="#60a5fa" stroke-width="2.5" opacity="0.7"/>
+    <line x1="212" y1="128" x2="232" y2="128" stroke="#60a5fa" stroke-width="2.5" opacity="0.7"/>
+    <!-- Rear wheel -->
+    <ellipse cx="78" cy="128" rx="22" ry="18" fill="#111827"/>
+    <ellipse cx="78" cy="128" rx="12" ry="10" fill="#334155"/>
+    <line x1="78" y1="118" x2="78" y2="138" stroke="#60a5fa" stroke-width="2.5" opacity="0.7"/>
+    <line x1="68" y1="128" x2="88" y2="128" stroke="#60a5fa" stroke-width="2.5" opacity="0.7"/>
+  </g>
+
+  <!-- Title -->
+  <text
+    x="600" y="460"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="68"
+    font-weight="700"
+    fill="white"
+    text-anchor="middle"
+    letter-spacing="-1"
+  >Awesome Learn Driving</text>
+
+  <!-- Tagline -->
+  <text
+    x="600" y="520"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="28"
+    font-weight="400"
+    fill="#93c5fd"
+    text-anchor="middle"
+  >🚗 Safe Driving Makes Happy Life 🚗</text>
+</svg>
