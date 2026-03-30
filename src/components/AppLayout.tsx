@@ -334,6 +334,31 @@ function SidebarBody({ onClose, completed }: { onClose?: () => void; completed: 
           GitHub
         </a>
         <a
+          href="mailto:frontend.yuri@gmail.com?subject=%5BAwesome%20Learning%20Driving%5D%20%E6%84%8F%E8%A6%8B%E5%9B%9E%E9%A5%8B%2F%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 7,
+            padding: '8px 12px',
+            borderRadius: 10,
+            color: 'var(--text-muted)',
+            fontSize: 13,
+            textDecoration: 'none',
+            transition: 'color 0.15s',
+          }}
+          onMouseEnter={function (e) {
+            e.currentTarget.style.color = 'var(--text-secondary)';
+          }}
+          onMouseLeave={function (e) {
+            e.currentTarget.style.color = 'var(--text-muted)';
+          }}
+        >
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+            <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z" />
+          </svg>
+          意見回饋
+        </a>
+        <a
           href="https://buymeacoffee.com/yurijournaltw"
           target="_blank"
           rel="noopener noreferrer"
