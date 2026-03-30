@@ -10,7 +10,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「連續彎路先向右」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「連續彎路先向右」。',
     image: 'signs/tf/000.png',
   },
   {
@@ -19,7 +19,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「連續彎路先向左」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「連續彎路先向右」，而非題目所述的「連續彎路先向左」。',
     image: 'signs/tf/001.png',
   },
   {
@@ -28,7 +28,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「岔路」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「岔路」。',
     image: 'signs/tf/002.png',
   },
   {
@@ -37,7 +37,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「救護站」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「岔路」，而非題目所述的「救護站」。',
     image: 'signs/tf/003.png',
   },
   {
@@ -46,7 +46,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「狹路」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「狹路」。',
     image: 'signs/tf/004.png',
   },
   {
@@ -55,7 +55,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「狹橋」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「狹路」，而非題目所述的「狹橋」。',
     image: 'signs/tf/005.png',
   },
   {
@@ -64,7 +64,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「險升坡」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「險升坡」。',
     image: 'signs/tf/006.png',
   },
   {
@@ -73,7 +73,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「險降坡」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「險升坡」，而非題目所述的「險降坡」。',
     image: 'signs/tf/007.png',
   },
   {
@@ -82,7 +82,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「狹橋」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「狹橋」。',
     image: 'signs/tf/008.png',
   },
   {
@@ -91,7 +91,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「狹路」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「狹橋」，而非題目所述的「狹路」。',
     image: 'signs/tf/009.png',
   },
   {
@@ -100,7 +100,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圓環」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圓環」。',
     image: 'signs/tf/010.png',
   },
   {
@@ -109,7 +109,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圓環遵行方向」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「圓環」，而非題目所述的「圓環遵行方向」。',
     image: 'signs/tf/011.png',
   },
   {
@@ -118,7 +118,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「雙向道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「雙向道」。',
     image: 'signs/tf/012.png',
   },
   {
@@ -127,7 +127,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「狹路」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「雙向道」，而非題目所述的「狹路」。',
     image: 'signs/tf/013.png',
   },
   {
@@ -136,7 +136,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「無柵門鐵路平交道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「無柵門鐵路平交道」。',
     image: 'signs/tf/014.png',
   },
   {
@@ -145,7 +145,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「有柵門鐵路平交道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「無柵門鐵路平交道」，而非題目所述的「有柵門鐵路平交道」。',
     image: 'signs/tf/015.png',
   },
   {
@@ -154,7 +154,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「當心行人」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「當心行人」。',
     image: 'signs/tf/016.png',
   },
   {
@@ -163,7 +163,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「當心兒童」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「當心行人」，而非題目所述的「當心兒童」。',
     image: 'signs/tf/017.png',
   },
   {
@@ -172,7 +172,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「注意強風」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「注意強風」。',
     image: 'signs/tf/018.png',
   },
   {
@@ -181,7 +181,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「注意標誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「注意強風」，而非題目所述的「注意標誌」。',
     image: 'signs/tf/019.png',
   },
   {
@@ -190,7 +190,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「當心兒童」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「當心兒童」。',
     image: 'signs/tf/020.png',
   },
   {
@@ -199,7 +199,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「當心行人」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「當心兒童」，而非題目所述的「當心行人」。',
     image: 'signs/tf/021.png',
   },
   {
@@ -208,7 +208,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左側斷崖」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「左側斷崖」。',
     image: 'signs/tf/022.png',
   },
   {
@@ -217,7 +217,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「注意落石」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「左側斷崖」，而非題目所述的「注意落石」。',
     image: 'signs/tf/023.png',
   },
   {
@@ -226,7 +226,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「危險」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「危險」。',
     image: 'signs/tf/024.png',
   },
   {
@@ -235,7 +235,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「注意號誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「危險」，而非題目所述的「注意號誌」。',
     image: 'signs/tf/025.png',
   },
   {
@@ -244,7 +244,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「停車再開」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「停車再開」。',
     image: 'signs/tf/026.png',
   },
   {
@@ -253,7 +253,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止停車」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「停車再開」，而非題目所述的「禁止停車」。',
     image: 'signs/tf/027.png',
   },
   {
@@ -262,7 +262,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「讓路」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「讓路」。',
     image: 'signs/tf/028.png',
   },
   {
@@ -271,7 +271,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「慢行」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「讓路」，而非題目所述的「慢行」。',
     image: 'signs/tf/029.png',
   },
   {
@@ -280,7 +280,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止停車」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「禁止停車」。',
     image: 'signs/tf/030.png',
   },
   {
@@ -289,7 +289,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「停車再開」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「禁止停車」，而非題目所述的「停車再開」。',
     image: 'signs/tf/031.png',
   },
   {
@@ -298,7 +298,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止四輪以上汽車進入」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「禁止四輪以上汽車進入」。',
     image: 'signs/tf/032.png',
   },
   {
@@ -307,7 +307,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止進入」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「禁止四輪以上汽車進入」，而非題目所述的「禁止進入」。',
     image: 'signs/tf/033.png',
   },
   {
@@ -316,7 +316,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止迴車」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「禁止迴車」。',
     image: 'signs/tf/034.png',
   },
   {
@@ -325,7 +325,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止左轉」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「禁止迴車」，而非題目所述的「禁止左轉」。',
     image: 'signs/tf/035.png',
   },
   {
@@ -334,7 +334,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止四輪以上汽車及機車進入」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「禁止四輪以上汽車及機車進入」。',
     image: 'signs/tf/036.png',
   },
   {
@@ -343,7 +343,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止四輪以上汽車進入」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「禁止四輪以上汽車及機車進入」，而非題目所述的「禁止四輪以上汽車進入」。',
     image: 'signs/tf/037.png',
   },
   {
@@ -352,7 +353,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「車輛高度限制」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「車輛高度限制」。',
     image: 'signs/tf/038.png',
   },
   {
@@ -361,7 +362,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「車輛寬度限制」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「車輛高度限制」，而非題目所述的「車輛寬度限制」。',
     image: 'signs/tf/039.png',
   },
   {
@@ -370,7 +371,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「停車檢查」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「停車檢查」。',
     image: 'signs/tf/040.png',
   },
   {
@@ -379,7 +380,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止停車」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「停車檢查」，而非題目所述的「禁止停車」。',
     image: 'signs/tf/041.png',
   },
   {
@@ -388,7 +389,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「最高速限」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「最高速限」。',
     image: 'signs/tf/042.png',
   },
   {
@@ -397,7 +398,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「最低速限」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「最高速限」，而非題目所述的「最低速限」。',
     image: 'signs/tf/043.png',
   },
   {
@@ -406,7 +407,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「停車檢查」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「停車檢查」。',
     image: 'signs/tf/044.png',
   },
   {
@@ -415,7 +416,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「停車再開」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「停車檢查」，而非題目所述的「停車再開」。',
     image: 'signs/tf/045.png',
   },
   {
@@ -424,7 +425,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止超車」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「禁止超車」。',
     image: 'signs/tf/046.png',
   },
   {
@@ -433,7 +434,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止會車」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「禁止超車」，而非題目所述的「禁止會車」。',
     image: 'signs/tf/047.png',
   },
   {
@@ -442,7 +443,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「最低速限」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「最低速限」。',
     image: 'signs/tf/048.png',
   },
   {
@@ -451,7 +452,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「最高速限」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「最低速限」，而非題目所述的「最高速限」。',
     image: 'signs/tf/049.png',
   },
   {
@@ -460,7 +461,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「當心身心障礙者」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「當心身心障礙者」。',
     image: 'signs/tf/050.png',
   },
   {
@@ -469,7 +470,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「當心兒童」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「當心身心障礙者」，而非題目所述的「當心兒童」。',
     image: 'signs/tf/051.png',
   },
   {
@@ -478,7 +479,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止臨時停車」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「禁止臨時停車」。',
     image: 'signs/tf/052.png',
   },
   {
@@ -487,7 +488,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止停車」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「禁止臨時停車」，而非題目所述的「禁止停車」。',
     image: 'signs/tf/053.png',
   },
   {
@@ -496,7 +497,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「專行車輛(大客車專行)」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「專行車輛(大客車專行)」。',
     image: 'signs/tf/054.png',
   },
   {
@@ -505,7 +506,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「車輛長度限制」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「專行車輛(大客車專行)」，而非題目所述的「車輛長度限制」。',
     image: 'signs/tf/055.png',
   },
   {
@@ -514,7 +515,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「車輛寬度限制」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「車輛寬度限制」。',
     image: 'signs/tf/056.png',
   },
   {
@@ -523,7 +524,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「車輛長度限制」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「車輛寬度限制」，而非題目所述的「車輛長度限制」。',
     image: 'signs/tf/057.png',
   },
   {
@@ -532,7 +533,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「停車檢查」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「停車檢查」。',
     image: 'signs/tf/058.png',
   },
   {
@@ -541,7 +542,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「車輛總重限制」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「停車檢查」，而非題目所述的「車輛總重限制」。',
     image: 'signs/tf/059.png',
   },
   {
@@ -550,7 +551,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止空計程車進入」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「禁止空計程車進入」。',
     image: 'signs/tf/060.png',
   },
   {
@@ -559,7 +560,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止汽車進入」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「禁止空計程車進入」，而非題目所述的「禁止汽車進入」。',
     image: 'signs/tf/061.png',
   },
   {
@@ -568,7 +569,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止任何車輛進入」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「禁止任何車輛進入」。',
     image: 'signs/tf/062.png',
   },
   {
@@ -577,7 +578,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「此路不通」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「禁止任何車輛進入」，而非題目所述的「此路不通」。',
     image: 'signs/tf/063.png',
   },
   {
@@ -586,7 +587,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「路面低窪」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「路面低窪」。',
     image: 'signs/tf/064.png',
   },
   {
@@ -595,7 +596,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「路面顛簸」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「路面低窪」，而非題目所述的「路面顛簸」。',
     image: 'signs/tf/065.png',
   },
   {
@@ -604,7 +605,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「注意號誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「注意號誌」。',
     image: 'signs/tf/066.png',
   },
   {
@@ -613,7 +614,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「行車管制號誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「注意號誌」，而非題目所述的「行車管制號誌」。',
     image: 'signs/tf/067.png',
   },
   {
@@ -622,7 +623,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「路面高突」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「路面高突」。',
     image: 'signs/tf/068.png',
   },
   {
@@ -631,7 +632,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「路面顛簸」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「路面高突」，而非題目所述的「路面顛簸」。',
     image: 'signs/tf/069.png',
   },
   {
@@ -640,7 +641,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「遵行方向」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「遵行方向」。',
     image: 'signs/tf/070.png',
   },
   {
@@ -649,7 +650,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「單行道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「遵行方向」，而非題目所述的「單行道」。',
     image: 'signs/tf/071.png',
   },
   {
@@ -658,7 +659,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「遵行方向」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「遵行方向」。',
     image: 'signs/tf/072.png',
   },
   {
@@ -667,7 +668,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「分道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「遵行方向」，而非題目所述的「分道」。',
     image: 'signs/tf/073.png',
   },
   {
@@ -676,7 +677,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「救護站」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「救護站」。',
     image: 'signs/tf/074.png',
   },
   {
@@ -685,7 +686,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「醫院」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「救護站」，而非題目所述的「醫院」。',
     image: 'signs/tf/075.png',
   },
   {
@@ -694,7 +695,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「連續彎路先向左」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「連續彎路先向左」。',
     image: 'signs/tf/076.png',
   },
   {
@@ -703,7 +704,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「連續彎路先向右」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「連續彎路先向左」，而非題目所述的「連續彎路先向右」。',
     image: 'signs/tf/077.png',
   },
   {
@@ -712,7 +713,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「岔路」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「岔路」。',
     image: 'signs/tf/078.png',
   },
   {
@@ -721,7 +722,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「此路不通」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「岔路」，而非題目所述的「此路不通」。',
     image: 'signs/tf/079.png',
   },
   {
@@ -730,7 +731,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「遵行方向」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「遵行方向」。',
     image: 'signs/tf/080.png',
   },
   {
@@ -739,7 +740,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「單行道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「遵行方向」，而非題目所述的「單行道」。',
     image: 'signs/tf/081.png',
   },
   {
@@ -748,7 +749,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「右轉方向」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「右轉方向」。',
     image: 'signs/tf/082.png',
   },
   {
@@ -757,7 +758,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「遵行方向」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「右轉方向」，而非題目所述的「遵行方向」。',
     image: 'signs/tf/083.png',
   },
   {
@@ -766,7 +767,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「避車彎」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「避車彎」。',
     image: 'signs/tf/084.png',
   },
   {
@@ -775,7 +776,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「狹路」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「避車彎」，而非題目所述的「狹路」。',
     image: 'signs/tf/085.png',
   },
   {
@@ -784,7 +785,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「靠右行駛」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「靠右行駛」。',
     image: 'signs/tf/086.png',
   },
   {
@@ -793,7 +794,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「靠左行駛」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「靠右行駛」，而非題目所述的「靠左行駛」。',
     image: 'signs/tf/087.png',
   },
   {
@@ -802,7 +803,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「單行道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「單行道」。',
     image: 'signs/tf/088.png',
   },
   {
@@ -811,7 +812,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「遵行方向」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「單行道」，而非題目所述的「遵行方向」。',
     image: 'signs/tf/089.png',
   },
   {
@@ -820,7 +821,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「省道路線編號」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「省道路線編號」。',
     image: 'signs/tf/090.png',
   },
   {
@@ -829,7 +830,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「國道路線編號」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「省道路線編號」，而非題目所述的「國道路線編號」。',
     image: 'signs/tf/091.png',
   },
   {
@@ -838,7 +839,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「市、縣道路線編號」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「市、縣道路線編號」。',
     image: 'signs/tf/092.png',
   },
   {
@@ -847,7 +848,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「省道路線編號」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「市、縣道路線編號」，而非題目所述的「省道路線編號」。',
     image: 'signs/tf/093.png',
   },
   {
@@ -856,7 +857,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「國道路線編號」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「國道路線編號」。',
     image: 'signs/tf/094.png',
   },
   {
@@ -865,7 +866,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「省道路線編號」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「國道路線編號」，而非題目所述的「省道路線編號」。',
     image: 'signs/tf/095.png',
   },
   {
@@ -874,7 +875,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「分道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「分道」。',
     image: 'signs/tf/096.png',
   },
   {
@@ -883,7 +884,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「岔路」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「分道」，而非題目所述的「岔路」。',
     image: 'signs/tf/097.png',
   },
   {
@@ -892,7 +893,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「禁止會車」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「禁止會車」。',
     image: 'signs/tf/098.png',
   },
   {
@@ -901,7 +902,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「雙向道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「禁止會車」，而非題目所述的「雙向道」。',
     image: 'signs/tf/099.png',
   },
   {
@@ -910,7 +911,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「右側車道路寬縮減」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「右側車道路寬縮減」。',
     image: 'signs/tf/100.png',
   },
   {
@@ -919,7 +920,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左側車道路寬縮減」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「右側車道路寬縮減」，而非題目所述的「左側車道路寬縮減」。',
     image: 'signs/tf/101.png',
   },
   {
@@ -928,7 +929,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左側車道路寬縮減」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「左側車道路寬縮減」。',
     image: 'signs/tf/102.png',
   },
   {
@@ -937,7 +938,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「右側車道路寬縮減」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「左側車道路寬縮減」，而非題目所述的「右側車道路寬縮減」。',
     image: 'signs/tf/103.png',
   },
   {
@@ -946,7 +947,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「特種閃光「黃燈」號誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「特種閃光「黃燈」。',
     image: 'signs/tf/104.png',
   },
   {
@@ -955,7 +956,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「行車管制號誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「特種閃光「黃燈」，而非題目所述的「行車管制號誌」。',
     image: 'signs/tf/105.png',
   },
   {
@@ -964,7 +965,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「行人專用號誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「行人專用號誌」。',
     image: 'signs/tf/106.png',
   },
   {
@@ -973,7 +974,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「當心行人」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「行人專用號誌」，而非題目所述的「當心行人」。',
     image: 'signs/tf/107.png',
   },
   {
@@ -982,7 +983,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「行人穿越道號誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「行人穿越道號誌」。',
     image: 'signs/tf/108.png',
   },
   {
@@ -991,7 +992,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「行車管制號誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「行人穿越道號誌」，而非題目所述的「行車管制號誌」。',
     image: 'signs/tf/109.png',
   },
   {
@@ -1000,7 +1001,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「雙線以上電化鐵路平交道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「雙線以上電化鐵路平交道」。',
     image: 'signs/tf/110.png',
   },
   {
@@ -1009,7 +1010,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「雙線以上鐵路平交道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「雙線以上電化鐵路平交道」，而非題目所述的「雙線以上鐵路平交道」。',
     image: 'signs/tf/111.png',
   },
   {
@@ -1018,7 +1020,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「特種閃光「紅燈」號誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「特種閃光「紅燈」。',
     image: 'signs/tf/112.png',
   },
   {
@@ -1027,7 +1029,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「行車管制號誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「特種閃光「紅燈」，而非題目所述的「行車管制號誌」。',
     image: 'signs/tf/113.png',
   },
   {
@@ -1036,7 +1038,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「行車管制號誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「行車管制號誌」。',
     image: 'signs/tf/114.png',
   },
   {
@@ -1045,7 +1047,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「行人專用號誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「行車管制號誌」，而非題目所述的「行人專用號誌」。',
     image: 'signs/tf/115.png',
   },
   {
@@ -1054,7 +1056,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「人行天橋」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「人行天橋」。',
     image: 'signs/tf/116.png',
   },
   {
@@ -1063,7 +1065,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「人行地下道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「人行天橋」，而非題目所述的「人行地下道」。',
     image: 'signs/tf/117.png',
   },
   {
@@ -1072,7 +1074,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「電話」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「電話」。',
     image: 'signs/tf/118.png',
   },
   {
@@ -1081,7 +1083,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「修理站」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「電話」，而非題目所述的「修理站」。',
     image: 'signs/tf/119.png',
   },
   {
@@ -1090,7 +1092,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「渡口」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「渡口」。',
     image: 'signs/tf/120.png',
   },
   {
@@ -1099,7 +1101,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「專行汽車」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「渡口」，而非題目所述的「專行汽車」。',
     image: 'signs/tf/121.png',
   },
   {
@@ -1108,7 +1110,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「右轉方向」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「右轉方向」。',
     image: 'signs/tf/122.png',
   },
   {
@@ -1117,7 +1119,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左轉方向」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「右轉方向」，而非題目所述的「左轉方向」。',
     image: 'signs/tf/123.png',
   },
   {
@@ -1126,7 +1128,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左右轉方向」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「左右轉方向」。',
     image: 'signs/tf/124.png',
   },
   {
@@ -1135,7 +1137,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「雙向道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「左右轉方向」，而非題目所述的「雙向道」。',
     image: 'signs/tf/125.png',
   },
   {
@@ -1144,7 +1146,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「餐旅服務」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「餐旅服務」。',
     image: 'signs/tf/126.png',
   },
   {
@@ -1153,7 +1155,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「加油站」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「餐旅服務」，而非題目所述的「加油站」。',
     image: 'signs/tf/127.png',
   },
   {
@@ -1162,7 +1164,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「人行地下道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「人行地下道」。',
     image: 'signs/tf/128.png',
   },
   {
@@ -1171,7 +1173,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「人行天橋」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「人行地下道」，而非題目所述的「人行天橋」。',
     image: 'signs/tf/129.png',
   },
   {
@@ -1180,7 +1182,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「加油站」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「加油站」。',
     image: 'signs/tf/130.png',
   },
   {
@@ -1189,7 +1191,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「餐旅服務」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「加油站」，而非題目所述的「餐旅服務」。',
     image: 'signs/tf/131.png',
   },
   {
@@ -1198,7 +1200,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左道封閉」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「左道封閉」。',
     image: 'signs/tf/132.png',
   },
   {
@@ -1207,7 +1209,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「右道封閉」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「左道封閉」，而非題目所述的「右道封閉」。',
     image: 'signs/tf/133.png',
   },
   {
@@ -1216,7 +1218,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「右道封閉」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「右道封閉」。',
     image: 'signs/tf/134.png',
   },
   {
@@ -1225,7 +1227,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左道封閉」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「右道封閉」，而非題目所述的「左道封閉」。',
     image: 'signs/tf/135.png',
   },
   {
@@ -1234,7 +1236,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「道路施工」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「道路施工」。',
     image: 'signs/tf/136.png',
   },
   {
@@ -1243,7 +1245,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「當心行人」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「道路施工」，而非題目所述的「當心行人」。',
     image: 'signs/tf/137.png',
   },
   {
@@ -1252,7 +1254,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「車輛改道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「車輛改道」。',
     image: 'signs/tf/138.png',
   },
   {
@@ -1261,7 +1263,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「岔路」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「車輛改道」，而非題目所述的「岔路」。',
     image: 'signs/tf/139.png',
   },
   {
@@ -1270,7 +1272,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「指示改道方向」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「指示改道方向」。',
     image: 'signs/tf/140.png',
   },
   {
@@ -1279,7 +1281,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「單行道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「指示改道方向」，而非題目所述的「單行道」。',
     image: 'signs/tf/141.png',
   },
   {
@@ -1288,7 +1290,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「道路封閉」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「道路封閉」。',
     image: 'signs/tf/142.png',
   },
   {
@@ -1297,7 +1299,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「道路施工」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「道路封閉」，而非題目所述的「道路施工」。',
     image: 'signs/tf/143.png',
   },
   {
@@ -1306,7 +1308,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中黃色雙實線為：雙向禁止超車線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圖中黃色雙實線為：雙向禁止超車線」。',
     image: 'signs/tf/144.png',
   },
   {
@@ -1315,7 +1317,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中黃色雙實線為：單向禁止超車線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「圖中黃色雙實線為：雙向禁止超車線」，而非題目所述的「圖中黃色雙實線為：單向禁止超車線」。',
     image: 'signs/tf/145.png',
   },
   {
@@ -1344,7 +1347,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中白色雙實線為：禁止變換車道線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圖中白色雙實線為：禁止變換車道線」。',
     image: 'signs/tf/148.png',
   },
   {
@@ -1353,7 +1356,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中白色雙實線為：行車分向線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「圖中白色雙實線為：禁止變換車道線」，而非題目所述的「圖中白色雙實線為：行車分向線」。',
     image: 'signs/tf/149.png',
   },
   {
@@ -1362,7 +1366,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中黃色實線為：禁止停車線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圖中黃色實線為：禁止停車線」。',
     image: 'signs/tf/150.png',
   },
   {
@@ -1371,7 +1375,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中黃色實線為：禁止臨時停車線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「圖中黃色實線為：禁止停車線」，而非題目所述的「圖中黃色實線為：禁止臨時停車線」。',
     image: 'signs/tf/151.png',
   },
   {
@@ -1380,7 +1385,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中紅色實線為：禁止臨時停車線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圖中紅色實線為：禁止臨時停車線」。',
     image: 'signs/tf/152.png',
   },
   {
@@ -1389,7 +1394,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中紅色實線為：禁止停車線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「圖中紅色實線為：禁止臨時停車線」，而非題目所述的「圖中紅色實線為：禁止停車線」。',
     image: 'signs/tf/153.png',
   },
   {
@@ -1398,7 +1404,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中黃色虛線為：行車分向線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圖中黃色虛線為：行車分向線」。',
     image: 'signs/tf/154.png',
   },
   {
@@ -1407,7 +1413,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中黃色虛線為：分向限制線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「圖中黃色虛線為：行車分向線」，而非題目所述的「圖中黃色虛線為：分向限制線」。',
     image: 'signs/tf/155.png',
   },
   {
@@ -1416,7 +1423,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中白色虛線為：車道線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圖中白色虛線為：車道線」。',
     image: 'signs/tf/156.png',
   },
   {
@@ -1425,7 +1432,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中白色虛線為：行車分向線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「圖中白色虛線為：車道線」，而非題目所述的「圖中白色虛線為：行車分向線」。',
     image: 'signs/tf/157.png',
   },
   {
@@ -1434,7 +1442,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中橫向白色實線為：停止線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圖中橫向白色實線為：停止線」。',
     image: 'signs/tf/158.png',
   },
   {
@@ -1443,7 +1451,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中橫向白色實線為：讓路線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「圖中橫向白色實線為：停止線」，而非題目所述的「圖中橫向白色實線為：讓路線」。',
     image: 'signs/tf/159.png',
   },
   {
@@ -1452,7 +1461,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中白色斜紋線為：斑馬紋行人穿越道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圖中白色斜紋線為：斑馬紋行人穿越道」。',
     image: 'signs/tf/160.png',
   },
   {
@@ -1461,7 +1470,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中白色斜紋線為：枕木紋行人穿越道」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「圖中白色斜紋線為：斑馬紋行人穿越道」，而非題目所述的「圖中白色斜紋線為：枕木紋行人穿越道」。',
     image: 'signs/tf/161.png',
   },
   {
@@ -1470,7 +1480,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「指向線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「指向線」。',
     image: 'signs/tf/162.png',
   },
   {
@@ -1479,7 +1489,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「行車分向線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「指向線」，而非題目所述的「行車分向線」。',
     image: 'signs/tf/163.png',
   },
   {
@@ -1488,7 +1498,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中白色紋線為：枕木紋行人穿越道線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圖中白色紋線為：枕木紋行人穿越道線」。',
     image: 'signs/tf/164.png',
   },
   {
@@ -1497,7 +1507,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中白色紋線為：斑馬紋行人穿越道線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「圖中白色紋線為：枕木紋行人穿越道線」，而非題目所述的「圖中白色紋線為：斑馬紋行人穿越道線」。',
     image: 'signs/tf/165.png',
   },
   {
@@ -1506,7 +1517,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中黃色雙實線為：分向限制線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圖中黃色雙實線為：分向限制線」。',
     image: 'signs/tf/166.png',
   },
   {
@@ -1515,7 +1526,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中黃色雙實線為：行車分向線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「圖中黃色雙實線為：分向限制線」，而非題目所述的「圖中黃色雙實線為：行車分向線」。',
     image: 'signs/tf/167.png',
   },
   {
@@ -1524,7 +1536,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「路寬變更線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「路寬變更線」。',
     image: 'signs/tf/168.png',
   },
   {
@@ -1533,7 +1545,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「狹路變更線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「路寬變更線」，而非題目所述的「狹路變更線」。',
     image: 'signs/tf/169.png',
   },
   {
@@ -1542,7 +1554,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「近障礙物線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「近障礙物線」。',
     image: 'signs/tf/170.png',
   },
   {
@@ -1551,7 +1563,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中黃色標線為單向禁止超車線。」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「近障礙物線」，而非題目所述的「圖中黃色標線為單向禁止超車線。」。',
     image: 'signs/tf/171.png',
   },
   {
@@ -1560,7 +1573,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「近鐵路平交道線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「近鐵路平交道線」。',
     image: 'signs/tf/172.png',
   },
   {
@@ -1569,7 +1582,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「讓路線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「近鐵路平交道線」，而非題目所述的「讓路線」。',
     image: 'signs/tf/173.png',
   },
   {
@@ -1578,7 +1591,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中白色倒三角型標線為：讓路線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圖中白色倒三角型標線為：讓路線」。',
     image: 'signs/tf/174.png',
   },
   {
@@ -1587,7 +1600,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中白色倒三角型標線為：指向線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「圖中白色倒三角型標線為：讓路線」，而非題目所述的「圖中白色倒三角型標線為：指向線」。',
     image: 'signs/tf/175.png',
   },
   {
@@ -1616,7 +1630,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「車輛停放線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「車輛停放線」。',
     image: 'signs/tf/178.png',
   },
   {
@@ -1625,7 +1639,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「停止線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「車輛停放線」，而非題目所述的「停止線」。',
     image: 'signs/tf/179.png',
   },
   {
@@ -1634,7 +1648,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中白色虛線為：轉彎線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「圖中白色虛線為：轉彎線」。',
     image: 'signs/tf/180.png',
   },
   {
@@ -1643,7 +1657,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「圖中白色虛線為：槽化線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此標誌正確含義為「圖中白色虛線為：轉彎線」，而非題目所述的「圖中白色虛線為：槽化線」。',
     image: 'signs/tf/181.png',
   },
   {
@@ -1652,7 +1667,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「全部車輛停止」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「全部車輛停止」。',
     image: 'signs/tf/182.png',
   },
   {
@@ -1661,7 +1676,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「前面來車停止」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「全部車輛停止」，而非題目所述的「前面來車停止」。',
     image: 'signs/tf/183.png',
   },
   {
@@ -1670,7 +1685,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「右面來車左轉彎」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「右面來車左轉彎」。',
     image: 'signs/tf/184.png',
   },
   {
@@ -1679,7 +1694,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左面來車右轉彎」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「右面來車左轉彎」，而非題目所述的「左面來車右轉彎」。',
     image: 'signs/tf/185.png',
   },
   {
@@ -1688,7 +1703,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「右面來車停止」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「右面來車停止」。',
     image: 'signs/tf/186.png',
   },
   {
@@ -1697,7 +1712,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左面來車停止」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「右面來車停止」，而非題目所述的「左面來車停止」。',
     image: 'signs/tf/187.png',
   },
   {
@@ -1706,7 +1721,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左面來車左轉彎」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「左面來車左轉彎」。',
     image: 'signs/tf/188.png',
   },
   {
@@ -1715,7 +1730,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「右面來車左轉彎」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「左面來車左轉彎」，而非題目所述的「右面來車左轉彎」。',
     image: 'signs/tf/189.png',
   },
   {
@@ -1724,7 +1739,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左面來車停止」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「左面來車停止」。',
     image: 'signs/tf/190.png',
   },
   {
@@ -1733,7 +1748,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「右面來車停止」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「左面來車停止」，而非題目所述的「右面來車停止」。',
     image: 'signs/tf/191.png',
   },
   {
@@ -1742,7 +1757,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「前後來車停止，左右來車通行」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「前後來車停止，左右來車通行」。',
     image: 'signs/tf/192.png',
   },
   {
@@ -1751,7 +1766,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「全部車輛停止」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「前後來車停止，左右來車通行」，而非題目所述的「全部車輛停止」。',
     image: 'signs/tf/193.png',
   },
   {
@@ -1760,7 +1775,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「右面來車速行」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「右面來車速行」。',
     image: 'signs/tf/194.png',
   },
   {
@@ -1769,7 +1784,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左面來車速行」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「右面來車速行」，而非題目所述的「左面來車速行」。',
     image: 'signs/tf/195.png',
   },
   {
@@ -1778,7 +1793,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「前面來車停止」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「前面來車停止」。',
     image: 'signs/tf/196.png',
   },
   {
@@ -1787,7 +1802,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「全部車輛停止」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「前面來車停止」，而非題目所述的「全部車輛停止」。',
     image: 'signs/tf/197.png',
   },
   {
@@ -1796,7 +1811,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「左面來車速行」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「左面來車速行」。',
     image: 'signs/tf/198.png',
   },
   {
@@ -1805,7 +1820,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「右面來車速行」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「左面來車速行」，而非題目所述的「右面來車速行」。',
     image: 'signs/tf/199.png',
   },
   {
@@ -1864,7 +1879,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「指示前方有服務區及其距離里程。」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「指示前方有服務區及其距離里程。」。',
     image: 'signs/tf/205.png',
   },
   {
@@ -1893,7 +1908,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「本號誌是車道管制號誌。」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「本號誌是車道管制號誌。」。',
     image: 'signs/tf/208.png',
   },
   {
@@ -1902,7 +1917,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「當心動物。」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「當心動物。」。',
     image: 'signs/tf/209.png',
   },
   {
@@ -1911,7 +1926,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「本標誌是指向北行。」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「本標誌是指向北行。」。',
     image: 'signs/tf/210.png',
   },
   {
@@ -1920,7 +1935,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「這是警告標誌，表示前面路段封閉。」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此為「道路施工」警示標誌（橙色菱形，施工人員圖示），表示前方道路正在施工，並非「前面路段封閉」。',
     image: 'signs/tf/211.png',
   },
   {
@@ -1949,7 +1965,8 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「本標誌用以指示通達地點應行駛之車道。」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation:
+      '此為「大型車靠右」指示標誌，要求大型車輛靠右行駛，並非用於指示通達地點應行駛之車道。',
     image: 'signs/tf/214.png',
   },
   {
@@ -1968,7 +1985,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「煞車系統警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「煞車系統警示燈」。',
     image: 'signs/tf/216.png',
   },
   {
@@ -1977,7 +1994,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「ABS 煞車警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「煞車系統警示燈」，而非題目所述的「ABS 煞車警示燈」。',
     image: 'signs/tf/217.png',
   },
   {
@@ -1986,7 +2003,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「充電警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「充電警示燈」。',
     image: 'signs/tf/218.png',
   },
   {
@@ -1995,7 +2012,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「引擎故障警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「充電警示燈」，而非題目所述的「引擎故障警示燈」。',
     image: 'signs/tf/219.png',
   },
   {
@@ -2004,7 +2021,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「低機油壓力警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「低機油壓力警示燈」。',
     image: 'signs/tf/220.png',
   },
   {
@@ -2013,7 +2030,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「低燃油油位警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「低機油壓力警示燈」，而非題目所述的「低燃油油位警示燈」。',
     image: 'signs/tf/221.png',
   },
   {
@@ -2022,7 +2039,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「引擎故障警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「引擎故障警示燈」。',
     image: 'signs/tf/222.png',
   },
   {
@@ -2031,7 +2048,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「充電警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「引擎故障警示燈」，而非題目所述的「充電警示燈」。',
     image: 'signs/tf/223.png',
   },
   {
@@ -2040,7 +2057,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「低燃油油位警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「低燃油油位警示燈」。',
     image: 'signs/tf/224.png',
   },
   {
@@ -2049,7 +2066,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「低機油壓力警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「低燃油油位警示燈」，而非題目所述的「低機油壓力警示燈」。',
     image: 'signs/tf/225.png',
   },
   {
@@ -2058,7 +2075,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「車門開啟警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「車門開啟警示燈」。',
     image: 'signs/tf/226.png',
   },
   {
@@ -2067,7 +2084,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「轉向指示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「車門開啟警示燈」，而非題目所述的「轉向指示燈」。',
     image: 'signs/tf/227.png',
   },
   {
@@ -2076,7 +2093,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「轉向指示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「轉向指示燈」。',
     image: 'signs/tf/228.png',
   },
   {
@@ -2085,7 +2102,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「車寬指示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「轉向指示燈」，而非題目所述的「車寬指示燈」。',
     image: 'signs/tf/229.png',
   },
   {
@@ -2094,7 +2111,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「遠光指示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「遠光指示燈」。',
     image: 'signs/tf/230.png',
   },
   {
@@ -2103,7 +2120,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「霧燈指示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「遠光指示燈」，而非題目所述的「霧燈指示燈」。',
     image: 'signs/tf/231.png',
   },
   {
@@ -2112,7 +2129,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「安全帶警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「安全帶警示燈」。',
     image: 'signs/tf/232.png',
   },
   {
@@ -2121,7 +2138,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「氣囊警示燈」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「安全帶警示燈」，而非題目所述的「氣囊警示燈」。',
     image: 'signs/tf/233.png',
   },
   {
@@ -2130,7 +2147,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「危險警告燈按鈕」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「危險警告燈按鈕」。',
     image: 'signs/tf/234.png',
   },
   {
@@ -2139,7 +2156,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「三角警示架」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 1,
-    explanation: '此敘述不正確，請注意相關法規或標誌說明。',
+    explanation: '此標誌正確含義為「危險警告燈按鈕」，而非題目所述的「三角警示架」。',
     image: 'signs/tf/235.png',
   },
   {
@@ -2148,7 +2165,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「自行車騎士手勢預告即將左轉」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「自行車騎士手勢預告即將左轉」。',
     image: 'signs/tf/236.png',
   },
   {
@@ -2157,7 +2174,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「自行車騎士手勢預告即將右轉」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「自行車騎士手勢預告即將右轉」。',
     image: 'signs/tf/237.png',
   },
   {
@@ -2166,7 +2183,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「通學區起點標線」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「通學區起點標線」。',
     image: 'signs/tf/238.png',
   },
   {
@@ -2175,7 +2192,7 @@ export const QUESTIONS_SIGN_TF: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為「行人優先區起點標誌」，此說明是否正確？',
     options: ['○（是）', 'X（否）'],
     correct: 0,
-    explanation: '此敘述正確。請記住相關交通規則以確保行車安全。',
+    explanation: '正確！此標誌含義為「行人優先區起點標誌」。',
     image: 'signs/tf/239.png',
   },
 ];

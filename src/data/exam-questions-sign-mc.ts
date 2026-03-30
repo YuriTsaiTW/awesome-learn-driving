@@ -10,7 +10,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['右彎', '左彎', '連續彎路先向 右'],
     correct: 0,
-    explanation: '正確答案為「右彎」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「右彎」，勿與 「左彎」、「連續彎路先向 右」 混淆。',
     image: 'signs/mc/000.png',
   },
   {
@@ -19,7 +19,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['左彎', '右彎', '連續彎路先向 左'],
     correct: 0,
-    explanation: '正確答案為「左彎」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「左彎」，勿與 「右彎」、「連續彎路先向 左」 混淆。',
     image: 'signs/mc/001.png',
   },
   {
@@ -28,7 +28,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['連續彎路先向右', '左彎', '連 續彎路先向左'],
     correct: 0,
-    explanation: '正確答案為「連續彎路先向右」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「連續彎路先向右」，勿與 「左彎」、「連 續彎路先向左」 混淆。',
     image: 'signs/mc/002.png',
   },
   {
@@ -37,7 +37,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['連續彎路先向左', '右彎', '連 續彎路先向右'],
     correct: 0,
-    explanation: '正確答案為「連續彎路先向左」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「連續彎路先向左」，勿與 「右彎」、「連 續彎路先向右」 混淆。',
     image: 'signs/mc/003.png',
   },
   {
@@ -46,7 +46,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['雙向道', '狹路', '岔路'],
     correct: 2,
-    explanation: '正確答案為「岔路」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「岔路」，勿與 「雙向道」、「狹路」 混淆。',
     image: 'signs/mc/004.png',
   },
   {
@@ -55,7 +55,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['岔路', '雙向道', '此路不通'],
     correct: 0,
-    explanation: '正確答案為「岔路」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「岔路」，勿與 「雙向道」、「此路不通」 混淆。',
     image: 'signs/mc/005.png',
   },
   {
@@ -64,7 +64,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['右側車道縮減', '狹路', '匝道 會車'],
     correct: 0,
-    explanation: '正確答案為「右側車道縮減」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「右側車道縮減」，勿與 「狹路」、「匝道 會車」 混淆。',
     image: 'signs/mc/006.png',
   },
   {
@@ -73,7 +73,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['狹路', '狹橋', '岔路'],
     correct: 0,
-    explanation: '正確答案為「狹路」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「狹路」，勿與 「狹橋」、「岔路」 混淆。',
     image: 'signs/mc/007.png',
   },
   {
@@ -82,7 +82,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['岔路', '狹橋', '匝道會車'],
     correct: 2,
-    explanation: '正確答案為「匝道會車」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「匝道會車」，勿與 「岔路」、「狹橋」 混淆。',
     image: 'signs/mc/008.png',
   },
   {
@@ -91,7 +91,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['單行道', '雙向道', '狹路'],
     correct: 1,
-    explanation: '正確答案為「雙向道」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「雙向道」，勿與 「單行道」、「狹路」 混淆。',
     image: 'signs/mc/009.png',
   },
   {
@@ -100,7 +100,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['左彎', '圓環', '岔路'],
     correct: 1,
-    explanation: '正確答案為「圓環」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「圓環」，勿與 「左彎」、「岔路」 混淆。',
     image: 'signs/mc/010.png',
   },
   {
@@ -109,7 +109,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['路面顛簸', '路面高突', '路面 低窪'],
     correct: 0,
-    explanation: '正確答案為「路面顛簸」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「路面顛簸」，勿與 「路面高突」、「路面 低窪」 混淆。',
     image: 'signs/mc/011.png',
   },
   {
@@ -118,7 +118,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['岔路', '狹橋', '狹路'],
     correct: 1,
-    explanation: '正確答案為「狹橋」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「狹橋」，勿與 「岔路」、「狹路」 混淆。',
     image: 'signs/mc/012.png',
   },
   {
@@ -127,7 +127,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['路面顛簸', '險升坡', '路面高 突'],
     correct: 2,
-    explanation: '正確答案為「路面高 突」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「路面高 突」，勿與 「路面顛簸」、「險升坡」 混淆。',
     image: 'signs/mc/013.png',
   },
   {
@@ -136,7 +136,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['險降坡', '險升坡', '碼頭'],
     correct: 0,
-    explanation: '正確答案為「險降坡」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「險降坡」，勿與 「險升坡」、「碼頭」 混淆。',
     image: 'signs/mc/014.png',
   },
   {
@@ -145,7 +145,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['右側斷崖', '注意落石', '左側 斷崖'],
     correct: 2,
-    explanation: '正確答案為「左側 斷崖」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「左側 斷崖」，勿與 「右側斷崖」、「注意落石」 混淆。',
     image: 'signs/mc/015.png',
   },
   {
@@ -154,7 +154,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['無柵門鐵路平交道', '有柵門鐵路平 交道', '禁止汽車進入'],
     correct: 0,
-    explanation: '正確答案為「無柵門鐵路平交道」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「無柵門鐵路平交道」，勿與 「有柵門鐵路平 交道」、「禁止汽車進入」 混淆。',
     image: 'signs/mc/016.png',
   },
   {
@@ -163,7 +164,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['注意號誌', '危險', '慢行'],
     correct: 0,
-    explanation: '正確答案為「注意號誌」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「注意號誌」，勿與 「危險」、「慢行」 混淆。',
     image: 'signs/mc/017.png',
   },
   {
@@ -172,7 +173,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止汽車進入', '無柵門鐵路平交 道', '有柵門鐵路平交道'],
     correct: 2,
-    explanation: '正確答案為「有柵門鐵路平交道」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「有柵門鐵路平交道」，勿與 「禁止汽車進入」、「無柵門鐵路平交 道」 混淆。',
     image: 'signs/mc/018.png',
   },
   {
@@ -181,7 +183,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['路面高突', '路滑', '禁止超 車'],
     correct: 1,
-    explanation: '正確答案為「路滑」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「路滑」，勿與 「路面高突」、「禁止超 車」 混淆。',
     image: 'signs/mc/019.png',
   },
   {
@@ -190,7 +192,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['狹路', '隧道', '狹橋'],
     correct: 1,
-    explanation: '正確答案為「隧道」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「隧道」，勿與 「狹路」、「狹橋」 混淆。',
     image: 'signs/mc/020.png',
   },
   {
@@ -199,7 +201,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止汽車進入', '當心台車', '當心行人 '],
     correct: 1,
-    explanation: '正確答案為「當心台車」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「當心台車」，勿與 「禁止汽車進入」、「當心行人 」 混淆。',
     image: 'signs/mc/021.png',
   },
   {
@@ -208,7 +210,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['當心行人', '當心兒童', '禁止 行人通行 '],
     correct: 1,
-    explanation: '正確答案為「當心兒童」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「當心兒童」，勿與 「當心行人」、「禁止 行人通行 」 混淆。',
     image: 'signs/mc/022.png',
   },
   {
@@ -217,7 +219,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['當心兒童', '當心行人', '禁止 行人通行 '],
     correct: 1,
-    explanation: '正確答案為「當心行人」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「當心行人」，勿與 「當心兒童」、「禁止 行人通行 」 混淆。',
     image: 'signs/mc/023.png',
   },
   {
@@ -226,7 +228,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['停車再開', '讓路', '慢行'],
     correct: 2,
-    explanation: '正確答案為「慢行」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「慢行」，勿與 「停車再開」、「讓路」 混淆。',
     image: 'signs/mc/024.png',
   },
   {
@@ -235,7 +237,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['險降坡', '碼頭、堤岸', '路 滑'],
     correct: 1,
-    explanation: '正確答案為「碼頭、堤岸」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「碼頭、堤岸」，勿與 「險降坡」、「路 滑」 混淆。',
     image: 'signs/mc/025.png',
   },
   {
@@ -244,7 +246,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['危險路面', '注意左側落石', '注意右側落石'],
     correct: 2,
-    explanation: '正確答案為「注意右側落石」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「注意右側落石」，勿與 「危險路面」、「注意左側落石」 混淆。',
     image: 'signs/mc/026.png',
   },
   {
@@ -253,7 +255,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['狹橋', '危險', '慢行'],
     correct: 1,
-    explanation: '正確答案為「危險」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「危險」，勿與 「狹橋」、「慢行」 混淆。',
     image: 'signs/mc/027.png',
   },
   {
@@ -262,7 +264,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['靠右行駛', '單行道', '可以右 轉'],
     correct: 0,
-    explanation: '正確答案為「靠右行駛」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「靠右行駛」，勿與 「單行道」、「可以右 轉」 混淆。',
     image: 'signs/mc/028.png',
   },
   {
@@ -271,7 +273,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止停車', '停車檢查', '禁止 汽車進入'],
     correct: 1,
-    explanation: '正確答案為「停車檢查」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「停車檢查」，勿與 「禁止停車」、「禁止 汽車進入」 混淆。',
     image: 'signs/mc/029.png',
   },
   {
@@ -280,7 +282,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止行人通行', '停車再開', '禁止任何車輛進入'],
     correct: 2,
-    explanation: '正確答案為「禁止任何車輛進入」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「禁止任何車輛進入」，勿與 「禁止行人通行」、「停車再開」 混淆。',
     image: 'signs/mc/030.png',
   },
   {
@@ -289,7 +291,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止行人通行', '禁止任何車輛進 入', '禁止四輪以上汽車進入'],
     correct: 2,
-    explanation: '正確答案為「禁止四輪以上汽車進入」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「禁止四輪以上汽車進入」，勿與 「禁止行人通行」、「禁止任何車輛進 入」 混淆。',
     image: 'signs/mc/031.png',
   },
   {
@@ -298,7 +301,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止任何車輛進入', '禁止聯結車進 入', '禁止大貨車及聯結車進入'],
     correct: 1,
-    explanation: '正確答案為「禁止聯結車進 入」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「禁止聯結車進 入」，勿與 「禁止任何車輛進入」、「禁止大貨車及聯結車進入」 混淆。',
     image: 'signs/mc/032.png',
   },
   {
@@ -307,7 +311,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止大型重型機車以外之 機車進入', '禁止四輪以上汽車進入', '禁止任何 機車進入'],
     correct: 0,
-    explanation: '正確答案為「禁止大型重型機車以外之 機車進入」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「禁止大型重型機車以外之 機車進入」，勿與 「禁止四輪以上汽車進入」、「禁止任何 機車進入」 混淆。',
     image: 'signs/mc/033.png',
   },
   {
@@ -316,7 +321,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止任何車輛進入', '禁止四輪以上 汽車及機車進入', '禁止行人通行'],
     correct: 1,
-    explanation: '正確答案為「禁止四輪以上 汽車及機車進入」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「禁止四輪以上 汽車及機車進入」，勿與 「禁止任何車輛進入」、「禁止行人通行」 混淆。',
     image: 'signs/mc/034.png',
   },
   {
@@ -325,7 +331,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止迴車', '禁止左轉', '禁止 超車'],
     correct: 1,
-    explanation: '正確答案為「禁止左轉」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「禁止左轉」，勿與 「禁止迴車」、「禁止 超車」 混淆。',
     image: 'signs/mc/035.png',
   },
   {
@@ -334,7 +340,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止超車', '禁止會車', '禁止 汽車進入 '],
     correct: 0,
-    explanation: '正確答案為「禁止超車」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「禁止超車」，勿與 「禁止會車」、「禁止 汽車進入 」 混淆。',
     image: 'signs/mc/036.png',
   },
   {
@@ -343,7 +349,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止左轉', '禁止迴車', '禁止 會車'],
     correct: 1,
-    explanation: '正確答案為「禁止迴車」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「禁止迴車」，勿與 「禁止左轉」、「禁止 會車」 混淆。',
     image: 'signs/mc/037.png',
   },
   {
@@ -352,7 +358,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['雙向道', '禁止會車', '分道'],
     correct: 1,
-    explanation: '正確答案為「禁止會車」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「禁止會車」，勿與 「雙向道」、「分道」 混淆。',
     image: 'signs/mc/038.png',
   },
   {
@@ -361,7 +367,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['車輛寬度限制', '單行道', '車 輛高度限制'],
     correct: 0,
-    explanation: '正確答案為「車輛寬度限制」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「車輛寬度限制」，勿與 「單行道」、「車 輛高度限制」 混淆。',
     image: 'signs/mc/039.png',
   },
   {
@@ -370,7 +376,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['車輛總重限制', '車輛載重限制', '車輛空重'],
     correct: 0,
-    explanation: '正確答案為「車輛總重限制」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「車輛總重限制」，勿與 「車輛載重限制」、「車輛空重」 混淆。',
     image: 'signs/mc/040.png',
   },
   {
@@ -379,7 +385,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止行人通行', '當心行人', '當心兒童'],
     correct: 0,
-    explanation: '正確答案為「禁止行人通行」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「禁止行人通行」，勿與 「當心行人」、「當心兒童」 混淆。',
     image: 'signs/mc/041.png',
   },
   {
@@ -388,7 +394,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['最低速限', '最高速限', '車輛 總重限制'],
     correct: 1,
-    explanation: '正確答案為「最高速限」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「最高速限」，勿與 「最低速限」、「車輛 總重限制」 混淆。',
     image: 'signs/mc/042.png',
   },
   {
@@ -397,7 +403,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止大貨車及聯結車進入', '禁止大 貨車進入', '禁止汽車進入'],
     correct: 0,
-    explanation: '正確答案為「禁止大貨車及聯結車進入」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「禁止大貨車及聯結車進入」，勿與 「禁止大 貨車進入」、「禁止汽車進入」 混淆。',
     image: 'signs/mc/043.png',
   },
   {
@@ -406,7 +413,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['左彎', '左轉方向', '直行後左 轉'],
     correct: 2,
-    explanation: '正確答案為「直行後左 轉」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「直行後左 轉」，勿與 「左彎」、「左轉方向」 混淆。',
     image: 'signs/mc/044.png',
   },
   {
@@ -415,7 +422,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['單線電化鐵路平交道', '雙線以上電 化鐵路平交道', '單線鐵路平交道'],
     correct: 1,
-    explanation: '正確答案為「雙線以上電 化鐵路平交道」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「雙線以上電 化鐵路平交道」，勿與 「單線電化鐵路平交道」、「單線鐵路平交道」 混淆。',
     image: 'signs/mc/045.png',
   },
   {
@@ -424,7 +432,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['車輛長度限制', '車輛寬度限制', '禁止大貨車進入'],
     correct: 0,
-    explanation: '正確答案為「車輛長度限制」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「車輛長度限制」，勿與 「車輛寬度限制」、「禁止大貨車進入」 混淆。',
     image: 'signs/mc/046.png',
   },
   {
@@ -433,7 +441,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['道路專行車輛', '禁行汽車', '禁止任何車輛進入'],
     correct: 0,
-    explanation: '正確答案為「道路專行車輛」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「道路專行車輛」，勿與 「禁行汽車」、「禁止任何車輛進入」 混淆。',
     image: 'signs/mc/047.png',
   },
   {
@@ -442,7 +450,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['圓環遵行方向', '分道', '單行 道'],
     correct: 0,
-    explanation: '正確答案為「圓環遵行方向」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「圓環遵行方向」，勿與 「分道」、「單行 道」 混淆。',
     image: 'signs/mc/048.png',
   },
   {
@@ -451,7 +459,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['行人專用', '當心行人', '當心 兒童'],
     correct: 0,
-    explanation: '正確答案為「行人專用」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「行人專用」，勿與 「當心行人」、「當心 兒童」 混淆。',
     image: 'signs/mc/049.png',
   },
   {
@@ -460,7 +468,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['省道路線編號', '市、縣道路線編 號', '國道路線編號'],
     correct: 1,
-    explanation: '正確答案為「市、縣道路線編 號」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「市、縣道路線編 號」，勿與 「省道路線編號」、「國道路線編號」 混淆。',
     image: 'signs/mc/050.png',
   },
   {
@@ -469,7 +478,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['遵行方向', '救護站', '岔路'],
     correct: 1,
-    explanation: '正確答案為「救護站」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「救護站」，勿與 「遵行方向」、「岔路」 混淆。',
     image: 'signs/mc/051.png',
   },
   {
@@ -478,7 +487,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['岔路', '此路不通', '狹路'],
     correct: 1,
-    explanation: '正確答案為「此路不通」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「此路不通」，勿與 「岔路」、「狹路」 混淆。',
     image: 'signs/mc/052.png',
   },
   {
@@ -487,7 +496,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['省道路線編號', '縣道路線編號', '國道路線編號'],
     correct: 0,
-    explanation: '正確答案為「省道路線編號」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「省道路線編號」，勿與 「縣道路線編號」、「國道路線編號」 混淆。',
     image: 'signs/mc/053.png',
   },
   {
@@ -496,7 +505,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['閃光黃燈', '行車管制號誌', '斑馬線閃光號誌'],
     correct: 1,
-    explanation: '正確答案為「行車管制號誌」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「行車管制號誌」，勿與 「閃光黃燈」、「斑馬線閃光號誌」 混淆。',
     image: 'signs/mc/054.png',
   },
   {
@@ -505,7 +514,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['斑馬線閃光號誌', '特種閃光「黃 燈」號誌', '閃光紅燈號誌'],
     correct: 1,
-    explanation: '正確答案為「特種閃光「黃 燈」號誌」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「特種閃光「黃 燈」號誌」，勿與 「斑馬線閃光號誌」、「閃光紅燈號誌」 混淆。',
     image: 'signs/mc/055.png',
   },
   {
@@ -514,7 +524,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['行人專用號誌', '閃光黃燈', '行人穿越道號誌'],
     correct: 0,
-    explanation: '正確答案為「行人專用號誌」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「行人專用號誌」，勿與 「閃光黃燈」、「行人穿越道號誌」 混淆。',
     image: 'signs/mc/056.png',
   },
   {
@@ -523,7 +533,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['閃光黃燈', '閃光紅燈號誌', '行人穿越道號誌'],
     correct: 2,
-    explanation: '正確答案為「行人穿越道號誌」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「行人穿越道號誌」，勿與 「閃光黃燈」、「閃光紅燈號誌」 混淆。',
     image: 'signs/mc/057.png',
   },
   {
@@ -532,7 +542,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['右道封閉', '左道封閉', '車輛 改道'],
     correct: 1,
-    explanation: '正確答案為「左道封閉」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「左道封閉」，勿與 「右道封閉」、「車輛 改道」 混淆。',
     image: 'signs/mc/058.png',
   },
   {
@@ -541,7 +551,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['右道封閉', '左道封閉', '車輛 改道'],
     correct: 0,
-    explanation: '正確答案為「右道封閉」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「右道封閉」，勿與 「左道封閉」、「車輛 改道」 混淆。',
     image: 'signs/mc/059.png',
   },
   {
@@ -550,7 +560,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['道路封閉', '車輛改道', '道路 施工'],
     correct: 2,
-    explanation: '正確答案為「道路 施工」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「道路 施工」，勿與 「道路封閉」、「車輛改道」 混淆。',
     image: 'signs/mc/060.png',
   },
   {
@@ -559,7 +569,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['左道封閉', '右道封閉', '車輛 改道'],
     correct: 2,
-    explanation: '正確答案為「車輛 改道」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「車輛 改道」，勿與 「左道封閉」、「右道封閉」 混淆。',
     image: 'signs/mc/061.png',
   },
   {
@@ -568,7 +578,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['指示改道方向', '單行道', '右 轉方向指示'],
     correct: 0,
-    explanation: '正確答案為「指示改道方向」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「指示改道方向」，勿與 「單行道」、「右 轉方向指示」 混淆。',
     image: 'signs/mc/062.png',
   },
   {
@@ -577,7 +587,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['道路施工', '道路封閉', '車輛 改道'],
     correct: 1,
-    explanation: '正確答案為「道路封閉」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「道路封閉」，勿與 「道路施工」、「車輛 改道」 混淆。',
     image: 'signs/mc/063.png',
   },
   {
@@ -586,7 +596,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['救護站', '加油站', '修理站'],
     correct: 2,
-    explanation: '正確答案為「修理站」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「修理站」，勿與 「救護站」、「加油站」 混淆。',
     image: 'signs/mc/064.png',
   },
   {
@@ -595,7 +605,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['直行後右轉', '直行後左轉', '左轉遵行方向'],
     correct: 0,
-    explanation: '正確答案為「直行後右轉」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「直行後右轉」，勿與 「直行後左轉」、「左轉遵行方向」 混淆。',
     image: 'signs/mc/065.png',
   },
   {
@@ -604,7 +614,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['人行天橋', '人行地下道', '停 車處'],
     correct: 1,
-    explanation: '正確答案為「人行地下道」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「人行地下道」，勿與 「人行天橋」、「停 車處」 混淆。',
     image: 'signs/mc/066.png',
   },
   {
@@ -613,7 +623,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['汽車專行', '大客車專行', '自行車及大型重型機車以外之機車專 行'],
     correct: 2,
-    explanation: '正確答案為「自行車及大型重型機車以外之機車專 行」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「自行車及大型重型機車以外之機車專 行」，勿與 「汽車專行」、「大客車專行」 混淆。',
     image: 'signs/mc/067.png',
   },
   {
@@ -622,7 +633,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['救護站', '修理站', '加油站'],
     correct: 2,
-    explanation: '正確答案為「加油站」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「加油站」，勿與 「救護站」、「修理站」 混淆。',
     image: 'signs/mc/068.png',
   },
   {
@@ -631,7 +642,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['餐旅服務', '加油站', '修理 站'],
     correct: 0,
-    explanation: '正確答案為「餐旅服務」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「餐旅服務」，勿與 「加油站」、「修理 站」 混淆。',
     image: 'signs/mc/069.png',
   },
   {
@@ -640,7 +651,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['左轉方向', '右轉方向', '左右 轉方向'],
     correct: 1,
-    explanation: '正確答案為「右轉方向」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「右轉方向」，勿與 「左轉方向」、「左右 轉方向」 混淆。',
     image: 'signs/mc/070.png',
   },
   {
@@ -649,7 +660,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁制標誌', '車輛故障標誌', '危險標誌'],
     correct: 1,
-    explanation: '正確答案為「車輛故障標誌」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「車輛故障標誌」，勿與 「禁制標誌」、「危險標誌」 混淆。',
     image: 'signs/mc/071.png',
   },
   {
@@ -658,7 +669,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['讓路線', '停止線', '路中障礙物體線'],
     correct: 0,
-    explanation: '正確答案為「讓路線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「讓路線」，勿與 「停止線」、「路中障礙物體線」 混淆。',
     image: 'signs/mc/072.png',
   },
   {
@@ -667,7 +678,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['停車線', '近障礙物線', '車輛 停放線'],
     correct: 2,
-    explanation: '正確答案為「車輛 停放線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「車輛 停放線」，勿與 「停車線」、「近障礙物線」 混淆。',
     image: 'signs/mc/073.png',
   },
   {
@@ -676,7 +687,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['路面邊線', '車道線', '雙方禁止超車線'],
     correct: 0,
-    explanation: '正確答案為「路面邊線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「路面邊線」，勿與 「車道線」、「雙方禁止超車線」 混淆。',
     image: 'signs/mc/074.png',
   },
   {
@@ -685,7 +696,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['近障礙物線', '近鐵路平交道線', '路寬變更線'],
     correct: 2,
-    explanation: '正確答案為「路寬變更線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「路寬變更線」，勿與 「近障礙物線」、「近鐵路平交道線」 混淆。',
     image: 'signs/mc/075.png',
   },
   {
@@ -694,7 +705,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['斑馬紋行人穿越道線', '車道線', '路面邊線'],
     correct: 1,
-    explanation: '正確答案為「車道線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「車道線」，勿與 「斑馬紋行人穿越道線」、「路面邊線」 混淆。',
     image: 'signs/mc/076.png',
   },
   {
@@ -703,7 +714,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['近鐵路平交道線', '近障礙物線', '路寬變更線'],
     correct: 0,
-    explanation: '正確答案為「近鐵路平交道線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「近鐵路平交道線」，勿與 「近障礙物線」、「路寬變更線」 混淆。',
     image: 'signs/mc/077.png',
   },
   {
@@ -712,7 +723,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止停車線', '行車分向線', '指向線'],
     correct: 2,
-    explanation: '正確答案為「指向線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「指向線」，勿與 「禁止停車線」、「行車分向線」 混淆。',
     image: 'signs/mc/078.png',
   },
   {
@@ -721,7 +732,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['單向禁止超車線', '雙向禁止超車線', '車道線'],
     correct: 1,
-    explanation: '正確答案為「雙向禁止超車線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「雙向禁止超車線」，勿與 「單向禁止超車線」、「車道線」 混淆。',
     image: 'signs/mc/079.png',
   },
   {
@@ -730,7 +741,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['單向禁止超車線', '雙向禁止超車線', '車道線'],
     correct: 0,
-    explanation: '正確答案為「單向禁止超車線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「單向禁止超車線」，勿與 「雙向禁止超車線」、「車道線」 混淆。',
     image: 'signs/mc/080.png',
   },
   {
@@ -739,7 +750,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['分向限制線', '雙向禁止超車線', '禁止變換車道線'],
     correct: 2,
-    explanation: '正確答案為「禁止變換車道線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「禁止變換車道線」，勿與 「分向限制線」、「雙向禁止超車線」 混淆。',
     image: 'signs/mc/081.png',
   },
   {
@@ -748,7 +759,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止停車線', '禁 止臨時停車線', '車輛停放線'],
     correct: 0,
-    explanation: '正確答案為「禁止停車線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「禁止停車線」，勿與 「禁 止臨時停車線」、「車輛停放線」 混淆。',
     image: 'signs/mc/082.png',
   },
   {
@@ -757,7 +768,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['禁止停車線', '禁 止臨時停車線', '車輛停放線'],
     correct: 1,
-    explanation: '正確答案為「禁 止臨時停車線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「禁 止臨時停車線」，勿與 「禁止停車線」、「車輛停放線」 混淆。',
     image: 'signs/mc/083.png',
   },
   {
@@ -766,7 +777,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['車道線', '分向限 制線', '行車分向線'],
     correct: 2,
-    explanation: '正確答案為「行車分向線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「行車分向線」，勿與 「車道線」、「分向限 制線」 混淆。',
     image: 'signs/mc/084.png',
   },
   {
@@ -775,7 +786,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['斑馬紋行人穿越道 線', '枕木紋行人穿越道線', '停止 線'],
     correct: 0,
-    explanation: '正確答案為「斑馬紋行人穿越道 線」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「斑馬紋行人穿越道 線」，勿與 「枕木紋行人穿越道線」、「停止 線」 混淆。',
     image: 'signs/mc/085.png',
   },
   {
@@ -784,7 +796,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['車輛停放線', '禁止超車線', '停止線'],
     correct: 2,
-    explanation: '正確答案為「停止線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「停止線」，勿與 「車輛停放線」、「禁止超車線」 混淆。',
     image: 'signs/mc/086.png',
   },
   {
@@ -793,7 +805,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['斑馬紋行人穿越道線', '枕木紋行人穿越道線', '停止線'],
     correct: 1,
-    explanation: '正確答案為「枕木紋行人穿越道線」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「枕木紋行人穿越道線」，勿與 「斑馬紋行人穿越道線」、「停止線」 混淆。',
     image: 'signs/mc/087.png',
   },
   {
@@ -802,7 +815,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['分向限制線', '禁止變換車道線', '車道線'],
     correct: 0,
-    explanation: '正確答案為「分向限制線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「分向限制線」，勿與 「禁止變換車道線」、「車道線」 混淆。',
     image: 'signs/mc/088.png',
   },
   {
@@ -811,7 +824,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['路中障礙物體線', '近障礙物線', '路寬變更線'],
     correct: 1,
-    explanation: '正確答案為「近障礙物線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「近障礙物線」，勿與 「路中障礙物體線」、「路寬變更線」 混淆。',
     image: 'signs/mc/089.png',
   },
   {
@@ -820,7 +833,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['可以臨時停車', '禁止臨時停 車', '禁止停車'],
     correct: 1,
-    explanation: '正確答案為「禁止臨時停 車」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「禁止臨時停 車」，勿與 「可以臨時停車」、「禁止停車」 混淆。',
     image: 'signs/mc/090.png',
   },
   {
@@ -829,7 +842,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['轉彎線', '網狀 線', '槽化線'],
     correct: 0,
-    explanation: '正確答案為「轉彎線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「轉彎線」，勿與 「網狀 線」、「槽化線」 混淆。',
     image: 'signs/mc/091.png',
   },
   {
@@ -838,7 +851,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['身心障礙者專用停車位', '停止線', '禁止停車線'],
     correct: 0,
-    explanation: '正確答案為「身心障礙者專用停車位」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「身心障礙者專用停車位」，勿與 「停止線」、「禁止停車線」 混淆。',
     image: 'signs/mc/092.png',
   },
   {
@@ -847,7 +860,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['全部車輛停止', '前後來車停止，左 右來車通行', '前方來車停止通行'],
     correct: 1,
-    explanation: '正確答案為「前後來車停止，左 右來車通行」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「前後來車停止，左 右來車通行」，勿與 「全部車輛停止」、「前方來車停止通行」 混淆。',
     image: 'signs/mc/093.png',
   },
   {
@@ -856,7 +870,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['右方來車左轉彎', '右方來車速行', '左方來車速行'],
     correct: 0,
-    explanation: '正確答案為「右方來車左轉彎」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「右方來車左轉彎」，勿與 「右方來車速行」、「左方來車速行」 混淆。',
     image: 'signs/mc/094.png',
   },
   {
@@ -865,7 +879,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['右方來車停止', '右方來車左轉彎', '右方來車速行'],
     correct: 0,
-    explanation: '正確答案為「右方來車停止」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「右方來車停止」，勿與 「右方來車左轉彎」、「右方來車速行」 混淆。',
     image: 'signs/mc/095.png',
   },
   {
@@ -874,7 +888,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['右方來車停止', '左方來車通行', '右方來車速行'],
     correct: 2,
-    explanation: '正確答案為「右方來車速行」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「右方來車速行」，勿與 「右方來車停止」、「左方來車通行」 混淆。',
     image: 'signs/mc/096.png',
   },
   {
@@ -883,7 +897,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['左方來車速行', '左方來車左轉彎', '右方來車停止'],
     correct: 1,
-    explanation: '正確答案為「左方來車左轉彎」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「左方來車左轉彎」，勿與 「左方來車速行」、「右方來車停止」 混淆。',
     image: 'signs/mc/097.png',
   },
   {
@@ -892,7 +906,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['前方來車停止通行', '前後來車停 止，左右來車通行', '全部車輛停止'],
     correct: 2,
-    explanation: '正確答案為「全部車輛停止」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「全部車輛停止」，勿與 「前方來車停止通行」、「前後來車停 止，左右來車通行」 混淆。',
     image: 'signs/mc/098.png',
   },
   {
@@ -901,7 +916,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['前方來車停止', '前後停止左右通 行', '全部車輛停止'],
     correct: 0,
-    explanation: '正確答案為「前方來車停止」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「前方來車停止」，勿與 「前後停止左右通 行」、「全部車輛停止」 混淆。',
     image: 'signs/mc/099.png',
   },
   {
@@ -910,7 +926,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['右轉 彎', '左轉彎', '讓後車超車'],
     correct: 0,
-    explanation: '正確答案為「右轉 彎」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「右轉 彎」，勿與 「左轉彎」、「讓後車超車」 混淆。',
     image: 'signs/mc/100.png',
   },
   {
@@ -919,7 +935,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['右轉彎', '左轉彎', '慢行'],
     correct: 1,
-    explanation: '正確答案為「左轉彎」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「左轉彎」，勿與 「右轉彎」、「慢行」 混淆。',
     image: 'signs/mc/101.png',
   },
   {
@@ -928,7 +944,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['減速暫 停', '讓後車超越', '倒車'],
     correct: 0,
-    explanation: '正確答案為「減速暫 停」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「減速暫 停」，勿與 「讓後車超越」、「倒車」 混淆。',
     image: 'signs/mc/102.png',
   },
   {
@@ -937,7 +953,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['倒車', '慢行', '讓後 車超越'],
     correct: 2,
-    explanation: '正確答案為「讓後 車超越」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「讓後 車超越」，勿與 「倒車」、「慢行」 混淆。',
     image: 'signs/mc/103.png',
   },
   {
@@ -946,7 +962,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['開亮頭燈', '注意號誌', '按鳴 喇叭'],
     correct: 0,
-    explanation: '正確答案為「開亮頭燈」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「開亮頭燈」，勿與 「注意號誌」、「按鳴 喇叭」 混淆。',
     image: 'signs/mc/104.png',
   },
   {
@@ -997,7 +1013,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['車輛長度限制', '最高速限', '行車安全距離限制'],
     correct: 2,
-    explanation: '正確答案為「行車安全距離限制」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「行車安全距離限制」，勿與 「車輛長度限制」、「最高速限」 混淆。',
     image: 'signs/mc/108.png',
   },
   {
@@ -1006,7 +1022,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['縣道路線編號', '省道路線 編號', '國道路線編號'],
     correct: 2,
-    explanation: '正確答案為「國道路線編號」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「國道路線編號」，勿與 「縣道路線編號」、「省道路線 編號」 混淆。',
     image: 'signs/mc/109.png',
   },
   {
@@ -1015,7 +1031,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['前方右側有車插會', '前方左側有車插會', '岔路'],
     correct: 0,
-    explanation: '正確答案為「前方右側有車插會」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「前方右側有車插會」，勿與 「前方左側有車插會」、「岔路」 混淆。',
     image: 'signs/mc/110.png',
   },
   {
@@ -1024,7 +1040,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['60公里', '40公里', '80公里'],
     correct: 1,
-    explanation: '正確答案為「40公里」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「40公里」，勿與 「60公里」、「80公里」 混淆。',
     image: 'signs/mc/111.png',
   },
   {
@@ -1033,7 +1049,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['出口', '車道', '地 名。之指示標誌'],
     correct: 1,
-    explanation: '正確答案為「車道」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「車道」，勿與 「出口」、「地 名。之指示標誌」 混淆。',
     image: 'signs/mc/112.png',
   },
   {
@@ -1042,7 +1058,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['單行道', '遵行方向', '指示改道方向'],
     correct: 2,
-    explanation: '正確答案為「指示改道方向」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「指示改道方向」，勿與 「單行道」、「遵行方向」 混淆。',
     image: 'signs/mc/113.png',
   },
   {
@@ -1051,7 +1067,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['警告標誌', '車輛故障標 誌', '施工標誌'],
     correct: 1,
-    explanation: '正確答案為「車輛故障標 誌」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「車輛故障標 誌」，勿與 「警告標誌」、「施工標誌」 混淆。',
     image: 'signs/mc/114.png',
   },
   {
@@ -1060,7 +1076,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['地名里程指示', '方向里 程指示', '地名方向指示'],
     correct: 2,
-    explanation: '正確答案為「地名方向指示」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「地名方向指示」，勿與 「地名里程指示」、「方向里 程指示」 混淆。',
     image: 'signs/mc/115.png',
   },
   {
@@ -1069,7 +1085,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['高速公路出口', '高速公路服務 區', '高速公路指引'],
     correct: 2,
-    explanation: '正確答案為「高速公路指引」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「高速公路指引」，勿與 「高速公路出口」、「高速公路服務 區」 混淆。',
     image: 'signs/mc/116.png',
   },
   {
@@ -1078,7 +1094,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['道路施工', '車輛改道', '道路封閉'],
     correct: 0,
-    explanation: '正確答案為「道路施工」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「道路施工」，勿與 「車輛改道」、「道路封閉」 混淆。',
     image: 'signs/mc/117.png',
   },
   {
@@ -1087,7 +1103,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['車道管制號誌，表示本車道封 閉', '前有岔道', '行車管制號誌'],
     correct: 0,
-    explanation: '正確答案為「車道管制號誌，表示本車道封 閉」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「車道管制號誌，表示本車道封 閉」，勿與 「前有岔道」、「行車管制號誌」 混淆。',
     image: 'signs/mc/118.png',
   },
   {
@@ -1096,7 +1113,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['里程碑', '里程牌', '縣道路線編號'],
     correct: 1,
-    explanation: '正確答案為「里程牌」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「里程牌」，勿與 「里程碑」、「縣道路線編號」 混淆。',
     image: 'signs/mc/119.png',
   },
   {
@@ -1105,7 +1122,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['快慢車道分隔線', '行車分向線', '雙方禁止超車線'],
     correct: 0,
-    explanation: '正確答案為「快慢車道分隔線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「快慢車道分隔線」，勿與 「行車分向線」、「雙方禁止超車線」 混淆。',
     image: 'signs/mc/120.png',
   },
   {
@@ -1114,7 +1131,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['當心自行車', '當心行人', '當 心機車'],
     correct: 0,
-    explanation: '正確答案為「當心自行車」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「當心自行車」，勿與 「當心行人」、「當 心機車」 混淆。',
     image: 'signs/mc/121.png',
   },
   {
@@ -1123,7 +1140,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['近鐵路平交道', '高 (快) 速公路車 輛保持距離', '高 (快) 速公路出口距離'],
     correct: 2,
-    explanation: '正確答案為「高 (快) 速公路出口距離」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「高 (快) 速公路出口距離」，勿與 「近鐵路平交道」、「高 (快) 速公路車 輛保持距離」 混淆。',
     image: 'signs/mc/122.png',
   },
   {
@@ -1132,7 +1150,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['高(快)速公路交流道名稱', '地名里 程', '高(快)速公路出口距離'],
     correct: 0,
-    explanation: '正確答案為「高(快)速公路交流道名稱」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「高(快)速公路交流道名稱」，勿與 「地名里 程」、「高(快)速公路出口距離」 混淆。',
     image: 'signs/mc/123.png',
   },
   {
@@ -1141,7 +1160,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['產業道路', '縣道路線編號標誌', '區、鄉道路線編號標誌'],
     correct: 2,
-    explanation: '正確答案為「區、鄉道路線編號標誌」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「區、鄉道路線編號標誌」，勿與 「產業道路」、「縣道路線編號標誌」 混淆。',
     image: 'signs/mc/124.png',
   },
   {
@@ -1150,7 +1170,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['一般公路之省道路線編號標誌', '快 速公路之省道路線編號標誌', '最高速限標 誌'],
     correct: 1,
-    explanation: '正確答案為「快 速公路之省道路線編號標誌」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「快 速公路之省道路線編號標誌」，勿與 「一般公路之省道路線編號標誌」、「最高速限標 誌」 混淆。',
     image: 'signs/mc/125.png',
   },
   {
@@ -1159,7 +1180,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['停車處', '公園', '迴轉道'],
     correct: 0,
-    explanation: '正確答案為「停車處」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「停車處」，勿與 「公園」、「迴轉道」 混淆。',
     image: 'signs/mc/126.png',
   },
   {
@@ -1168,7 +1189,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['捷運車站', '鐵路車站', '高速 鐵路車站 '],
     correct: 0,
-    explanation: '正確答案為「捷運車站」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「捷運車站」，勿與 「鐵路車站」、「高速 鐵路車站 」 混淆。',
     image: 'signs/mc/127.png',
   },
   {
@@ -1177,7 +1198,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['港埠', '渡口', '修理站'],
     correct: 0,
-    explanation: '正確答案為「港埠」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「港埠」，勿與 「渡口」、「修理站」 混淆。',
     image: 'signs/mc/128.png',
   },
   {
@@ -1186,7 +1207,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['捷運車站', '鐵路車站', '高速 鐵路車站 '],
     correct: 1,
-    explanation: '正確答案為「鐵路車站」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「鐵路車站」，勿與 「捷運車站」、「高速 鐵路車站 」 混淆。',
     image: 'signs/mc/129.png',
   },
   {
@@ -1195,7 +1216,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['捷運車站', '鐵路車站', '高速 鐵路車站 '],
     correct: 2,
-    explanation: '正確答案為「高速 鐵路車站 」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「高速 鐵路車站 」，勿與 「捷運車站」、「鐵路車站」 混淆。',
     image: 'signs/mc/130.png',
   },
   {
@@ -1204,7 +1225,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['公路汽車客運車站或轉運站', '捷運 車站', '計程車招呼站'],
     correct: 0,
-    explanation: '正確答案為「公路汽車客運車站或轉運站」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「公路汽車客運車站或轉運站」，勿與 「捷運 車站」、「計程車招呼站」 混淆。',
     image: 'signs/mc/131.png',
   },
   {
@@ -1213,7 +1235,8 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['車道指定自行車專行', '車道指定汽 車專行', '車道指定機車專行'],
     correct: 0,
-    explanation: '正確答案為「車道指定自行車專行」。請參閱相關法規或標誌說明。',
+    explanation:
+      '此標誌含義為「車道指定自行車專行」，勿與 「車道指定汽 車專行」、「車道指定機車專行」 混淆。',
     image: 'signs/mc/132.png',
   },
   {
@@ -1222,7 +1245,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['對角線行人穿 越道線', '網狀線', '自行車穿越道 線'],
     correct: 0,
-    explanation: '正確答案為「對角線行人穿 越道線」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「對角線行人穿 越道線」，勿與 「網狀線」、「自行車穿越道 線」 混淆。',
     image: 'signs/mc/133.png',
   },
   {
@@ -1231,7 +1254,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['減速慢行', '加速通 過', '檢查輪胎 '],
     correct: 0,
-    explanation: '正確答案為「減速慢行」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「減速慢行」，勿與 「加速通 過」、「檢查輪胎 」 混淆。',
     image: 'signs/mc/134.png',
   },
   {
@@ -1240,7 +1263,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['右轉', '左轉', '減速暫停'],
     correct: 0,
-    explanation: '正確答案為「右轉」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「右轉」，勿與 「左轉」、「減速暫停」 混淆。',
     image: 'signs/mc/135.png',
   },
   {
@@ -1249,7 +1272,7 @@ export const QUESTIONS_SIGN_MC: ExamQuestion[] = [
     question: '如圖所示的標誌，其含義為何？',
     options: ['右轉', '左轉', '減速暫停'],
     correct: 2,
-    explanation: '正確答案為「減速暫停」。請參閱相關法規或標誌說明。',
+    explanation: '此標誌含義為「減速暫停」，勿與 「右轉」、「左轉」 混淆。',
     image: 'signs/mc/136.png',
   },
 ];
